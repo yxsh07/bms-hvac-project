@@ -1,0 +1,16 @@
+{
+  "name": "packages-twin-core",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.3",
+    "vitest": "^2.0.5"
+  }
+}

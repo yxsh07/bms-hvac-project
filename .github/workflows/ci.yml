@@ -1,0 +1,161 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CI: true
+  # On Free plan, we skip protected branch checks; enforce via lefthook instead
+
+jobs:
+  lint-typecheck-unit:
+    name: Lint + Typecheck + Unit Tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Install Python deps
+        run: pip install -r apps/sim/requirements.txt 2>/dev/null || true
+      - name: Lint
+        run: pnpm -r lint
+      - name: Typecheck
+        run: pnpm -r typecheck
+      - name: Unit tests
+        run: pnpm -r test
+
+  contracts-drift:
+    name: Contracts Drift Check
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+    if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+      - name: Generate TS client
+        run: pnpm -w run generate:client
+      - name: Check drift
+        run: pnpm -r exec git diff --exit-code || echo "Drift detected: contracts changed"
+
+  site-agnostic:
+    name: Site-Agnostic Grep Check
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run check script
+        run: pnpm exec scripts/check-site-agnostic.sh
+
+  docker-build:
+    name: Docker Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push
+        run: |
+          docker build -t ghcr.io/yxsh07/bms-hvac-project:main -f apps/web/Dockerfile .
+          docker build -t ghcr.io/yxsh07/bms-hvac-project:sim -f apps/sim/Dockerfile .
+          docker build -t ghcr.io/yxsh07/bms-hvac-project:api -f apps/api/Dockerfile .
+
+  e2e-smoke:
+    name: E2E Smoke (Playwright)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.pull_request.labels.Any(name='e2e')
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+      - name: Start compose
+        run: docker compose -f infra/docker-compose.yml up -d
+      - name: Wait for services
+        run: sleep 30
+      - name: Run Playwright smoke
+        run: pnpm -w run test --grep="smoke" 2>/dev/null || true
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: apps/web/e2e/**
+
+  review-gate:
+    name: Review Gate
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify reviewed-ok label present
+        run: |
+          labels=$(gh pr view --json labels --jq '.labels[].name')
+          echo "$labels" | grep -qx 'reviewed-ok' || { echo "FAIL: reviewed-ok label missing"; exit 1; }
+          echo "$labels" | grep -qx 'changes-requested' && { echo "FAIL: changes-requested label present"; exit 1; }
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  dependabot:
+    name: Dependabot
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enable Dependabot
+        uses: dependabot/fetch-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

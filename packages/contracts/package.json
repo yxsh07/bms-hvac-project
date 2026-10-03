@@ -1,0 +1,12 @@
+{
+  "name": "packages-contracts",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:client": "openapi-generator-cli generate -i openapi.yaml -g typescript-axios -o packages/contracts/client --additional-properties=supportsES6=true"
+  },
+  "dependencies": {
+    "zod": "^4.6.5"
+  }
+}

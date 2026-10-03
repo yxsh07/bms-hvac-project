@@ -1,0 +1,10 @@
+{
+  "name": "bms-hvac-project",
+  "private": true,
+  "scripts": {
+    "lint": "pnpm -r --if-present lint",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test"
+  },
+  "packageManager": "pnpm@12.8.1"
+}

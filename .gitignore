@@ -1,0 +1,23 @@
+# Dependencies and gitignored files
+node_modules/
+.pnpm/
+dist/
+.next/
+.invalid.css
+*.local
+*.env
+.env*
+data/raw/
+*.xlsx
+*.pdf (unless in docs/reference)
+data/calibration/*.json (these are small derived JSON - keep them)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.git/
+.hg/
+*.sln
+.lock-wscript
+CMakeLists.txt
+Makefile
