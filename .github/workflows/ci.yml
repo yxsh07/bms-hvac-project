@@ -14,6 +14,7 @@ concurrency:
 env:
   CI: true
   # On Free plan, we skip protected branch checks; enforce via lefthook instead
+  COREPACK_ENABLE_AUTO_PIN: 0
 
 jobs:
   lint-typecheck-unit:
@@ -24,17 +25,22 @@ jobs:
         working-directory: .
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'pnpm'
+      - name: Enable corepack
+        run: corepack enable
+      - name: Setup pnpm
+        run: corepack prepare pnpm@9.15.4 --activate
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
       - name: Install Python deps
         run: |
           pip install -r apps/sim/requirements.txt 2>/dev/null || true
@@ -57,11 +63,16 @@ jobs:
     if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'pnpm'
+      - name: Enable corepack
+        run: corepack enable
+      - name: Setup pnpm
+        run: corepack prepare pnpm@9.15.4 --activate
       - name: Install deps
         run: pnpm install --frozen-lockfile
       - name: Generate TS client
@@ -140,13 +151,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'pnpm'
+      - name: Enable corepack
+        run: corepack enable
+      - name: Setup pnpm
+        run: corepack prepare pnpm@9.15.4 --activate
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install deps
-        run: pnpm install --frozen-lockfile
       - name: Install Playwright
         run: npx playwright install --with-deps
       - name: Start compose
@@ -169,10 +183,10 @@ jobs:
         working-directory: .
     if: github.event_name == 'pull_request'
     steps:
-      - uses: actions/checkout@v4
       - name: Verify reviewed-ok label present
         run: |
-          labels=$(gh pr view --json labels --jq '.labels[].name')
+          labels=$(gh pr view ${{ github.event.pull_request.number }} --json labels --jq '.labels[].name')
+          echo "Labels: $labels"
           echo "$labels" | grep -qx 'reviewed-ok' || { echo "FAIL: reviewed-ok label missing"; exit 1; }
           echo "$labels" | grep -qx 'changes-requested' && { echo "FAIL: changes-requested label present"; exit 1; }
         env:
