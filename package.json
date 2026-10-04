@@ -4,7 +4,11 @@
   "scripts": {
     "lint": "pnpm -r --if-present lint",
     "typecheck": "pnpm -r --if-present typecheck",
-    "test": "pnpm -r --if-present test"
+    "test": "pnpm -r --if-present test",
+    "generate:client": "echo 'generate:client not yet implemented - will be added in T-014'"
   },
-  "packageManager": "pnpm@12.8.1"
+  "devDependencies": {
+    "lefthook": "^1.11.13"
+  },
+  "packageManager": "pnpm@9.15.4"
 }

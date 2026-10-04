@@ -9,8 +9,8 @@ dist/
 .env*
 data/raw/
 *.xlsx
-*.pdf (unless in docs/reference)
-data/calibration/*.json (these are small derived JSON - keep them)
+*.pdf
+data/calibration/*.json
 __pycache__/
 *.pyc
 *.pyo
@@ -21,3 +21,26 @@ __pycache__/
 .lock-wscript
 CMakeLists.txt
 Makefile
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# Docker
+.docker/
+
+# Logs
+*.log
+npm-debug.log*

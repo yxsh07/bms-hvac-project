@@ -1,24 +1,28 @@
 {
-  "name": "apps-api",
+  "name": "@bms/api",
   "version": "0.0.1",
+  "private": true,
   "type": "module",
+  "main": "src/index.ts",
   "scripts": {
-    "dev": "fastify dev",
-    "build": "tsc --noEmit",
-    "lint": "eslint .",
-    "test": "pytest -q"
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
-    "fastify": "^5.12.5",
-    "zod": "^4.6.5",
-    "pino": "^9.3.0"
+    "fastify": "^5.1.0",
+    "zod": "^3.24.1",
+    "pino": "^9.6.0"
   },
   "devDependencies": {
-    "@types/fastify": "^5.0.5",
-    "@types/zod": "^3.11.3",
-    "eslint": "^8.57.0",
-    "typescript": "^5.5.3",
-    "pytest": "^8.3.3",
-    "playwright": "^1.63.0"
+    "typescript": "^5.7.3",
+    "tsx": "^4.19.2",
+    "eslint": "^9.17.0",
+    "@eslint/js": "^9.17.0",
+    "typescript-eslint": "^8.18.0",
+    "vitest": "^2.1.8",
+    "@types/node": "^22.10.5"
   }
 }

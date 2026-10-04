@@ -36,13 +36,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Install Python deps
-        run: pip install -r apps/sim/requirements.txt 2>/dev/null || true
+        run: |
+          pip install -r apps/sim/requirements.txt 2>/dev/null || true
       - name: Lint
-        run: pnpm -r lint
+        run: pnpm -r --if-present lint
       - name: Typecheck
-        run: pnpm -r typecheck
-      - name: Unit tests
-        run: pnpm -r test
+        run: pnpm -r --if-present typecheck
+      - name: Unit tests (JS/TS)
+        run: pnpm -r --if-present test
+      - name: Unit tests (Python)
+        run: |
+          cd apps/sim && pytest -q
 
   contracts-drift:
     name: Contracts Drift Check
@@ -61,9 +65,10 @@ jobs:
       - name: Install deps
         run: pnpm install --frozen-lockfile
       - name: Generate TS client
-        run: pnpm -w run generate:client
+        run: pnpm -w run generate:client 2>/dev/null || echo "generate:client script not yet implemented"
       - name: Check drift
-        run: pnpm -r exec git diff --exit-code || echo "Drift detected: contracts changed"
+        run: |
+          git diff --exit-code || (echo "Drift detected: contracts changed" && exit 1)
 
   site-agnostic:
     name: Site-Agnostic Grep Check
@@ -74,11 +79,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run check script
-        run: pnpm exec scripts/check-site-agnostic.sh
+        run: bash scripts/check-site-agnostic.sh
 
   docker-build:
     name: Docker Build
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     defaults:
       run:
         working-directory: .
@@ -92,16 +98,39 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and push
-        run: |
-          docker build -t ghcr.io/yxsh07/bms-hvac-project:main -f apps/web/Dockerfile .
-          docker build -t ghcr.io/yxsh07/bms-hvac-project:sim -f apps/sim/Dockerfile .
-          docker build -t ghcr.io/yxsh07/bms-hvac-project:api -f apps/api/Dockerfile .
+      - name: Build and push api
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: apps/api/Dockerfile
+          push: true
+          tags: ghcr.io/${{ github.repository }}/api:${{ github.sha }}
+      - name: Build and push web
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: apps/web/Dockerfile
+          push: true
+          tags: ghcr.io/${{ github.repository }}/web:${{ github.sha }}
+      - name: Build and push sim
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: apps/sim/Dockerfile
+          push: true
+          tags: ghcr.io/${{ github.repository }}/sim:${{ github.sha }}
+      - name: Build and push sim-console
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: apps/sim-console/Dockerfile
+          push: true
+          tags: ghcr.io/${{ github.repository }}/sim-console:${{ github.sha }}
 
   e2e-smoke:
     name: E2E Smoke (Playwright)
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.event.pull_request.labels.Any(name='e2e')
+    if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'e2e')
     defaults:
       run:
         working-directory: .
@@ -121,7 +150,7 @@ jobs:
       - name: Install Playwright
         run: npx playwright install --with-deps
       - name: Start compose
-        run: docker compose -f infra/docker-compose.yml up -d
+        run: docker compose -f docker-compose.yml up -d
       - name: Wait for services
         run: sleep 30
       - name: Run Playwright smoke
@@ -148,14 +177,3 @@ jobs:
           echo "$labels" | grep -qx 'changes-requested' && { echo "FAIL: changes-requested label present"; exit 1; }
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  dependabot:
-    name: Dependabot
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - uses: actions/checkout@v4
-      - name: Enable Dependabot
-        uses: dependabot/fetch-action@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}

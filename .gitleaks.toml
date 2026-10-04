@@ -1,0 +1,45 @@
+title = "Gitleaks Config"
+
+[allowlist]
+description = "Allowlisted patterns"
+paths = [
+  "(?i)\\.(md|txt|yaml|yml)$",
+  "docs/",
+  "data/seed/",
+  "scripts/",
+  "lefthook.yml",
+  ".gitleaks.toml"
+]
+regexes = [
+  '''(?i)password\s*[:=]\s*["']?(password|secret|admin)["']?''',
+]
+
+[[rules]]
+id = "generic-api-key"
+description = "Generic API Key"
+regex = '''(?i)(api[_-]?key|apikey)\s*[:=]\s*["']?[a-zA-Z0-9_-]{20,}["']?'''
+tags = ["key", "api"]
+
+[[rules]]
+id = "generic-secret"
+description = "Generic Secret"
+regex = '''(?i)(secret|password|passwd|pwd)\s*[:=]\s*["']?[a-zA-Z0-9!@#$%^&*()_+-=]{8,}["']?'''
+tags = ["secret", "password"]
+
+[[rules]]
+id = "jwt-token"
+description = "JWT Token"
+regex = '''eyJ[A-Za-z0-9_-]*\.eyJ[A-Za-z0-9_-]*\.[A-Za-z0-9_-]*'''
+tags = ["jwt", "token"]
+
+[[rules]]
+id = "postgres-dsn"
+description = "PostgreSQL DSN with password"
+regex = '''postgres(?:ql)?://[^:]+:[^@]+@[^/]+/\w+'''
+tags = ["database", "postgres"]
+
+[[rules]]
+id = "private-key"
+description = "Private Key"
+regex = '''-----BEGIN (?:RSA |EC |DSA |OPENSSH )?PRIVATE KEY-----'''
+tags = ["key", "private"]

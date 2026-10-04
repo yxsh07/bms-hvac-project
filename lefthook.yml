@@ -1,0 +1,14 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      run: pnpm -r --if-present lint
+    typecheck:
+      run: pnpm -r --if-present typecheck
+    gitleaks:
+      run: npx --yes gitleaks detect --staged --config .gitleaks.toml
+
+pre-push:
+  commands:
+    block-main:
+      run: test "$(git branch --show-current)" != main || { echo 'Direct push to main is blocked. Use a feature branch and PR.'; exit 1; }

@@ -31,11 +31,13 @@ TIER2_PATHS=(
   "packages/quality"
   "packages/ontology"
 )
-TIER2_EXCLUDES=(
-  "data/"
-  "docs/"
-  "**/fixtures/**"
-  "**/*.test.*"
+
+# Build exclude args for rg
+EXCLUDE_ARGS=(
+  "-g" "!data/"
+  "-g" "!docs/"
+  "-g" "!**/fixtures/**"
+  "-g" "!**/*.test.*"
 )
 
 fail=0
@@ -49,15 +51,31 @@ for pattern in "${TIER1_PATTERNS[@]}"; do
   done
 done
 
+# Also check forbidden-strings.txt if it exists
+if [ -f "${REPO_ROOT}/data/seed/forbidden-strings.txt" ]; then
+  while IFS= read -r line; do
+    [ -z "$line" ] && continue
+    matches=$(rg -l "$line" "${REPO_ROOT}" 2>/dev/null || true)
+    for f in $matches; do
+      echo "FAIL: Tier 1 hit (forbidden-strings): pattern='$line' file=$f"
+      fail=1
+    done
+  done < "${REPO_ROOT}/data/seed/forbidden-strings.txt"
+fi
+
 echo "Checking Tier 2 patterns..."
 for pattern in "${TIER2_PATTERNS[@]}"; do
   for path in "${TIER2_PATHS[@]}"; do
-    # Use rg with path filter and exclusions
-    matches=$(rg -g "!${TIER2_EXCLUDES[*]/#/-g \"!\"}" -p "$pattern" "$path" 2>/dev/null || true)
-    for f in $matches; do
-      echo "FAIL: Tier 2 hit: pattern='$pattern' file=$f"
-      fail=1
-    done
+    full_path="${REPO_ROOT}/${path}"
+    [ -d "$full_path" ] || continue
+    matches=$(rg -i -p "${EXCLUDE_ARGS[@]}" "$pattern" "$full_path" 2>/dev/null || true)
+    if [ -n "$matches" ]; then
+      while IFS= read -r line; do
+        [ -z "$line" ] && continue
+        echo "FAIL: Tier 2 hit: pattern='$pattern' file=$line"
+        fail=1
+      done <<< "$matches"
+    fi
   done
 done
 

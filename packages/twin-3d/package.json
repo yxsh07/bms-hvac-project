@@ -1,18 +1,28 @@
 {
-  "name": "packages-twin-3d",
+  "name": "@bms/twin-3d",
   "version": "0.0.1",
   "private": true,
   "type": "module",
+  "main": "src/index.ts",
   "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run"
   },
   "dependencies": {
-    "three": "^0.186.1",
-    "@react-three/fiber": "^9.8.1",
-    "@react-three/drei": "^10.7.9"
+    "three": "^0.171.0",
+    "@react-three/fiber": "^9.0.4",
+    "@react-three/drei": "^9.121.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.5.3",
-    "vitest": "^2.0.5"
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8",
+    "@types/three": "^0.171.0",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3"
   }
 }

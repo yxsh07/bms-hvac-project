@@ -1,0 +1,14 @@
+# Distinctive tokens from the client site (curated by T-010)
+# These are Tier 1 forbidden patterns - exact matches fail the site-agnostic check
+# Ordinary words like "status", "kw", "current" are NOT included
+
+kmssh
+Manavata
+KIMS
+JouleLogger
+coollwt
+heatwt
+supplytemp
+returntemp
+valvepct
+fanstatus
