@@ -182,12 +182,19 @@ jobs:
       run:
         working-directory: .
     if: github.event_name == 'pull_request'
+    permissions:
+      contents: read
+      pull-requests: read
     steps:
       - uses: actions/checkout@v4
       - name: Verify reviewed-ok label present
         run: |
-          labels=$(gh pr view ${{ github.event.pull_request.number }} --json labels --jq '.labels[].name')
-          echo "$labels" | grep -qx 'reviewed-ok' || { echo "FAIL: reviewed-ok label missing"; exit 1; }
-          echo "$labels" | grep -qx 'changes-requested' && { echo "FAIL: changes-requested label present"; exit 1; }
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          RESPONSE=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER")
+          LABELS=$(echo "$RESPONSE" | jq -r '.labels[].name')
+          echo "$LABELS" | grep -qx 'reviewed-ok' || { echo "FAIL: reviewed-ok label missing"; exit 1; }
+          echo "$LABELS" | grep -qx 'changes-requested' && { echo "FAIL: changes-requested label present"; exit 1; }
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
