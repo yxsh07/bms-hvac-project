@@ -11,4 +11,4 @@ pre-commit:
 pre-push:
   commands:
     block-main:
-      run: test "$(git branch --show-current)" != main || { echo 'Direct push to main is blocked. Use a feature branch and PR.'; exit 1; }
+      run: bash scripts/block-main.sh
