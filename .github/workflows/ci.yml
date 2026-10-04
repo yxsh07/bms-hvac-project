@@ -190,11 +190,15 @@ jobs:
       - name: Verify reviewed-ok label present
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
+          echo "Checking PR #$PR_NUMBER for reviewed-ok label..."
           RESPONSE=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
             "https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER")
-          LABELS=$(echo "$RESPONSE" | jq -r '.labels[].name')
+          echo "API Response: $RESPONSE"
+          LABELS=$(echo "$RESPONSE" | jq -r '.labels[].name' 2>/dev/null || echo "")
+          echo "Labels found: $LABELS"
           echo "$LABELS" | grep -qx 'reviewed-ok' || { echo "FAIL: reviewed-ok label missing"; exit 1; }
           echo "$LABELS" | grep -qx 'changes-requested' && { echo "FAIL: changes-requested label present"; exit 1; }
+          echo "PASS: reviewed-ok label present, no changes-requested label"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
