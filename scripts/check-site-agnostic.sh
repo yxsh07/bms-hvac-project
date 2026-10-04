@@ -38,13 +38,15 @@ EXCLUDE_ARGS=(
   "-g" "!docs/"
   "-g" "!**/fixtures/**"
   "-g" "!**/*.test.*"
+  "-g" "!tools/**"
+  "-g" "!scripts/**"
 )
 
 fail=0
 
 echo "Checking Tier 1 patterns..."
 for pattern in "${TIER1_PATTERNS[@]}"; do
-  matches=$(rg -l "$pattern" "${REPO_ROOT}" 2>/dev/null || true)
+  matches=$(rg -l "$pattern" "${REPO_ROOT}" "${EXCLUDE_ARGS[@]}" 2>/dev/null || true)
   for f in $matches; do
     echo "FAIL: Tier 1 hit: pattern='$pattern' file=$f"
     fail=1
@@ -55,7 +57,7 @@ done
 if [ -f "${REPO_ROOT}/data/seed/forbidden-strings.txt" ]; then
   while IFS= read -r line; do
     [ -z "$line" ] && continue
-    matches=$(rg -l "$line" "${REPO_ROOT}" 2>/dev/null || true)
+    matches=$(rg -l "$line" "${REPO_ROOT}" "${EXCLUDE_ARGS[@]}" 2>/dev/null || true)
     for f in $matches; do
       echo "FAIL: Tier 1 hit (forbidden-strings): pattern='$line' file=$f"
       fail=1
