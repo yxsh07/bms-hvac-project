@@ -1,0 +1,650 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 0.392,
+    "p5": 0.263,
+    "p95": 0.521,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 1.09,
+    "p5": 0.731,
+    "p95": 1.448,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 0.076,
+    "p5": 0.051,
+    "p95": 0.101,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 0.228,
+    "p5": 0.153,
+    "p95": 0.303,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 0.447,
+    "p5": 0.3,
+    "p95": 0.593,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 1.328,
+    "p5": 0.891,
+    "p95": 1.765,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 0.91,
+    "p5": 0.611,
+    "p95": 1.209,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 0.342,
+    "p5": 0.229,
+    "p95": 0.454,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 0.651,
+    "p5": 0.437,
+    "p95": 0.865,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 1.546,
+    "p5": 1.037,
+    "p95": 2.054,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 1.601,
+    "p5": 1.074,
+    "p95": 2.128,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 1.461,
+    "p5": 0.98,
+    "p95": 1.941,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 0.83,
+    "p5": 0.557,
+    "p95": 1.103,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 1.882,
+    "p5": 1.263,
+    "p95": 2.502,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 0.546,
+    "p5": 0.366,
+    "p95": 0.726,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 1.945,
+    "p5": 1.305,
+    "p95": 2.585,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 0.849,
+    "p5": 0.57,
+    "p95": 1.128,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 1.436,
+    "p5": 0.964,
+    "p95": 1.909,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 0.807,
+    "p5": 0.541,
+    "p95": 1.072,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 1.14,
+    "p5": 0.765,
+    "p95": 1.515,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 0.98,
+    "p5": 0.658,
+    "p95": 1.303,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "criticalAhu",
+    "field": "kw",
+    "mean": 1.439,
+    "p5": 0.965,
+    "p95": 1.912,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 48.508,
+    "p5": 32.549,
+    "p95": 64.468,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 59.719,
+    "p5": 40.072,
+    "p95": 79.367,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 46.789,
+    "p5": 31.396,
+    "p95": 62.183,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 46.857,
+    "p5": 31.441,
+    "p95": 62.272,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 48.511,
+    "p5": 32.551,
+    "p95": 64.471,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 55.579,
+    "p5": 37.293,
+    "p95": 73.864,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 62.887,
+    "p5": 42.197,
+    "p95": 83.577,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 53.14,
+    "p5": 35.657,
+    "p95": 70.622,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 39.53,
+    "p5": 26.525,
+    "p95": 52.536,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 40.455,
+    "p5": 27.145,
+    "p95": 53.764,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 62.031,
+    "p5": 41.623,
+    "p95": 82.439,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 66.836,
+    "p5": 44.847,
+    "p95": 88.825,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 47.855,
+    "p5": 32.111,
+    "p95": 63.6,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 41.837,
+    "p5": 28.072,
+    "p95": 55.601,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 40.715,
+    "p5": 27.32,
+    "p95": 54.111,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 41.509,
+    "p5": 27.852,
+    "p95": 55.165,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 58.123,
+    "p5": 39.001,
+    "p95": 77.245,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 43.396,
+    "p5": 29.119,
+    "p95": 57.673,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 58.545,
+    "p5": 39.284,
+    "p95": 77.807,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 51.081,
+    "p5": 34.275,
+    "p95": 67.886,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 47.33,
+    "p5": 31.758,
+    "p95": 62.901,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 40.964,
+    "p5": 27.487,
+    "p95": 54.441,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 35.485,
+    "p5": 23.81,
+    "p95": 47.159,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "criticalAhu",
+    "field": "temp",
+    "mean": 54.984,
+    "p5": 36.894,
+    "p95": 73.074,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 56.003,
+    "p5": 37.578,
+    "p95": 74.428,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 41.727,
+    "p5": 27.999,
+    "p95": 55.455,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 46.579,
+    "p5": 31.254,
+    "p95": 61.903,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 61.246,
+    "p5": 41.096,
+    "p95": 81.396,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 20.908,
+    "p5": 14.03,
+    "p95": 27.787,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 65.174,
+    "p5": 43.732,
+    "p95": 86.616,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 41.248,
+    "p5": 27.677,
+    "p95": 54.819,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 56.099,
+    "p5": 37.643,
+    "p95": 74.556,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 51.496,
+    "p5": 34.554,
+    "p95": 68.438,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 41.286,
+    "p5": 27.703,
+    "p95": 54.87,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 39.644,
+    "p5": 26.601,
+    "p95": 52.686,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 61.627,
+    "p5": 41.351,
+    "p95": 81.902,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 47.357,
+    "p5": 31.776,
+    "p95": 62.937,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 63.42,
+    "p5": 42.555,
+    "p95": 84.285,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 51.382,
+    "p5": 34.477,
+    "p95": 68.286,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 53.684,
+    "p5": 36.022,
+    "p95": 71.346,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 56.246,
+    "p5": 37.741,
+    "p95": 74.752,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 37.209,
+    "p5": 24.967,
+    "p95": 49.451,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 56.196,
+    "p5": 37.707,
+    "p95": 74.684,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 46.9,
+    "p5": 31.47,
+    "p95": 62.33,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 39.457,
+    "p5": 26.476,
+    "p95": 52.438,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 61.742,
+    "p5": 41.429,
+    "p95": 82.055,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 49.647,
+    "p5": 33.313,
+    "p95": 65.98,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "criticalAhu",
+    "field": "status",
+    "mean": 24.478,
+    "p5": 16.425,
+    "p95": 32.532,
+    "count": 216
+  }
+]

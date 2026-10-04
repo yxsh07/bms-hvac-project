@@ -1,0 +1,650 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 0.666,
+    "p5": 0.447,
+    "p95": 0.885,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 0.806,
+    "p5": 0.541,
+    "p95": 1.072,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 1.015,
+    "p5": 0.681,
+    "p95": 1.349,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 0.865,
+    "p5": 0.58,
+    "p95": 1.149,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 0.334,
+    "p5": 0.224,
+    "p95": 0.444,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 0.602,
+    "p5": 0.404,
+    "p95": 0.8,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 0.916,
+    "p5": 0.614,
+    "p95": 1.217,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 0.754,
+    "p5": 0.506,
+    "p95": 1.002,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 1.56,
+    "p5": 1.047,
+    "p95": 2.074,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 1.189,
+    "p5": 0.798,
+    "p95": 1.581,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 0.909,
+    "p5": 0.61,
+    "p95": 1.208,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 1.959,
+    "p5": 1.314,
+    "p95": 2.603,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 1.292,
+    "p5": 0.867,
+    "p95": 1.717,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 0.781,
+    "p5": 0.524,
+    "p95": 1.038,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 1.357,
+    "p5": 0.911,
+    "p95": 1.804,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 1.262,
+    "p5": 0.847,
+    "p95": 1.678,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 1.457,
+    "p5": 0.977,
+    "p95": 1.936,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 2.235,
+    "p5": 1.5,
+    "p95": 2.97,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 1.914,
+    "p5": 1.285,
+    "p95": 2.544,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 1.109,
+    "p5": 0.744,
+    "p95": 1.474,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 0.454,
+    "p5": 0.305,
+    "p95": 0.604,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 0.757,
+    "p5": 0.508,
+    "p95": 1.006,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 2.125,
+    "p5": 1.426,
+    "p95": 2.824,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "tank",
+    "field": "kw",
+    "mean": 0.52,
+    "p5": 0.349,
+    "p95": 0.691,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 46.315,
+    "p5": 31.077,
+    "p95": 61.552,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 43.266,
+    "p5": 29.031,
+    "p95": 57.5,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 49.785,
+    "p5": 33.406,
+    "p95": 66.164,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 57.872,
+    "p5": 38.832,
+    "p95": 76.912,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 53.5,
+    "p5": 35.899,
+    "p95": 71.102,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 49.193,
+    "p5": 33.008,
+    "p95": 65.377,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 60.727,
+    "p5": 40.748,
+    "p95": 80.706,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 52.776,
+    "p5": 35.413,
+    "p95": 70.139,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 60.233,
+    "p5": 40.416,
+    "p95": 80.049,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 52.081,
+    "p5": 34.946,
+    "p95": 69.215,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 43.919,
+    "p5": 29.47,
+    "p95": 58.369,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 58.093,
+    "p5": 38.98,
+    "p95": 77.206,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 66.901,
+    "p5": 44.89,
+    "p95": 88.911,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 81.006,
+    "p5": 54.355,
+    "p95": 107.658,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 58.172,
+    "p5": 39.034,
+    "p95": 77.311,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 34.494,
+    "p5": 23.145,
+    "p95": 45.842,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 59.656,
+    "p5": 40.029,
+    "p95": 79.283,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 55.578,
+    "p5": 37.293,
+    "p95": 73.863,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 46.503,
+    "p5": 31.203,
+    "p95": 61.802,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 49.929,
+    "p5": 33.502,
+    "p95": 66.355,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 51.522,
+    "p5": 34.571,
+    "p95": 68.473,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 59.437,
+    "p5": 39.882,
+    "p95": 78.991,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 67.673,
+    "p5": 45.409,
+    "p95": 89.938,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "tank",
+    "field": "temp",
+    "mean": 70.805,
+    "p5": 47.51,
+    "p95": 94.099,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 47.441,
+    "p5": 31.833,
+    "p95": 63.049,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 51.356,
+    "p5": 34.46,
+    "p95": 68.252,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 29.613,
+    "p5": 19.871,
+    "p95": 39.356,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 37.835,
+    "p5": 25.387,
+    "p95": 50.283,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 49.6,
+    "p5": 33.281,
+    "p95": 65.918,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 49.727,
+    "p5": 33.367,
+    "p95": 66.087,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 50.091,
+    "p5": 33.611,
+    "p95": 66.571,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 44.4,
+    "p5": 29.793,
+    "p95": 59.008,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 49.463,
+    "p5": 33.19,
+    "p95": 65.737,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 68.04,
+    "p5": 45.655,
+    "p95": 90.425,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 36.85,
+    "p5": 24.726,
+    "p95": 48.973,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 49.037,
+    "p5": 32.904,
+    "p95": 65.17,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 59.491,
+    "p5": 39.919,
+    "p95": 79.064,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 30.409,
+    "p5": 20.404,
+    "p95": 40.414,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 61.94,
+    "p5": 41.562,
+    "p95": 82.318,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 56.799,
+    "p5": 38.112,
+    "p95": 75.486,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 36.781,
+    "p5": 24.68,
+    "p95": 48.883,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 27.29,
+    "p5": 18.312,
+    "p95": 36.269,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 59.748,
+    "p5": 40.091,
+    "p95": 79.405,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 36.38,
+    "p5": 24.411,
+    "p95": 48.349,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 49.818,
+    "p5": 33.428,
+    "p95": 66.208,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 60.378,
+    "p5": 40.513,
+    "p95": 80.242,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 57.468,
+    "p5": 38.561,
+    "p95": 76.375,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "tank",
+    "field": "status",
+    "mean": 50.203,
+    "p5": 33.686,
+    "p95": 66.72,
+    "count": 216
+  }
+]

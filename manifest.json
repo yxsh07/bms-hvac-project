@@ -1,0 +1,31 @@
+{
+  "total_files": 12,
+  "total_rows": 2385291,
+  "total_blocks": 3918,
+  "total_entities": 571,
+  "measurement": "components",
+  "date_range": {
+    "start": "2026-07-12T00:00:00+05:30",
+    "end": "2026-07-14T23:59:00+05:30"
+  },
+  "file_breakdown": [
+    {
+      "filename": "components_20260712_0000.csv",
+      "rows": 795097,
+      "blocks": 1306,
+      "entities": 571
+    },
+    {
+      "filename": "components_20260712_1200.csv",
+      "rows": 795097,
+      "blocks": 1306,
+      "entities": 571
+    },
+    {
+      "filename": "components_20260713_0000.csv",
+      "rows": 795097,
+      "blocks": 1306,
+      "entities": 571
+    }
+  ]
+}

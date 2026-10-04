@@ -1,0 +1,650 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 0.949,
+    "p5": 0.637,
+    "p95": 1.261,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 0.623,
+    "p5": 0.418,
+    "p95": 0.828,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 1.727,
+    "p5": 1.159,
+    "p95": 2.296,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 1.615,
+    "p5": 1.084,
+    "p95": 2.146,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 0.36,
+    "p5": 0.241,
+    "p95": 0.478,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 0.588,
+    "p5": 0.394,
+    "p95": 0.781,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 0.391,
+    "p5": 0.262,
+    "p95": 0.52,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 1.565,
+    "p5": 1.05,
+    "p95": 2.08,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 1.312,
+    "p5": 0.88,
+    "p95": 1.743,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 2.072,
+    "p5": 1.391,
+    "p95": 2.754,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 1.334,
+    "p5": 0.895,
+    "p95": 1.772,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 0.624,
+    "p5": 0.419,
+    "p95": 0.83,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 1.725,
+    "p5": 1.157,
+    "p95": 2.292,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 0.845,
+    "p5": 0.567,
+    "p95": 1.123,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 0.814,
+    "p5": 0.546,
+    "p95": 1.082,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 1.655,
+    "p5": 1.111,
+    "p95": 2.2,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 1.6,
+    "p5": 1.073,
+    "p95": 2.126,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 0.952,
+    "p5": 0.639,
+    "p95": 1.265,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 0.964,
+    "p5": 0.647,
+    "p95": 1.281,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 0.591,
+    "p5": 0.396,
+    "p95": 0.785,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 1.011,
+    "p5": 0.678,
+    "p95": 1.344,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 0.579,
+    "p5": 0.388,
+    "p95": 0.769,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "hrvu",
+    "field": "kw",
+    "mean": 0.558,
+    "p5": 0.375,
+    "p95": 0.742,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 40.7,
+    "p5": 27.31,
+    "p95": 54.09,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 35.605,
+    "p5": 23.891,
+    "p95": 47.32,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 45.445,
+    "p5": 30.493,
+    "p95": 60.396,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 39.842,
+    "p5": 26.734,
+    "p95": 52.95,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 44.117,
+    "p5": 29.603,
+    "p95": 58.631,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 49.812,
+    "p5": 33.424,
+    "p95": 66.2,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 52.675,
+    "p5": 35.345,
+    "p95": 70.006,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 66.082,
+    "p5": 44.341,
+    "p95": 87.823,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 44.239,
+    "p5": 29.684,
+    "p95": 58.793,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 52.243,
+    "p5": 35.055,
+    "p95": 69.431,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 54.606,
+    "p5": 36.64,
+    "p95": 72.571,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 62.672,
+    "p5": 42.053,
+    "p95": 83.29,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 67.015,
+    "p5": 44.967,
+    "p95": 89.063,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 44.963,
+    "p5": 30.17,
+    "p95": 59.756,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 44.466,
+    "p5": 29.837,
+    "p95": 59.095,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 52.042,
+    "p5": 34.92,
+    "p95": 69.164,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 59.663,
+    "p5": 40.034,
+    "p95": 79.292,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 45.387,
+    "p5": 30.454,
+    "p95": 60.319,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 48.012,
+    "p5": 32.216,
+    "p95": 63.808,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 43.221,
+    "p5": 29.001,
+    "p95": 57.44,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 46.05,
+    "p5": 30.899,
+    "p95": 61.2,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 55.158,
+    "p5": 37.011,
+    "p95": 73.304,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 23.854,
+    "p5": 16.006,
+    "p95": 31.702,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "hrvu",
+    "field": "temp",
+    "mean": 46.951,
+    "p5": 31.504,
+    "p95": 62.398,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 45.742,
+    "p5": 30.693,
+    "p95": 60.792,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 38.458,
+    "p5": 25.806,
+    "p95": 51.111,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 35.897,
+    "p5": 24.087,
+    "p95": 47.708,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 57.148,
+    "p5": 38.346,
+    "p95": 75.95,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 55.704,
+    "p5": 37.377,
+    "p95": 74.03,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 67.436,
+    "p5": 45.25,
+    "p95": 89.623,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 53.212,
+    "p5": 35.705,
+    "p95": 70.718,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 61.177,
+    "p5": 41.05,
+    "p95": 81.305,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 32.331,
+    "p5": 21.694,
+    "p95": 42.968,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 57.327,
+    "p5": 38.466,
+    "p95": 76.187,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 53.841,
+    "p5": 36.127,
+    "p95": 71.555,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 46.095,
+    "p5": 30.93,
+    "p95": 61.26,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 54.584,
+    "p5": 36.626,
+    "p95": 72.542,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 41.327,
+    "p5": 27.731,
+    "p95": 54.924,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 38.632,
+    "p5": 25.922,
+    "p95": 51.341,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 45.48,
+    "p5": 30.517,
+    "p95": 60.443,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 66.299,
+    "p5": 44.486,
+    "p95": 88.111,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 44.943,
+    "p5": 30.157,
+    "p95": 59.729,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 49.074,
+    "p5": 32.928,
+    "p95": 65.219,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 56.58,
+    "p5": 37.965,
+    "p95": 75.195,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 55.788,
+    "p5": 37.434,
+    "p95": 74.143,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 62.026,
+    "p5": 41.619,
+    "p95": 82.432,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 42.991,
+    "p5": 28.847,
+    "p95": 57.135,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "hrvu",
+    "field": "status",
+    "mean": 60.558,
+    "p5": 40.634,
+    "p95": 80.481,
+    "count": 216
+  }
+]

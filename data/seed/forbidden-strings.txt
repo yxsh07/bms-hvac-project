@@ -1,0 +1,9 @@
+# Forbidden strings - curated by T-010
+# These are client-specific identifiers that must not appear outside data/
+# Ordinary words like 'status', 'kw', 'current' are excluded
+JouleLogger
+KIMS
+Manavata
+kmssh
+kmssh-
+nas_224

@@ -1,0 +1,866 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 68.79,
+    "p5": 46.158,
+    "p95": 91.422,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 39.037,
+    "p5": 26.194,
+    "p95": 51.88,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 67.196,
+    "p5": 45.088,
+    "p95": 89.303,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 21.028,
+    "p5": 14.11,
+    "p95": 27.946,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 17.591,
+    "p5": 11.804,
+    "p95": 23.378,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 50.834,
+    "p5": 34.109,
+    "p95": 67.558,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 47.147,
+    "p5": 31.635,
+    "p95": 62.658,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 49.177,
+    "p5": 32.998,
+    "p95": 65.356,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 47.105,
+    "p5": 31.608,
+    "p95": 62.603,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 42.415,
+    "p5": 28.461,
+    "p95": 56.37,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 61.225,
+    "p5": 41.082,
+    "p95": 81.368,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 30.651,
+    "p5": 20.567,
+    "p95": 40.735,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 64.633,
+    "p5": 43.369,
+    "p95": 85.898,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 78.674,
+    "p5": 52.791,
+    "p95": 104.558,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 68.294,
+    "p5": 45.825,
+    "p95": 90.763,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 39.015,
+    "p5": 26.179,
+    "p95": 51.852,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 58.289,
+    "p5": 39.112,
+    "p95": 77.466,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 52.381,
+    "p5": 35.148,
+    "p95": 69.615,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 60.382,
+    "p5": 40.516,
+    "p95": 80.248,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 86.605,
+    "p5": 58.112,
+    "p95": 115.098,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 55.711,
+    "p5": 37.382,
+    "p95": 74.04,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 50.771,
+    "p5": 34.067,
+    "p95": 67.474,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 33.404,
+    "p5": 22.414,
+    "p95": 44.394,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "coolingTower",
+    "field": "fan_speed",
+    "mean": 95.302,
+    "p5": 63.948,
+    "p95": 126.657,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 0.599,
+    "p5": 0.402,
+    "p95": 0.797,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 1.115,
+    "p5": 0.748,
+    "p95": 1.481,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 1.018,
+    "p5": 0.683,
+    "p95": 1.353,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 1.424,
+    "p5": 0.955,
+    "p95": 1.892,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 1.15,
+    "p5": 0.771,
+    "p95": 1.528,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 0.881,
+    "p5": 0.591,
+    "p95": 1.171,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 0.629,
+    "p5": 0.422,
+    "p95": 0.835,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 1.291,
+    "p5": 0.867,
+    "p95": 1.716,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 1.443,
+    "p5": 0.968,
+    "p95": 1.918,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 1.534,
+    "p5": 1.029,
+    "p95": 2.038,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 1.56,
+    "p5": 1.047,
+    "p95": 2.074,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 1.153,
+    "p5": 0.774,
+    "p95": 1.533,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 0.807,
+    "p5": 0.541,
+    "p95": 1.072,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 0.996,
+    "p5": 0.668,
+    "p95": 1.323,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 1.487,
+    "p5": 0.998,
+    "p95": 1.976,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 1.645,
+    "p5": 1.104,
+    "p95": 2.186,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 0.126,
+    "p5": 0.085,
+    "p95": 0.168,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 0.957,
+    "p5": 0.642,
+    "p95": 1.271,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 0.341,
+    "p5": 0.229,
+    "p95": 0.453,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 0.442,
+    "p5": 0.297,
+    "p95": 0.588,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 1.364,
+    "p5": 0.915,
+    "p95": 1.813,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 1.709,
+    "p5": 1.146,
+    "p95": 2.271,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 2.078,
+    "p5": 1.394,
+    "p95": 2.762,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "coolingTower",
+    "field": "approach",
+    "mean": 0.228,
+    "p5": 0.153,
+    "p95": 0.303,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 47.764,
+    "p5": 32.049,
+    "p95": 63.478,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 36.197,
+    "p5": 24.288,
+    "p95": 48.106,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 53.384,
+    "p5": 35.821,
+    "p95": 70.947,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 52.837,
+    "p5": 35.454,
+    "p95": 70.221,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 58.99,
+    "p5": 39.582,
+    "p95": 78.398,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 50.174,
+    "p5": 33.666,
+    "p95": 66.681,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 50.891,
+    "p5": 34.148,
+    "p95": 67.634,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 41.481,
+    "p5": 27.834,
+    "p95": 55.129,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 43.718,
+    "p5": 29.335,
+    "p95": 58.101,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 70.243,
+    "p5": 47.133,
+    "p95": 93.353,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 36.812,
+    "p5": 24.701,
+    "p95": 48.924,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 47.247,
+    "p5": 31.703,
+    "p95": 62.791,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 70.962,
+    "p5": 47.616,
+    "p95": 94.309,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 51.8,
+    "p5": 34.758,
+    "p95": 68.842,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 53.136,
+    "p5": 35.654,
+    "p95": 70.618,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 50.804,
+    "p5": 34.09,
+    "p95": 67.519,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 41.193,
+    "p5": 27.64,
+    "p95": 54.745,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 41.281,
+    "p5": 27.699,
+    "p95": 54.862,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 56.244,
+    "p5": 37.74,
+    "p95": 74.749,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 49.55,
+    "p5": 33.248,
+    "p95": 65.852,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 46.714,
+    "p5": 31.345,
+    "p95": 62.082,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 38.353,
+    "p5": 25.735,
+    "p95": 50.972,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 43.059,
+    "p5": 28.893,
+    "p95": 57.225,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "coolingTower",
+    "field": "range",
+    "mean": 31.469,
+    "p5": 21.116,
+    "p95": 41.823,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 57.572,
+    "p5": 38.631,
+    "p95": 76.514,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 39.969,
+    "p5": 26.819,
+    "p95": 53.118,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 39.963,
+    "p5": 26.815,
+    "p95": 53.111,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 41.067,
+    "p5": 27.556,
+    "p95": 54.577,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 49.121,
+    "p5": 32.96,
+    "p95": 65.282,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 59.192,
+    "p5": 39.718,
+    "p95": 78.667,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 42.359,
+    "p5": 28.423,
+    "p95": 56.295,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 52.725,
+    "p5": 35.379,
+    "p95": 70.072,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 32.182,
+    "p5": 21.594,
+    "p95": 42.77,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 49.092,
+    "p5": 32.94,
+    "p95": 65.243,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 52.617,
+    "p5": 35.306,
+    "p95": 69.928,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 54.772,
+    "p5": 36.752,
+    "p95": 72.792,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 71.05,
+    "p5": 47.675,
+    "p95": 94.426,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 62.443,
+    "p5": 41.899,
+    "p95": 82.987,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 39.42,
+    "p5": 26.451,
+    "p95": 52.389,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 31.141,
+    "p5": 20.896,
+    "p95": 41.387,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 45.994,
+    "p5": 30.862,
+    "p95": 61.126,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 52.975,
+    "p5": 35.546,
+    "p95": 70.403,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 65.939,
+    "p5": 44.245,
+    "p95": 87.633,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 39.491,
+    "p5": 26.499,
+    "p95": 52.484,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 42.737,
+    "p5": 28.677,
+    "p95": 56.798,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 55.389,
+    "p5": 37.166,
+    "p95": 73.612,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 50.458,
+    "p5": 33.857,
+    "p95": 67.058,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "coolingTower",
+    "field": "wet_bulb",
+    "mean": 45.529,
+    "p5": 30.55,
+    "p95": 60.508,
+    "count": 216
+  }
+]

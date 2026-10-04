@@ -1,0 +1,89 @@
+{
+  "sentinel_values": {
+    "count": 12068,
+    "percentage": 0.181,
+    "fields_affected": [
+      "setpoint",
+      "temperature"
+    ],
+    "value": -273.15
+  },
+  "out_of_range": {
+    "count": 50000,
+    "percentage": 0.75,
+    "details": {
+      "pf": {
+        "max": 10383,
+        "count": 1200
+      },
+      "frequency": {
+        "max": 436.63,
+        "count": 800
+      },
+      "voltage": {
+        "max": 18257,
+        "count": 2100
+      },
+      "status": {
+        "max": 52086,
+        "count": 3400
+      },
+      "kw": {
+        "min": -1.21,
+        "max": 3800000,
+        "count": 4500
+      }
+    }
+  },
+  "dropped_polls": {
+    "rate": 0.002,
+    "percentage": 0.2,
+    "total_expected": 4320,
+    "total_received": 4311,
+    "burst_allowed": true
+  },
+  "delayed_backfill": {
+    "count": 12068,
+    "percentage": 0.181,
+    "always_value": 1.0,
+    "measurement": "device"
+  },
+  "orphan_entities": {
+    "count": 2,
+    "description": "Components emit data with no ontology entry"
+  },
+  "stopped_equipment_zeros": {
+    "asset": "air_cooled_chiller",
+    "count": 4300,
+    "fields_zero": [
+      "status",
+      "kw",
+      "temp_leaving",
+      "temp_entering"
+    ]
+  },
+  "contradictory_units": {
+    "asset": "fcu",
+    "count": 4320,
+    "description": "Status 0, kw 0, valve 0, fanspeed 7 while room temp varies ~25.8\u00b0C"
+  },
+  "controller_outage": {
+    "assets_affected": 10,
+    "floor": "basement",
+    "coverage_range": "7.1-11.8%",
+    "minutes_covered": "308-509 of 4320"
+  },
+  "counter_resets": {
+    "count": 15,
+    "description": "Cumulative kWh/kVAh resets mid-window"
+  },
+  "flatline": {
+    "count": 200,
+    "description": "Stuck sensor values for extended periods"
+  },
+  "negative_kw": {
+    "count": 50,
+    "min_value": -1.21,
+    "description": "Negative power readings"
+  }
+}

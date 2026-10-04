@@ -1,0 +1,650 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 0.561,
+    "p5": 0.376,
+    "p95": 0.745,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 0.727,
+    "p5": 0.488,
+    "p95": 0.966,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 0.131,
+    "p5": 0.088,
+    "p95": 0.174,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 0.156,
+    "p5": 0.105,
+    "p95": 0.208,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 0.383,
+    "p5": 0.257,
+    "p95": 0.509,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 0.692,
+    "p5": 0.464,
+    "p95": 0.919,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 1.28,
+    "p5": 0.859,
+    "p95": 1.701,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 0.69,
+    "p5": 0.463,
+    "p95": 0.917,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 0.99,
+    "p5": 0.664,
+    "p95": 1.316,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 1.026,
+    "p5": 0.688,
+    "p95": 1.364,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 0.948,
+    "p5": 0.636,
+    "p95": 1.26,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 1.275,
+    "p5": 0.856,
+    "p95": 1.695,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 1.448,
+    "p5": 0.972,
+    "p95": 1.925,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 1.075,
+    "p5": 0.721,
+    "p95": 1.429,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 1.734,
+    "p5": 1.163,
+    "p95": 2.304,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 0.995,
+    "p5": 0.668,
+    "p95": 1.323,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 2.224,
+    "p5": 1.493,
+    "p95": 2.956,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 0.984,
+    "p5": 0.661,
+    "p95": 1.308,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 1.057,
+    "p5": 0.709,
+    "p95": 1.405,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 1.35,
+    "p5": 0.906,
+    "p95": 1.794,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 0.982,
+    "p5": 0.659,
+    "p95": 1.305,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 0.768,
+    "p5": 0.515,
+    "p95": 1.02,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "airCooledChiller",
+    "field": "kw",
+    "mean": 1.271,
+    "p5": 0.853,
+    "p95": 1.689,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 47.617,
+    "p5": 31.951,
+    "p95": 63.284,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 57.686,
+    "p5": 38.707,
+    "p95": 76.664,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 60.753,
+    "p5": 40.765,
+    "p95": 80.741,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 53.299,
+    "p5": 35.764,
+    "p95": 70.834,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 64.566,
+    "p5": 43.323,
+    "p95": 85.808,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 57.854,
+    "p5": 38.82,
+    "p95": 76.889,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 38.233,
+    "p5": 25.654,
+    "p95": 50.811,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 51.336,
+    "p5": 34.446,
+    "p95": 68.225,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 52.229,
+    "p5": 35.045,
+    "p95": 69.412,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 54.211,
+    "p5": 36.376,
+    "p95": 72.047,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 51.11,
+    "p5": 34.295,
+    "p95": 67.925,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 42.305,
+    "p5": 28.387,
+    "p95": 56.223,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 63.427,
+    "p5": 42.559,
+    "p95": 84.294,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 35.143,
+    "p5": 23.581,
+    "p95": 46.706,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 58.022,
+    "p5": 38.933,
+    "p95": 77.111,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 50.452,
+    "p5": 33.853,
+    "p95": 67.051,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 61.921,
+    "p5": 41.549,
+    "p95": 82.293,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 33.489,
+    "p5": 22.471,
+    "p95": 44.507,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 37.501,
+    "p5": 25.163,
+    "p95": 49.839,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 60.809,
+    "p5": 40.803,
+    "p95": 80.815,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 45.784,
+    "p5": 30.721,
+    "p95": 60.846,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 56.689,
+    "p5": 38.038,
+    "p95": 75.34,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 43.981,
+    "p5": 29.511,
+    "p95": 58.45,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "airCooledChiller",
+    "field": "temp",
+    "mean": 68.824,
+    "p5": 46.181,
+    "p95": 91.468,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 40.183,
+    "p5": 26.963,
+    "p95": 53.403,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 52.94,
+    "p5": 35.523,
+    "p95": 70.357,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 59.071,
+    "p5": 39.637,
+    "p95": 78.505,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 58.799,
+    "p5": 39.454,
+    "p95": 78.144,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 61.226,
+    "p5": 41.083,
+    "p95": 81.369,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 43.333,
+    "p5": 29.077,
+    "p95": 57.59,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 35.104,
+    "p5": 23.555,
+    "p95": 46.654,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 35.628,
+    "p5": 23.906,
+    "p95": 47.35,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 60.222,
+    "p5": 40.409,
+    "p95": 80.035,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 53.896,
+    "p5": 36.165,
+    "p95": 71.628,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 69.602,
+    "p5": 46.703,
+    "p95": 92.501,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 38.556,
+    "p5": 25.871,
+    "p95": 51.24,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 54.858,
+    "p5": 36.81,
+    "p95": 72.907,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 42.877,
+    "p5": 28.77,
+    "p95": 56.983,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 49.45,
+    "p5": 33.181,
+    "p95": 65.72,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 39.861,
+    "p5": 26.747,
+    "p95": 52.976,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 56.638,
+    "p5": 38.004,
+    "p95": 75.272,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 47.79,
+    "p5": 32.067,
+    "p95": 63.512,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 63.218,
+    "p5": 42.42,
+    "p95": 84.017,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 67.407,
+    "p5": 45.23,
+    "p95": 89.583,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 50.714,
+    "p5": 34.029,
+    "p95": 67.398,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 47.794,
+    "p5": 32.069,
+    "p95": 63.518,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 51.778,
+    "p5": 34.743,
+    "p95": 68.813,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "airCooledChiller",
+    "field": "status",
+    "mean": 42.311,
+    "p5": 28.391,
+    "p95": 56.231,
+    "count": 216
+  }
+]

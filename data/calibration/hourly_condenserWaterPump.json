@@ -1,0 +1,650 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.77,
+    "p5": 0.517,
+    "p95": 1.023,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.932,
+    "p5": 0.625,
+    "p95": 1.238,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.288,
+    "p5": 0.193,
+    "p95": 0.383,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.428,
+    "p5": 0.287,
+    "p95": 0.569,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.947,
+    "p5": 0.636,
+    "p95": 1.259,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.906,
+    "p5": 0.608,
+    "p95": 1.204,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.575,
+    "p5": 0.386,
+    "p95": 0.764,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.9,
+    "p5": 0.604,
+    "p95": 1.196,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.924,
+    "p5": 0.62,
+    "p95": 1.228,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.762,
+    "p5": 0.511,
+    "p95": 1.012,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 2.137,
+    "p5": 1.434,
+    "p95": 2.84,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 1.496,
+    "p5": 1.004,
+    "p95": 1.988,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 1.112,
+    "p5": 0.746,
+    "p95": 1.478,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 1.576,
+    "p5": 1.058,
+    "p95": 2.095,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 1.268,
+    "p5": 0.851,
+    "p95": 1.685,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 1.582,
+    "p5": 1.062,
+    "p95": 2.103,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 1.983,
+    "p5": 1.331,
+    "p95": 2.636,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 1.547,
+    "p5": 1.038,
+    "p95": 2.056,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.776,
+    "p5": 0.521,
+    "p95": 1.032,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.855,
+    "p5": 0.574,
+    "p95": 1.137,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.838,
+    "p5": 0.563,
+    "p95": 1.114,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.968,
+    "p5": 0.65,
+    "p95": 1.287,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.513,
+    "p5": 0.344,
+    "p95": 0.682,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "condenserWaterPump",
+    "field": "kw",
+    "mean": 0.518,
+    "p5": 0.348,
+    "p95": 0.689,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 113.427,
+    "p5": 76.11,
+    "p95": 150.744,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 94.578,
+    "p5": 63.462,
+    "p95": 125.695,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 102.585,
+    "p5": 68.835,
+    "p95": 136.336,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 73.481,
+    "p5": 49.306,
+    "p95": 97.656,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 75.749,
+    "p5": 50.827,
+    "p95": 100.67,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 111.806,
+    "p5": 75.022,
+    "p95": 148.59,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 110.021,
+    "p5": 73.824,
+    "p95": 146.218,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 80.103,
+    "p5": 53.749,
+    "p95": 106.457,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 63.018,
+    "p5": 42.285,
+    "p95": 83.751,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 63.308,
+    "p5": 42.48,
+    "p95": 84.136,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 107.419,
+    "p5": 72.078,
+    "p95": 142.76,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 61.493,
+    "p5": 41.262,
+    "p95": 81.725,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 112.728,
+    "p5": 75.64,
+    "p95": 149.815,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 89.585,
+    "p5": 60.112,
+    "p95": 119.059,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 100.636,
+    "p5": 67.527,
+    "p95": 133.745,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 87.658,
+    "p5": 58.819,
+    "p95": 116.498,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 51.037,
+    "p5": 34.246,
+    "p95": 67.828,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 97.35,
+    "p5": 65.322,
+    "p95": 129.379,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 99.73,
+    "p5": 66.919,
+    "p95": 132.542,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 84.121,
+    "p5": 56.445,
+    "p95": 111.797,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 104.334,
+    "p5": 70.008,
+    "p95": 138.659,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 129.146,
+    "p5": 86.657,
+    "p95": 171.635,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 82.777,
+    "p5": 55.543,
+    "p95": 110.01,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "condenserWaterPump",
+    "field": "flow",
+    "mean": 111.823,
+    "p5": 75.033,
+    "p95": 148.613,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 74.099,
+    "p5": 49.72,
+    "p95": 98.477,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 47.944,
+    "p5": 32.171,
+    "p95": 63.718,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 40.49,
+    "p5": 27.169,
+    "p95": 53.812,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 56.983,
+    "p5": 38.235,
+    "p95": 75.73,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 29.972,
+    "p5": 20.111,
+    "p95": 39.833,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 64.466,
+    "p5": 43.256,
+    "p95": 85.675,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 27.354,
+    "p5": 18.355,
+    "p95": 36.354,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 68.093,
+    "p5": 45.69,
+    "p95": 90.495,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 56.675,
+    "p5": 38.029,
+    "p95": 75.321,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 45.31,
+    "p5": 30.403,
+    "p95": 60.217,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 22.372,
+    "p5": 15.012,
+    "p95": 29.733,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 88.682,
+    "p5": 59.506,
+    "p95": 117.859,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 26.422,
+    "p5": 17.729,
+    "p95": 35.115,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 28.25,
+    "p5": 18.956,
+    "p95": 37.544,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 66.983,
+    "p5": 44.946,
+    "p95": 89.02,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 36.534,
+    "p5": 24.514,
+    "p95": 48.554,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 20.528,
+    "p5": 13.775,
+    "p95": 27.282,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 68.561,
+    "p5": 46.004,
+    "p95": 91.117,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 55.803,
+    "p5": 37.444,
+    "p95": 74.163,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 51.322,
+    "p5": 34.437,
+    "p95": 68.206,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 88.402,
+    "p5": 59.318,
+    "p95": 117.487,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 66.664,
+    "p5": 44.732,
+    "p95": 88.597,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 45.203,
+    "p5": 30.331,
+    "p95": 60.074,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "condenserWaterPump",
+    "field": "speed",
+    "mean": 50.927,
+    "p5": 34.172,
+    "p95": 67.682,
+    "count": 216
+  }
+]

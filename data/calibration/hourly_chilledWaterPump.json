@@ -1,0 +1,650 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 0.991,
+    "p5": 0.665,
+    "p95": 1.317,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 1.068,
+    "p5": 0.716,
+    "p95": 1.419,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 0.216,
+    "p5": 0.145,
+    "p95": 0.287,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 0.266,
+    "p5": 0.179,
+    "p95": 0.354,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 1.025,
+    "p5": 0.688,
+    "p95": 1.362,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 0.771,
+    "p5": 0.517,
+    "p95": 1.025,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 0.612,
+    "p5": 0.411,
+    "p95": 0.814,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 0.942,
+    "p5": 0.632,
+    "p95": 1.251,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 1.591,
+    "p5": 1.068,
+    "p95": 2.115,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 1.465,
+    "p5": 0.983,
+    "p95": 1.948,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 1.405,
+    "p5": 0.942,
+    "p95": 1.867,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 1.717,
+    "p5": 1.152,
+    "p95": 2.282,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 1.548,
+    "p5": 1.039,
+    "p95": 2.057,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 1.196,
+    "p5": 0.802,
+    "p95": 1.589,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 1.12,
+    "p5": 0.752,
+    "p95": 1.489,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 1.277,
+    "p5": 0.857,
+    "p95": 1.697,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 1.189,
+    "p5": 0.798,
+    "p95": 1.581,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 1.871,
+    "p5": 1.256,
+    "p95": 2.487,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 0.812,
+    "p5": 0.545,
+    "p95": 1.079,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 0.172,
+    "p5": 0.116,
+    "p95": 0.229,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 0.639,
+    "p5": 0.429,
+    "p95": 0.85,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 1.048,
+    "p5": 0.704,
+    "p95": 1.393,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 0.959,
+    "p5": 0.643,
+    "p95": 1.274,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "chilledWaterPump",
+    "field": "kw",
+    "mean": 0.966,
+    "p5": 0.648,
+    "p95": 1.284,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 130.839,
+    "p5": 87.793,
+    "p95": 173.886,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 76.333,
+    "p5": 51.219,
+    "p95": 101.446,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 102.911,
+    "p5": 69.053,
+    "p95": 136.768,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 92.496,
+    "p5": 62.065,
+    "p95": 122.927,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 105.043,
+    "p5": 70.484,
+    "p95": 139.602,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 125.721,
+    "p5": 84.359,
+    "p95": 167.083,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 90.234,
+    "p5": 60.547,
+    "p95": 119.921,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 97.701,
+    "p5": 65.557,
+    "p95": 129.844,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 79.766,
+    "p5": 53.523,
+    "p95": 106.009,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 86.712,
+    "p5": 58.184,
+    "p95": 115.24,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 104.843,
+    "p5": 70.35,
+    "p95": 139.337,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 109.025,
+    "p5": 73.156,
+    "p95": 144.894,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 95.525,
+    "p5": 64.097,
+    "p95": 126.953,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 125.756,
+    "p5": 84.382,
+    "p95": 167.13,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 94.567,
+    "p5": 63.454,
+    "p95": 125.679,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 125.633,
+    "p5": 84.3,
+    "p95": 166.966,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 105.491,
+    "p5": 70.785,
+    "p95": 140.198,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 120.852,
+    "p5": 81.092,
+    "p95": 160.612,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 91.531,
+    "p5": 61.417,
+    "p95": 121.645,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 85.301,
+    "p5": 57.237,
+    "p95": 113.364,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 106.528,
+    "p5": 71.481,
+    "p95": 141.576,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 108.213,
+    "p5": 72.611,
+    "p95": 143.815,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 104.13,
+    "p5": 69.872,
+    "p95": 138.389,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "chilledWaterPump",
+    "field": "flow",
+    "mean": 91.07,
+    "p5": 61.108,
+    "p95": 121.032,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 74.045,
+    "p5": 49.684,
+    "p95": 98.406,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 45.567,
+    "p5": 30.575,
+    "p95": 60.558,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 61.552,
+    "p5": 41.302,
+    "p95": 81.803,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 27.047,
+    "p5": 18.149,
+    "p95": 35.946,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 66.963,
+    "p5": 44.932,
+    "p95": 88.993,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 66.632,
+    "p5": 44.71,
+    "p95": 88.553,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 86.063,
+    "p5": 57.748,
+    "p95": 114.378,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 50.372,
+    "p5": 33.8,
+    "p95": 66.944,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 49.019,
+    "p5": 32.892,
+    "p95": 65.146,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 37.991,
+    "p5": 25.492,
+    "p95": 50.491,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 74.636,
+    "p5": 50.08,
+    "p95": 99.191,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 16.287,
+    "p5": 10.929,
+    "p95": 21.646,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 56.53,
+    "p5": 37.932,
+    "p95": 75.128,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 21.07,
+    "p5": 14.138,
+    "p95": 28.002,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 33.265,
+    "p5": 22.321,
+    "p95": 44.209,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 14.874,
+    "p5": 9.98,
+    "p95": 19.767,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 39.103,
+    "p5": 26.238,
+    "p95": 51.968,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 68.01,
+    "p5": 45.635,
+    "p95": 90.385,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 49.957,
+    "p5": 33.521,
+    "p95": 66.393,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 62.175,
+    "p5": 41.72,
+    "p95": 82.631,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 71.712,
+    "p5": 48.119,
+    "p95": 95.306,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 42.815,
+    "p5": 28.729,
+    "p95": 56.901,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 89.43,
+    "p5": 60.008,
+    "p95": 118.853,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "chilledWaterPump",
+    "field": "speed",
+    "mean": 52.488,
+    "p5": 35.22,
+    "p95": 69.757,
+    "count": 216
+  }
+]

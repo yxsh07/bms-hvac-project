@@ -1,0 +1,650 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 0.744,
+    "p5": 0.499,
+    "p95": 0.988,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 0.275,
+    "p5": 0.184,
+    "p95": 0.365,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 0.453,
+    "p5": 0.304,
+    "p95": 0.602,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 0.482,
+    "p5": 0.323,
+    "p95": 0.64,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 1.173,
+    "p5": 0.787,
+    "p95": 1.558,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 0.777,
+    "p5": 0.521,
+    "p95": 1.033,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 0.252,
+    "p5": 0.169,
+    "p95": 0.335,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 2.025,
+    "p5": 1.359,
+    "p95": 2.692,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 0.119,
+    "p5": 0.08,
+    "p95": 0.158,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 1.129,
+    "p5": 0.758,
+    "p95": 1.501,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 1.095,
+    "p5": 0.735,
+    "p95": 1.455,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 1.391,
+    "p5": 0.933,
+    "p95": 1.848,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 1.135,
+    "p5": 0.762,
+    "p95": 1.509,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 1.224,
+    "p5": 0.821,
+    "p95": 1.626,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 1.55,
+    "p5": 1.04,
+    "p95": 2.06,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 1.567,
+    "p5": 1.051,
+    "p95": 2.082,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 1.414,
+    "p5": 0.949,
+    "p95": 1.879,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 0.577,
+    "p5": 0.387,
+    "p95": 0.767,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 0.493,
+    "p5": 0.331,
+    "p95": 0.656,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 2.219,
+    "p5": 1.489,
+    "p95": 2.949,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 0.269,
+    "p5": 0.18,
+    "p95": 0.357,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 1.404,
+    "p5": 0.942,
+    "p95": 1.866,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 1.614,
+    "p5": 1.083,
+    "p95": 2.146,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "boosterPump",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 60.498,
+    "p5": 40.594,
+    "p95": 80.402,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 60.584,
+    "p5": 40.652,
+    "p95": 80.516,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 48.233,
+    "p5": 32.364,
+    "p95": 64.102,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 58.531,
+    "p5": 39.275,
+    "p95": 77.788,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 37.863,
+    "p5": 25.406,
+    "p95": 50.32,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 44.669,
+    "p5": 29.973,
+    "p95": 59.365,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 58.926,
+    "p5": 39.539,
+    "p95": 78.312,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 72.848,
+    "p5": 48.881,
+    "p95": 96.815,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 66.796,
+    "p5": 44.82,
+    "p95": 88.772,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 37.536,
+    "p5": 25.187,
+    "p95": 49.885,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 56.269,
+    "p5": 37.756,
+    "p95": 74.781,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 56.675,
+    "p5": 38.029,
+    "p95": 75.321,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 56.543,
+    "p5": 37.941,
+    "p95": 75.146,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 68.418,
+    "p5": 45.908,
+    "p95": 90.927,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 58.828,
+    "p5": 39.474,
+    "p95": 78.183,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 66.716,
+    "p5": 44.766,
+    "p95": 88.666,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 58.62,
+    "p5": 39.334,
+    "p95": 77.907,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 56.208,
+    "p5": 37.716,
+    "p95": 74.701,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 48.757,
+    "p5": 32.716,
+    "p95": 64.798,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 48.99,
+    "p5": 32.872,
+    "p95": 65.108,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 68.458,
+    "p5": 45.935,
+    "p95": 90.981,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 56.428,
+    "p5": 37.863,
+    "p95": 74.992,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 51.861,
+    "p5": 34.799,
+    "p95": 68.923,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "boosterPump",
+    "field": "temp",
+    "mean": 60.488,
+    "p5": 40.587,
+    "p95": 80.388,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 53.032,
+    "p5": 35.585,
+    "p95": 70.48,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 46.794,
+    "p5": 31.399,
+    "p95": 62.19,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 47.455,
+    "p5": 31.843,
+    "p95": 63.068,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 45.71,
+    "p5": 30.671,
+    "p95": 60.748,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 33.011,
+    "p5": 22.151,
+    "p95": 43.872,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 42.643,
+    "p5": 28.614,
+    "p95": 56.673,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 41.995,
+    "p5": 28.178,
+    "p95": 55.811,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 43.447,
+    "p5": 29.153,
+    "p95": 57.741,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 58.274,
+    "p5": 39.102,
+    "p95": 77.446,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 55.359,
+    "p5": 37.146,
+    "p95": 73.572,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 41.517,
+    "p5": 27.858,
+    "p95": 55.176,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 55.255,
+    "p5": 37.076,
+    "p95": 73.434,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 45.991,
+    "p5": 30.86,
+    "p95": 61.122,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 59.297,
+    "p5": 39.788,
+    "p95": 78.805,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 51.603,
+    "p5": 34.626,
+    "p95": 68.581,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 51.793,
+    "p5": 34.753,
+    "p95": 68.833,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 57.746,
+    "p5": 38.748,
+    "p95": 76.745,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 61.264,
+    "p5": 41.108,
+    "p95": 81.42,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 52.86,
+    "p5": 35.469,
+    "p95": 70.251,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 48.77,
+    "p5": 32.724,
+    "p95": 64.815,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 49.616,
+    "p5": 33.293,
+    "p95": 65.94,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 42.804,
+    "p5": 28.721,
+    "p95": 56.886,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 48.567,
+    "p5": 32.589,
+    "p95": 64.546,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "boosterPump",
+    "field": "status",
+    "mean": 44.324,
+    "p5": 29.741,
+    "p95": 58.906,
+    "count": 216
+  }
+]

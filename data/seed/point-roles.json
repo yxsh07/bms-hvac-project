@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "roles_vocabulary": [
+    "run-status",
+    "fault-alarm",
+    "power-kw",
+    "loading-pct",
+    "chw-leaving-temp",
+    "chw-entering-temp",
+    "chw-flow",
+    "setpoint-chw-temp",
+    "supply-air-temp",
+    "return-air-temp",
+    "valve-position",
+    "fan-speed",
+    "area-temp",
+    "area-humidity",
+    "filter-status",
+    "cooling-status",
+    "heating-status"
+  ],
+  "by_type": {
+    "chiller": {
+      "run-status": "status",
+      "power-kw": "kw",
+      "loading-pct": "loading",
+      "chw-leaving-temp": "chiller_temp_leaving",
+      "chw-entering-temp": "chiller_temp_entering",
+      "chw-flow": "chiller_flow"
+    },
+    "ahu": {
+      "run-status": "status",
+      "supply-air-temp": "temp_supply",
+      "return-air-temp": "temp_return",
+      "valve-position": "valve_position",
+      "fan-speed": "fan_speed"
+    },
+    "fcu": {
+      "run-status": "status",
+      "area-temp": "temp_room",
+      "valve-position": "valve_position",
+      "fan-speed": "fan_speed"
+    },
+    "cooling_tower": {
+      "run-status": "status",
+      "fan-speed": "fan_speed"
+    }
+  },
+  "fallback_rules": [
+    {
+      "description": "Match by classification + unit",
+      "classification": "Temperature",
+      "unit": "\u00b0C",
+      "pattern": ".*temp.*"
+    },
+    {
+      "description": "Match power points",
+      "classification": "Power/Energy Meter",
+      "unit": "kW",
+      "pattern": ".*kw.*"
+    }
+  ]
+}

@@ -1,0 +1,1082 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 21.235,
+    "p5": 14.249,
+    "p95": 28.222,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 22.525,
+    "p5": 15.114,
+    "p95": 29.936,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 20.955,
+    "p5": 14.061,
+    "p95": 27.849,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 20.7,
+    "p5": 13.889,
+    "p95": 27.51,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 22.264,
+    "p5": 14.939,
+    "p95": 29.589,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 21.25,
+    "p5": 14.259,
+    "p95": 28.241,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 24.239,
+    "p5": 16.264,
+    "p95": 32.214,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 20.498,
+    "p5": 13.754,
+    "p95": 27.242,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 19.813,
+    "p5": 13.295,
+    "p95": 26.332,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 19.392,
+    "p5": 13.012,
+    "p95": 25.772,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 22.436,
+    "p5": 15.055,
+    "p95": 29.817,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 22.023,
+    "p5": 14.778,
+    "p95": 29.269,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 20.871,
+    "p5": 14.004,
+    "p95": 27.737,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 23.67,
+    "p5": 15.882,
+    "p95": 31.457,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 23.836,
+    "p5": 15.994,
+    "p95": 31.679,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 21.491,
+    "p5": 14.421,
+    "p95": 28.562,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 19.031,
+    "p5": 12.77,
+    "p95": 25.292,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 23.19,
+    "p5": 15.561,
+    "p95": 30.82,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 21.743,
+    "p5": 14.59,
+    "p95": 28.897,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 20.348,
+    "p5": 13.653,
+    "p95": 27.042,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 20.063,
+    "p5": 13.462,
+    "p95": 26.664,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 24.69,
+    "p5": 16.567,
+    "p95": 32.813,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 22.677,
+    "p5": 15.216,
+    "p95": 30.138,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "ahu",
+    "field": "temp_supply",
+    "mean": 20.071,
+    "p5": 13.467,
+    "p95": 26.674,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 23.728,
+    "p5": 15.921,
+    "p95": 31.534,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 23.834,
+    "p5": 15.993,
+    "p95": 31.676,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 21.51,
+    "p5": 14.433,
+    "p95": 28.587,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 25.469,
+    "p5": 17.089,
+    "p95": 33.848,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 20.218,
+    "p5": 13.566,
+    "p95": 26.869,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 23.872,
+    "p5": 16.018,
+    "p95": 31.726,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 22.291,
+    "p5": 14.957,
+    "p95": 29.624,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 21.915,
+    "p5": 14.705,
+    "p95": 29.124,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 19.04,
+    "p5": 12.776,
+    "p95": 25.304,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 18.848,
+    "p5": 12.647,
+    "p95": 25.049,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 19.95,
+    "p5": 13.386,
+    "p95": 26.513,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 21.102,
+    "p5": 14.159,
+    "p95": 28.044,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 24.578,
+    "p5": 16.492,
+    "p95": 32.664,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 19.01,
+    "p5": 12.756,
+    "p95": 25.264,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 21.039,
+    "p5": 14.117,
+    "p95": 27.961,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 22.46,
+    "p5": 15.071,
+    "p95": 29.85,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 22.411,
+    "p5": 15.037,
+    "p95": 29.784,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 21.282,
+    "p5": 14.28,
+    "p95": 28.283,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 23.065,
+    "p5": 15.476,
+    "p95": 30.653,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 24.696,
+    "p5": 16.571,
+    "p95": 32.821,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 21.398,
+    "p5": 14.358,
+    "p95": 28.438,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 21.091,
+    "p5": 14.152,
+    "p95": 28.031,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 20.652,
+    "p5": 13.858,
+    "p95": 27.447,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "ahu",
+    "field": "temp_return",
+    "mean": 25.395,
+    "p5": 17.04,
+    "p95": 33.75,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 108.303,
+    "p5": 72.671,
+    "p95": 143.934,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 60.484,
+    "p5": 40.585,
+    "p95": 80.383,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 62.479,
+    "p5": 41.924,
+    "p95": 83.035,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 17.965,
+    "p5": 12.055,
+    "p95": 23.876,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 33.574,
+    "p5": 22.528,
+    "p95": 44.619,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 59.121,
+    "p5": 39.67,
+    "p95": 78.572,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 32.414,
+    "p5": 21.75,
+    "p95": 43.078,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 9.693,
+    "p5": 6.504,
+    "p95": 12.883,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 50.474,
+    "p5": 33.868,
+    "p95": 67.08,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 39.907,
+    "p5": 26.777,
+    "p95": 53.036,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 28.986,
+    "p5": 19.45,
+    "p95": 38.522,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 32.415,
+    "p5": 21.75,
+    "p95": 43.079,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 90.28,
+    "p5": 60.578,
+    "p95": 119.982,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 59.718,
+    "p5": 40.07,
+    "p95": 79.365,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 65.805,
+    "p5": 44.155,
+    "p95": 87.455,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 45.755,
+    "p5": 30.701,
+    "p95": 60.808,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 79.158,
+    "p5": 53.115,
+    "p95": 105.201,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 27.794,
+    "p5": 18.65,
+    "p95": 36.938,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 36.504,
+    "p5": 24.494,
+    "p95": 48.514,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 25.615,
+    "p5": 17.188,
+    "p95": 34.042,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 77.943,
+    "p5": 52.3,
+    "p95": 103.586,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 49.696,
+    "p5": 33.346,
+    "p95": 66.046,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 66.711,
+    "p5": 44.763,
+    "p95": 88.659,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "ahu",
+    "field": "valve_position",
+    "mean": 35.508,
+    "p5": 23.826,
+    "p95": 47.19,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 44.751,
+    "p5": 30.028,
+    "p95": 59.474,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 73.233,
+    "p5": 49.14,
+    "p95": 97.327,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 81.596,
+    "p5": 54.751,
+    "p95": 108.441,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 83.825,
+    "p5": 56.247,
+    "p95": 111.404,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 47.928,
+    "p5": 32.16,
+    "p95": 63.697,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 30.043,
+    "p5": 20.159,
+    "p95": 39.927,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 70.817,
+    "p5": 47.518,
+    "p95": 94.116,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 48.434,
+    "p5": 32.499,
+    "p95": 64.369,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 38.819,
+    "p5": 26.048,
+    "p95": 51.591,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 43.907,
+    "p5": 29.462,
+    "p95": 58.353,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 37.624,
+    "p5": 25.246,
+    "p95": 50.003,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 31.208,
+    "p5": 20.94,
+    "p95": 41.475,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 26.695,
+    "p5": 17.913,
+    "p95": 35.478,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 52.315,
+    "p5": 35.104,
+    "p95": 69.527,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 22.021,
+    "p5": 14.776,
+    "p95": 29.265,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 60.951,
+    "p5": 40.898,
+    "p95": 81.004,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 70.1,
+    "p5": 47.037,
+    "p95": 93.162,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 47.081,
+    "p5": 31.592,
+    "p95": 62.571,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 22.391,
+    "p5": 15.025,
+    "p95": 29.758,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 95.36,
+    "p5": 63.986,
+    "p95": 126.733,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 74.559,
+    "p5": 50.029,
+    "p95": 99.089,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 42.451,
+    "p5": 28.485,
+    "p95": 56.417,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 75.423,
+    "p5": 50.609,
+    "p95": 100.237,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "ahu",
+    "field": "fan_speed",
+    "mean": 73.793,
+    "p5": 49.515,
+    "p95": 98.07,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 0.537,
+    "p5": 0.36,
+    "p95": 0.714,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 0.314,
+    "p5": 0.211,
+    "p95": 0.418,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 1.198,
+    "p5": 0.804,
+    "p95": 1.592,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 0.32,
+    "p5": 0.215,
+    "p95": 0.426,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 0.608,
+    "p5": 0.408,
+    "p95": 0.807,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 0.28,
+    "p5": 0.188,
+    "p95": 0.373,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 1.558,
+    "p5": 1.046,
+    "p95": 2.071,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 2.002,
+    "p5": 1.343,
+    "p95": 2.66,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 1.14,
+    "p5": 0.765,
+    "p95": 1.515,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 1.013,
+    "p5": 0.68,
+    "p95": 1.346,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 0.797,
+    "p5": 0.535,
+    "p95": 1.059,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 1.159,
+    "p5": 0.778,
+    "p95": 1.54,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 1.585,
+    "p5": 1.063,
+    "p95": 2.106,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 1.208,
+    "p5": 0.811,
+    "p95": 1.606,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 1.568,
+    "p5": 1.052,
+    "p95": 2.084,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 0.879,
+    "p5": 0.59,
+    "p95": 1.169,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 0.729,
+    "p5": 0.489,
+    "p95": 0.969,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 1.776,
+    "p5": 1.192,
+    "p95": 2.36,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 0.497,
+    "p5": 0.333,
+    "p95": 0.66,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 1.421,
+    "p5": 0.954,
+    "p95": 1.889,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 1.052,
+    "p5": 0.706,
+    "p95": 1.398,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 0.974,
+    "p5": 0.654,
+    "p95": 1.295,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "ahu",
+    "field": "kw",
+    "mean": 1.728,
+    "p5": 1.16,
+    "p95": 2.297,
+    "count": 216
+  }
+]

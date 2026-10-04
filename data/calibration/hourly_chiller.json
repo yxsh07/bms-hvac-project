@@ -1,0 +1,1514 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 17.34,
+    "p5": 11.635,
+    "p95": 23.045,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 17.257,
+    "p5": 11.579,
+    "p95": 22.934,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 19.483,
+    "p5": 13.073,
+    "p95": 25.893,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 18.826,
+    "p5": 12.632,
+    "p95": 25.019,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 17.575,
+    "p5": 11.793,
+    "p95": 23.357,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 16.569,
+    "p5": 11.118,
+    "p95": 22.02,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 19.979,
+    "p5": 13.406,
+    "p95": 26.552,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 30.226,
+    "p5": 20.282,
+    "p95": 40.171,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 36.485,
+    "p5": 24.482,
+    "p95": 48.489,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 34.103,
+    "p5": 22.883,
+    "p95": 45.323,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 39.924,
+    "p5": 26.789,
+    "p95": 53.059,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 43.323,
+    "p5": 29.07,
+    "p95": 57.576,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 37.685,
+    "p5": 25.287,
+    "p95": 50.084,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 44.592,
+    "p5": 29.921,
+    "p95": 59.262,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 44.524,
+    "p5": 29.876,
+    "p95": 59.172,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 45.319,
+    "p5": 30.409,
+    "p95": 60.228,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 42.0,
+    "p5": 28.182,
+    "p95": 55.817,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 40.338,
+    "p5": 27.067,
+    "p95": 53.61,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 36.143,
+    "p5": 24.252,
+    "p95": 48.034,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 33.886,
+    "p5": 22.737,
+    "p95": 45.034,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 26.168,
+    "p5": 17.558,
+    "p95": 34.777,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 27.663,
+    "p5": 18.562,
+    "p95": 36.764,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 24.549,
+    "p5": 16.472,
+    "p95": 32.625,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "chiller",
+    "field": "kw",
+    "mean": 26.617,
+    "p5": 17.86,
+    "p95": 35.374,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 21.916,
+    "p5": 14.706,
+    "p95": 29.126,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 23.572,
+    "p5": 15.817,
+    "p95": 31.327,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 20.028,
+    "p5": 13.439,
+    "p95": 26.617,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 24.964,
+    "p5": 16.751,
+    "p95": 33.177,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 21.212,
+    "p5": 14.233,
+    "p95": 28.19,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 23.044,
+    "p5": 15.463,
+    "p95": 30.626,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 22.13,
+    "p5": 14.849,
+    "p95": 29.411,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 24.18,
+    "p5": 16.225,
+    "p95": 32.135,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 24.952,
+    "p5": 16.743,
+    "p95": 33.161,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 18.803,
+    "p5": 12.617,
+    "p95": 24.989,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 23.214,
+    "p5": 15.577,
+    "p95": 30.852,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 21.768,
+    "p5": 14.607,
+    "p95": 28.93,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 22.797,
+    "p5": 15.297,
+    "p95": 30.297,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 22.945,
+    "p5": 15.396,
+    "p95": 30.494,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 21.844,
+    "p5": 14.658,
+    "p95": 29.031,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 25.489,
+    "p5": 17.103,
+    "p95": 33.875,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 21.922,
+    "p5": 14.71,
+    "p95": 29.134,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 18.691,
+    "p5": 12.542,
+    "p95": 24.84,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 23.34,
+    "p5": 15.661,
+    "p95": 31.019,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 24.717,
+    "p5": 16.585,
+    "p95": 32.849,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 21.207,
+    "p5": 14.23,
+    "p95": 28.184,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 20.897,
+    "p5": 14.022,
+    "p95": 27.772,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 21.459,
+    "p5": 14.399,
+    "p95": 28.519,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "chiller",
+    "field": "temp_leaving",
+    "mean": 20.29,
+    "p5": 13.615,
+    "p95": 26.966,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 19.502,
+    "p5": 13.086,
+    "p95": 25.918,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 20.789,
+    "p5": 13.949,
+    "p95": 27.628,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 21.944,
+    "p5": 14.724,
+    "p95": 29.164,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 20.77,
+    "p5": 13.937,
+    "p95": 27.603,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 27.32,
+    "p5": 18.332,
+    "p95": 36.308,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 26.892,
+    "p5": 18.044,
+    "p95": 35.739,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 19.748,
+    "p5": 13.251,
+    "p95": 26.245,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 23.627,
+    "p5": 15.854,
+    "p95": 31.4,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 23.358,
+    "p5": 15.673,
+    "p95": 31.043,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 21.32,
+    "p5": 14.306,
+    "p95": 28.335,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 20.878,
+    "p5": 14.009,
+    "p95": 27.747,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 23.218,
+    "p5": 15.579,
+    "p95": 30.857,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 18.966,
+    "p5": 12.726,
+    "p95": 25.206,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 21.751,
+    "p5": 14.595,
+    "p95": 28.907,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 26.622,
+    "p5": 17.863,
+    "p95": 35.381,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 20.496,
+    "p5": 13.753,
+    "p95": 27.24,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 23.189,
+    "p5": 15.56,
+    "p95": 30.818,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 21.62,
+    "p5": 14.507,
+    "p95": 28.732,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 23.997,
+    "p5": 16.102,
+    "p95": 31.893,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 22.49,
+    "p5": 15.091,
+    "p95": 29.889,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 23.04,
+    "p5": 15.46,
+    "p95": 30.62,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 19.783,
+    "p5": 13.274,
+    "p95": 26.292,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 26.875,
+    "p5": 18.033,
+    "p95": 35.717,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "chiller",
+    "field": "temp_entering",
+    "mean": 20.813,
+    "p5": 13.966,
+    "p95": 27.661,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 81.134,
+    "p5": 54.441,
+    "p95": 107.828,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 57.605,
+    "p5": 38.653,
+    "p95": 76.557,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 68.081,
+    "p5": 45.683,
+    "p95": 90.48,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 87.846,
+    "p5": 58.944,
+    "p95": 116.747,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 84.271,
+    "p5": 56.546,
+    "p95": 111.996,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 154.456,
+    "p5": 103.64,
+    "p95": 205.272,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 89.425,
+    "p5": 60.004,
+    "p95": 118.845,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 90.642,
+    "p5": 60.821,
+    "p95": 120.463,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 115.945,
+    "p5": 77.799,
+    "p95": 154.091,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 103.716,
+    "p5": 69.594,
+    "p95": 137.839,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 86.372,
+    "p5": 57.956,
+    "p95": 114.789,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 72.618,
+    "p5": 48.727,
+    "p95": 96.509,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 128.082,
+    "p5": 85.943,
+    "p95": 170.22,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 132.107,
+    "p5": 88.644,
+    "p95": 175.571,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 94.207,
+    "p5": 63.213,
+    "p95": 125.201,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 114.614,
+    "p5": 76.906,
+    "p95": 152.322,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 102.395,
+    "p5": 68.707,
+    "p95": 136.083,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 88.752,
+    "p5": 59.553,
+    "p95": 117.952,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 123.043,
+    "p5": 82.562,
+    "p95": 163.524,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 86.061,
+    "p5": 57.747,
+    "p95": 114.375,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 110.225,
+    "p5": 73.961,
+    "p95": 146.488,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 72.043,
+    "p5": 48.341,
+    "p95": 95.745,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 85.965,
+    "p5": 57.682,
+    "p95": 114.247,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "chiller",
+    "field": "flow",
+    "mean": 70.757,
+    "p5": 47.478,
+    "p95": 94.036,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 67.709,
+    "p5": 45.432,
+    "p95": 89.985,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 34.384,
+    "p5": 23.072,
+    "p95": 45.697,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 71.95,
+    "p5": 48.278,
+    "p95": 95.622,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 26.507,
+    "p5": 17.786,
+    "p95": 35.228,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 42.063,
+    "p5": 28.224,
+    "p95": 55.901,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 22.654,
+    "p5": 15.201,
+    "p95": 30.107,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 58.535,
+    "p5": 39.277,
+    "p95": 77.793,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 55.154,
+    "p5": 37.009,
+    "p95": 73.3,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 42.677,
+    "p5": 28.636,
+    "p95": 56.717,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 76.774,
+    "p5": 51.516,
+    "p95": 102.033,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 44.623,
+    "p5": 29.942,
+    "p95": 59.304,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 33.421,
+    "p5": 22.425,
+    "p95": 44.416,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 47.695,
+    "p5": 32.004,
+    "p95": 63.387,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 40.18,
+    "p5": 26.961,
+    "p95": 53.399,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 46.067,
+    "p5": 30.911,
+    "p95": 61.223,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 63.669,
+    "p5": 42.722,
+    "p95": 84.616,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 41.91,
+    "p5": 28.122,
+    "p95": 55.699,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 43.44,
+    "p5": 29.148,
+    "p95": 57.731,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 68.905,
+    "p5": 46.235,
+    "p95": 91.574,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 27.898,
+    "p5": 18.72,
+    "p95": 37.076,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 58.376,
+    "p5": 39.17,
+    "p95": 77.582,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 99.771,
+    "p5": 66.947,
+    "p95": 132.596,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 77.786,
+    "p5": 52.195,
+    "p95": 103.378,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "chiller",
+    "field": "loading",
+    "mean": 45.583,
+    "p5": 30.586,
+    "p95": 60.58,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.512,
+    "p5": 0.344,
+    "p95": 0.68,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.375,
+    "p5": 0.252,
+    "p95": 0.499,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.36,
+    "p5": 0.241,
+    "p95": 0.478,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.414,
+    "p5": 0.278,
+    "p95": 0.55,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.452,
+    "p5": 0.303,
+    "p95": 0.601,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.445,
+    "p5": 0.299,
+    "p95": 0.592,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.432,
+    "p5": 0.29,
+    "p95": 0.574,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.433,
+    "p5": 0.291,
+    "p95": 0.576,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.471,
+    "p5": 0.316,
+    "p95": 0.626,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.434,
+    "p5": 0.291,
+    "p95": 0.576,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.441,
+    "p5": 0.296,
+    "p95": 0.586,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.411,
+    "p5": 0.276,
+    "p95": 0.547,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.477,
+    "p5": 0.32,
+    "p95": 0.633,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.394,
+    "p5": 0.265,
+    "p95": 0.524,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.489,
+    "p5": 0.328,
+    "p95": 0.65,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.517,
+    "p5": 0.347,
+    "p95": 0.687,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.571,
+    "p5": 0.383,
+    "p95": 0.759,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.47,
+    "p5": 0.316,
+    "p95": 0.625,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.502,
+    "p5": 0.337,
+    "p95": 0.668,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.384,
+    "p5": 0.258,
+    "p95": 0.51,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.49,
+    "p5": 0.329,
+    "p95": 0.652,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.594,
+    "p5": 0.398,
+    "p95": 0.789,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.5,
+    "p5": 0.336,
+    "p95": 0.665,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "chiller",
+    "field": "ikw_tr",
+    "mean": 0.487,
+    "p5": 0.327,
+    "p95": 0.647,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 2.458,
+    "p5": 1.649,
+    "p95": 3.266,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 2.978,
+    "p5": 1.998,
+    "p95": 3.958,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 3.207,
+    "p5": 2.152,
+    "p95": 4.263,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 2.926,
+    "p5": 1.963,
+    "p95": 3.888,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 2.915,
+    "p5": 1.956,
+    "p95": 3.874,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 3.269,
+    "p5": 2.193,
+    "p95": 4.344,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 3.259,
+    "p5": 2.186,
+    "p95": 4.331,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 3.629,
+    "p5": 2.435,
+    "p95": 4.823,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 3.231,
+    "p5": 2.168,
+    "p95": 4.293,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 3.559,
+    "p5": 2.388,
+    "p95": 4.73,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 2.733,
+    "p5": 1.834,
+    "p95": 3.632,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 4.205,
+    "p5": 2.822,
+    "p95": 5.588,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 2.728,
+    "p5": 1.83,
+    "p95": 3.625,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 2.975,
+    "p5": 1.997,
+    "p95": 3.954,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 2.692,
+    "p5": 1.806,
+    "p95": 3.578,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 2.75,
+    "p5": 1.845,
+    "p95": 3.655,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 3.084,
+    "p5": 2.069,
+    "p95": 4.099,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 2.567,
+    "p5": 1.722,
+    "p95": 3.411,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 3.202,
+    "p5": 2.149,
+    "p95": 4.256,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 3.448,
+    "p5": 2.314,
+    "p95": 4.582,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 2.056,
+    "p5": 1.379,
+    "p95": 2.732,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 3.714,
+    "p5": 2.492,
+    "p95": 4.935,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 2.055,
+    "p5": 1.379,
+    "p95": 2.731,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "chiller",
+    "field": "delta_t",
+    "mean": 2.326,
+    "p5": 1.561,
+    "p95": 3.091,
+    "count": 216
+  }
+]

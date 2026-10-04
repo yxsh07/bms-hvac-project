@@ -1,0 +1,650 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 0.673,
+    "p5": 0.451,
+    "p95": 0.894,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 1.434,
+    "p5": 0.962,
+    "p95": 1.906,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 0.232,
+    "p5": 0.156,
+    "p95": 0.309,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 1.084,
+    "p5": 0.727,
+    "p95": 1.44,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 0.735,
+    "p5": 0.493,
+    "p95": 0.976,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 0.731,
+    "p5": 0.49,
+    "p95": 0.971,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 1.996,
+    "p5": 1.339,
+    "p95": 2.653,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 1.245,
+    "p5": 0.835,
+    "p95": 1.654,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 1.793,
+    "p5": 1.203,
+    "p95": 2.382,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 1.642,
+    "p5": 1.102,
+    "p95": 2.183,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 1.423,
+    "p5": 0.955,
+    "p95": 1.891,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 1.228,
+    "p5": 0.824,
+    "p95": 1.633,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 2.284,
+    "p5": 1.533,
+    "p95": 3.036,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 1.798,
+    "p5": 1.207,
+    "p95": 2.39,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 0.842,
+    "p5": 0.565,
+    "p95": 1.119,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 1.04,
+    "p5": 0.698,
+    "p95": 1.382,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 1.862,
+    "p5": 1.249,
+    "p95": 2.475,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 1.861,
+    "p5": 1.248,
+    "p95": 2.473,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 0.858,
+    "p5": 0.576,
+    "p95": 1.14,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 0.918,
+    "p5": 0.616,
+    "p95": 1.22,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 1.353,
+    "p5": 0.908,
+    "p95": 1.798,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 1.386,
+    "p5": 0.93,
+    "p95": 1.842,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "vav",
+    "field": "kw",
+    "mean": 1.601,
+    "p5": 1.074,
+    "p95": 2.128,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 42.187,
+    "p5": 28.307,
+    "p95": 56.066,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 59.247,
+    "p5": 39.755,
+    "p95": 78.739,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 56.863,
+    "p5": 38.155,
+    "p95": 75.572,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 60.75,
+    "p5": 40.763,
+    "p95": 80.737,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 60.643,
+    "p5": 40.691,
+    "p95": 80.594,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 55.089,
+    "p5": 36.965,
+    "p95": 73.214,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 50.64,
+    "p5": 33.98,
+    "p95": 67.301,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 42.027,
+    "p5": 28.2,
+    "p95": 55.854,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 50.569,
+    "p5": 33.932,
+    "p95": 67.206,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 57.701,
+    "p5": 38.718,
+    "p95": 76.685,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 55.42,
+    "p5": 37.187,
+    "p95": 73.654,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 42.295,
+    "p5": 28.38,
+    "p95": 56.211,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 45.549,
+    "p5": 30.564,
+    "p95": 60.535,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 41.974,
+    "p5": 28.165,
+    "p95": 55.784,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 66.769,
+    "p5": 44.802,
+    "p95": 88.737,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 56.56,
+    "p5": 37.952,
+    "p95": 75.168,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 34.492,
+    "p5": 23.144,
+    "p95": 45.84,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 48.716,
+    "p5": 32.689,
+    "p95": 64.744,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 33.571,
+    "p5": 22.526,
+    "p95": 44.616,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 50.93,
+    "p5": 34.174,
+    "p95": 67.686,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 58.457,
+    "p5": 39.224,
+    "p95": 77.689,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 43.478,
+    "p5": 29.174,
+    "p95": 57.782,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 52.627,
+    "p5": 35.313,
+    "p95": 69.942,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "vav",
+    "field": "temp",
+    "mean": 37.692,
+    "p5": 25.291,
+    "p95": 50.092,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 46.846,
+    "p5": 31.434,
+    "p95": 62.259,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 52.096,
+    "p5": 34.957,
+    "p95": 69.236,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 48.978,
+    "p5": 32.864,
+    "p95": 65.091,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 53.516,
+    "p5": 35.909,
+    "p95": 71.123,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 61.263,
+    "p5": 41.107,
+    "p95": 81.419,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 58.443,
+    "p5": 39.215,
+    "p95": 77.67,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 60.583,
+    "p5": 40.651,
+    "p95": 80.514,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 59.355,
+    "p5": 39.827,
+    "p95": 78.883,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 57.584,
+    "p5": 38.639,
+    "p95": 76.529,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 58.059,
+    "p5": 38.958,
+    "p95": 77.161,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 35.959,
+    "p5": 24.129,
+    "p95": 47.79,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 77.519,
+    "p5": 52.015,
+    "p95": 103.022,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 54.217,
+    "p5": 36.38,
+    "p95": 72.054,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 38.482,
+    "p5": 25.822,
+    "p95": 51.143,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 59.504,
+    "p5": 39.927,
+    "p95": 79.08,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 40.167,
+    "p5": 26.952,
+    "p95": 53.382,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 46.701,
+    "p5": 31.336,
+    "p95": 62.066,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 42.653,
+    "p5": 28.62,
+    "p95": 56.685,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 40.625,
+    "p5": 27.259,
+    "p95": 53.99,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 39.635,
+    "p5": 26.595,
+    "p95": 52.675,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 45.142,
+    "p5": 30.29,
+    "p95": 59.994,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 23.147,
+    "p5": 15.532,
+    "p95": 30.763,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 63.902,
+    "p5": 42.878,
+    "p95": 84.926,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "vav",
+    "field": "status",
+    "mean": 52.069,
+    "p5": 34.938,
+    "p95": 69.2,
+    "count": 216
+  }
+]

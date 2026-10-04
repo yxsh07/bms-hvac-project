@@ -1,0 +1,866 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 25.656,
+    "p5": 17.215,
+    "p95": 34.097,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 19.186,
+    "p5": 12.874,
+    "p95": 25.499,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 21.632,
+    "p5": 14.515,
+    "p95": 28.748,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 20.529,
+    "p5": 13.775,
+    "p95": 27.283,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 21.665,
+    "p5": 14.537,
+    "p95": 28.792,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 22.532,
+    "p5": 15.119,
+    "p95": 29.945,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 22.7,
+    "p5": 15.232,
+    "p95": 30.168,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 20.382,
+    "p5": 13.676,
+    "p95": 27.087,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 21.925,
+    "p5": 14.711,
+    "p95": 29.138,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 23.536,
+    "p5": 15.792,
+    "p95": 31.279,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 27.511,
+    "p5": 18.46,
+    "p95": 36.563,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 23.071,
+    "p5": 15.481,
+    "p95": 30.662,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 21.587,
+    "p5": 14.485,
+    "p95": 28.689,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 21.767,
+    "p5": 14.606,
+    "p95": 28.929,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 23.622,
+    "p5": 15.85,
+    "p95": 31.394,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 21.9,
+    "p5": 14.695,
+    "p95": 29.105,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 25.918,
+    "p5": 17.391,
+    "p95": 34.445,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 18.822,
+    "p5": 12.63,
+    "p95": 25.015,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 22.582,
+    "p5": 15.153,
+    "p95": 30.012,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 21.409,
+    "p5": 14.366,
+    "p95": 28.453,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 18.946,
+    "p5": 12.713,
+    "p95": 25.179,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 25.628,
+    "p5": 17.196,
+    "p95": 34.059,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 24.363,
+    "p5": 16.348,
+    "p95": 32.379,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "fcu",
+    "field": "temp_room",
+    "mean": 23.416,
+    "p5": 15.712,
+    "p95": 31.12,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 57.238,
+    "p5": 38.407,
+    "p95": 76.07,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 47.911,
+    "p5": 32.148,
+    "p95": 63.674,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 57.407,
+    "p5": 38.52,
+    "p95": 76.293,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 44.889,
+    "p5": 30.12,
+    "p95": 59.657,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 26.909,
+    "p5": 18.056,
+    "p95": 35.762,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 60.271,
+    "p5": 40.442,
+    "p95": 80.101,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 37.361,
+    "p5": 25.07,
+    "p95": 49.653,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 51.237,
+    "p5": 34.38,
+    "p95": 68.094,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 64.451,
+    "p5": 43.247,
+    "p95": 85.655,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 77.29,
+    "p5": 51.862,
+    "p95": 102.718,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 78.686,
+    "p5": 52.798,
+    "p95": 104.573,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 47.742,
+    "p5": 32.035,
+    "p95": 63.449,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 55.593,
+    "p5": 37.303,
+    "p95": 73.883,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 27.851,
+    "p5": 18.688,
+    "p95": 37.013,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 60.165,
+    "p5": 40.371,
+    "p95": 79.96,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 63.095,
+    "p5": 42.337,
+    "p95": 83.853,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 52.412,
+    "p5": 35.168,
+    "p95": 69.655,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 38.576,
+    "p5": 25.885,
+    "p95": 51.268,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 71.31,
+    "p5": 47.849,
+    "p95": 94.771,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 45.621,
+    "p5": 30.612,
+    "p95": 60.63,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 9.514,
+    "p5": 6.384,
+    "p95": 12.644,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 77.751,
+    "p5": 52.171,
+    "p95": 103.331,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 0.084,
+    "p5": 0.057,
+    "p95": 0.112,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "fcu",
+    "field": "valve_position",
+    "mean": 55.916,
+    "p5": 37.519,
+    "p95": 74.312,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 55.695,
+    "p5": 37.371,
+    "p95": 74.019,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 35.092,
+    "p5": 23.547,
+    "p95": 46.637,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 65.317,
+    "p5": 43.828,
+    "p95": 86.806,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 81.627,
+    "p5": 54.772,
+    "p95": 108.483,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 64.437,
+    "p5": 43.237,
+    "p95": 85.637,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 52.915,
+    "p5": 35.506,
+    "p95": 70.324,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 56.996,
+    "p5": 38.244,
+    "p95": 75.748,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 30.493,
+    "p5": 20.461,
+    "p95": 40.526,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 38.598,
+    "p5": 25.9,
+    "p95": 51.297,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 60.913,
+    "p5": 40.873,
+    "p95": 80.954,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 70.479,
+    "p5": 47.291,
+    "p95": 93.666,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 75.052,
+    "p5": 50.36,
+    "p95": 99.744,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 14.767,
+    "p5": 9.908,
+    "p95": 19.625,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 58.05,
+    "p5": 38.952,
+    "p95": 77.149,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 32.964,
+    "p5": 22.119,
+    "p95": 43.81,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 24.698,
+    "p5": 16.573,
+    "p95": 32.824,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 34.491,
+    "p5": 23.143,
+    "p95": 45.838,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 72.037,
+    "p5": 48.337,
+    "p95": 95.738,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 40.235,
+    "p5": 26.998,
+    "p95": 53.473,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 43.845,
+    "p5": 29.42,
+    "p95": 58.27,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 96.211,
+    "p5": 64.558,
+    "p95": 127.864,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 46.777,
+    "p5": 31.387,
+    "p95": 62.166,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 32.881,
+    "p5": 22.063,
+    "p95": 43.698,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "fcu",
+    "field": "fan_speed",
+    "mean": 53.179,
+    "p5": 35.683,
+    "p95": 70.675,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 0.646,
+    "p5": 0.434,
+    "p95": 0.859,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 0.86,
+    "p5": 0.577,
+    "p95": 1.143,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 0.243,
+    "p5": 0.163,
+    "p95": 0.323,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 0.063,
+    "p5": 0.042,
+    "p95": 0.084,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 1.266,
+    "p5": 0.849,
+    "p95": 1.682,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 0.549,
+    "p5": 0.369,
+    "p95": 0.73,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 0.662,
+    "p5": 0.444,
+    "p95": 0.88,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 0.52,
+    "p5": 0.349,
+    "p95": 0.691,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 1.248,
+    "p5": 0.838,
+    "p95": 1.659,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 1.489,
+    "p5": 0.999,
+    "p95": 1.979,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 1.624,
+    "p5": 1.09,
+    "p95": 2.159,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 1.912,
+    "p5": 1.283,
+    "p95": 2.541,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 1.18,
+    "p5": 0.792,
+    "p95": 1.569,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 0.834,
+    "p5": 0.56,
+    "p95": 1.109,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 0.603,
+    "p5": 0.405,
+    "p95": 0.802,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 0.788,
+    "p5": 0.529,
+    "p95": 1.048,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 0.67,
+    "p5": 0.45,
+    "p95": 0.891,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 1.778,
+    "p5": 1.193,
+    "p95": 2.363,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 1.034,
+    "p5": 0.694,
+    "p95": 1.375,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 0.84,
+    "p5": 0.564,
+    "p95": 1.116,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 0.597,
+    "p5": 0.4,
+    "p95": 0.793,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 0.584,
+    "p5": 0.392,
+    "p95": 0.776,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 1.43,
+    "p5": 0.96,
+    "p95": 1.901,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "fcu",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  }
+]

@@ -1,0 +1,650 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 0.276,
+    "p5": 0.185,
+    "p95": 0.367,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 1.086,
+    "p5": 0.729,
+    "p95": 1.443,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 0.466,
+    "p5": 0.313,
+    "p95": 0.619,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 0.147,
+    "p5": 0.099,
+    "p95": 0.195,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 1.083,
+    "p5": 0.726,
+    "p95": 1.439,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 0.416,
+    "p5": 0.279,
+    "p95": 0.553,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 2.17,
+    "p5": 1.456,
+    "p95": 2.884,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 1.556,
+    "p5": 1.044,
+    "p95": 2.068,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 0.922,
+    "p5": 0.619,
+    "p95": 1.226,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 1.855,
+    "p5": 1.245,
+    "p95": 2.465,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 1.659,
+    "p5": 1.114,
+    "p95": 2.205,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 1.273,
+    "p5": 0.854,
+    "p95": 1.692,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 1.582,
+    "p5": 1.061,
+    "p95": 2.102,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 1.609,
+    "p5": 1.08,
+    "p95": 2.138,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 1.562,
+    "p5": 1.048,
+    "p95": 2.076,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 1.737,
+    "p5": 1.165,
+    "p95": 2.308,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 1.517,
+    "p5": 1.018,
+    "p95": 2.016,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 1.113,
+    "p5": 0.747,
+    "p95": 1.479,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 1.855,
+    "p5": 1.244,
+    "p95": 2.465,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 0.921,
+    "p5": 0.618,
+    "p95": 1.223,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "pressurizationFan",
+    "field": "kw",
+    "mean": 1.94,
+    "p5": 1.301,
+    "p95": 2.578,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 66.62,
+    "p5": 44.702,
+    "p95": 88.538,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 50.283,
+    "p5": 33.74,
+    "p95": 66.826,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 41.835,
+    "p5": 28.071,
+    "p95": 55.598,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 62.099,
+    "p5": 41.668,
+    "p95": 82.53,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 69.069,
+    "p5": 46.345,
+    "p95": 91.793,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 46.501,
+    "p5": 31.202,
+    "p95": 61.8,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 51.689,
+    "p5": 34.683,
+    "p95": 68.695,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 46.26,
+    "p5": 31.041,
+    "p95": 61.48,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 47.626,
+    "p5": 31.957,
+    "p95": 63.295,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 63.303,
+    "p5": 42.476,
+    "p95": 84.129,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 52.844,
+    "p5": 35.458,
+    "p95": 70.23,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 60.608,
+    "p5": 40.668,
+    "p95": 80.548,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 55.966,
+    "p5": 37.553,
+    "p95": 74.379,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 61.494,
+    "p5": 41.263,
+    "p95": 81.726,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 59.831,
+    "p5": 40.147,
+    "p95": 79.516,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 43.096,
+    "p5": 28.918,
+    "p95": 57.275,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 62.525,
+    "p5": 41.954,
+    "p95": 83.096,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 43.617,
+    "p5": 29.267,
+    "p95": 57.967,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 35.653,
+    "p5": 23.923,
+    "p95": 47.382,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 61.106,
+    "p5": 41.002,
+    "p95": 81.209,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 56.608,
+    "p5": 37.984,
+    "p95": 75.232,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 52.596,
+    "p5": 35.292,
+    "p95": 69.901,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 35.715,
+    "p5": 23.965,
+    "p95": 47.465,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "pressurizationFan",
+    "field": "temp",
+    "mean": 49.532,
+    "p5": 33.236,
+    "p95": 65.828,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 43.544,
+    "p5": 29.218,
+    "p95": 57.87,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 47.619,
+    "p5": 31.952,
+    "p95": 63.286,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 58.929,
+    "p5": 39.541,
+    "p95": 78.317,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 35.333,
+    "p5": 23.709,
+    "p95": 46.958,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 25.159,
+    "p5": 16.881,
+    "p95": 33.436,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 39.881,
+    "p5": 26.76,
+    "p95": 53.002,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 61.345,
+    "p5": 41.162,
+    "p95": 81.527,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 44.191,
+    "p5": 29.652,
+    "p95": 58.73,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 38.107,
+    "p5": 25.57,
+    "p95": 50.645,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 41.597,
+    "p5": 27.912,
+    "p95": 55.283,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 42.985,
+    "p5": 28.843,
+    "p95": 57.127,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 53.352,
+    "p5": 35.799,
+    "p95": 70.904,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 50.065,
+    "p5": 33.593,
+    "p95": 66.536,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 50.229,
+    "p5": 33.703,
+    "p95": 66.754,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 40.266,
+    "p5": 27.018,
+    "p95": 53.514,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 38.951,
+    "p5": 26.136,
+    "p95": 51.766,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 54.426,
+    "p5": 36.52,
+    "p95": 72.331,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 52.297,
+    "p5": 35.091,
+    "p95": 69.503,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 58.361,
+    "p5": 39.16,
+    "p95": 77.562,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 49.936,
+    "p5": 33.507,
+    "p95": 66.365,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 35.809,
+    "p5": 24.028,
+    "p95": 47.59,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 46.089,
+    "p5": 30.926,
+    "p95": 61.252,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 61.718,
+    "p5": 41.413,
+    "p95": 82.023,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "pressurizationFan",
+    "field": "status",
+    "mean": 41.64,
+    "p5": 27.941,
+    "p95": 55.34,
+    "count": 216
+  }
+]

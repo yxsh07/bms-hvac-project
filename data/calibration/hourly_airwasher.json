@@ -1,0 +1,650 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 1.13,
+    "p5": 0.759,
+    "p95": 1.502,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 0.46,
+    "p5": 0.308,
+    "p95": 0.611,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 0.451,
+    "p5": 0.302,
+    "p95": 0.599,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 0.814,
+    "p5": 0.546,
+    "p95": 1.082,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 1.26,
+    "p5": 0.845,
+    "p95": 1.674,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 0.792,
+    "p5": 0.532,
+    "p95": 1.053,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 1.638,
+    "p5": 1.099,
+    "p95": 2.177,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 1.092,
+    "p5": 0.733,
+    "p95": 1.452,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 0.663,
+    "p5": 0.445,
+    "p95": 0.881,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 2.3,
+    "p5": 1.543,
+    "p95": 3.057,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 1.139,
+    "p5": 0.764,
+    "p95": 1.514,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 1.748,
+    "p5": 1.173,
+    "p95": 2.323,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 1.464,
+    "p5": 0.982,
+    "p95": 1.945,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 0.934,
+    "p5": 0.627,
+    "p95": 1.242,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 2.006,
+    "p5": 1.346,
+    "p95": 2.666,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 1.26,
+    "p5": 0.845,
+    "p95": 1.674,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 1.185,
+    "p5": 0.795,
+    "p95": 1.575,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 1.852,
+    "p5": 1.243,
+    "p95": 2.462,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 0.891,
+    "p5": 0.598,
+    "p95": 1.184,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 1.474,
+    "p5": 0.989,
+    "p95": 1.96,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 0.951,
+    "p5": 0.638,
+    "p95": 1.264,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "airwasher",
+    "field": "kw",
+    "mean": 0.669,
+    "p5": 0.449,
+    "p95": 0.888,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 50.27,
+    "p5": 33.731,
+    "p95": 66.809,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 49.095,
+    "p5": 32.943,
+    "p95": 65.247,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 61.699,
+    "p5": 41.4,
+    "p95": 81.999,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 50.056,
+    "p5": 33.587,
+    "p95": 66.524,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 39.328,
+    "p5": 26.389,
+    "p95": 52.267,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 43.836,
+    "p5": 29.414,
+    "p95": 58.257,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 59.197,
+    "p5": 39.721,
+    "p95": 78.673,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 63.58,
+    "p5": 42.662,
+    "p95": 84.498,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 65.304,
+    "p5": 43.819,
+    "p95": 86.788,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 53.372,
+    "p5": 35.813,
+    "p95": 70.932,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 56.303,
+    "p5": 37.779,
+    "p95": 74.826,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 44.421,
+    "p5": 29.807,
+    "p95": 59.036,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 34.195,
+    "p5": 22.945,
+    "p95": 45.445,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 45.131,
+    "p5": 30.283,
+    "p95": 59.979,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 46.506,
+    "p5": 31.205,
+    "p95": 61.806,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 53.079,
+    "p5": 35.616,
+    "p95": 70.542,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 76.33,
+    "p5": 51.218,
+    "p95": 101.443,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 43.413,
+    "p5": 29.13,
+    "p95": 57.696,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 57.73,
+    "p5": 38.737,
+    "p95": 76.723,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 50.736,
+    "p5": 34.044,
+    "p95": 67.428,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 54.781,
+    "p5": 36.758,
+    "p95": 72.804,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 34.53,
+    "p5": 23.169,
+    "p95": 45.89,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 49.09,
+    "p5": 32.939,
+    "p95": 65.241,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "airwasher",
+    "field": "temp",
+    "mean": 47.955,
+    "p5": 32.177,
+    "p95": 63.732,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 53.136,
+    "p5": 35.654,
+    "p95": 70.618,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 46.134,
+    "p5": 30.956,
+    "p95": 61.312,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 36.74,
+    "p5": 24.652,
+    "p95": 48.827,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 56.89,
+    "p5": 38.173,
+    "p95": 75.607,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 61.926,
+    "p5": 41.553,
+    "p95": 82.3,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 62.043,
+    "p5": 41.631,
+    "p95": 82.455,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 62.831,
+    "p5": 42.159,
+    "p95": 83.502,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 40.744,
+    "p5": 27.339,
+    "p95": 54.149,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 53.12,
+    "p5": 35.643,
+    "p95": 70.596,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 57.694,
+    "p5": 38.713,
+    "p95": 76.676,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 61.364,
+    "p5": 41.175,
+    "p95": 81.553,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 55.119,
+    "p5": 36.985,
+    "p95": 73.253,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 49.025,
+    "p5": 32.896,
+    "p95": 65.155,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 60.261,
+    "p5": 40.435,
+    "p95": 80.087,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 52.283,
+    "p5": 35.082,
+    "p95": 69.484,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 44.366,
+    "p5": 29.77,
+    "p95": 58.962,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 24.462,
+    "p5": 16.414,
+    "p95": 32.51,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 49.685,
+    "p5": 33.339,
+    "p95": 66.031,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 33.073,
+    "p5": 22.192,
+    "p95": 43.954,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 41.163,
+    "p5": 27.621,
+    "p95": 54.706,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 28.75,
+    "p5": 19.292,
+    "p95": 38.209,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 66.967,
+    "p5": 44.935,
+    "p95": 88.999,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 51.905,
+    "p5": 34.828,
+    "p95": 68.982,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "airwasher",
+    "field": "status",
+    "mean": 38.967,
+    "p5": 26.147,
+    "p95": 51.787,
+    "count": 216
+  }
+]

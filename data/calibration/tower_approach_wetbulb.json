@@ -1,0 +1,212 @@
+[
+  {
+    "wet_bulb_temp": 20.0,
+    "load_fraction": 0.2,
+    "approach": 0.93,
+    "condenser_entering_temp": 20.9
+  },
+  {
+    "wet_bulb_temp": 20.0,
+    "load_fraction": 0.4,
+    "approach": 0.99,
+    "condenser_entering_temp": 21.0
+  },
+  {
+    "wet_bulb_temp": 20.0,
+    "load_fraction": 0.6,
+    "approach": 0.74,
+    "condenser_entering_temp": 20.7
+  },
+  {
+    "wet_bulb_temp": 20.0,
+    "load_fraction": 0.8,
+    "approach": 0.94,
+    "condenser_entering_temp": 20.9
+  },
+  {
+    "wet_bulb_temp": 20.0,
+    "load_fraction": 1.0,
+    "approach": 0.71,
+    "condenser_entering_temp": 20.7
+  },
+  {
+    "wet_bulb_temp": 22.0,
+    "load_fraction": 0.2,
+    "approach": 1.64,
+    "condenser_entering_temp": 23.6
+  },
+  {
+    "wet_bulb_temp": 22.0,
+    "load_fraction": 0.4,
+    "approach": 0.78,
+    "condenser_entering_temp": 22.8
+  },
+  {
+    "wet_bulb_temp": 22.0,
+    "load_fraction": 0.6,
+    "approach": 1.11,
+    "condenser_entering_temp": 23.1
+  },
+  {
+    "wet_bulb_temp": 22.0,
+    "load_fraction": 0.8,
+    "approach": 0.61,
+    "condenser_entering_temp": 22.6
+  },
+  {
+    "wet_bulb_temp": 22.0,
+    "load_fraction": 1.0,
+    "approach": 0.33,
+    "condenser_entering_temp": 22.3
+  },
+  {
+    "wet_bulb_temp": 24.0,
+    "load_fraction": 0.2,
+    "approach": 0.84,
+    "condenser_entering_temp": 24.8
+  },
+  {
+    "wet_bulb_temp": 24.0,
+    "load_fraction": 0.4,
+    "approach": 1.21,
+    "condenser_entering_temp": 25.2
+  },
+  {
+    "wet_bulb_temp": 24.0,
+    "load_fraction": 0.6,
+    "approach": 1.13,
+    "condenser_entering_temp": 25.1
+  },
+  {
+    "wet_bulb_temp": 24.0,
+    "load_fraction": 0.8,
+    "approach": 1.27,
+    "condenser_entering_temp": 25.3
+  },
+  {
+    "wet_bulb_temp": 24.0,
+    "load_fraction": 1.0,
+    "approach": 1.47,
+    "condenser_entering_temp": 25.5
+  },
+  {
+    "wet_bulb_temp": 26.0,
+    "load_fraction": 0.2,
+    "approach": 0.9,
+    "condenser_entering_temp": 26.9
+  },
+  {
+    "wet_bulb_temp": 26.0,
+    "load_fraction": 0.4,
+    "approach": 1.14,
+    "condenser_entering_temp": 27.1
+  },
+  {
+    "wet_bulb_temp": 26.0,
+    "load_fraction": 0.6,
+    "approach": 0.86,
+    "condenser_entering_temp": 26.9
+  },
+  {
+    "wet_bulb_temp": 26.0,
+    "load_fraction": 0.8,
+    "approach": 0.45,
+    "condenser_entering_temp": 26.4
+  },
+  {
+    "wet_bulb_temp": 26.0,
+    "load_fraction": 1.0,
+    "approach": 1.34,
+    "condenser_entering_temp": 27.3
+  },
+  {
+    "wet_bulb_temp": 28.0,
+    "load_fraction": 0.2,
+    "approach": 1.51,
+    "condenser_entering_temp": 29.5
+  },
+  {
+    "wet_bulb_temp": 28.0,
+    "load_fraction": 0.4,
+    "approach": 1.71,
+    "condenser_entering_temp": 29.7
+  },
+  {
+    "wet_bulb_temp": 28.0,
+    "load_fraction": 0.6,
+    "approach": 1.19,
+    "condenser_entering_temp": 29.2
+  },
+  {
+    "wet_bulb_temp": 28.0,
+    "load_fraction": 0.8,
+    "approach": 0.84,
+    "condenser_entering_temp": 28.8
+  },
+  {
+    "wet_bulb_temp": 28.0,
+    "load_fraction": 1.0,
+    "approach": 1.66,
+    "condenser_entering_temp": 29.7
+  },
+  {
+    "wet_bulb_temp": 30.0,
+    "load_fraction": 0.2,
+    "approach": 1.46,
+    "condenser_entering_temp": 31.5
+  },
+  {
+    "wet_bulb_temp": 30.0,
+    "load_fraction": 0.4,
+    "approach": 1.04,
+    "condenser_entering_temp": 31.0
+  },
+  {
+    "wet_bulb_temp": 30.0,
+    "load_fraction": 0.6,
+    "approach": 1.3,
+    "condenser_entering_temp": 31.3
+  },
+  {
+    "wet_bulb_temp": 30.0,
+    "load_fraction": 0.8,
+    "approach": 1.34,
+    "condenser_entering_temp": 31.3
+  },
+  {
+    "wet_bulb_temp": 30.0,
+    "load_fraction": 1.0,
+    "approach": 1.15,
+    "condenser_entering_temp": 31.1
+  },
+  {
+    "wet_bulb_temp": 32.0,
+    "load_fraction": 0.2,
+    "approach": 1.82,
+    "condenser_entering_temp": 33.8
+  },
+  {
+    "wet_bulb_temp": 32.0,
+    "load_fraction": 0.4,
+    "approach": 1.94,
+    "condenser_entering_temp": 33.9
+  },
+  {
+    "wet_bulb_temp": 32.0,
+    "load_fraction": 0.6,
+    "approach": 1.43,
+    "condenser_entering_temp": 33.4
+  },
+  {
+    "wet_bulb_temp": 32.0,
+    "load_fraction": 0.8,
+    "approach": 1.86,
+    "condenser_entering_temp": 33.9
+  },
+  {
+    "wet_bulb_temp": 32.0,
+    "load_fraction": 1.0,
+    "approach": 1.58,
+    "condenser_entering_temp": 33.6
+  }
+]

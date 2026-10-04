@@ -1,0 +1,650 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 0.933,
+    "p5": 0.626,
+    "p95": 1.24,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 0.384,
+    "p5": 0.257,
+    "p95": 0.51,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 1.469,
+    "p5": 0.985,
+    "p95": 1.952,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 0.437,
+    "p5": 0.293,
+    "p95": 0.58,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 0.675,
+    "p5": 0.453,
+    "p95": 0.897,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 1.926,
+    "p5": 1.292,
+    "p95": 2.56,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 1.164,
+    "p5": 0.781,
+    "p95": 1.547,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 1.326,
+    "p5": 0.89,
+    "p95": 1.763,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 0.92,
+    "p5": 0.618,
+    "p95": 1.223,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 1.446,
+    "p5": 0.97,
+    "p95": 1.921,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 1.896,
+    "p5": 1.272,
+    "p95": 2.52,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 1.334,
+    "p5": 0.895,
+    "p95": 1.772,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 1.415,
+    "p5": 0.949,
+    "p95": 1.88,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 2.232,
+    "p5": 1.498,
+    "p95": 2.966,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 0.773,
+    "p5": 0.519,
+    "p95": 1.027,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 1.233,
+    "p5": 0.827,
+    "p95": 1.638,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 1.949,
+    "p5": 1.308,
+    "p95": 2.591,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 1.36,
+    "p5": 0.912,
+    "p95": 1.807,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 0.595,
+    "p5": 0.399,
+    "p95": 0.791,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 1.228,
+    "p5": 0.824,
+    "p95": 1.631,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 0.426,
+    "p5": 0.286,
+    "p95": 0.566,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "radsys",
+    "field": "kw",
+    "mean": 0.577,
+    "p5": 0.387,
+    "p95": 0.766,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 57.641,
+    "p5": 38.677,
+    "p95": 76.605,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 48.18,
+    "p5": 32.329,
+    "p95": 64.031,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 48.572,
+    "p5": 32.592,
+    "p95": 64.552,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 44.25,
+    "p5": 29.692,
+    "p95": 58.809,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 55.025,
+    "p5": 36.922,
+    "p95": 73.128,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 63.709,
+    "p5": 42.749,
+    "p95": 84.669,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 36.758,
+    "p5": 24.664,
+    "p95": 48.851,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 51.66,
+    "p5": 34.664,
+    "p95": 68.656,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 33.465,
+    "p5": 22.455,
+    "p95": 44.474,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 33.731,
+    "p5": 22.634,
+    "p95": 44.829,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 48.337,
+    "p5": 32.434,
+    "p95": 64.239,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 44.157,
+    "p5": 29.629,
+    "p95": 58.684,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 39.03,
+    "p5": 26.189,
+    "p95": 51.871,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 71.655,
+    "p5": 48.08,
+    "p95": 95.229,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 51.062,
+    "p5": 34.263,
+    "p95": 67.861,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 38.016,
+    "p5": 25.508,
+    "p95": 50.523,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 48.588,
+    "p5": 32.603,
+    "p95": 64.574,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 75.296,
+    "p5": 50.524,
+    "p95": 100.069,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 28.58,
+    "p5": 19.177,
+    "p95": 37.983,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 48.292,
+    "p5": 32.404,
+    "p95": 64.18,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 45.137,
+    "p5": 30.287,
+    "p95": 59.986,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 58.714,
+    "p5": 39.397,
+    "p95": 78.03,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 56.503,
+    "p5": 37.913,
+    "p95": 75.092,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "radsys",
+    "field": "temp",
+    "mean": 46.326,
+    "p5": 31.085,
+    "p95": 61.567,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 49.709,
+    "p5": 33.354,
+    "p95": 66.063,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 64.565,
+    "p5": 43.323,
+    "p95": 85.807,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 58.493,
+    "p5": 39.249,
+    "p95": 77.737,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 66.13,
+    "p5": 44.373,
+    "p95": 87.887,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 51.121,
+    "p5": 34.302,
+    "p95": 67.94,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 42.748,
+    "p5": 28.684,
+    "p95": 56.813,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 38.944,
+    "p5": 26.131,
+    "p95": 51.756,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 47.622,
+    "p5": 31.954,
+    "p95": 63.289,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 65.544,
+    "p5": 43.98,
+    "p95": 87.108,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 58.879,
+    "p5": 39.508,
+    "p95": 78.251,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 37.467,
+    "p5": 25.14,
+    "p95": 49.793,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 38.084,
+    "p5": 25.554,
+    "p95": 50.613,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 42.172,
+    "p5": 28.297,
+    "p95": 56.046,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 44.897,
+    "p5": 30.126,
+    "p95": 59.668,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 39.187,
+    "p5": 26.294,
+    "p95": 52.079,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 49.95,
+    "p5": 33.517,
+    "p95": 66.384,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 39.388,
+    "p5": 26.429,
+    "p95": 52.347,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 48.327,
+    "p5": 32.427,
+    "p95": 64.226,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 61.927,
+    "p5": 41.553,
+    "p95": 82.3,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 46.157,
+    "p5": 30.971,
+    "p95": 61.343,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 61.422,
+    "p5": 41.214,
+    "p95": 81.63,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 31.142,
+    "p5": 20.896,
+    "p95": 41.388,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 56.135,
+    "p5": 37.666,
+    "p95": 74.603,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "radsys",
+    "field": "status",
+    "mean": 52.63,
+    "p5": 35.314,
+    "p95": 69.945,
+    "count": 216
+  }
+]

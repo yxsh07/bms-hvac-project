@@ -1,0 +1,650 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 0.555,
+    "p5": 0.373,
+    "p95": 0.738,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 0.895,
+    "p5": 0.601,
+    "p95": 1.19,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 0.904,
+    "p5": 0.606,
+    "p95": 1.201,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 0.925,
+    "p5": 0.621,
+    "p95": 1.23,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 1.572,
+    "p5": 1.055,
+    "p95": 2.089,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 0.869,
+    "p5": 0.583,
+    "p95": 1.155,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 1.575,
+    "p5": 1.057,
+    "p95": 2.093,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 0.665,
+    "p5": 0.446,
+    "p95": 0.884,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 1.219,
+    "p5": 0.818,
+    "p95": 1.62,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 1.68,
+    "p5": 1.127,
+    "p95": 2.232,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 0.604,
+    "p5": 0.405,
+    "p95": 0.802,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 1.77,
+    "p5": 1.188,
+    "p95": 2.353,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 1.68,
+    "p5": 1.128,
+    "p95": 2.233,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 0.738,
+    "p5": 0.495,
+    "p95": 0.98,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 1.325,
+    "p5": 0.889,
+    "p95": 1.76,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 1.551,
+    "p5": 1.041,
+    "p95": 2.061,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 0.163,
+    "p5": 0.109,
+    "p95": 0.216,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 1.326,
+    "p5": 0.889,
+    "p95": 1.762,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 1.179,
+    "p5": 0.791,
+    "p95": 1.566,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 1.102,
+    "p5": 0.74,
+    "p95": 1.465,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 1.202,
+    "p5": 0.807,
+    "p95": 1.597,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 1.23,
+    "p5": 0.826,
+    "p95": 1.635,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "treatedFreshAir",
+    "field": "kw",
+    "mean": 0.225,
+    "p5": 0.151,
+    "p95": 0.299,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 58.225,
+    "p5": 39.069,
+    "p95": 77.381,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 44.397,
+    "p5": 29.79,
+    "p95": 59.003,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 56.727,
+    "p5": 38.064,
+    "p95": 75.39,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 47.467,
+    "p5": 31.851,
+    "p95": 63.084,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 47.233,
+    "p5": 31.693,
+    "p95": 62.772,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 49.459,
+    "p5": 33.187,
+    "p95": 65.731,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 43.688,
+    "p5": 29.314,
+    "p95": 58.061,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 53.253,
+    "p5": 35.733,
+    "p95": 70.774,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 63.799,
+    "p5": 42.809,
+    "p95": 84.789,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 54.161,
+    "p5": 36.342,
+    "p95": 71.981,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 45.801,
+    "p5": 30.732,
+    "p95": 60.869,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 35.42,
+    "p5": 23.767,
+    "p95": 47.074,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 43.666,
+    "p5": 29.3,
+    "p95": 58.032,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 58.572,
+    "p5": 39.302,
+    "p95": 77.842,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 49.181,
+    "p5": 33.0,
+    "p95": 65.361,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 56.252,
+    "p5": 37.745,
+    "p95": 74.759,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 64.195,
+    "p5": 43.075,
+    "p95": 85.315,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 44.926,
+    "p5": 30.146,
+    "p95": 59.707,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 51.921,
+    "p5": 34.839,
+    "p95": 69.003,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 54.364,
+    "p5": 36.478,
+    "p95": 72.25,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 53.991,
+    "p5": 36.228,
+    "p95": 71.754,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 35.437,
+    "p5": 23.778,
+    "p95": 47.095,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 66.805,
+    "p5": 44.826,
+    "p95": 88.784,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "treatedFreshAir",
+    "field": "temp",
+    "mean": 44.895,
+    "p5": 30.124,
+    "p95": 59.665,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 49.799,
+    "p5": 33.415,
+    "p95": 66.183,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 30.792,
+    "p5": 20.661,
+    "p95": 40.922,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 65.548,
+    "p5": 43.983,
+    "p95": 87.113,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 51.394,
+    "p5": 34.485,
+    "p95": 68.303,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 51.834,
+    "p5": 34.78,
+    "p95": 68.887,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 63.695,
+    "p5": 42.739,
+    "p95": 84.65,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 58.544,
+    "p5": 39.283,
+    "p95": 77.805,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 45.752,
+    "p5": 30.7,
+    "p95": 60.805,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 41.945,
+    "p5": 28.145,
+    "p95": 55.745,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 43.706,
+    "p5": 29.327,
+    "p95": 58.086,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 49.819,
+    "p5": 33.429,
+    "p95": 66.21,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 47.882,
+    "p5": 32.129,
+    "p95": 63.636,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 36.879,
+    "p5": 24.746,
+    "p95": 49.012,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 48.312,
+    "p5": 32.417,
+    "p95": 64.206,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 35.343,
+    "p5": 23.715,
+    "p95": 46.971,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 33.76,
+    "p5": 22.653,
+    "p95": 44.867,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 30.101,
+    "p5": 20.198,
+    "p95": 40.005,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 48.784,
+    "p5": 32.734,
+    "p95": 64.833,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 65.251,
+    "p5": 43.783,
+    "p95": 86.718,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 54.78,
+    "p5": 36.757,
+    "p95": 72.803,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 28.631,
+    "p5": 19.211,
+    "p95": 38.051,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 42.125,
+    "p5": 28.266,
+    "p95": 55.984,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 36.169,
+    "p5": 24.269,
+    "p95": 48.068,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "treatedFreshAir",
+    "field": "status",
+    "mean": 59.675,
+    "p5": 40.042,
+    "p95": 79.308,
+    "count": 216
+  }
+]

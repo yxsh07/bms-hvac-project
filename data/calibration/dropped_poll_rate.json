@@ -1,0 +1,8 @@
+{
+  "rate": 0.002,
+  "percentage": 0.2,
+  "total_expected_per_entity": 4320,
+  "total_received_per_entity": 4311,
+  "burst_allowed": true,
+  "source": "PLAN.md \u00a73.2 cadence and loss"
+}

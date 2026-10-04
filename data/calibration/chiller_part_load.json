@@ -1,0 +1,62 @@
+[
+  {
+    "plr": 0.1,
+    "ikw_tr": 0.623,
+    "condenser_entering_temp": 30.5,
+    "chw_leaving_temp": 7.3
+  },
+  {
+    "plr": 0.2,
+    "ikw_tr": 0.586,
+    "condenser_entering_temp": 30.3,
+    "chw_leaving_temp": 7.1
+  },
+  {
+    "plr": 0.3,
+    "ikw_tr": 0.489,
+    "condenser_entering_temp": 31.2,
+    "chw_leaving_temp": 7.7
+  },
+  {
+    "plr": 0.4,
+    "ikw_tr": 0.447,
+    "condenser_entering_temp": 31.8,
+    "chw_leaving_temp": 7.8
+  },
+  {
+    "plr": 0.5,
+    "ikw_tr": 0.449,
+    "condenser_entering_temp": 31.4,
+    "chw_leaving_temp": 7.7
+  },
+  {
+    "plr": 0.6,
+    "ikw_tr": 0.506,
+    "condenser_entering_temp": 32.9,
+    "chw_leaving_temp": 7.7
+  },
+  {
+    "plr": 0.7,
+    "ikw_tr": 0.498,
+    "condenser_entering_temp": 32.4,
+    "chw_leaving_temp": 7.6
+  },
+  {
+    "plr": 0.8,
+    "ikw_tr": 0.528,
+    "condenser_entering_temp": 33.5,
+    "chw_leaving_temp": 7.8
+  },
+  {
+    "plr": 0.9,
+    "ikw_tr": 0.528,
+    "condenser_entering_temp": 33.8,
+    "chw_leaving_temp": 7.7
+  },
+  {
+    "plr": 1.0,
+    "ikw_tr": 0.548,
+    "condenser_entering_temp": 34.9,
+    "chw_leaving_temp": 8.5
+  }
+]

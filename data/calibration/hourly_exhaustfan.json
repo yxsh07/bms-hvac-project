@@ -1,0 +1,650 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 0.467,
+    "p5": 0.313,
+    "p95": 0.621,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 1.63,
+    "p5": 1.094,
+    "p95": 2.167,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 1.688,
+    "p5": 1.132,
+    "p95": 2.243,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 0.557,
+    "p5": 0.374,
+    "p95": 0.74,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 0.09,
+    "p5": 0.06,
+    "p95": 0.119,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 0.07,
+    "p5": 0.047,
+    "p95": 0.093,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 0.202,
+    "p5": 0.136,
+    "p95": 0.269,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 1.754,
+    "p5": 1.177,
+    "p95": 2.331,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 1.833,
+    "p5": 1.23,
+    "p95": 2.436,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 0.502,
+    "p5": 0.337,
+    "p95": 0.668,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 1.91,
+    "p5": 1.282,
+    "p95": 2.539,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 1.917,
+    "p5": 1.286,
+    "p95": 2.548,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 0.931,
+    "p5": 0.625,
+    "p95": 1.237,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 0.742,
+    "p5": 0.498,
+    "p95": 0.986,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 1.088,
+    "p5": 0.73,
+    "p95": 1.446,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 1.302,
+    "p5": 0.874,
+    "p95": 1.731,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 2.087,
+    "p5": 1.4,
+    "p95": 2.773,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 1.229,
+    "p5": 0.824,
+    "p95": 1.633,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 0.643,
+    "p5": 0.432,
+    "p95": 0.855,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 1.413,
+    "p5": 0.948,
+    "p95": 1.878,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 1.488,
+    "p5": 0.999,
+    "p95": 1.978,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 1.339,
+    "p5": 0.898,
+    "p95": 1.779,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "exhaustfan",
+    "field": "kw",
+    "mean": 0.863,
+    "p5": 0.579,
+    "p95": 1.147,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 42.708,
+    "p5": 28.657,
+    "p95": 56.759,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 47.113,
+    "p5": 31.613,
+    "p95": 62.614,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 64.052,
+    "p5": 42.979,
+    "p95": 85.125,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 54.737,
+    "p5": 36.729,
+    "p95": 72.746,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 52.68,
+    "p5": 35.348,
+    "p95": 70.011,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 50.564,
+    "p5": 33.929,
+    "p95": 67.2,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 59.959,
+    "p5": 40.232,
+    "p95": 79.685,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 52.901,
+    "p5": 35.497,
+    "p95": 70.305,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 36.076,
+    "p5": 24.207,
+    "p95": 47.945,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 65.959,
+    "p5": 44.258,
+    "p95": 87.659,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 46.766,
+    "p5": 31.38,
+    "p95": 62.153,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 44.366,
+    "p5": 29.77,
+    "p95": 58.963,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 45.884,
+    "p5": 30.788,
+    "p95": 60.98,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 35.519,
+    "p5": 23.833,
+    "p95": 47.205,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 45.367,
+    "p5": 30.442,
+    "p95": 60.293,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 58.534,
+    "p5": 39.276,
+    "p95": 77.791,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 49.784,
+    "p5": 33.405,
+    "p95": 66.163,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 57.209,
+    "p5": 38.387,
+    "p95": 76.031,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 40.961,
+    "p5": 27.485,
+    "p95": 54.437,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 43.856,
+    "p5": 29.427,
+    "p95": 58.285,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 54.223,
+    "p5": 36.383,
+    "p95": 72.062,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 47.118,
+    "p5": 31.616,
+    "p95": 62.62,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 57.059,
+    "p5": 38.287,
+    "p95": 75.832,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "exhaustfan",
+    "field": "temp",
+    "mean": 42.665,
+    "p5": 28.628,
+    "p95": 56.702,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 50.633,
+    "p5": 33.975,
+    "p95": 67.292,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 46.782,
+    "p5": 31.391,
+    "p95": 62.173,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 47.112,
+    "p5": 31.612,
+    "p95": 62.612,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 35.08,
+    "p5": 23.539,
+    "p95": 46.622,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 49.279,
+    "p5": 33.066,
+    "p95": 65.491,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 35.816,
+    "p5": 24.033,
+    "p95": 47.6,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 46.839,
+    "p5": 31.429,
+    "p95": 62.249,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 47.06,
+    "p5": 31.578,
+    "p95": 62.543,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 54.74,
+    "p5": 36.731,
+    "p95": 72.75,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 44.391,
+    "p5": 29.787,
+    "p95": 58.996,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 56.505,
+    "p5": 37.915,
+    "p95": 75.095,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 57.16,
+    "p5": 38.354,
+    "p95": 75.965,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 64.335,
+    "p5": 43.169,
+    "p95": 85.501,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 31.411,
+    "p5": 21.077,
+    "p95": 41.745,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 55.72,
+    "p5": 37.388,
+    "p95": 74.053,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 49.122,
+    "p5": 32.961,
+    "p95": 65.283,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 45.259,
+    "p5": 30.369,
+    "p95": 60.149,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 38.796,
+    "p5": 26.032,
+    "p95": 51.56,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 42.357,
+    "p5": 28.422,
+    "p95": 56.292,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 39.712,
+    "p5": 26.647,
+    "p95": 52.777,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 51.368,
+    "p5": 34.468,
+    "p95": 68.268,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 46.818,
+    "p5": 31.415,
+    "p95": 62.222,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 46.805,
+    "p5": 31.406,
+    "p95": 62.204,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "exhaustfan",
+    "field": "status",
+    "mean": 63.539,
+    "p5": 42.634,
+    "p95": 84.443,
+    "count": 216
+  }
+]

@@ -1,0 +1,650 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 1.468,
+    "p5": 0.985,
+    "p95": 1.951,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 0.764,
+    "p5": 0.512,
+    "p95": 1.015,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 0.696,
+    "p5": 0.467,
+    "p95": 0.925,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 0.28,
+    "p5": 0.188,
+    "p95": 0.373,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 1.118,
+    "p5": 0.75,
+    "p95": 1.486,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 0,
+    "p5": 0,
+    "p95": 1.645,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 0.324,
+    "p5": 0.217,
+    "p95": 0.43,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 0.654,
+    "p5": 0.439,
+    "p95": 0.869,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 1.281,
+    "p5": 0.86,
+    "p95": 1.703,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 0.572,
+    "p5": 0.384,
+    "p95": 0.76,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 1.063,
+    "p5": 0.713,
+    "p95": 1.412,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 1.689,
+    "p5": 1.133,
+    "p95": 2.245,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 1.399,
+    "p5": 0.939,
+    "p95": 1.859,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 2.071,
+    "p5": 1.39,
+    "p95": 2.753,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 1.255,
+    "p5": 0.842,
+    "p95": 1.668,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 1.074,
+    "p5": 0.721,
+    "p95": 1.427,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 0.529,
+    "p5": 0.355,
+    "p95": 0.704,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 1.109,
+    "p5": 0.744,
+    "p95": 1.474,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 2.135,
+    "p5": 1.433,
+    "p95": 2.838,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 1.36,
+    "p5": 0.913,
+    "p95": 1.808,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 0.793,
+    "p5": 0.532,
+    "p95": 1.054,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 0.875,
+    "p5": 0.587,
+    "p95": 1.162,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 1.022,
+    "p5": 0.686,
+    "p95": 1.358,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "damper",
+    "field": "kw",
+    "mean": 0.316,
+    "p5": 0.212,
+    "p95": 0.42,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 62.853,
+    "p5": 42.174,
+    "p95": 83.531,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 62.541,
+    "p5": 41.965,
+    "p95": 83.116,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 45.339,
+    "p5": 30.422,
+    "p95": 60.255,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 45.389,
+    "p5": 30.456,
+    "p95": 60.322,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 42.241,
+    "p5": 28.344,
+    "p95": 56.138,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 54.631,
+    "p5": 36.657,
+    "p95": 72.605,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 40.06,
+    "p5": 26.88,
+    "p95": 53.24,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 54.133,
+    "p5": 36.323,
+    "p95": 71.943,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 64.223,
+    "p5": 43.094,
+    "p95": 85.353,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 60.734,
+    "p5": 40.753,
+    "p95": 80.716,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 51.319,
+    "p5": 34.435,
+    "p95": 68.203,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 48.028,
+    "p5": 32.227,
+    "p95": 63.829,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 70.216,
+    "p5": 47.115,
+    "p95": 93.317,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 68.954,
+    "p5": 46.268,
+    "p95": 91.64,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 47.092,
+    "p5": 31.599,
+    "p95": 62.585,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 55.871,
+    "p5": 37.489,
+    "p95": 74.253,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 49.721,
+    "p5": 33.363,
+    "p95": 66.08,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 47.52,
+    "p5": 31.886,
+    "p95": 63.154,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 59.964,
+    "p5": 40.236,
+    "p95": 79.692,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 35.729,
+    "p5": 23.974,
+    "p95": 47.483,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 34.864,
+    "p5": 23.394,
+    "p95": 46.335,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 53.48,
+    "p5": 35.885,
+    "p95": 71.075,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 50.22,
+    "p5": 33.698,
+    "p95": 66.743,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "damper",
+    "field": "temp",
+    "mean": 50.972,
+    "p5": 34.202,
+    "p95": 67.742,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 27.976,
+    "p5": 18.772,
+    "p95": 37.18,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 24.89,
+    "p5": 16.701,
+    "p95": 33.079,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 47.156,
+    "p5": 31.641,
+    "p95": 62.67,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 65.738,
+    "p5": 44.11,
+    "p95": 87.366,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 63.847,
+    "p5": 42.842,
+    "p95": 84.853,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 54.869,
+    "p5": 36.817,
+    "p95": 72.92,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 68.994,
+    "p5": 46.295,
+    "p95": 91.694,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 38.883,
+    "p5": 26.09,
+    "p95": 51.675,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 38.003,
+    "p5": 25.5,
+    "p95": 50.507,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 52.397,
+    "p5": 35.158,
+    "p95": 69.636,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 52.532,
+    "p5": 35.249,
+    "p95": 69.815,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 54.881,
+    "p5": 36.825,
+    "p95": 72.937,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 51.886,
+    "p5": 34.816,
+    "p95": 68.957,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 59.255,
+    "p5": 39.76,
+    "p95": 78.75,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 51.549,
+    "p5": 34.589,
+    "p95": 68.508,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 59.634,
+    "p5": 40.014,
+    "p95": 79.253,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 56.928,
+    "p5": 38.199,
+    "p95": 75.658,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 56.442,
+    "p5": 37.872,
+    "p95": 75.011,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 48.294,
+    "p5": 32.405,
+    "p95": 64.183,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 53.295,
+    "p5": 35.761,
+    "p95": 70.829,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 53.595,
+    "p5": 35.962,
+    "p95": 71.228,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 53.012,
+    "p5": 35.571,
+    "p95": 70.453,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 47.527,
+    "p5": 31.89,
+    "p95": 63.163,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "damper",
+    "field": "status",
+    "mean": 62.562,
+    "p5": 41.979,
+    "p95": 83.145,
+    "count": 216
+  }
+]

@@ -1,0 +1,650 @@
+[
+  {
+    "hour": 0,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 1.842,
+    "p5": 1.236,
+    "p95": 2.449,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 0.948,
+    "p5": 0.636,
+    "p95": 1.26,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 0.434,
+    "p5": 0.291,
+    "p95": 0.576,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 0.248,
+    "p5": 0.166,
+    "p95": 0.329,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 0.393,
+    "p5": 0.264,
+    "p95": 0.523,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 1.328,
+    "p5": 0.891,
+    "p95": 1.765,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 0.838,
+    "p5": 0.562,
+    "p95": 1.114,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 2.025,
+    "p5": 1.359,
+    "p95": 2.691,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 0.922,
+    "p5": 0.619,
+    "p95": 1.225,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 0.363,
+    "p5": 0.244,
+    "p95": 0.483,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 1.176,
+    "p5": 0.789,
+    "p95": 1.563,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 1.376,
+    "p5": 0.923,
+    "p95": 1.829,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 1.685,
+    "p5": 1.13,
+    "p95": 2.239,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 2.504,
+    "p5": 1.68,
+    "p95": 3.328,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 0.08,
+    "p5": 0.053,
+    "p95": 0.106,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 1.211,
+    "p5": 0.813,
+    "p95": 1.609,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 1.226,
+    "p5": 0.823,
+    "p95": 1.629,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 1.255,
+    "p5": 0.842,
+    "p95": 1.668,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 0.324,
+    "p5": 0.218,
+    "p95": 0.431,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 1.784,
+    "p5": 1.197,
+    "p95": 2.37,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 2.009,
+    "p5": 1.348,
+    "p95": 2.67,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 1.119,
+    "p5": 0.751,
+    "p95": 1.487,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 1.008,
+    "p5": 0.676,
+    "p95": 1.339,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "airscrubber",
+    "field": "kw",
+    "mean": 0.699,
+    "p5": 0.469,
+    "p95": 0.929,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 47.335,
+    "p5": 31.762,
+    "p95": 62.909,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 51.444,
+    "p5": 34.519,
+    "p95": 68.369,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 49.273,
+    "p5": 33.062,
+    "p95": 65.484,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 53.405,
+    "p5": 35.835,
+    "p95": 70.975,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 46.542,
+    "p5": 31.23,
+    "p95": 61.855,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 38.267,
+    "p5": 25.677,
+    "p95": 50.857,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 38.51,
+    "p5": 25.84,
+    "p95": 51.18,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 49.655,
+    "p5": 33.318,
+    "p95": 65.991,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 54.879,
+    "p5": 36.824,
+    "p95": 72.934,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 63.726,
+    "p5": 42.76,
+    "p95": 84.692,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 48.115,
+    "p5": 32.285,
+    "p95": 63.945,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 46.359,
+    "p5": 31.107,
+    "p95": 61.612,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 39.593,
+    "p5": 26.567,
+    "p95": 52.619,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 71.517,
+    "p5": 47.988,
+    "p95": 95.046,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 49.13,
+    "p5": 32.966,
+    "p95": 65.294,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 60.027,
+    "p5": 40.278,
+    "p95": 79.776,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 56.275,
+    "p5": 37.76,
+    "p95": 74.789,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 21.21,
+    "p5": 14.232,
+    "p95": 28.188,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 44.395,
+    "p5": 29.789,
+    "p95": 59.001,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 38.125,
+    "p5": 25.582,
+    "p95": 50.669,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 51.639,
+    "p5": 34.65,
+    "p95": 68.629,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 48.133,
+    "p5": 32.297,
+    "p95": 63.969,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 36.444,
+    "p5": 24.454,
+    "p95": 48.435,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "airscrubber",
+    "field": "temp",
+    "mean": 51.067,
+    "p5": 34.266,
+    "p95": 67.867,
+    "count": 216
+  },
+  {
+    "hour": 0,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 58.95,
+    "p5": 39.555,
+    "p95": 78.345,
+    "count": 216
+  },
+  {
+    "hour": 1,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 58.637,
+    "p5": 39.346,
+    "p95": 77.929,
+    "count": 216
+  },
+  {
+    "hour": 2,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 26.348,
+    "p5": 17.68,
+    "p95": 35.017,
+    "count": 216
+  },
+  {
+    "hour": 3,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 51.197,
+    "p5": 34.353,
+    "p95": 68.041,
+    "count": 216
+  },
+  {
+    "hour": 4,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 65.033,
+    "p5": 43.637,
+    "p95": 86.429,
+    "count": 216
+  },
+  {
+    "hour": 5,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 48.259,
+    "p5": 32.382,
+    "p95": 64.137,
+    "count": 216
+  },
+  {
+    "hour": 6,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 48.577,
+    "p5": 32.595,
+    "p95": 64.559,
+    "count": 216
+  },
+  {
+    "hour": 7,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 45.326,
+    "p5": 30.414,
+    "p95": 60.238,
+    "count": 216
+  },
+  {
+    "hour": 8,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 35.981,
+    "p5": 24.143,
+    "p95": 47.819,
+    "count": 216
+  },
+  {
+    "hour": 9,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 52.248,
+    "p5": 35.058,
+    "p95": 69.437,
+    "count": 216
+  },
+  {
+    "hour": 10,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 39.427,
+    "p5": 26.456,
+    "p95": 52.399,
+    "count": 216
+  },
+  {
+    "hour": 11,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 55.334,
+    "p5": 37.129,
+    "p95": 73.539,
+    "count": 216
+  },
+  {
+    "hour": 12,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 49.183,
+    "p5": 33.002,
+    "p95": 65.364,
+    "count": 216
+  },
+  {
+    "hour": 13,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 57.857,
+    "p5": 38.822,
+    "p95": 76.892,
+    "count": 216
+  },
+  {
+    "hour": 14,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 69.231,
+    "p5": 46.454,
+    "p95": 92.009,
+    "count": 216
+  },
+  {
+    "hour": 15,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 41.52,
+    "p5": 27.86,
+    "p95": 55.181,
+    "count": 216
+  },
+  {
+    "hour": 16,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 35.391,
+    "p5": 23.747,
+    "p95": 47.034,
+    "count": 216
+  },
+  {
+    "hour": 17,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 53.016,
+    "p5": 35.574,
+    "p95": 70.458,
+    "count": 216
+  },
+  {
+    "hour": 18,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 50.667,
+    "p5": 33.998,
+    "p95": 67.337,
+    "count": 216
+  },
+  {
+    "hour": 19,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 47.695,
+    "p5": 32.003,
+    "p95": 63.386,
+    "count": 216
+  },
+  {
+    "hour": 20,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 47.048,
+    "p5": 31.569,
+    "p95": 62.526,
+    "count": 216
+  },
+  {
+    "hour": 21,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 49.858,
+    "p5": 33.455,
+    "p95": 66.261,
+    "count": 216
+  },
+  {
+    "hour": 22,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 41.258,
+    "p5": 27.684,
+    "p95": 54.831,
+    "count": 216
+  },
+  {
+    "hour": 23,
+    "asset_type": "airscrubber",
+    "field": "status",
+    "mean": 63.882,
+    "p5": 42.865,
+    "p95": 84.899,
+    "count": 216
+  }
+]
