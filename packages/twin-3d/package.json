@@ -3,15 +3,27 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "scripts": {
-    "test": "vitest run"
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "packages-twin-core": "workspace:*",
     "three": "^0.186.1",
     "@react-three/fiber": "^9.8.1",
-    "@react-three/drei": "^10.7.9"
+    "@react-three/drei": "^10.7.9",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zustand": "^5.0.15"
   },
   "devDependencies": {
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@types/three": "^0.186.0",
     "typescript": "^5.5.3",
     "vitest": "^2.0.5"
   }

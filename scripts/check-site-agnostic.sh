@@ -5,7 +5,7 @@ set -euo pipefail
 # Exit non-zero with file:line on any hit
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$(git rev-parse --show-toplevel)"
+REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
 
 # Tier 1: forbidden strings (exact match across whole repo)
 TIER1_PATTERNS=(
@@ -13,9 +13,6 @@ TIER1_PATTERNS=(
   "Manavata"
   "KIMS"
   "JouleLogger"
-)
-TIER1_FILES=(
-  "${REPO_ROOT}/data/seed/forbidden-strings.txt"
 )
 
 # Tier 2: generic equipment words only in app/domain code paths
@@ -31,33 +28,66 @@ TIER2_PATHS=(
   "packages/quality"
   "packages/ontology"
 )
-TIER2_EXCLUDES=(
-  "data/"
-  "docs/"
-  "**/fixtures/**"
-  "**/*.test.*"
-)
 
 fail=0
 
 echo "Checking Tier 1 patterns..."
 for pattern in "${TIER1_PATTERNS[@]}"; do
-  matches=$(rg -l "$pattern" "${REPO_ROOT}" 2>/dev/null || true)
+  matches=$(grep -r -l -E \
+    --exclude-dir=node_modules \
+    --exclude-dir=.git \
+    --exclude-dir=data \
+    --exclude-dir=docs \
+    --exclude-dir=fixtures \
+    --exclude-dir=scripts \
+    --exclude="build_ontology_json.py" \
+    --exclude="*.test.*" \
+    "$pattern" "$REPO_ROOT" 2>/dev/null || true)
   for f in $matches; do
     echo "FAIL: Tier 1 hit: pattern='$pattern' file=$f"
     fail=1
   done
 done
 
+# Check forbidden-strings.txt if it exists
+if [ -f "${REPO_ROOT}/data/seed/forbidden-strings.txt" ]; then
+  while IFS= read -r pattern; do
+    [[ "$pattern" =~ ^#.*$ ]] && continue
+    [[ -z "$pattern" ]] && continue
+    matches=$(grep -r -l -E \
+      --exclude-dir=node_modules \
+      --exclude-dir=.git \
+      --exclude-dir=data \
+      --exclude-dir=docs \
+      --exclude-dir=fixtures \
+      --exclude-dir=scripts \
+      --exclude="build_ontology_json.py" \
+      --exclude="*.test.*" \
+      "$pattern" "$REPO_ROOT" 2>/dev/null || true)
+    for f in $matches; do
+      echo "FAIL: Tier 1 hit: forbidden string '$pattern' file=$f"
+      fail=1
+    done
+  done < "${REPO_ROOT}/data/seed/forbidden-strings.txt"
+fi
+
 echo "Checking Tier 2 patterns..."
 for pattern in "${TIER2_PATTERNS[@]}"; do
   for path in "${TIER2_PATHS[@]}"; do
-    # Use rg with path filter and exclusions
-    matches=$(rg -g "!${TIER2_EXCLUDES[*]/#/-g \"!\"}" -p "$pattern" "$path" 2>/dev/null || true)
-    for f in $matches; do
-      echo "FAIL: Tier 2 hit: pattern='$pattern' file=$f"
-      fail=1
-    done
+    if [ -d "${REPO_ROOT}/$path" ]; then
+      matches=$(grep -r -n -E \
+        --exclude-dir=node_modules \
+        --exclude-dir=.git \
+        --exclude-dir=data \
+        --exclude-dir=docs \
+        --exclude-dir=fixtures \
+        --exclude="*.test.*" \
+        -i "$pattern" "${REPO_ROOT}/$path" 2>/dev/null || true)
+      for line in $matches; do
+        echo "FAIL: Tier 2 hit: pattern='$pattern' line=$line"
+        fail=1
+      done
+    fi
   done
 done
 
