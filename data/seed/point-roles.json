@@ -1,0 +1,69 @@
+{
+  "$comment": "Semantic role -> point abbreviation, keyed by asset type (§5.4, DEC-4). This file is DATA: it may contain the site's raw abbreviations, but application code and templates must only ever reference roles from packages/twin-core ROLES. A different site ships a different point-roles.json and the same templates keep working.",
+  "byType": {
+    "chiller": {
+      "run-status": "RUN",
+      "power-kw": "KW",
+      "loading-pct": "LOAD",
+      "chw-leaving-temp": "CHWST",
+      "chw-entering-temp": "CHWRT",
+      "cond-leaving-temp": "CWST",
+      "cond-entering-temp": "CWRT",
+      "setpoint-chw-temp": "CHWSSP"
+    },
+    "chilled-water-pump": {
+      "run-status": "RUN",
+      "fault-alarm": "FAULT",
+      "differential-pressure": "DP"
+    },
+    "condenser-water-pump": {
+      "run-status": "RUN",
+      "fault-alarm": "FAULT",
+      "differential-pressure": "DP"
+    },
+    "cooling-tower": {
+      "run-status": "RUN",
+      "fault-alarm": "FAULT",
+      "fan-speed": "FAN",
+      "cond-leaving-temp": "CWST",
+      "cond-entering-temp": "CWRT"
+    },
+    "ahu": {
+      "run-status": "RUN",
+      "fault-alarm": "FAULT",
+      "supply-air-temp": "SAT",
+      "return-air-temp": "RAT",
+      "valve-position": "CHVP",
+      "fan-speed": "FANSPD"
+    },
+    "fcu": {
+      "run-status": "RUN",
+      "area-temp": "RAT",
+      "valve-position": "CHVP",
+      "fan-speed": "FANSPD"
+    },
+    "dashboard": {
+      "power-kw": "TOTAL_KW",
+      "energy-kwh": "TOTAL_KWH",
+      "cop": "SYS_COP",
+      "area-temp": "AVG_TEMP",
+      "area-humidity": "AVG_HUM"
+    }
+  },
+  "fallbackRules": [
+    { "nameContains": "run status", "role": "run-status" },
+    { "nameContains": "fault", "role": "fault-alarm" },
+    { "nameContains": "supply air temp", "role": "supply-air-temp" },
+    { "nameContains": "return air temp", "role": "return-air-temp" },
+    { "nameContains": "room temp", "role": "area-temp" },
+    { "nameContains": "humidity", "role": "area-humidity" },
+    { "nameContains": "setpoint", "role": "setpoint-chw-temp" },
+    { "nameContains": "power", "role": "power-kw" },
+    { "nameContains": "energy", "role": "energy-kwh" },
+    { "nameContains": "valve", "role": "valve-position" },
+    { "nameContains": "fan speed", "role": "fan-speed" },
+    { "classificationContains": "temp", "role": "area-temp" },
+    { "classificationContains": "pressure", "role": "differential-pressure" },
+    { "classificationContains": "flow", "role": "chw-flow" }
+  ]
+}

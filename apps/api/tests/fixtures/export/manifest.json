@@ -1,0 +1,6 @@
+{
+  "files": [
+    { "name": "day1.csv", "lines": 5, "rows": 4 },
+    { "name": "day2.csv", "lines": 3, "rows": 1 }
+  ]
+}

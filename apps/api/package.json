@@ -1,24 +1,28 @@
 {
   "name": "apps-api",
   "version": "0.0.1",
+  "private": true,
   "type": "module",
   "scripts": {
-    "dev": "fastify dev",
+    "dev": "tsx watch src/server.ts",
     "build": "tsc --noEmit",
     "lint": "eslint .",
-    "test": "pytest -q"
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "g2": "tsx scripts/g2-check.ts"
   },
   "dependencies": {
     "fastify": "^5.12.5",
-    "zod": "^4.6.5",
-    "pino": "^9.3.0"
+    "pg": "^8.23.1",
+    "pino": "^9.3.0",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
-    "@types/fastify": "^5.0.5",
-    "@types/zod": "^3.11.3",
+    "@types/pg": "^8.23.1",
     "eslint": "^8.57.0",
+    "pg-mem": "^3.0.14",
+    "tsx": "^4.23.15",
     "typescript": "^5.5.3",
-    "pytest": "^8.3.3",
-    "playwright": "^1.63.0"
+    "vitest": "^2.0.5"
   }
 }

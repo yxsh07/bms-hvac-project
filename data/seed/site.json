@@ -1,0 +1,45 @@
+{
+  "$comment": "Site config (§2.3). Server-side only; secrets never reach the client. The app is pointed at SimSite by this file alone (DEC-5/DEC-6).",
+  "siteId": "simsite-hospital",
+  "name": "Simulation Hospital",
+  "timezone": "Asia/Kolkata",
+  "telemetry": {
+    "driver": "sim-http",
+    "url": "http://localhost:8000",
+    "table": "site_store.points",
+    "cadenceSeconds": 60
+  },
+  "gateway": {
+    "driver": "sim-http",
+    "url": "http://localhost:8000/gateway"
+  },
+  "ontology": { "driver": "json", "path": "data/seed/ontology.json" },
+  "pointRoles": "data/seed/point-roles.json",
+  "twin": { "layout": "data/seed/twin-layout.json" },
+  "quality": {
+    "sentinelValues": [-273.15],
+    "ranges": [
+      { "classification": "Temperature", "min": -10, "max": 90 },
+      { "classification": "Humidity", "min": 0, "max": 100 },
+      { "classification": "Pressure", "min": -100, "max": 1000 },
+      { "classification": "Flow Sensor", "min": 0, "max": 100000 },
+      { "classification": "Power", "min": -1000, "max": 10000 },
+      { "classification": "Energy", "min": 0, "max": 100000000 },
+      { "classification": "Voltage", "min": 0, "max": 500 },
+      { "classification": "Current", "min": -1000, "max": 1000 },
+      { "classification": "Frequency", "min": 45, "max": 55 },
+      { "classification": "Power Factor", "min": -1, "max": 1 }
+    ],
+    "suppressProcessValuesWhenStopped": ["Temperature", "Pressure", "Flow Sensor"],
+    "consistencyRules": [
+      { "triggerField": "RUN", "triggerValue": 0, "targetField": "FANSPD", "targetMax": 0 }
+    ]
+  },
+  "comfort": {
+    "bands": {
+      "patient-ward": { "coldBelow": 20, "warmAbove": 24, "hotAbove": 27 }
+    }
+  },
+  "staleAfterCadences": 5,
+  "useWallClock": false
+}

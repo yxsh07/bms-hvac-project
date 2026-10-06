@@ -9,8 +9,9 @@ dist/
 .env*
 data/raw/
 *.xlsx
-*.pdf (unless in docs/reference)
-data/calibration/*.json (these are small derived JSON - keep them)
+*.pdf
+!docs/reference/*.pdf
+# data/calibration/*.json are small derived JSON - keep them (do not ignore)
 __pycache__/
 *.pyc
 *.pyo

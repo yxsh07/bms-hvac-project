@@ -4,9 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate:client": "openapi-generator-cli generate -i openapi.yaml -g typescript-axios -o packages/contracts/client --additional-properties=supportsES6=true"
+    "generate:client": "node scripts/generate-client.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.3",
+    "vitest": "^2.0.5"
   }
 }

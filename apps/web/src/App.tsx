@@ -16,6 +16,7 @@ const Audit = lazy(() => import('./pages/Audit').then(m => ({ default: m.Audit }
 const Users = lazy(() => import('./pages/Users').then(m => ({ default: m.Users })));
 const Settings = lazy(() => import('./pages/Settings').then(m => ({ default: m.Settings })));
 const ControllerHealth = lazy(() => import('./pages/ControllerHealth').then(m => ({ default: m.ControllerHealth })));
+const Live = lazy(() => import('./pages/Live').then(m => ({ default: m.Live })));
 
 function AppContent() {
   const { isAuthenticated, isLoading } = useAuth();
@@ -58,6 +59,7 @@ function AppContent() {
             <Route path="/users" element={<Users />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/controllers" element={<ControllerHealth />} />
+            <Route path="/live" element={<Live />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>

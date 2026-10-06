@@ -1,21 +1,12 @@
-FROM node:20-alpine AS deps
-WORKDIR /app
-RUN apk add --no-cache libc6-compat
-RUN npm install pnpm@12
-COPY package.json pnpm-lock.yaml* ./
-RUN pnpm install --frozen-lockfile
+# Web PWA (PLAN §2.1, §8). Vite build served by nginx.
+FROM node:22-alpine AS build
 
-FROM node:20-alpine AS builder
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+RUN corepack enable
 COPY . .
-RUN pnpm run build
+RUN pnpm install --frozen-lockfile
+RUN pnpm --filter apps-web build
 
-FROM node:20-alpine AS runner
-WORKDIR /app
-ENV NODE_ENV production
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/package.json ./package.json
-RUN npm install --production
-EXPOSE 5173
-CMD ["node", "server.js"]
+FROM nginx:1.27-alpine AS runner
+COPY --from=build /app/apps/web/dist /usr/share/nginx/html
+EXPOSE 80
