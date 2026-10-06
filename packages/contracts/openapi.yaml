@@ -1,0 +1,215 @@
+openapi: 3.1.0
+info:
+  title: BMS/HVAC API
+  version: 0.1.0
+  description: >
+    Human-readable catalogue for /api/v1 (PLAN §7.9). The zod schemas in
+    packages/contracts/src are authoritative; this file is documentation and
+    must be kept in step with them. Errors are always { error, code, detail? }.
+servers:
+  - url: /api/v1
+security:
+  - bearerAuth: []
+tags:
+  - name: auth
+  - name: sites
+  - name: telemetry
+  - name: setpoints
+  - name: alarms
+  - name: reports
+  - name: audit
+paths:
+  /auth/login:
+    post:
+      tags: [auth]
+      security: []
+      summary: Exchange credentials for an access/refresh token pair
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/LoginRequest' }
+      responses:
+        '200':
+          description: Token pair
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/LoginResponse' }
+  /auth/refresh:
+    post:
+      tags: [auth]
+      security: []
+      summary: Rotate a refresh token
+      responses: { '200': { description: Token pair } }
+  /auth/logout:
+    post:
+      tags: [auth]
+      summary: Revoke a refresh token
+      responses: { '204': { description: Revoked } }
+  /me:
+    get:
+      tags: [auth]
+      summary: Current user, roles and sites
+      responses: { '200': { description: OK } }
+  /sites:
+    get:
+      tags: [sites]
+      summary: List sites visible to the caller
+      responses: { '200': { description: OK } }
+  /sites/{siteId}:
+    get:
+      tags: [sites]
+      parameters: [{ name: siteId, in: path, required: true, schema: { type: string } }]
+      summary: Site summary incl. environment
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/ontology:
+    get:
+      tags: [sites]
+      parameters: [{ name: siteId, in: path, required: true, schema: { type: string } }]
+      summary: Ontology tree (floors, zones, assets, controllers)
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/assets:
+    get:
+      tags: [sites]
+      parameters:
+        - { name: siteId, in: path, required: true, schema: { type: string } }
+        - { name: type, in: query, schema: { type: string } }
+        - { name: zone, in: query, schema: { type: string } }
+      summary: Filterable asset list
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/assets/{assetId}:
+    get:
+      tags: [sites]
+      parameters:
+        - { name: siteId, in: path, required: true, schema: { type: string } }
+        - { name: assetId, in: path, required: true, schema: { type: string } }
+      summary: One asset with its points
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/assets/{assetId}/latest:
+    get:
+      tags: [telemetry]
+      summary: Latest value per field with a quality block
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/assets/{assetId}/telemetry:
+    get:
+      tags: [telemetry]
+      summary: Series (raw | 1h | 1d) with per-bucket n
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/assets/{assetId}/coverage:
+    get:
+      tags: [telemetry]
+      summary: Coverage over a window
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/floors/summary:
+    get:
+      tags: [telemetry]
+      summary: Per-floor kWh, mean temp and comfort
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/plant/kpis:
+    get:
+      tags: [telemetry]
+      summary: Role-resolved plant KPIs (kW, TR, ikW/TR, ΔT, approach, staging)
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/controllers:
+    get:
+      tags: [telemetry]
+      summary: Controller health and blast radius
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/setpoints:
+    get:
+      tags: [setpoints]
+      summary: Writable points and any live request
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/setpoint-requests:
+    get:
+      tags: [setpoints]
+      summary: Request queue by state
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/setpoints/{assetId}/{field}:
+    post:
+      tags: [setpoints]
+      summary: Propose a set-point change (guards + one live request)
+      responses:
+        '201': { description: Created }
+        '409': { description: SETPOINT_REQUEST_CONFLICT }
+        '422': { description: VALUE_OUT_OF_RANGE | CONTROL_MODE_BLOCKED }
+  /setpoint-requests/{id}/approve:
+    post:
+      tags: [setpoints]
+      summary: Approve (no self-approval)
+      responses: { '200': { description: OK } }
+  /setpoint-requests/{id}/reject:
+    post:
+      tags: [setpoints]
+      summary: Reject with a reason
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/alarms:
+    get:
+      tags: [alarms]
+      summary: Paginated alarms
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/alarms/{id}/ack:
+    post:
+      tags: [alarms]
+      summary: Acknowledge an alarm (not executive)
+      responses: { '200': { description: OK } }
+  /reports:
+    get:
+      tags: [reports]
+      summary: Report definitions
+      responses: { '200': { description: OK } }
+  /reports/{key}/run:
+    post:
+      tags: [reports]
+      summary: Queue a report run
+      responses: { '202': { description: Queued } }
+  /reports/runs/{id}:
+    get:
+      tags: [reports]
+      summary: Report run status
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/audit:
+    get:
+      tags: [audit]
+      summary: Query the audit log
+      responses: { '200': { description: OK } }
+  /sites/{siteId}/audit/verify:
+    get:
+      tags: [audit]
+      summary: Walk the hash chain and report the first break
+      responses: { '200': { description: OK } }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email: { type: string, format: email }
+        password: { type: string }
+    LoginResponse:
+      type: object
+      required: [accessToken, refreshToken, expiresIn]
+      properties:
+        accessToken: { type: string }
+        refreshToken: { type: string }
+        expiresIn: { type: integer }
+    QualityBlock:
+      type: object
+      required: [expectedSamples, goodSamples, coveragePct, hasDelayedData]
+      properties:
+        expectedSamples: { type: integer }
+        goodSamples: { type: integer }
+        coveragePct: { type: number }
+        hasDelayedData: { type: boolean }
+    ApiError:
+      type: object
+      required: [error, code]
+      properties:
+        error: { type: string }
+        code: { type: string }
+        detail: { type: object, additionalProperties: true }

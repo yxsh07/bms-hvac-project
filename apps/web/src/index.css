@@ -1,0 +1,282 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Colors - Neutral theme (default) */
+  --color-surface-base: #FFFFFF;
+  --color-surface-elevated: #F8F9FA;
+  --color-surface-sunken: #F1F3F4;
+  --color-surface-overlay: rgba(11, 58, 64, 0.6);
+
+  --color-content-primary: #0B3A40;
+  --color-content-secondary: #3A4A50;
+  --color-content-tertiary: #6B7B80;
+  --color-content-inverse: #FFFFFF;
+  --color-content-disabled: #9AA8AD;
+
+  --color-border-default: #E0E4E6;
+  --color-border-strong: #C5CDD0;
+  --color-border-focus: #1F5FA8;
+  --color-border-error: #C42B1C;
+
+  --color-semantic-chilled: #1F5FA8;
+  --color-semantic-condenser: #E8702A;
+  --color-semantic-success: #2E9E5B;
+  --color-semantic-warning: #D4A01E;
+  --color-semantic-critical: #C42B1C;
+  --color-semantic-info: #1F5FA8;
+  --color-semantic-stale: #9AA8AD;
+  --color-semantic-missing: #D0D5D8;
+
+  --color-state-hover: rgba(11, 58, 64, 0.04);
+  --color-state-active: rgba(11, 58, 64, 0.08);
+  --color-state-selected: rgba(31, 95, 168, 0.12);
+  --color-state-focus-ring: #1F5FA8;
+
+  --color-status-running-bg: #E8F5ED;
+  --color-status-running-text: #1A7A3D;
+  --color-status-stopped-bg: #FCE8E6;
+  --color-status-stopped-text: #A82317;
+  --color-status-alarm-bg: #FEF3E2;
+  --color-status-alarm-text: #B85C0E;
+  --color-status-unknown-bg: #F1F3F4;
+  --color-status-unknown-text: #6B7B80;
+
+  /* Typography */
+  --font-family-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, Consolas, monospace;
+
+  --text-xs: 0.7rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-lg: 1.0625rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --leading-tight: 1.1;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.02em;
+  --tracking-wider: 0.08em;
+
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+
+  /* Border radius */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(11, 58, 64, 0.05);
+  --shadow-md: 0 4px 8px rgba(11, 58, 64, 0.08);
+  --shadow-lg: 0 8px 24px rgba(11, 58, 64, 0.1);
+  --shadow-xl: 0 16px 48px rgba(11, 58, 64, 0.12);
+  --shadow-inner: inset 0 2px 4px rgba(11, 58, 64, 0.05);
+
+  /* Transitions */
+  --transition-fast: 120ms ease-out;
+  --transition-normal: 200ms ease-out;
+  --transition-slow: 300ms ease-out;
+
+  /* Breakpoints */
+  --breakpoint-phone: 390px;
+  --breakpoint-tablet-portrait: 820px;
+  --breakpoint-tablet-landscape: 1180px;
+  --breakpoint-desktop: 1440px;
+
+  /* Layout */
+  --header-height: 56px;
+  --header-height-compact: 48px;
+  --side-panel-width: 360px;
+  --side-panel-width-narrow: 300px;
+  --control-strip-height: 72px;
+  --tab-bar-height: 44px;
+  --breadcrumb-height: 36px;
+}
+
+/* SmartJoules theme override */
+[data-theme="smartjoules"] {
+  --color-surface-base: #FFFFFF;
+  --color-surface-elevated: #F0F4F5;
+  --color-surface-sunken: #E8EEF0;
+  --color-surface-overlay: rgba(11, 58, 64, 0.7);
+
+  --color-content-primary: #082A2E;
+  --color-content-secondary: #2D4549;
+  --color-content-tertiary: #5A7175;
+  --color-content-inverse: #FFFFFF;
+  --color-content-disabled: #8A9BA0;
+
+  --color-border-default: #D0DCE0;
+  --color-border-strong: #B0C0C5;
+  --color-border-focus: #0066CC;
+  --color-border-error: #B81E1E;
+
+  --color-semantic-chilled: #0066CC;
+  --color-semantic-condenser: #E05E00;
+  --color-semantic-success: #1E8A49;
+  --color-semantic-warning: #C89000;
+  --color-semantic-critical: #B81E1E;
+  --color-semantic-info: #0066CC;
+  --color-semantic-stale: #8A9BA0;
+  --color-semantic-missing: #C0CCD0;
+
+  --color-state-hover: rgba(8, 42, 46, 0.04);
+  --color-state-active: rgba(8, 42, 46, 0.08);
+  --color-state-selected: rgba(0, 102, 204, 0.12);
+  --color-state-focus-ring: #0066CC;
+
+  --color-status-running-bg: #E0F2E8;
+  --color-status-running-text: #147034;
+  --color-status-stopped-bg: #FDE0DD;
+  --color-status-stopped-text: #9C1E14;
+  --color-status-alarm-bg: #FEF0DB;
+  --color-status-alarm-text: #A8540A;
+  --color-status-unknown-bg: #E8EEF0;
+  --color-status-unknown-text: #5A7175;
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-family-sans);
+  font-size: 16px;
+  line-height: var(--leading-normal);
+  color: var(--color-content-primary);
+  background-color: var(--color-surface-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--color-state-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-sunken);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-content-tertiary);
+}
+
+/* Tabular numerals for data display */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-family-mono);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-state-selected);
+  color: var(--color-content-primary);
+}
+
+/* Utility classes for theme-aware colors */
+.bg-surface-base { background-color: var(--color-surface-base); }
+.bg-surface-elevated { background-color: var(--color-surface-elevated); }
+.bg-surface-sunken { background-color: var(--color-surface-sunken); }
+
+.text-content-primary { color: var(--color-content-primary); }
+.text-content-secondary { color: var(--color-content-secondary); }
+.text-content-tertiary { color: var(--color-content-tertiary); }
+.text-content-inverse { color: var(--color-content-inverse); }
+.text-content-disabled { color: var(--color-content-disabled); }
+
+.border-default { border-color: var(--color-border-default); }
+.border-strong { border-color: var(--color-border-strong); }
+.border-focus { border-color: var(--color-border-focus); }
+.border-error { border-color: var(--color-border-error); }
+
+/* Semantic color utilities */
+.text-chilled { color: var(--color-semantic-chilled); }
+.text-condenser { color: var(--color-semantic-condenser); }
+.text-success { color: var(--color-semantic-success); }
+.text-warning { color: var(--color-semantic-warning); }
+.text-critical { color: var(--color-semantic-critical); }
+.text-stale { color: var(--color-semantic-stale); }
+.text-missing { color: var(--color-semantic-missing); }
+
+.bg-chilled { background-color: var(--color-semantic-chilled); }
+.bg-condenser { background-color: var(--color-semantic-condenser); }
+.bg-success { background-color: var(--color-semantic-success); }
+.bg-warning { background-color: var(--color-semantic-warning); }
+.bg-critical { background-color: var(--color-semantic-critical); }
+
+/* Status pill utilities */
+.status-running {
+  background-color: var(--color-status-running-bg);
+  color: var(--color-status-running-text);
+}
+.status-stopped {
+  background-color: var(--color-status-stopped-bg);
+  color: var(--color-status-stopped-text);
+}
+.status-alarm {
+  background-color: var(--color-status-alarm-bg);
+  color: var(--color-status-alarm-text);
+}
+.status-unknown {
+  background-color: var(--color-status-unknown-bg);
+  color: var(--color-status-unknown-text);
+}

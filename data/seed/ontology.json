@@ -1,0 +1,254 @@
+{
+  "site": {
+    "id": "simsite-hospital",
+    "name": "Simulation Hospital",
+    "timezone": "Asia/Kolkata"
+  },
+  "floors": [
+    { "id": "floor-b1", "name": "Basement 1", "level": -1 },
+    { "id": "floor-gf", "name": "Ground Floor", "level": 0 },
+    { "id": "floor-1f", "name": "First Floor", "level": 1 }
+  ],
+  "zones": [
+    { "id": "zone-plant-room",   "name": "Plant Room" },
+    { "id": "zone-patient-ward", "name": "Patient Ward" },
+    { "id": "zone-corridor",     "name": "Corridor" },
+    { "id": "zone-utility",      "name": "Utility Area" }
+  ],
+  "assets": [
+    {
+      "id": "chiller-01",
+      "name": "Chiller 1",
+      "type": "chiller",
+      "criticality": "critical",
+      "zoneId": "zone-plant-room",
+      "floorId": "floor-b1",
+      "points": [
+        { "abbr": "CHWST",  "display": "CHW Supply Temp",     "unit": "°C",  "group": "temperatures", "cls": "chilled-water-supply-temp",    "source": "modbus", "writable": false, "safeMin": 4.0,  "safeMax": 14.0 },
+        { "abbr": "CHWRT",  "display": "CHW Return Temp",     "unit": "°C",  "group": "temperatures", "cls": "chilled-water-return-temp",    "source": "modbus", "writable": false, "safeMin": 8.0,  "safeMax": 18.0 },
+        { "abbr": "CWST",   "display": "Cond Water Supply",   "unit": "°C",  "group": "temperatures", "cls": "condenser-water-supply-temp",  "source": "modbus", "writable": false, "safeMin": 20.0, "safeMax": 38.0 },
+        { "abbr": "CWRT",   "display": "Cond Water Return",   "unit": "°C",  "group": "temperatures", "cls": "condenser-water-return-temp",  "source": "modbus", "writable": false, "safeMin": 22.0, "safeMax": 42.0 },
+        { "abbr": "KW",     "display": "Compressor Power",    "unit": "kW",  "group": "energy",       "cls": "power",                        "source": "modbus", "writable": false },
+        { "abbr": "LOAD",   "display": "Loading %",           "unit": "%",   "group": "performance",  "cls": "loading-percentage",           "source": "modbus", "writable": false, "safeMin": 0.0,  "safeMax": 105.0 },
+        { "abbr": "RUN",    "display": "Run Status",          "unit": "",    "group": "status",       "cls": "run-status",                   "source": "modbus", "writable": false },
+        { "abbr": "CHWSSP", "display": "CHW Supply Setpoint", "unit": "°C",  "group": "setpoints",    "cls": "setpoint-chw-temp",            "source": "modbus", "writable": true,  "safeMin": 4.0,  "safeMax": 12.0 }
+      ]
+    },
+    {
+      "id": "chiller-02",
+      "name": "Chiller 2",
+      "type": "chiller",
+      "criticality": "critical",
+      "zoneId": "zone-plant-room",
+      "floorId": "floor-b1",
+      "points": [
+        { "abbr": "CHWST",  "display": "CHW Supply Temp",     "unit": "°C",  "group": "temperatures", "cls": "chilled-water-supply-temp",    "source": "modbus", "writable": false, "safeMin": 4.0,  "safeMax": 14.0 },
+        { "abbr": "CHWRT",  "display": "CHW Return Temp",     "unit": "°C",  "group": "temperatures", "cls": "chilled-water-return-temp",    "source": "modbus", "writable": false, "safeMin": 8.0,  "safeMax": 18.0 },
+        { "abbr": "CWST",   "display": "Cond Water Supply",   "unit": "°C",  "group": "temperatures", "cls": "condenser-water-supply-temp",  "source": "modbus", "writable": false, "safeMin": 20.0, "safeMax": 38.0 },
+        { "abbr": "CWRT",   "display": "Cond Water Return",   "unit": "°C",  "group": "temperatures", "cls": "condenser-water-return-temp",  "source": "modbus", "writable": false, "safeMin": 22.0, "safeMax": 42.0 },
+        { "abbr": "KW",     "display": "Compressor Power",    "unit": "kW",  "group": "energy",       "cls": "power",                        "source": "modbus", "writable": false },
+        { "abbr": "LOAD",   "display": "Loading %",           "unit": "%",   "group": "performance",  "cls": "loading-percentage",           "source": "modbus", "writable": false, "safeMin": 0.0,  "safeMax": 105.0 },
+        { "abbr": "RUN",    "display": "Run Status",          "unit": "",    "group": "status",       "cls": "run-status",                   "source": "modbus", "writable": false },
+        { "abbr": "CHWSSP", "display": "CHW Supply Setpoint", "unit": "°C",  "group": "setpoints",    "cls": "setpoint-chw-temp",            "source": "modbus", "writable": true,  "safeMin": 4.0,  "safeMax": 12.0 }
+      ]
+    },
+    {
+      "id": "chwp-01",
+      "name": "CHW Pump 1",
+      "type": "chilled-water-pump",
+      "criticality": "high",
+      "zoneId": "zone-plant-room",
+      "floorId": "floor-b1",
+      "points": [
+        { "abbr": "RUN",   "display": "Run Status",    "unit": "",   "group": "status",      "cls": "run-status",             "source": "modbus", "writable": false },
+        { "abbr": "FAULT", "display": "Fault Alarm",   "unit": "",   "group": "alarms",      "cls": "fault-alarm",            "source": "modbus", "writable": false },
+        { "abbr": "DP",    "display": "Diff Pressure", "unit": "kPa","group": "pressures",   "cls": "differential-pressure",  "source": "modbus", "writable": false, "safeMin": 0.0, "safeMax": 300.0 },
+        { "abbr": "SPEED", "display": "Fan/Pump Speed","unit": "%",  "group": "control",     "cls": "speed-percentage",       "source": "modbus", "writable": true,  "safeMin": 20.0,"safeMax": 100.0 }
+      ]
+    },
+    {
+      "id": "chwp-02",
+      "name": "CHW Pump 2",
+      "type": "chilled-water-pump",
+      "criticality": "high",
+      "zoneId": "zone-plant-room",
+      "floorId": "floor-b1",
+      "points": [
+        { "abbr": "RUN",   "display": "Run Status",    "unit": "",   "group": "status",      "cls": "run-status",             "source": "modbus", "writable": false },
+        { "abbr": "FAULT", "display": "Fault Alarm",   "unit": "",   "group": "alarms",      "cls": "fault-alarm",            "source": "modbus", "writable": false },
+        { "abbr": "DP",    "display": "Diff Pressure", "unit": "kPa","group": "pressures",   "cls": "differential-pressure",  "source": "modbus", "writable": false, "safeMin": 0.0, "safeMax": 300.0 },
+        { "abbr": "SPEED", "display": "Fan/Pump Speed","unit": "%",  "group": "control",     "cls": "speed-percentage",       "source": "modbus", "writable": true,  "safeMin": 20.0,"safeMax": 100.0 }
+      ]
+    },
+    {
+      "id": "cooling-tower-01",
+      "name": "Cooling Tower 1",
+      "type": "cooling-tower",
+      "criticality": "high",
+      "zoneId": "zone-plant-room",
+      "floorId": "floor-b1",
+      "points": [
+        { "abbr": "RUN",    "display": "Run Status",         "unit": "",  "group": "status",      "cls": "run-status",            "source": "modbus", "writable": false },
+        { "abbr": "FAULT",  "display": "Fault Alarm",        "unit": "",  "group": "alarms",      "cls": "fault-alarm",           "source": "modbus", "writable": false },
+        { "abbr": "FAN",    "display": "Fan Speed",          "unit": "%", "group": "control",     "cls": "fan-speed",             "source": "modbus", "writable": true,  "safeMin": 20.0,"safeMax": 100.0 },
+        { "abbr": "CWST",   "display": "Cond Water Supply",  "unit": "°C","group": "temperatures","cls": "condenser-water-supply-temp", "source": "modbus", "writable": false, "safeMin": 20.0,"safeMax": 38.0 },
+        { "abbr": "CWRT",   "display": "Cond Water Return",  "unit": "°C","group": "temperatures","cls": "condenser-water-return-temp", "source": "modbus", "writable": false, "safeMin": 22.0,"safeMax": 42.0 }
+      ]
+    },
+    {
+      "id": "cwp-01",
+      "name": "Condenser Water Pump 1",
+      "type": "condenser-water-pump",
+      "criticality": "high",
+      "zoneId": "zone-plant-room",
+      "floorId": "floor-b1",
+      "points": [
+        { "abbr": "RUN",   "display": "Run Status",    "unit": "",   "group": "status",    "cls": "run-status",            "source": "modbus", "writable": false },
+        { "abbr": "FAULT", "display": "Fault Alarm",   "unit": "",   "group": "alarms",    "cls": "fault-alarm",           "source": "modbus", "writable": false },
+        { "abbr": "DP",    "display": "Diff Pressure", "unit": "kPa","group": "pressures", "cls": "differential-pressure", "source": "modbus", "writable": false, "safeMin": 0.0,"safeMax": 300.0 }
+      ]
+    },
+    {
+      "id": "ahu-01",
+      "name": "AHU 1",
+      "type": "ahu",
+      "criticality": "high",
+      "zoneId": "zone-patient-ward",
+      "points": [
+        { "abbr": "SAT",   "display": "Supply Air Temp",   "unit": "°C", "group": "temperatures","cls": "supply-air-temp",     "source": "bacnet", "writable": false, "safeMin": 10.0,"safeMax": 24.0 },
+        { "abbr": "RAT",   "display": "Return Air Temp",   "unit": "°C", "group": "temperatures","cls": "return-air-temp",     "source": "bacnet", "writable": false, "safeMin": 18.0,"safeMax": 30.0 },
+        { "abbr": "CHVP",  "display": "CHW Valve Position","unit": "%",  "group": "valves",      "cls": "valve-position",      "source": "bacnet", "writable": true,  "safeMin": 0.0, "safeMax": 100.0 },
+        { "abbr": "FANSPD","display": "Fan Speed",         "unit": "%",  "group": "control",     "cls": "fan-speed",           "source": "bacnet", "writable": true,  "safeMin": 20.0,"safeMax": 100.0 },
+        { "abbr": "RUN",   "display": "Run Status",        "unit": "",   "group": "status",      "cls": "run-status",          "source": "bacnet", "writable": false },
+        { "abbr": "FAULT", "display": "Fault Alarm",       "unit": "",   "group": "alarms",      "cls": "fault-alarm",         "source": "bacnet", "writable": false },
+        { "abbr": "SASP",  "display": "Supply Air Setpt",  "unit": "°C", "group": "setpoints",   "cls": "setpoint-supply-air", "source": "bacnet", "writable": true,  "safeMin": 12.0,"safeMax": 22.0 }
+      ]
+    },
+    {
+      "id": "ahu-02",
+      "name": "AHU 2",
+      "type": "ahu",
+      "criticality": "high",
+      "zoneId": "zone-corridor",
+      "points": [
+        { "abbr": "SAT",   "display": "Supply Air Temp",   "unit": "°C", "group": "temperatures","cls": "supply-air-temp",     "source": "bacnet", "writable": false, "safeMin": 10.0,"safeMax": 24.0 },
+        { "abbr": "RAT",   "display": "Return Air Temp",   "unit": "°C", "group": "temperatures","cls": "return-air-temp",     "source": "bacnet", "writable": false, "safeMin": 18.0,"safeMax": 30.0 },
+        { "abbr": "CHVP",  "display": "CHW Valve Position","unit": "%",  "group": "valves",      "cls": "valve-position",      "source": "bacnet", "writable": true,  "safeMin": 0.0, "safeMax": 100.0 },
+        { "abbr": "FANSPD","display": "Fan Speed",         "unit": "%",  "group": "control",     "cls": "fan-speed",           "source": "bacnet", "writable": true,  "safeMin": 20.0,"safeMax": 100.0 },
+        { "abbr": "RUN",   "display": "Run Status",        "unit": "",   "group": "status",      "cls": "run-status",          "source": "bacnet", "writable": false },
+        { "abbr": "FAULT", "display": "Fault Alarm",       "unit": "",   "group": "alarms",      "cls": "fault-alarm",         "source": "bacnet", "writable": false }
+      ]
+    },
+    {
+      "id": "fcu-01",
+      "name": "FCU Room 101",
+      "type": "fcu",
+      "criticality": "medium",
+      "zoneId": "zone-patient-ward",
+      "floorId": "floor-1f",
+      "points": [
+        { "abbr": "RAT",  "display": "Room Temp",          "unit": "°C", "group": "temperatures","cls": "area-temp",       "source": "bacnet", "writable": false, "safeMin": 18.0,"safeMax": 28.0 },
+        { "abbr": "CHVP", "display": "CHW Valve Position", "unit": "%",  "group": "valves",      "cls": "valve-position",  "source": "bacnet", "writable": true,  "safeMin": 0.0, "safeMax": 100.0 },
+        { "abbr": "FANSPD","display": "Fan Speed",         "unit": "%",  "group": "control",     "cls": "fan-speed",       "source": "bacnet", "writable": true,  "safeMin": 0.0, "safeMax": 100.0 },
+        { "abbr": "RATSP","display": "Room Temp Setpt",    "unit": "°C", "group": "setpoints",   "cls": "setpoint-area-temp","source":"bacnet","writable": true,  "safeMin": 18.0,"safeMax": 26.0 }
+      ]
+    },
+    {
+      "id": "fcu-02",
+      "name": "FCU Room 102",
+      "type": "fcu",
+      "criticality": "medium",
+      "zoneId": "zone-patient-ward",
+      "floorId": "floor-1f",
+      "points": [
+        { "abbr": "RAT",  "display": "Room Temp",          "unit": "°C", "group": "temperatures","cls": "area-temp",       "source": "bacnet", "writable": false, "safeMin": 18.0,"safeMax": 28.0 },
+        { "abbr": "CHVP", "display": "CHW Valve Position", "unit": "%",  "group": "valves",      "cls": "valve-position",  "source": "bacnet", "writable": true,  "safeMin": 0.0, "safeMax": 100.0 },
+        { "abbr": "FANSPD","display": "Fan Speed",         "unit": "%",  "group": "control",     "cls": "fan-speed",       "source": "bacnet", "writable": true,  "safeMin": 0.0, "safeMax": 100.0 },
+        { "abbr": "RATSP","display": "Room Temp Setpt",    "unit": "°C", "group": "setpoints",   "cls": "setpoint-area-temp","source":"bacnet","writable": true,  "safeMin": 18.0,"safeMax": 26.0 }
+      ]
+    },
+    {
+      "id": "fcu-03",
+      "name": "FCU Corridor A",
+      "type": "fcu",
+      "criticality": "low",
+      "zoneId": "zone-corridor",
+      "floorId": "floor-gf",
+      "points": [
+        { "abbr": "RAT",  "display": "Room Temp",          "unit": "°C", "group": "temperatures","cls": "area-temp",       "source": "bacnet", "writable": false, "safeMin": 18.0,"safeMax": 30.0 },
+        { "abbr": "CHVP", "display": "CHW Valve Position", "unit": "%",  "group": "valves",      "cls": "valve-position",  "source": "bacnet", "writable": true,  "safeMin": 0.0, "safeMax": 100.0 },
+        { "abbr": "FANSPD","display": "Fan Speed",         "unit": "%",  "group": "control",     "cls": "fan-speed",       "source": "bacnet", "writable": true,  "safeMin": 0.0, "safeMax": 100.0 }
+      ]
+    },
+    {
+      "id": "fcu-04",
+      "name": "FCU Corridor B",
+      "type": "fcu",
+      "criticality": "low",
+      "zoneId": "zone-corridor",
+      "floorId": "floor-gf",
+      "points": [
+        { "abbr": "RAT",  "display": "Room Temp",          "unit": "°C", "group": "temperatures","cls": "area-temp",       "source": "bacnet", "writable": false, "safeMin": 18.0,"safeMax": 30.0 },
+        { "abbr": "CHVP", "display": "CHW Valve Position", "unit": "%",  "group": "valves",      "cls": "valve-position",  "source": "bacnet", "writable": true,  "safeMin": 0.0, "safeMax": 100.0 },
+        { "abbr": "FANSPD","display": "Fan Speed",         "unit": "%",  "group": "control",     "cls": "fan-speed",       "source": "bacnet", "writable": true,  "safeMin": 0.0, "safeMax": 100.0 }
+      ]
+    },
+    {
+      "id": "fcu-05",
+      "name": "FCU Utility Room",
+      "type": "fcu",
+      "criticality": "low",
+      "zoneId": "zone-utility",
+      "floorId": "floor-b1",
+      "points": [
+        { "abbr": "RAT",  "display": "Room Temp",          "unit": "°C", "group": "temperatures","cls": "area-temp",       "source": "bacnet", "writable": false, "safeMin": 18.0,"safeMax": 32.0 },
+        { "abbr": "CHVP", "display": "CHW Valve Position", "unit": "%",  "group": "valves",      "cls": "valve-position",  "source": "bacnet", "writable": true,  "safeMin": 0.0, "safeMax": 100.0 },
+        { "abbr": "FANSPD","display": "Fan Speed",         "unit": "%",  "group": "control",     "cls": "fan-speed",       "source": "bacnet", "writable": true,  "safeMin": 0.0, "safeMax": 100.0 }
+      ]
+    },
+    {
+      "id": "dashboard-plant",
+      "name": "Plant Room Dashboard",
+      "type": "dashboard",
+      "criticality": "low",
+      "zoneId": "zone-plant-room",
+      "points": [
+        { "abbr": "TOTAL_KW",  "display": "Total Plant Power", "unit": "kW",  "group": "energy",  "cls": "power",      "source": "calculated", "writable": false },
+        { "abbr": "TOTAL_KWH", "display": "Total Energy Today","unit": "kWh", "group": "energy",  "cls": "energy-kwh", "source": "calculated", "writable": false },
+        { "abbr": "SYS_COP",   "display": "System COP",        "unit": "",    "group": "performance","cls": "cop",     "source": "calculated", "writable": false }
+      ]
+    },
+    {
+      "id": "dashboard-ward",
+      "name": "Ward Environment Dashboard",
+      "type": "dashboard",
+      "criticality": "low",
+      "zoneId": "zone-patient-ward",
+      "points": [
+        { "abbr": "AVG_TEMP", "display": "Average Ward Temp", "unit": "°C", "group": "temperatures","cls": "area-temp",     "source": "calculated", "writable": false },
+        { "abbr": "AVG_HUM",  "display": "Average Humidity",  "unit": "%",  "group": "comfort",     "cls": "area-humidity", "source": "calculated", "writable": false }
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "id": "ctrl-plant",
+      "name": "Plant Room Controller",
+      "deviceId": "dev-ctrl-001",
+      "assetIds": ["chiller-01", "chiller-02", "chwp-01", "chwp-02", "cooling-tower-01", "cwp-01"]
+    },
+    {
+      "id": "ctrl-air",
+      "name": "Air-Side Controller",
+      "deviceId": "dev-ctrl-002",
+      "assetIds": ["ahu-01", "ahu-02", "fcu-01", "fcu-02", "fcu-03", "fcu-04", "fcu-05"]
+    }
+  ],
+  "meters": [
+    {
+      "deviceId": "dev-meter-001",
+      "name": "Main Electrical Meter",
+      "model": "generic-multifunction-meter"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+node_modules
+**/node_modules
+.git
+.gitignore
+dist
+**/dist
+.pytest_cache
+**/__pycache__
+**/*.pyc
+data/raw
+docs/reference
+playwright-report
+test-results
+*.log

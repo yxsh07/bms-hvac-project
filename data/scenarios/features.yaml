@@ -1,0 +1,48 @@
+# Test Checklist features (§6.8, §13.2). Each Playwright test starts its
+# scenario (seeded), waits on app state, asserts, then POSTs the result to
+# /sim/checklist. The Sim Console renders this list for the mentor demo.
+features:
+  - id: live-value
+    title: A live plant value appears through ingest + quality
+    scenario: normal-day
+    docRef: G2
+  - id: heatwave-staging
+    title: Heatwave stages the lag chiller and widens tower approach
+    scenario: heatwave
+    docRef: D-06
+  - id: lead-trip-failover
+    title: Lead chiller trip raises an alarm and fails over to standby
+    scenario: lead-chiller-trip
+    docRef: D-02
+  - id: controller-outage-coverage
+    title: Controller outage drives coverage CRITICAL and shows blast radius
+    scenario: controller-outage
+    docRef: D-02
+  - id: sensor-garbage-quality
+    title: Sentinels and impossible values are flagged, never averaged away
+    scenario: sensor-garbage
+    docRef: D-04
+  - id: stopped-equipment-zeros
+    title: Stopped-equipment zeros are suppressed from plant averages
+    scenario: stopped-equipment-zeros
+    docRef: D-05
+  - id: critical-ahu-excursions
+    title: Critical AHU shows valve saturation and RH excursions
+    scenario: critical-ahu-drift
+    docRef: O-02
+  - id: low-delta-t-advice
+    title: Low delta-T fires an optimiser recommendation
+    scenario: low-delta-t
+    docRef: O-03
+  - id: setpoint-ok
+    title: Set-point request applies, reads back, and is audited (gateway ok)
+    scenario: normal-day
+    docRef: S8
+  - id: setpoint-reject
+    title: Gateway rejection fails the request and audits the transition
+    scenario: normal-day
+    docRef: S8
+  - id: setpoint-apply-then-alarm
+    title: Alarm inside the watch window reverts the set point
+    scenario: normal-day
+    docRef: S8

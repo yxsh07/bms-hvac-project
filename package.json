@@ -1,0 +1,23 @@
+{
+  "name": "bms-hvac-project",
+  "private": true,
+  "scripts": {
+    "lint": "pnpm -r --if-present --workspace-concurrency=1 lint",
+    "typecheck": "pnpm -r --if-present --workspace-concurrency=1 typecheck",
+    "test": "pnpm -r --if-present --workspace-concurrency=1 test",
+    "generate:client": "pnpm --filter packages-contracts generate:client",
+    "g2": "pnpm --filter apps-api g2",
+    "dev": "pnpm -r --parallel --if-present dev"
+  },
+  "packageManager": "pnpm@12.8.1",
+  "pnpm": {
+    "allowedDeprecatedVersions": {
+      "esbuild": "*",
+      "sharp": "*"
+    },
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  }
+}

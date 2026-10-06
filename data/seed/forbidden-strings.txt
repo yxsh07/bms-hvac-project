@@ -1,0 +1,9 @@
+# Distinctive client tokens that must never appear outside data/ and docs/.
+# Curated by T-010. Ordinary words (status, kw, current) are intentionally
+# excluded — they are not distinctive and would cause false positives.
+# Tier 1 check: scripts/check-site-agnostic.sh
+kmssh
+Manavata
+KIMS
+JouleLogger
+kmssh-nas_224

@@ -1,0 +1,79 @@
+# Dev compose (PLAN §2.1). One Timescale/Postgres container hosting the app
+# database, with the raw `site_store` and application `app_store` schemas created
+# by the migrations in apps/api/src/migrations. Services: api, web, sim,
+# sim-console. The `coarse` profile adds the hourly site config used by the
+# `fouling-90d` scenario (§6.4).
+
+services:
+  timescale:
+    image: timescale/timescaledb:latest-pg16
+    ports: ["5432:5432"]
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: app_store
+    volumes:
+      - timescale_data:/var/lib/postgresql/data
+      - ./infra/init.sql:/docker-entrypoint-initdb.d/00-bootstrap.sql:ro
+      - ./apps/api/src/migrations/001_init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+      - ./apps/api/src/migrations/002_rollups.sql:/docker-entrypoint-initdb.d/02-rollups.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d app_store"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  sim:
+    build:
+      context: .
+      dockerfile: apps/sim/Dockerfile
+    ports: ["8000:8000"]
+    environment:
+      SITE_STORE_DSN: postgres://postgres:postgres@timescale:5432/app_store
+    depends_on:
+      timescale:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "python -c \"import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8000/sim/state').status==200 else 1)\"",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    ports: ["3000:3000"]
+    environment:
+      PORT: 3000
+      SITE_CONFIG_PATH: data/seed/site.json
+      SITE_STORE_DSN: postgres://postgres:postgres@timescale:5432/app_store
+      # Dev-only secrets. Replace in any real deployment.
+      AUDIT_HMAC_KEY: dev-audit-key-do-not-use-in-production
+      JWT_SECRET: dev-jwt-secret-do-not-use-in-production
+    depends_on:
+      timescale:
+        condition: service_healthy
+      sim:
+        condition: service_started
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports: ["5173:80"]
+    depends_on: [api]
+
+  sim-console:
+    build:
+      context: .
+      dockerfile: apps/sim-console/Dockerfile
+    ports: ["5174:80"]
+    depends_on: [sim]
+
+volumes:
+  timescale_data:

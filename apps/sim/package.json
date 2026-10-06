@@ -1,0 +1,9 @@
+{
+  "name": "apps-sim",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "python -m uvicorn sim.app:app --host 0.0.0.0 --port 8000",
+    "test": "python -m pytest -q"
+  }
+}

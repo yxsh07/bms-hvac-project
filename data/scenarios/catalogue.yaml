@@ -1,0 +1,112 @@
+# Scenario catalogue (§6.6). A scenario is a timeline of env / fault / mode
+# events in sim-minutes. Targets are LOGICAL ("lead-chiller"), resolved through
+# the profile and ontology by the engine — never site strings (DEC-13).
+#
+# Schema:
+#   name: string
+#   seed: integer            # determinism (§6.4)
+#   tier: core|later|local
+#   events:
+#     - atMin: integer
+#       type: env|fault|mode
+#       ...type-specific fields
+
+scenarios:
+  - name: normal-day
+    seed: 1001
+    tier: core
+    description: Calibrated baseline; no injected events.
+    events: []
+
+  - name: heatwave
+    seed: 1002
+    tier: core
+    description: +6 C outdoor; lag stages in, approach widens, surrogate falls back to parametric curve.
+    events:
+      - { atMin: 360, type: env, outdoorDbtOffsetC: 6.0 }
+      - { atMin: 900, type: env, outdoorDbtOffsetC: 0.0 }
+
+  - name: lead-chiller-trip
+    seed: 1003
+    tier: core
+    description: Lead chiller trips; standby promotes, kW shifts, alarm raised.
+    events:
+      - { atMin: 600, type: fault, fault: lead-chiller-trip, target: lead-chiller }
+
+  - name: controller-outage
+    seed: 1004
+    tier: core
+    description: One controller's assets stop reporting; coverage goes CRITICAL.
+    events:
+      - { atMin: 480, type: fault, fault: controller-outage, target: ctrl-plant, durationMin: 240 }
+
+  - name: sensor-garbage
+    seed: 1005
+    tier: core
+    description: Sentinels, pf 10383, 436 Hz; quality flags; averages not poisoned.
+    events:
+      - { atMin: 300, type: fault, fault: sentinel, target: lead-chiller }
+      - { atMin: 300, type: fault, fault: out-of-range, target: lead-chiller }
+
+  - name: stopped-equipment-zeros
+    seed: 1006
+    tier: core
+    description: Idle unit reports 0.0 water temps; plant average excludes it.
+    events:
+      - { atMin: 0, type: fault, fault: stopped-zero, target: standby-chiller }
+
+  - name: critical-ahu-drift
+    seed: 1007
+    tier: core
+    description: Critical AHU valve >= 97%, RH > 60%; compliance excursions.
+    events:
+      - { atMin: 300, type: fault, fault: valve-saturation, target: critical-ahu }
+
+  - name: low-delta-t
+    seed: 1008
+    tier: core
+    description: CHW delta-T ~ 3 K; optimiser recommendation fires.
+    events:
+      - { atMin: 300, type: fault, fault: low-delta-t, target: lead-chiller }
+
+  - name: monday-surge
+    seed: 2001
+    tier: later
+    description: 07:00 ramp x2.
+    events:
+      - { atMin: 420, type: env, occupancyMultiplier: 2.0 }
+
+  - name: late-data-backfill
+    seed: 2002
+    tier: later
+    description: Burst of is_delayed rows with old timestamps.
+    events:
+      - { atMin: 600, type: fault, fault: delayed-backfill, target: lead-chiller, durationMin: 60 }
+
+  - name: orphan-entities
+    seed: 2003
+    tier: later
+    description: IDs unknown to the ontology.
+    events:
+      - { atMin: 300, type: fault, fault: orphan, target: lead-chiller, durationMin: 120 }
+
+  - name: contradictory-fcu
+    seed: 2004
+    tier: later
+    description: status 0, fan speed 7.
+    events:
+      - { atMin: 200, type: fault, fault: contradictory, target: area-unit }
+
+  - name: counter-reset
+    seed: 2005
+    tier: later
+    description: Cumulative kWh resets mid-window.
+    events:
+      - { atMin: 500, type: fault, fault: counter-reset, target: lead-chiller }
+
+  - name: fouling-90d
+    seed: 2006
+    tier: later
+    description: Approach widens over 90 sim-days (coarse mode, hourly points).
+    events:
+      - { atMin: 0, type: fault, fault: tower-fouling, target: lead-chiller }
