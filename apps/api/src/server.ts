@@ -14,6 +14,7 @@ import { loadPointRoles, type PointRolesData } from './domain/classify.js';
 import { buildEntityToAsset, buildPointResolver, materializeAssets } from './domain/ontology.js';
 import { SimHttpGateway } from './drivers/gateway.js';
 import { createSourceDriver } from './drivers/source.js';
+import { startIngestWorker } from './ingest/worker.js';
 import { SetpointService } from './services/setpoints.js';
 import { MemoryStore } from './store/memory.js';
 import { PostgresStore } from './store/postgres.js';
@@ -68,6 +69,10 @@ export async function createServerDeps(opts: CreateDepsOptions): Promise<ServerD
     gateway,
     clock,
     resolvePoint: buildPointResolver(ontology),
+    // E2E may shorten these so a full read-back/expiry cycle is observable.
+    readbackTimeoutSeconds: Number(process.env.SETPOINT_READBACK_TIMEOUT_S) || undefined,
+    watchWindowSeconds: Number(process.env.SETPOINT_WATCH_WINDOW_S) || undefined,
+    dispatchDeadlineSeconds: Number(process.env.SETPOINT_DISPATCH_DEADLINE_S) || undefined,
   });
 
   const source = createSourceDriver({
@@ -202,7 +207,46 @@ export async function main(): Promise<void> {
   await seedDemoUsers(deps.store, config);
   const app = await buildServer(deps);
   const port = Number(process.env.PORT ?? 3000);
+
+  const stopWorkers = startBackgroundWorkers(deps);
+  app.addHook('onClose', async () => stopWorkers());
+
   await app.listen({ port, host: process.env.HOST ?? '0.0.0.0' });
+}
+
+/**
+ * Start the ingest poller and the set-point scheduler (§7.5, §7.6).
+ *
+ * These are the only two long-running loops the prototype needs; both are
+ * unref'd so they never keep the process alive on their own. Intervals are
+ * overridable for e2e (INGEST_POLL_MS, SETPOINT_TICK_MS) so tests can drive a
+ * scenario and observe the app without waiting a full minute.
+ */
+export function startBackgroundWorkers(deps: ServerDeps): () => void {
+  const ingestPollMs = Number(process.env.INGEST_POLL_MS) || undefined;
+  const ingest = startIngestWorker(
+    deps.store,
+    deps.source,
+    deps.config,
+    {
+      ontology: deps.ontology,
+      pointRoles: deps.pointRoles,
+      entityToAsset: deps.entityToAsset,
+    },
+    undefined,
+    ingestPollMs,
+  );
+
+  const tickMs = Number(process.env.SETPOINT_TICK_MS) || 5000;
+  const scheduler = setInterval(() => {
+    void deps.setpoints.schedulerTick();
+  }, tickMs);
+  if (typeof scheduler.unref === 'function') scheduler.unref();
+
+  return () => {
+    ingest.stop();
+    clearInterval(scheduler);
+  };
 }
 
 // Re-export helpers for tests and tooling.

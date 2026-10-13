@@ -24,6 +24,9 @@ import {
   QualityCode,
   TERMINAL_SETPOINT_STATES,
   LIVE_SETPOINT_STATES,
+  WHATIF_LABEL,
+  WhatIfRequestSchema,
+  WhatIfResponseSchema,
 } from './index.js';
 
 describe('auth contracts', () => {
@@ -204,5 +207,58 @@ describe('alarm and report contracts', () => {
 describe('error contract', () => {
   it('has a stable shape and documented codes', () => {
     expect(ApiErrorSchema.safeParse({ error: 'nope', code: ErrorCode.NOT_FOUND }).success).toBe(true);
+  });
+});
+
+describe('what-if contract', () => {
+  it('defaults the horizon and accepts a set-point change', () => {
+    const parsed = WhatIfRequestSchema.safeParse({
+      changes: [{ type: 'setpoint', target: 'lead-chiller', field: 'setpoint-chw-temp', value: 9 }],
+    });
+    expect(parsed.success).toBe(true);
+    if (parsed.success) expect(parsed.data.horizonMin).toBe(60);
+  });
+
+  it('rejects an unknown change type and an out-of-range horizon', () => {
+    expect(WhatIfRequestSchema.safeParse({ changes: [{ type: 'teleport' }] }).success).toBe(false);
+    expect(WhatIfRequestSchema.safeParse({ changes: [], horizonMin: 5000 }).success).toBe(false);
+  });
+
+  it('parses a response carrying the indicative label and an envelope warning', () => {
+    const sample = {
+      t: '2026-07-12T01:00:00Z',
+      kw: 30,
+      deltaTC: 3,
+      tr: 60,
+      chwLeavingC: 15,
+      condenserEnteringC: 25,
+    };
+    const parsed = WhatIfResponseSchema.safeParse({
+      label: WHATIF_LABEL,
+      horizonMin: 60,
+      stepMinutes: 5,
+      changes: [],
+      liveStateUnchanged: true,
+      baseline: { meanKw: 31, peakKw: 40, meanDeltaTC: 3, points: 1 },
+      predicted: { meanKw: 29, peakKw: 38, meanDeltaTC: 3, points: 1, series: [sample] },
+      baselineSeries: [sample],
+      delta: { meanKw: -2, meanDeltaTC: 0 },
+      envelope: {
+        kind: 'parametric-curve',
+        trainedOnDays: 3,
+        tolerancePct: 5,
+        bounds: { chwLeavingC: { min: 7.1, max: 12.1 } },
+        samples: 1,
+        samplesOutside: 1,
+        insideEnvelopePct: 0,
+        exceeded: true,
+        fallbackActive: true,
+        breaches: ['chwLeavingC'],
+        warning: 'Surrogate left its training envelope',
+      },
+      warning: 'Surrogate left its training envelope',
+    });
+    expect(parsed.success).toBe(true);
+    expect(WHATIF_LABEL).toBe('indicative, 3-day calibration');
   });
 });

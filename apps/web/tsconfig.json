@@ -21,6 +21,6 @@
       "@contracts/*": ["../../packages/contracts/client/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "../../packages/twin-3d/src/r3f.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

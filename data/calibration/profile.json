@@ -67,6 +67,8 @@
       "approachMinC": -1.0,
       "approachMaxC": 2.8,
       "rangeMeanC": 3.22,
+      "enteringMinC": 21.0,
+      "enteringMaxC": 30.0,
       "kwPerTrToCondenserSensitivityPerK": 0.025
     },
     "physics": {

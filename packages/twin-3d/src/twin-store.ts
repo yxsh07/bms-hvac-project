@@ -39,7 +39,7 @@ export interface TwinStoreState {
 export const useTwinStore = create<TwinStoreState>()(
   subscribeWithSelector((set) => ({
     layout: null,
-    expandFactor: 0,
+    expandFactor: 0.45,
     revolve: false,
     focusedFloorId: null,
     comfortBands: {},

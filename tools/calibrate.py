@@ -73,7 +73,7 @@ def main() -> int:
         )
         return 3
 
-    entity_types = entity_types_from_ontology(ONTOLOGY) if ONTOLOGY.exists() else {}
+    entity_types = entity_types_from_ontology(ONTOLOGY) if ONTOLOGY.exists() else None
     result = calibrate_export(
         input_path,
         entity_types,
@@ -81,7 +81,7 @@ def main() -> int:
         window_minutes=args.window_minutes,
         expected_timestamps=args.expected_timestamps,
     )
-    written = write_calibration(result, out_dir)
+    written = write_calibration(result, out_dir, max_bytes=2_000_000)
 
     print(f"Calibrated {result['counts']['rows']} rows from {input_path}")
     print(f"dropped_poll_rate = {result['dropped_poll_rate']}")

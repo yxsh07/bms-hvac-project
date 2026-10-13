@@ -15,3 +15,4 @@ export * from './errors.js';
 export * from './gateway.js';
 export * from './alarm.js';
 export * from './report.js';
+export * from './whatif.js';

@@ -58,8 +58,9 @@ export const BuildingTwin: React.FC<BuildingTwinProps> = ({
 
   return (
     <>
-      <ambientLight intensity={0.6} />
-      <directionalLight position={[10, 20, 10]} intensity={0.8} />
+      <color attach="background" args={['#12232d']} />
+      <ambientLight intensity={1.2} />
+      <directionalLight position={[10, 20, 10]} intensity={1.4} />
 
       <group>
         {sortedFloors.map((floor, i) => (

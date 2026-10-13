@@ -8,6 +8,15 @@ from fastapi.testclient import TestClient
 from sim.app import Settings, create_app
 
 
+def test_autorun_primes_live_rows(monkeypatch):
+    monkeypatch.setenv("SIM_AUTORUN", "1")
+    with TestClient(create_app(Settings(seed=1001))) as running:
+        state = running.get("/sim/state").json()
+        assert state["minutes"] >= 5
+        assert state["activeScenario"] == "normal-day"
+        assert running.get("/sim/raw", params={"limit": 1}).json()["points"]
+
+
 @pytest.fixture()
 def client():
     app = create_app(Settings(seed=1001))
@@ -132,3 +141,11 @@ def test_env_and_whatif(client):
     assert whatif.status_code == 200
     assert whatif.json()["horizonMin"] == 30
     assert whatif.json()["points"] > 0
+    assert whatif.json()["label"] == "indicative, 3-day calibration"
+
+
+def test_whatif_rejects_bad_requests(client):
+    assert client.post("/sim/whatif", json={"horizonMin": 0}).status_code == 422
+    assert client.post("/sim/whatif", json={"horizonMin": "soon"}).status_code == 422
+    bad = client.post("/sim/whatif", json={"changes": [{"type": "teleport"}]})
+    assert bad.status_code == 422

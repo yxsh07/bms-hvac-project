@@ -18,7 +18,7 @@ export function Dashboard() {
   const { user, currentSiteId, sites, isLoading } = useAuth();
   const isMobile = useResponsiveSidePanel();
   const [selectedAssetId, setSelectedAssetId] = useState<string | undefined>('ch-001');
-  const [detailPanelOpen, setDetailPanelOpen] = useState(!isMobile);
+  const [detailPanelOpen, setDetailPanelOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('assets');
   const [filterText, setFilterText] = useState('');
   const [filterType, setFilterType] = useState('');
@@ -92,7 +92,6 @@ export function Dashboard() {
         tabs={tabs}
         activeTab={activeTab}
         onTabChange={setActiveTab}
-        onMenuClick={() => {}}
         onInfoClick={() => {}}
         onToolsClick={() => {}}
       />

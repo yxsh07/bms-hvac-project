@@ -12,12 +12,13 @@
  *   - a ragged row (column count ≠ header count) is skipped and counted, never
  *     silently dropped.
  *
- * Header columns are matched by name (case-insensitive, `_`/`-` insensitive):
- *   time | timestamp
- *   entity | entity_id | component | id
- *   field | parameter | point
- *   value | val
- *   is_delayed_data | is_delayed | delayed
+ * Supports two CSV formats:
+ * 1. **Long format** (test fixtures): one row per entity/field/time
+ *    Columns: time | entity | field | value | is_delayed_data (optional)
+ *
+ * 2. **Pivoted format** (client export): one row per entity/time, fields as columns
+ *    Columns: _time, _measurement, componentId/deviceId, siteId, field1, field2, ...
+ *    Each field column becomes a separate row in the output.
  *
  * `is_delayed_data` is a *field* in the export (value 1.0). Rows carrying it
  * mark every row for the same `(entity, time)` as delayed, and are themselves
@@ -33,6 +34,14 @@ export interface RawCsvRow {
   field: string;
   value: number | null;
   isDelayed: boolean;
+  measurement?: string;
+}
+
+export interface PivotedParseOptions {
+  /** Known metadata columns that should NOT be melted into field rows. */
+  metadataColumns?: string[];
+  /** Fallback measurement when not present in the row. */
+  defaultMeasurement?: string;
 }
 
 export interface CsvBlock {
@@ -43,6 +52,8 @@ export interface CsvBlock {
   rows: RawCsvRow[];
   /** `# file: <name>` value when present. */
   file: string | null;
+  /** True when the block is in pivoted (wide) format. */
+  isPivoted?: boolean;
 }
 
 export interface CsvParseResult {
@@ -63,7 +74,7 @@ export interface CsvParseOptions {
   defaultMeasurement?: string;
 }
 
-const HEADER_ALIASES: Record<keyof ColumnMap, string[]> = {
+const HEADER_ALIASES: Record<Exclude<keyof ColumnMap, 'measurement'>, string[]> = {
   time: ['time', 'timestamp', 'datetime', 'date'],
   entity: ['entity', 'entityid', 'component', 'componentid', 'id', 'asset'],
   field: ['field', 'parameter', 'point', 'tag'],
@@ -77,6 +88,7 @@ interface ColumnMap {
   field: number;
   value: number;
   delayed: number;
+  measurement?: number;
 }
 
 function normaliseHeaderCell(cell: string): string {
@@ -131,6 +143,105 @@ export function splitCsvLine(line: string): string[] {
   }
   out.push(cur);
   return out;
+}
+
+/** Known metadata column names (normalised) that should not be melted as fields. */
+const METADATA_COLUMNS = new Set([
+  'time', 'timestamp', '_time',
+  'measurement', '_measurement',
+  'entity', 'entityid', 'component', 'componentid', 'deviceid', 'device_id', 'id',
+  'site', 'siteid', 'site_id',
+  'result', 'table',
+  'result', 'table',
+  '', // empty column (common in InfluxDB exports)
+]);
+
+/** Detect if a CSV header is in pivoted format (many field columns, few metadata columns). */
+function isPivotedFormat(header: string[]): boolean {
+  let fieldCount = 0;
+  for (const h of header) {
+    const norm = normaliseHeaderCell(h);
+    if (!METADATA_COLUMNS.has(norm)) fieldCount++;
+  }
+  // If more than 4 non-metadata columns, it's likely pivoted
+  return fieldCount > 4;
+}
+
+/** Melt a pivoted row into multiple RawCsvRow entries (one per field column). */
+function meltPivotedRow(
+  cells: string[],
+  header: string[],
+  cols: ColumnMap,
+): RawCsvRow[] {
+  const out: RawCsvRow[] = [];
+  const t = Date.parse(cells[cols.time].trim());
+  if (Number.isNaN(t)) return out;
+  const time = new Date(t).toISOString();
+  const entity = cells[cols.entity].trim();
+  if (!entity) return out;
+
+  const measurement = (cols.measurement !== undefined && cols.measurement >= 0) ? cells[cols.measurement].trim() : undefined;
+
+  // For each non-metadata column, create a row
+  for (let i = 0; i < header.length; i++) {
+    const colName = header[i];
+    const normName = normaliseHeaderCell(colName);
+    if (METADATA_COLUMNS.has(normName)) continue;
+
+    const valueStr = cells[i]?.trim();
+    if (valueStr === '' || valueStr === undefined) continue;
+
+    const numeric = Number(valueStr);
+    const isDelayed = isDelayField(colName) && numeric === 1;
+
+    out.push({
+      time: new Date(t).toISOString(),
+      entityId: entity,
+      field: colName,
+      value: Number.isNaN(numeric) ? null : numeric,
+      isDelayed,
+      measurement,
+    });
+  }
+  return out;
+}
+
+/** Resolve only metadata columns for pivoted format (time, entity, measurement). */
+function resolvePivotedColumns(header: string[]): ColumnMap | null {
+  const norm = header.map(normaliseHeaderCell);
+  const map: Partial<ColumnMap> = {};
+
+  // Time column
+  for (const alias of HEADER_ALIASES.time) {
+    const idx = norm.findIndex((h) => h === alias);
+    if (idx >= 0) { map.time = idx; break; }
+  }
+  // Entity column
+  for (const alias of HEADER_ALIASES.entity) {
+    const idx = norm.findIndex((h) => h === alias);
+    if (idx >= 0) { map.entity = idx; break; }
+  }
+  // Measurement column (optional)
+  for (const alias of ['measurement', '_measurement']) {
+    const idx = norm.findIndex((h) => h === alias);
+    if (idx >= 0) { map.measurement = idx; break; }
+  }
+  // Field and value not needed for pivoted format - we melt all other columns
+  // But we need placeholder values for the ColumnMap type
+  map.field = -1;
+  map.value = -1;
+
+  if (map.time === undefined || map.entity === undefined) {
+    return null;
+  }
+  return {
+    time: map.time,
+    entity: map.entity,
+    field: map.field,
+    value: map.value,
+    delayed: -1,
+    measurement: map.measurement,
+  };
 }
 
 function isDelayedTrue(raw: string | undefined): boolean {
@@ -189,6 +300,8 @@ export function parseCsvExport(text: string, _opts: CsvParseOptions = {}): CsvPa
     const cells = splitCsvLine(line);
     if (current.header.length === 0) {
       current.header = cells.map((c) => c.trim());
+      // Detect pivoted format on first header row
+      current.isPivoted = isPivotedFormat(current.header);
       lineCount++;
       continue;
     }
@@ -198,12 +311,26 @@ export function parseCsvExport(text: string, _opts: CsvParseOptions = {}): CsvPa
       raggedRows++;
       continue;
     }
+
+    // For pivoted format, we only need metadata columns; skip full resolution
+    if (current.isPivoted) {
+      const cols = resolvePivotedColumns(current.header);
+      if (!cols) {
+        invalidRows++;
+        continue;
+      }
+      const melted = meltPivotedRow(cells, current.header, cols);
+      for (const row of melted) {
+        current.rows.push(row);
+      }
+      continue;
+    }
+
     const cols = resolveColumns(current.header);
     if (!cols) {
       invalidRows++;
       continue;
     }
-
     const t = Date.parse(cells[cols.time].trim());
     if (Number.isNaN(t)) {
       invalidRows++;

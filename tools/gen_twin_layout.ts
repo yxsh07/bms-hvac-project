@@ -45,7 +45,7 @@ const CONDENSER_TYPES = new Set(['cooling-tower', 'condenser-pump']);
 const PLANT_VB_W = 1600;
 const PLANT_VB_H = 900;
 const DEFAULT_FLOOR_SIZE = 100;
-const GRID_STEP = 5;
+const DEFAULT_FLOOR_DEPTH = 60;
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -107,7 +107,7 @@ export async function generate(input: GeneratorInput): Promise<GeneratorResult> 
         id: sf.id,
         name: sf.name,
         elevation: sf.elevation,
-        footprint: { w: DEFAULT_FLOOR_SIZE, h: DEFAULT_FLOOR_SIZE },
+        footprint: { w: DEFAULT_FLOOR_SIZE, h: DEFAULT_FLOOR_DEPTH },
         planImage: null,
       });
 
@@ -121,37 +121,31 @@ export async function generate(input: GeneratorInput): Promise<GeneratorResult> 
         else zoneMap.set(zk, [a]);
       }
 
-      let yOff = 0;
-      for (const [rawZid, zAssets] of zoneMap.entries()) {
+      const zoneColumns = Math.max(1, Math.ceil(Math.sqrt(zoneMap.size)));
+      const zoneRows = Math.max(1, Math.ceil(zoneMap.size / zoneColumns));
+      const zW = DEFAULT_FLOOR_SIZE / zoneColumns;
+      const zH = DEFAULT_FLOOR_DEPTH / zoneRows;
+      for (const [zoneIndex, [rawZid, zAssets]] of [...zoneMap.entries()].entries()) {
         zoneSeq++;
         const zid = rawZid.startsWith('_auto_') ? `Z${String(zoneSeq).padStart(2, '0')}` : rawZid;
-        const zW = DEFAULT_FLOOR_SIZE;
-        const rows = Math.ceil(zAssets.length / Math.floor(zW / GRID_STEP));
-        const zH = Math.max(rows * GRID_STEP, GRID_STEP);
+        const zx = (zoneIndex % zoneColumns) * zW;
+        const zy = Math.floor(zoneIndex / zoneColumns) * zH;
 
         zones.push({
           id: zid,
           floor: sf.id,
-          rect: [0, yOff, zW, zH] as [number, number, number, number],
+          rect: [zx, zy, zW, zH] as [number, number, number, number],
           spaceType: 'general',
         });
 
-        let gx = 0;
-        let gy = yOff;
-        for (const a of zAssets) {
-          anchors[a.id] = { floor: sf.id, zone: zid, xy: [gx + 2.5, gy + 2.5] as [number, number] };
-          gx += GRID_STEP;
-          if (gx >= zW) {
-            gx = 0;
-            gy += GRID_STEP;
-          }
+        const assetColumns = Math.max(1, Math.ceil(Math.sqrt(zAssets.length * zW / zH)));
+        const assetRows = Math.max(1, Math.ceil(zAssets.length / assetColumns));
+        for (const [assetIndex, asset] of zAssets.entries()) {
+          const ax = zx + ((assetIndex % assetColumns) + 0.5) * zW / assetColumns;
+          const ay = zy + (Math.floor(assetIndex / assetColumns) + 0.5) * zH / assetRows;
+          anchors[asset.id] = { floor: sf.id, zone: zid, xy: [ax, ay] as [number, number] };
         }
-        yOff += zH;
       }
-
-      // Adjust footprint to actual used area
-      const lastFloor = floors[floors.length - 1]!;
-      if (yOff > 0) lastFloor.footprint.h = yOff;
     }
 
     // ── Plant schematic ────────────────────────────────────────────────────

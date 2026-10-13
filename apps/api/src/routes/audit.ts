@@ -108,4 +108,31 @@ export function registerAuditRoutes(app: FastifyInstance, deps: RouteDeps): void
       return parse(AuditVerifyResponseSchema, result);
     },
   );
+
+  // E2E-only tamper hook (PLAN §13.2 F-15): mutate a stored audit row so the
+  // verify endpoint can prove detection. Disabled unless E2E_TAMPER_ENABLED=1.
+  app.post<{ Params: { siteId: string }; Body: { id?: string; justification?: string; approverId?: string } }>(
+    '/sites/:siteId/audit/_tamper',
+    { preHandler: [authenticate(deps), authorize(deps, Actions.auditRead)] },
+    async (request, reply) => {
+      if (process.env.E2E_TAMPER_ENABLED !== '1') {
+        return reply.code(404).send({ error: 'Route not found', code: 'NOT_FOUND' });
+      }
+      ensureSite(request.params.siteId);
+      const body = request.body ?? {};
+      if (!body.id) {
+        return reply.code(422).send({ error: 'id is required', code: 'VALIDATION_ERROR' });
+      }
+      if (typeof deps.store.tamperAudit !== 'function') {
+        return reply
+          .code(501)
+          .send({ error: 'tamper hook unavailable for this store', code: 'NOT_IMPLEMENTED' });
+      }
+      await deps.store.tamperAudit(request.params.siteId, body.id, {
+        justification: body.justification ?? 'tampered by e2e',
+        ...(body.approverId ? { approverId: body.approverId } : {}),
+      });
+      return { tampered: true, id: body.id };
+    },
+  );
 }

@@ -6,6 +6,11 @@ CORS is wide open for local development only.
 
 from __future__ import annotations
 
+import asyncio
+import os
+import time
+from collections.abc import AsyncIterator
+from contextlib import asynccontextmanager, suppress
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -50,7 +55,40 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     gateway = Gateway()
     checklist = Checklist(features)
 
-    app = FastAPI(title="SimSite", version="1.0")
+    @asynccontextmanager
+    async def lifespan(_app: FastAPI) -> AsyncIterator[None]:
+        task: asyncio.Task[None] | None = None
+        if os.getenv("SIM_AUTORUN") == "1":
+            engine.runner.start(os.getenv("SIM_DEFAULT_SCENARIO", "normal-day"))
+            engine.run(5)  # Prime the live API before the first ingest poll.
+
+            async def advance_clock() -> None:
+                carry = 0.0
+                previous = time.monotonic()
+                while True:
+                    await asyncio.sleep(0.25)
+                    now = time.monotonic()
+                    elapsed = now - previous
+                    previous = now
+                    if engine.clock.paused:
+                        carry = 0.0
+                        continue
+                    carry += elapsed * engine.clock.scale / 60.0
+                    due = min(int(carry), 5)
+                    if due:
+                        engine.run(due)
+                        carry -= due
+
+            task = asyncio.create_task(advance_clock())
+        try:
+            yield
+        finally:
+            if task is not None:
+                task.cancel()
+                with suppress(asyncio.CancelledError):
+                    await task
+
+    app = FastAPI(title="SimSite", version="1.0", lifespan=lifespan)
     app.add_middleware(
         CORSMiddleware,
         allow_origins=settings.cors_origins,
@@ -187,7 +225,17 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     @app.post("/sim/whatif")
     async def whatif(request: Request) -> dict[str, Any]:
         body = await _json(request)
-        return engine.whatif(body.get("changes"), int(body.get("horizonMin", 60)))
+        try:
+            horizon = int(body.get("horizonMin", 60))
+            step = int(body.get("stepMinutes", 5))
+        except (TypeError, ValueError):
+            raise HTTPException(status_code=422, detail="horizonMin and stepMinutes must be integers")
+        if not 1 <= horizon <= 1440:
+            raise HTTPException(status_code=422, detail="horizonMin must be between 1 and 1440")
+        try:
+            return engine.whatif(body.get("changes"), horizon, step)
+        except (ValueError, TypeError) as exc:
+            raise HTTPException(status_code=422, detail=str(exc))
 
     @app.get("/sim/checklist")
     async def get_checklist() -> dict[str, Any]:

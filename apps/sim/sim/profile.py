@@ -190,6 +190,8 @@ class ChillerCal(BaseModel):
     deltaTMinC: float = 1.3
     deltaTMaxC: float = 4.8
     outputMeanTr: float = 67.1
+    outputMinTr: float = 0.0
+    outputMaxTr: float = 181.0
     loadingMeanPct: float = 35.1
     efficiencyMeanIkwPerTr: float = 0.47
     meanKw: float = 32.6
@@ -207,6 +209,8 @@ class CondenserCal(BaseModel):
     approachMinC: float = -1.0
     approachMaxC: float = 2.8
     rangeMeanC: float = 3.22
+    enteringMinC: float = 21.0
+    enteringMaxC: float = 30.0
     kwPerTrToCondenserSensitivityPerK: float = 0.025
 
 

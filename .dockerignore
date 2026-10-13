@@ -8,7 +8,11 @@ dist
 **/__pycache__
 **/*.pyc
 data/raw
+*_raw_influx_*/
 docs/reference
 playwright-report
 test-results
 *.log
+.env*
+*.xlsx
+*.pdf

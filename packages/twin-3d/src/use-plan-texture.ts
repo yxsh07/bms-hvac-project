@@ -14,10 +14,10 @@ import type { Floor, Zone } from 'packages-twin-core';
 import type { ComfortBands } from './twin-store.js';
 
 const MAX_TEX = 1024;
-const BG_COLOR = '#1a1a2e';
-const ZONE_STROKE = '#ffffff';
-const LABEL_FILL = '#ffffff';
-const NEUTRAL_FILL = '#555555';
+const BG_COLOR = '#153642';
+const ZONE_STROKE = '#94c5ce';
+const LABEL_FILL = '#e8f7f9';
+const NEUTRAL_FILL = '#286778';
 
 /**
  * Look up the comfort band colour for a given spaceType + temperature.
@@ -93,7 +93,7 @@ export function usePlanTexture(
       ctx.fillRect(sx, sy, sw, sh);
 
       ctx.strokeStyle = ZONE_STROKE;
-      ctx.lineWidth = 1;
+      ctx.lineWidth = 3;
       ctx.strokeRect(sx, sy, sw, sh);
 
       // Label

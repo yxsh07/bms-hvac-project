@@ -22,7 +22,7 @@ export interface EquipmentInstancesProps {
 /** Layout-unit → Three.js scale factor (must match FloorSlab). */
 const LU = 0.1;
 /** Equipment marker half-size. */
-const EQ_SIZE = 0.2;
+const EQ_SIZE = 0.32;
 /** Expand gap (must match FloorSlab). */
 const EXPAND_GAP = 3;
 
@@ -31,6 +31,8 @@ interface AnchorEntry {
   anchor: Anchor;
   floorIndex: number;
   elevation: number;
+  centerX: number;
+  centerZ: number;
 }
 
 /** Shared colour for quality codes. */
@@ -38,7 +40,7 @@ const Q_COLORS = {
   GOOD: new THREE.Color(0x22c55e),
   STALE: new THREE.Color(0xeab308),
   BAD: new THREE.Color(0xef4444),
-  UNAVAILABLE: new THREE.Color(0x888888),
+  UNAVAILABLE: new THREE.Color(0x77d6e3),
 } as const;
 
 export const EquipmentInstances = React.memo<EquipmentInstancesProps>(
@@ -48,8 +50,8 @@ export const EquipmentInstances = React.memo<EquipmentInstancesProps>(
     // Build a sorted floor index map once
     const floorIndex = useMemo(() => {
       const sorted = [...layout.floors].sort((a, b) => a.elevation - b.elevation);
-      const map = new Map<string, { idx: number; elevation: number }>();
-      sorted.forEach((f, i) => map.set(f.id, { idx: i, elevation: f.elevation }));
+      const map = new Map<string, { idx: number; elevation: number; centerX: number; centerZ: number }>();
+      sorted.forEach((f, i) => map.set(f.id, { idx: i, elevation: f.elevation, centerX: f.footprint.w / 2, centerZ: f.footprint.h / 2 }));
       return map;
     }, [layout.floors]);
 
@@ -59,7 +61,7 @@ export const EquipmentInstances = React.memo<EquipmentInstancesProps>(
       for (const [assetId, anchor] of Object.entries(layout.anchors)) {
         const fi = floorIndex.get(anchor.floor);
         if (!fi) continue;
-        list.push({ assetId, anchor, floorIndex: fi.idx, elevation: fi.elevation });
+        list.push({ assetId, anchor, floorIndex: fi.idx, elevation: fi.elevation, centerX: fi.centerX, centerZ: fi.centerZ });
       }
       return list;
     }, [layout.anchors, floorIndex]);
@@ -94,8 +96,8 @@ const EquipmentDot = React.memo<DotProps>(function EquipmentDot({ entry, expandF
   const ref = useRef<any>(null);
   const invalidate = useThree((s) => s.invalidate);
 
-  const x = entry.anchor.xy[0] * LU;
-  const z = entry.anchor.xy[1] * LU;
+  const x = (entry.anchor.xy[0] - entry.centerX) * LU;
+  const z = (entry.anchor.xy[1] - entry.centerZ) * LU;
   const targetY =
     entry.floorIndex * 0.15 + // slab thickness offset
     entry.floorIndex * expandFactor * EXPAND_GAP +
