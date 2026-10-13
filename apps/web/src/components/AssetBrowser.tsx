@@ -252,10 +252,10 @@ export function AssetBrowser({
 
       {/* Virtualized list */}
       <div className="flex-1 overflow-hidden">
-        <AutoSizer disableHeight>
-          {({ width }) => (
+        <AutoSizer>
+          {({ width, height }) => (
             <List
-              height={600} // Will be constrained by parent
+              height={height}
               itemCount={sortedAssets.length}
               itemSize={68}
               width={width}

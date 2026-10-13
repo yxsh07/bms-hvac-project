@@ -21,13 +21,14 @@ export function Audit() {
             <div className="flex items-center justify-between">
               <h1 className="text-xl font-semibold text-content-primary">Audit Trail</h1>
               <div className="flex items-center gap-2">
-                <button className="px-3 py-1.5 bg-chilled text-white text-sm rounded-md hover:opacity-90 transition-opacity">Verify Chain</button>
-                <button className="px-3 py-1.5 bg-surface-sunken text-content-primary text-sm rounded-md border border-default hover:bg-state-hover transition-colors">Export</button>
+                <button disabled title="Unavailable in this prototype" className="px-3 py-1.5 bg-chilled text-white text-sm rounded-md">Verify Chain</button>
+                <button disabled title="Unavailable in this prototype" className="px-3 py-1.5 bg-surface-sunken text-content-primary text-sm rounded-md border border-default">Export</button>
               </div>
             </div>
 
-            <div className="bg-surface-base border border-default rounded-lg overflow-hidden">
-              <table className="w-full text-sm">
+            <p className="text-xs text-content-tertiary md:hidden">Scroll table sideways to see all columns →</p>
+            <div className="bg-surface-base border border-default rounded-lg overflow-x-auto">
+              <table className="w-full min-w-[850px] text-sm">
                 <thead className="bg-surface-elevated border-b border-default">
                   <tr>
                     <th className="px-3 py-2 text-left font-medium text-content-secondary">Time (UTC)</th>
@@ -89,7 +90,7 @@ export function Audit() {
 
             <div className="p-4 bg-surface-elevated border border-default rounded-lg text-sm text-content-tertiary">
               <strong>Chain Verification:</strong> HMAC-SHA256 with canonical JSON, per-site advisory lock. 
-              <button className="ml-2 px-2 py-1 text-chilled hover:underline text-sm">Run verification now</button>
+              <span className="ml-2 text-content-tertiary text-sm">Verification unavailable in prototype</span>
             </div>
           </div>
         </div>

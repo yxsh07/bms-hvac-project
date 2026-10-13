@@ -59,9 +59,9 @@ export function PlantSchematic() {
   return (
     <div className="min-h-screen bg-surface-base">
       <Header breadcrumb={breadcrumb} />
-      <main style={{ paddingTop: 'var(--header-height)' }} className="p-4">
-        <div className="mb-3 flex items-center justify-between gap-2">
-          <h1 className="text-lg font-semibold text-content-primary">Plant schematic</h1>
+      <main style={{ paddingTop: 'calc(var(--header-height) + 24px)' }} className="p-4 lg:p-6">
+        <div className="mb-5 flex flex-wrap items-end justify-between gap-2">
+          <div><p className="text-[10px] font-mono tracking-widest text-content-tertiary">SYSTEMS / WATER CIRCUITS</p><h1 className="mt-2 text-content-primary">Plant schematic</h1><p className="mt-1 text-sm text-content-secondary">Trace connected equipment and model a proposed change.</p></div>
           <span className="rounded-full bg-surface-sunken px-2 py-0.5 text-[10px] text-content-tertiary">
             schematic layout — not to scale
           </span>
@@ -71,7 +71,7 @@ export function PlantSchematic() {
           <section className="rounded-lg border border-border-default bg-surface-elevated p-2" aria-label="L2 plant schematic">
             <svg
               viewBox={PLANT_VIEWBOX.join(' ')}
-              className="h-auto w-full"
+              className="h-auto w-full max-sm:min-w-[700px]"
               role="img"
               aria-label="Schematic of the chilled and condenser water loops"
             >

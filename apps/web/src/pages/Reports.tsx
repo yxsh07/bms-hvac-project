@@ -19,7 +19,7 @@ export function Reports() {
         <div className="h-[calc(100vh-var(--header-height))] p-4 overflow-y-auto">
           <div className="max-w-4xl mx-auto space-y-4">
             <h1 className="text-xl font-semibold text-content-primary">Reports</h1>
-            <p className="text-content-tertiary">Queue-based generation with PDF, XLSX, CSV outputs. All exports audited. PROVISIONAL mark for windows &lt; 2h old.</p>
+            <p className="text-content-tertiary">Report catalog preview. Generation and history are unavailable in this prototype.</p>
 
             <div className="space-y-3">
               {reports.map(report => (
@@ -38,8 +38,8 @@ export function Reports() {
                     <span>Formats: <span className="font-mono">{report.formats.join(', ')}</span></span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <button className="px-3 py-1.5 bg-chilled text-white text-sm rounded-md hover:opacity-90 transition-opacity">Run Report</button>
-                    <button className="px-3 py-1.5 bg-surface-sunken text-content-primary text-sm rounded-md border border-default hover:bg-state-hover transition-colors">View History</button>
+                    <button disabled title="Unavailable in this prototype" className="px-3 py-1.5 bg-chilled text-white text-sm rounded-md">Run Report</button>
+                    <button disabled title="Unavailable in this prototype" className="px-3 py-1.5 bg-surface-sunken text-content-primary text-sm rounded-md border border-default">View History</button>
                   </div>
                 </div>
               ))}

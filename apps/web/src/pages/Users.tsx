@@ -33,11 +33,12 @@ export function Users() {
           <div className="max-w-4xl mx-auto space-y-4">
             <div className="flex items-center justify-between">
               <h1 className="text-xl font-semibold text-content-primary">Users</h1>
-              <button className="px-3 py-1.5 bg-chilled text-white text-sm rounded-md hover:opacity-90 transition-opacity">Invite User</button>
+              <button disabled title="Unavailable in this prototype" className="px-3 py-1.5 bg-chilled text-white text-sm rounded-md">Invite User</button>
             </div>
 
-            <div className="bg-surface-base border border-default rounded-lg overflow-hidden">
-              <table className="w-full text-sm">
+            <p className="text-xs text-content-tertiary md:hidden">Scroll table sideways to see all columns →</p>
+            <div className="bg-surface-base border border-default rounded-lg overflow-x-auto">
+              <table className="w-full min-w-[820px] text-sm">
                 <thead className="bg-surface-elevated border-b border-default">
                   <tr>
                     <th className="px-3 py-2 text-left font-medium text-content-secondary">Name</th>
@@ -68,10 +69,10 @@ export function Users() {
                       <td className="px-3 py-2 font-mono tabular-nums text-content-tertiary">{user.lastLogin}</td>
                       <td className="px-3 py-2">
                         <div className="flex items-center gap-1">
-                          <button className="p-1.5 rounded hover:bg-state-hover transition-colors text-content-tertiary" title="Edit">
+                          <button disabled className="p-1.5 rounded text-content-tertiary" title="Edit unavailable in this prototype">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg>
                           </button>
-                          <button className="p-1.5 rounded hover:bg-state-hover transition-colors text-content-tertiary" title="Remove">
+                          <button disabled className="p-1.5 rounded text-content-tertiary" title="Remove unavailable in this prototype">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg>
                           </button>
                         </div>
