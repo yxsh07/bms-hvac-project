@@ -8,7 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'http://localhost:5173',
+    baseURL: process.env.DEMO_URL ?? 'http://localhost:5173',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure'
@@ -43,7 +43,7 @@ export default defineConfig({
       use: { ...devices['iPad Pro 11'], viewport: { width: 820, height: 1180 } }
     }
   ],
-  webServer: {
+  webServer: process.env.DEMO_URL ? undefined : {
     command: 'pnpm dev',
     url: 'http://localhost:5173',
     reuseExistingServer: !process.env.CI,

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ApiClient, qualityLabel, type AssetSummary, type LatestResponse } from '../api/client';
+import { Header } from '../components/Header';
 
 /**
  * Live (T-029 / gate G2): log in to the real API, open an asset and show its
@@ -60,18 +61,20 @@ export function Live() {
   }, [connected, selected, loadLatest]);
 
   return (
-    <div className="min-h-screen bg-surface-base p-6 text-content-primary">
-      <h1 className="text-xl font-semibold mb-4">Live telemetry</h1>
+    <div className="min-h-screen bg-surface-base text-content-primary">
+      <Header breadcrumb={[{ label: 'Live telemetry' }]} />
+      <main className="live-page p-5 lg:p-8" style={{ paddingTop: 'calc(var(--header-height) + 28px)' }}>
+      <div className="mb-7 flex flex-wrap items-end justify-between gap-3"><div><p className="text-[10px] font-mono tracking-widest text-content-tertiary">OBSERVE / DATA QUALITY</p><h1 className="mt-2">Live telemetry</h1><p className="mt-2 text-sm text-content-secondary">Inspect the latest values from the simulation stream.</p></div><div className="rounded-md border border-default bg-surface-elevated px-3 py-2 text-xs text-content-secondary"><span className={`mr-2 inline-block h-2 w-2 rounded-full ${connected ? 'bg-green-600' : 'bg-amber-500'}`} />{connected ? 'Connected' : 'Connect to API'}</div></div>
 
-      <section className="mb-6 grid gap-3 max-w-md">
+      <section className="mb-6 grid gap-3 rounded-lg border border-default bg-surface-elevated p-5 md:grid-cols-[1fr_1fr_1fr_auto] md:items-end" aria-label="Connection">
         <label className="grid gap-1 text-sm">
           API user
-          <input className="border rounded px-2 py-1" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input className="min-h-10 rounded border border-default bg-white px-2 py-1" value={email} onChange={(e) => setEmail(e.target.value)} />
         </label>
         <label className="grid gap-1 text-sm">
           Password
           <input
-            className="border rounded px-2 py-1"
+            className="min-h-10 rounded border border-default bg-white px-2 py-1"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -79,10 +82,10 @@ export function Live() {
         </label>
         <label className="grid gap-1 text-sm">
           Site
-          <input className="border rounded px-2 py-1" value={siteId} onChange={(e) => setSiteId(e.target.value)} />
+          <input className="min-h-10 rounded border border-default bg-white px-2 py-1" value={siteId} onChange={(e) => setSiteId(e.target.value)} />
         </label>
         <button
-          className="justify-self-start rounded bg-surface-raised px-3 py-1.5 text-sm border"
+          className="min-h-10 justify-self-start rounded bg-content-primary px-4 py-1.5 text-sm font-semibold text-white"
           onClick={() => void connect()}
           disabled={busy}
         >
@@ -91,17 +94,17 @@ export function Live() {
       </section>
 
       {error && (
-        <p className="mb-4 rounded border border-red-500/40 bg-red-500/10 px-3 py-2 text-sm text-red-300">
-          {error} — is the API running? Start it with <code>pnpm -C apps/api dev</code>.
+        <p className="mb-4 rounded border border-critical/40 bg-critical/10 px-3 py-2 text-sm text-critical">
+          {error} — Check the connection and try again.
         </p>
       )}
 
       {connected && (
-        <section className="mb-6 grid gap-2">
+        <section className="mb-6 grid gap-2 rounded-lg border border-default bg-surface-elevated p-5">
           <label className="grid gap-1 text-sm max-w-md">
             Asset ({assets.length})
             <select
-              className="border rounded px-2 py-1"
+              className="min-h-10 rounded border border-default bg-white px-2 py-1"
               value={selected?.id ?? ''}
               onChange={(e) => setSelected(assets.find((a) => a.id === e.target.value) ?? null)}
             >
@@ -116,34 +119,36 @@ export function Live() {
       )}
 
       {selected && latest && (
-        <section>
-          <div className="mb-2 text-sm text-content-tertiary">
+        <section className="overflow-x-auto rounded-lg border border-default bg-surface-elevated p-5">
+          <h2 className="mb-2 text-lg font-semibold">Latest points · {selected.name}</h2>
+          <div className="mb-4 text-sm text-content-tertiary">
             coverage {latest.quality.coveragePct.toFixed(1)}% · {latest.quality.goodSamples}/
             {latest.quality.expectedSamples} good samples
             {latest.quality.hasDelayedData ? ' · includes delayed data' : ''}
           </div>
-          <table className="min-w-[24rem] text-sm border-collapse">
+          <table className="w-full min-w-[24rem] text-sm border-collapse">
             <thead>
               <tr className="text-left text-content-tertiary">
-                <th className="border-b py-1 pr-6">Point</th>
-                <th className="border-b py-1 pr-6">Value</th>
-                <th className="border-b py-1">Quality</th>
+                <th className="border-b border-default py-3 pr-6">Point</th>
+                <th className="border-b border-default py-3 pr-6">Value</th>
+                <th className="border-b border-default py-3">Quality</th>
               </tr>
             </thead>
             <tbody>
               {Object.entries(latest.fields).map(([field, point]) => (
                 <tr key={field}>
-                  <td className="border-b py-1 pr-6 font-mono">{field}</td>
-                  <td className="border-b py-1 pr-6" data-testid={`value-${field}`}>
+                  <td className="border-b border-default py-3 pr-6 font-mono">{field}</td>
+                  <td className="border-b border-default py-3 pr-6 font-mono" data-testid={`value-${field}`}>
                     {point.value === null ? '—' : point.value}
                   </td>
-                  <td className="border-b py-1">{qualityLabel(point.quality)}</td>
+                  <td className="border-b border-default py-3">{qualityLabel(point.quality)}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </section>
       )}
+      </main>
     </div>
   );
 }

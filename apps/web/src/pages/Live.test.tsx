@@ -67,6 +67,6 @@ describe('Live page (G2)', () => {
     await waitFor(() =>
       expect(screen.getByText(/connect ECONNREFUSED/)).toBeInTheDocument(),
     );
-    expect(screen.getByText(/is the API running/)).toBeInTheDocument();
+    expect(screen.getByText(/Check the connection and try again/)).toBeInTheDocument();
   });
 });

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Header } from '../components/Header';
 import { Breadcrumb } from '../components/Breadcrumb';
 import { useTheme } from '../context/ThemeContext';
@@ -8,9 +8,6 @@ import clsx from 'clsx';
 export function Settings() {
   const { theme, setTheme } = useTheme();
   const { user } = useAuth();
-  const [notifications, setNotifications] = useState(true);
-  const [autoRefresh, setAutoRefresh] = useState(true);
-  const [refreshInterval, setRefreshInterval] = useState(30);
 
   const breadcrumb = [
     { label: 'Dashboard', href: '/' },
@@ -77,7 +74,8 @@ export function Settings() {
 
             {/* Preferences */}
             <section className="bg-surface-base border border-default rounded-lg p-4">
-              <h2 className="text-sm font-medium text-content-primary mb-4">Preferences</h2>
+              <h2 className="text-sm font-medium text-content-primary mb-1">Preferences</h2>
+              <p className="mb-4 text-xs text-content-tertiary">Preview of planned notification and refresh controls.</p>
               <div className="space-y-4">
                 <label className="flex items-center justify-between cursor-pointer">
                   <div>
@@ -86,8 +84,8 @@ export function Settings() {
                   </div>
                   <input
                     type="checkbox"
-                    checked={notifications}
-                    onChange={(e) => setNotifications(e.target.checked)}
+                    checked
+                    disabled
                     className="w-4 h-4 accent-chilled"
                   />
                 </label>
@@ -99,18 +97,18 @@ export function Settings() {
                   </div>
                   <input
                     type="checkbox"
-                    checked={autoRefresh}
-                    onChange={(e) => setAutoRefresh(e.target.checked)}
+                    checked
+                    disabled
                     className="w-4 h-4 accent-chilled"
                   />
                 </label>
 
-                {autoRefresh && (
+                {(
                   <div>
                     <label className="block text-sm font-medium text-content-secondary mb-2">Refresh Interval (seconds)</label>
                     <select
-                      value={refreshInterval}
-                      onChange={(e) => setRefreshInterval(Number(e.target.value))}
+                      value={30}
+                      disabled
                       className="w-full max-w-xs px-3 py-2 bg-surface-base border border-default rounded-md text-sm text-content-primary focus:border-focus focus:outline-none focus:ring-1 focus:ring-focus"
                     >
                       <option value={15}>15</option>
@@ -128,10 +126,10 @@ export function Settings() {
             <section className="bg-surface-base border border-default rounded-lg p-4">
               <h2 className="text-sm font-medium text-content-primary mb-4">Data & Cache</h2>
               <div className="space-y-3">
-                <button className="w-full px-3 py-2 text-left bg-surface-sunken hover:bg-state-hover transition-colors rounded-md text-content-primary border border-default">
+                <button disabled title="Unavailable in this prototype" className="w-full px-3 py-2 text-left bg-surface-sunken rounded-md text-content-primary border border-default">
                   Clear Service Worker Cache
                 </button>
-                <button className="w-full px-3 py-2 text-left bg-surface-sunken hover:bg-state-hover transition-colors rounded-md text-content-primary border border-default">
+                <button disabled title="Unavailable in this prototype" className="w-full px-3 py-2 text-left bg-surface-sunken rounded-md text-content-primary border border-default">
                   Reset All Preferences
                 </button>
               </div>
