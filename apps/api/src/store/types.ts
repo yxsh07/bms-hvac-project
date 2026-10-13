@@ -301,6 +301,11 @@ export interface Store extends AuditSink {
   appendAudit(input: AuditAppendInput): Promise<AuditLogEntry>;
   listAudit(siteId: string, query: AuditQueryFilter): Promise<Page<AuditLogEntry>>;
   verifyAudit(siteId: string): Promise<AuditVerifyResult>;
+  /**
+   * E2E test hook (guarded by E2E_TAMPER_ENABLED): mutate a stored audit row so
+   * the verification endpoint can prove it detects tampering (§7.8).
+   */
+  tamperAudit?(siteId: string, id: string, patch: Partial<AuditLogEntry>): Promise<void> | void;
 
   // Ingest
   getIngestCursor(siteId: string): Promise<string | null>;

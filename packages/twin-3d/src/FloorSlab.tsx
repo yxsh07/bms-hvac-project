@@ -60,9 +60,9 @@ export const FloorSlab = React.memo<FloorSlabProps>(function FloorSlab({
 
   // Materials – top gets the plan texture, sides are neutral
   const mats = useMemo(() => {
-    const side = new THREE.MeshStandardMaterial({ color: 0x666666 });
-    const top = new THREE.MeshStandardMaterial({ color: 0x444444 });
-    const bottom = new THREE.MeshStandardMaterial({ color: 0x333333 });
+    const side = new THREE.MeshStandardMaterial({ color: 0x387487, metalness: 0.12, roughness: 0.72 });
+    const top = new THREE.MeshStandardMaterial({ color: 0x286778 });
+    const bottom = new THREE.MeshStandardMaterial({ color: 0x173e4e });
     // BoxGeometry face order: +X -X +Y -Y +Z -Z
     return [side, side, top, bottom, side, side] as const;
   }, []);
@@ -75,7 +75,7 @@ export const FloorSlab = React.memo<FloorSlabProps>(function FloorSlab({
       top.color.set(0xffffff);
     } else {
       top.map = null;
-      top.color.set(0x444444);
+      top.color.set(0x286778);
     }
     top.needsUpdate = true;
   }, [texture, mats]);
@@ -86,7 +86,7 @@ export const FloorSlab = React.memo<FloorSlabProps>(function FloorSlab({
       m.transparent = isDimmed;
       m.opacity = isDimmed ? 0.25 : 1;
     }
-    mats[2].emissive.set(isFocused ? 0x222244 : 0x000000);
+    mats[2].emissive.set(isFocused ? 0x124054 : 0x000000);
   }, [isFocused, isDimmed, mats]);
 
   // Lerp Y position – ref-only, never setState

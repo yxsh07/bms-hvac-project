@@ -22,11 +22,26 @@ from zoneinfo import ZoneInfo
 import numpy as np
 
 from .clock import SimClock
+from .envelope import evaluate_envelope
 from .faults import FaultLayer
 from .noise import hash_noise
-from .profile import Ontology, Profile, load_catalogue, load_ontology, load_profile
+from .profile import (
+    Ontology,
+    Profile,
+    load_catalogue,
+    load_ontology,
+    load_profile,
+    resolve_target,
+)
 from .scenarios import ScenarioRunner
 from .writer import Writer
+
+# The label every what-if surface must carry (PLAN 5.9, 6.4).
+WHATIF_LABEL = "indicative, 3-day calibration"
+
+# Set-point roles a what-if may change, and the classes that map to them.
+_CHW_SETPOINTS = {"setpoint-chw-temp", "chw-leaving-temp"}
+_AREA_SETPOINTS = {"setpoint-area-temp", "area-temp-setpoint"}
 
 # Temperature classes that a stopped unit may report as 0.0 (PLAN 3.2).
 _WATER_TEMPS = {
@@ -61,6 +76,7 @@ class SimEngine:
     EFF_B = 0.5
     EFF_P0 = 0.45
     EFF_COND = 0.004
+    EFF_CHW = 0.012            # efficiency gain per K of CHW leaving-temperature lift
     ZONE_R = 2.5               # K per kW
     DEFAULT_SETPOINT = 22.0
     CHW_LEAVE_SETPOINT = 8.0
@@ -118,6 +134,7 @@ class SimEngine:
         self.integral = np.zeros(n, dtype=float)
         self.valve = np.zeros(n, dtype=float)
         self.Q = 0.0
+        self.chw_setpoint = self.CHW_LEAVE_SETPOINT
         self.lag_on = False
         self._above = 0
         self._below = 0
@@ -188,8 +205,24 @@ class SimEngine:
     # step
     # ------------------------------------------------------------------
     def step(self) -> list[dict[str, Any]]:
-        if self.clock.paused:
+        ctx = self._advance()
+        if ctx is None:
             return []
+        t = self.clock.now()
+        rows = self._emit(t, ctx)
+        rows = self.faults.apply(rows, self.minutes)
+        self.writer.add_many(rows)
+        return rows
+
+    def _advance(self) -> dict[str, Any] | None:
+        """Advance the physics one sim-minute and return its context.
+
+        No rows are emitted and no faults are applied, so ``what-if`` can step
+        a clone cheaply and read physics aggregates only (PLAN 6.3).  ``step``
+        wraps this with emission; the two must stay in lock-step.
+        """
+        if self.clock.paused:
+            return None
         self.minutes += 1
         self.clock.step(1)
         self.runner.tick(self.minutes)
@@ -273,10 +306,22 @@ class SimEngine:
         for a in self.chillers:
             ctx["running"][a.id] = chiller_ctx.get(a.id) is not None
 
-        rows = self._emit(t, ctx)
-        rows = self.faults.apply(rows, self.minutes)
-        self.writer.add_many(rows)
-        return rows
+        return ctx
+
+    def sample(self, ctx: dict[str, Any]) -> dict[str, Any]:
+        """Aggregate one step's physics into the what-if overlay shape."""
+        details = [d for d in ctx["chiller"].values() if d is not None]
+        delta_t = sum(d["dt"] for d in details) / len(details) if details else 0.0
+        tr = sum(d["tr"] for d in details)
+        lead = ctx["chiller"].get(self.chillers[0].id) if self.chillers else None
+        return {
+            "t": self.clock.now().astimezone(timezone.utc).isoformat(),
+            "kw": round(float(ctx["total_kw"]), 3),
+            "deltaTC": round(float(delta_t), 3),
+            "tr": round(float(tr), 3),
+            "chwLeavingC": round(float(lead["tleave"]), 3) if lead else None,
+            "condenserEnteringC": round(float(lead["tcond"]), 3) if lead else None,
+        }
 
     def _update_staging(self) -> None:
         st = self.profile.plant.station
@@ -315,18 +360,21 @@ class SimEngine:
             + 0.15 * hash_noise(self.seed, asset.id, "approach", self.minutes)
         )
         tcond = twb + approach
+        tleave = self.chw_setpoint + 0.15 * hash_noise(self.seed, asset.id, "leave", self.minutes)
         eff = (
             self.EFF_A
             + self.EFF_B * (plr - self.EFF_P0) ** 2
             + self.EFF_COND * (tcond - 24.0)
         )
+        # A higher CHW leaving temperature improves the evaporator approach and
+        # so the COP; the term is zero at the calibrated baseline set point.
+        eff -= self.EFF_CHW * (tleave - self.CHW_LEAVE_SETPOINT)
         eff = max(0.15, eff)
         flow = self.PUMP_K * (q ** 0.9)
         dt = q / (self.kw_per_flow * flow) if flow > 0 else 0.0
         dt += 0.25 * hash_noise(self.seed, asset.id, "dt", self.minutes)
         dt = max(self.profile.plant.leadChiller.deltaTMinC,
                  min(self.profile.plant.leadChiller.deltaTMaxC, dt))
-        tleave = self.CHW_LEAVE_SETPOINT + 0.15 * hash_noise(self.seed, asset.id, "leave", self.minutes)
         crange = self.profile.plant.condenser.rangeMeanC + 0.4 * hash_noise(
             self.seed, asset.id, "range", self.minutes
         )
@@ -386,7 +434,7 @@ class SimEngine:
                 }:
                     return 0.0
                 if cls == "setpoint-chw-temp":
-                    return self.CHW_LEAVE_SETPOINT
+                    return self.chw_setpoint
                 return 0.0
             if cls == "chilled-water-supply-temp":
                 return d["tleave"]
@@ -401,7 +449,7 @@ class SimEngine:
             if cls == "loading-percentage":
                 return d["load"]
             if cls == "setpoint-chw-temp":
-                return self.CHW_LEAVE_SETPOINT
+                return self.chw_setpoint
             return 0.0
 
         if cls == "valve-position":
@@ -471,6 +519,7 @@ class SimEngine:
         return rows
 
     def state(self) -> dict[str, Any]:
+        env = self.environment()
         return {
             **self.clock.state(),
             "seed": self.seed,
@@ -479,39 +528,209 @@ class SimEngine:
             "leadChillerId": self.chillers[0].id if self.chillers else None,
             "lagOn": self.lag_on,
             "chwLoadKw": self.Q,
-            "conditions": {"wetBulbC": self.twb},
+            "conditions": {"wetBulbC": env["wetBulbC"]},
+            # Environment block feeds the app's weather strip (§8.2).
+            "outdoorDbtC": env["dryBulbC"],
+            "relativeHumidityPct": env["relativeHumidityPct"],
+            "occupancyMultiplier": env["occupancyMultiplier"],
+            "wetBulbC": env["wetBulbC"],
+            "modes": dict(self.modes),
             "scenario": self.runner.current_name,
             "faults": [f.id for f in self.faults.specs],
+            "faultSpecs": [
+                {
+                    "id": f.id,
+                    "type": f.type,
+                    "target": f.raw_target,
+                    "resolvedTarget": f.target,
+                    "duration": f.duration,
+                    "start": f.start,
+                    "active": f.is_active(self.minutes),
+                }
+                for f in self.faults.specs
+            ],
+            "activeScenario": self.runner.current_name,
         }
 
-    def whatif(self, changes: list[dict[str, Any]] | None, horizon_min: int = 60) -> dict[str, Any]:
-        clone = copy.deepcopy(self)
-        for change in changes or []:
-            kind = change.get("type") or change.get("kind")
-            if kind == "env":
-                clone.set_env(
-                    change.get("outdoor_dbt"),
-                    change.get("rh"),
-                    change.get("occupancy_mult"),
-                )
-            elif kind == "fault":
-                clone.faults.add(
-                    change.get("fault"),
-                    change.get("target"),
-                    change.get("params"),
-                    change.get("durationMin"),
-                    start_min=0,
-                )
-        clone.clock.paused = False
-        rows = clone.run(horizon_min)
-        series: list[dict[str, Any]] = []
-        for row in rows:
-            series.append(
-                {
-                    "time": row["time"],
-                    "entity_id": row["entity_id"],
-                    "field": row["field"],
-                    "value": row["value"],
-                }
+    def environment(self) -> dict[str, float]:
+        """The live environment block (weather strip + Sim Console readout).
+
+        Uses the same weather curve the engine steps with, so a manual override
+        (``set_env``) is reflected here too.  ``wetBulbC`` is the Stull value.
+        """
+        t = self.clock.now().astimezone(self.tz)
+        dbt, rh, occ, twb = self._weather(t)
+        return {
+            "dryBulbC": round(float(dbt), 2),
+            "relativeHumidityPct": round(float(rh), 1),
+            "occupancyMultiplier": round(float(occ), 3),
+            "wetBulbC": round(float(twb), 2),
+        }
+
+    def fault_types(self) -> list[str]:
+        """The fault types the layer implements, derived from its handlers."""
+        prefix = "_f_"
+        return sorted(
+            name[len(prefix):].replace("_", "-")
+            for name in dir(self.faults)
+            if name.startswith(prefix)
+        )
+
+    # ------------------------------------------------------------------
+    # what-if (PLAN 5.9, 6.3; task WIF1)
+    # ------------------------------------------------------------------
+    def __deepcopy__(self, memo: dict[int, Any]) -> SimEngine:
+        """Copy the engine without dragging a live DB connection along.
+
+        ``what-if`` deep-copies the whole engine graph; the writer is the one
+        field that must not be shared or copied (it may hold a psycopg
+        connection), so a fresh in-memory writer is attached to the clone.
+        """
+        cls = type(self)
+        clone = cls.__new__(cls)
+        memo[id(self)] = clone
+        for key, value in self.__dict__.items():
+            if key == "writer":
+                setattr(clone, key, Writer())
+            else:
+                setattr(clone, key, copy.deepcopy(value, memo))
+        return clone
+
+    def _fingerprint(self) -> tuple[Any, ...]:
+        """Cheap signature of live physics state, to prove no mutation."""
+        return (
+            self.minutes,
+            round(self.Q, 6),
+            round(self.plant_kwh, 6),
+            self.lag_on,
+            round(self.chw_setpoint, 6),
+            tuple(float(x) for x in self.Tz),
+            tuple(float(x) for x in self.valve),
+        )
+
+    def set_setpoint(self, target: str | None, kind: str, value: float) -> None:
+        """Apply a proposed set-point change to this (cloned) engine.
+
+        Only set-point roles the engine models are accepted; the caller maps
+        the point/role to a logical kind first.  Raises ValueError otherwise so
+        the API can answer 422 instead of silently ignoring the request.
+        """
+        resolved = resolve_target(target, self.ontology) if target else None
+        if kind in _CHW_SETPOINTS and (
+            resolved is None or resolved in {a.id for a in self.chillers}
+        ):
+            self.chw_setpoint = float(value)
+            return
+        if kind in _AREA_SETPOINTS and resolved in self.zone_index:
+            self.Tsp[self.zone_index[resolved]] = float(value)
+            return
+        raise ValueError(f"unsupported set-point change: target={target!r} kind={kind!r}")
+
+    def _apply_whatif_change(self, clone: SimEngine, change: dict[str, Any]) -> None:
+        kind = change.get("type") or change.get("kind")
+        if kind == "env":
+            clone.set_env(
+                change.get("outdoor_dbt"),
+                change.get("rh"),
+                change.get("occupancy_mult"),
             )
-        return {"horizonMin": horizon_min, "series": series, "points": len(series)}
+        elif kind == "fault":
+            clone.faults.add(
+                change.get("fault"),
+                change.get("target"),
+                change.get("params"),
+                change.get("durationMin"),
+                start_min=0,
+            )
+        elif kind == "setpoint":
+            target = change.get("target") or change.get("asset")
+            field = change.get("field") or change.get("role") or "setpoint-chw-temp"
+            if change.get("value") is None:
+                raise ValueError("setpoint change requires a value")
+            clone.set_setpoint(str(target) if target else None, str(field), float(change["value"]))
+        elif kind == "mode":
+            target = change.get("target") or change.get("asset")
+            if target and change.get("controlType"):
+                clone.modes[str(target)] = str(change["controlType"])
+        else:
+            raise ValueError(f"unknown change type: {kind!r}")
+
+    def _simulate_series(self, clone: SimEngine, horizon_min: int, step_min: int) -> list[dict[str, Any]]:
+        """Step a clone forward and sample the plant aggregates.
+
+        Uses ``_advance`` directly: no rows are emitted and no faults are
+        applied, so the prediction reflects physics only and stays cheap.
+        """
+        series: list[dict[str, Any]] = []
+        for minute in range(1, horizon_min + 1):
+            ctx = clone._advance()
+            if ctx is None:
+                break
+            if minute == horizon_min or minute % step_min == 0:
+                series.append(clone.sample(ctx))
+        return series
+
+    @staticmethod
+    def _series_summary(series: list[dict[str, Any]]) -> dict[str, Any]:
+        if not series:
+            return {"meanKw": 0.0, "peakKw": 0.0, "meanDeltaTC": 0.0, "points": 0}
+        return {
+            "meanKw": round(sum(s["kw"] for s in series) / len(series), 3),
+            "peakKw": round(max(s["kw"] for s in series), 3),
+            "meanDeltaTC": round(sum(s["deltaTC"] for s in series) / len(series), 3),
+            "points": len(series),
+        }
+
+    def whatif(
+        self,
+        changes: list[dict[str, Any]] | None,
+        horizon_min: int = 60,
+        step_minutes: int = 5,
+    ) -> dict[str, Any]:
+        """Copy the state, step it forward with the proposed changes, never touch live.
+
+        Two clones are stepped over the same horizon: one unchanged (baseline)
+        and one with ``changes`` applied (predicted).  The live engine is never
+        stepped and its physics fingerprint is checked before and after.
+        """
+        horizon = max(1, min(1440, int(horizon_min)))
+        step = max(1, min(horizon, int(step_minutes or 5)))
+        before = self._fingerprint()
+
+        baseline = copy.deepcopy(self)
+        baseline.clock.paused = False
+        predicted = copy.deepcopy(self)
+        predicted.clock.paused = False
+        for change in changes or []:
+            if not isinstance(change, dict):
+                raise TypeError("each change must be an object")
+            self._apply_whatif_change(predicted, change)
+
+        baseline_series = self._simulate_series(baseline, horizon, step)
+        predicted_series = self._simulate_series(predicted, horizon, step)
+        envelope = evaluate_envelope(self.profile, predicted_series)
+
+        after = self._fingerprint()
+        baseline_summary = self._series_summary(baseline_series)
+        predicted_summary = self._series_summary(predicted_series)
+        return {
+            "label": WHATIF_LABEL,
+            "horizonMin": horizon,
+            "stepMinutes": step,
+            "siteId": self.ontology.site.id,
+            "changes": changes or [],
+            "liveStateUnchanged": before == after,
+            "baseline": baseline_summary,
+            "predicted": {**predicted_summary, "series": predicted_series},
+            "baselineSeries": baseline_series,
+            "delta": {
+                "meanKw": round(predicted_summary["meanKw"] - baseline_summary["meanKw"], 3),
+                "meanDeltaTC": round(
+                    predicted_summary["meanDeltaTC"] - baseline_summary["meanDeltaTC"], 3
+                ),
+            },
+            "envelope": envelope,
+            "warning": envelope["warning"],
+            # Compatibility with the earlier endpoint shape (test_api).
+            "points": predicted_summary["points"],
+        }

@@ -23,6 +23,7 @@ export interface TwinCanvasProps {
   layout: TwinLayout;
   comfortBands: ComfortBands;
   zoneTemps?: Record<string, number> | undefined;
+  focusedFloorId?: string | null;
 }
 
 // ── Error boundary ───────────────────────────────────────────────────────────
@@ -55,11 +56,14 @@ class WebGLErrorBoundary extends React.Component<
 export const TwinCanvas: React.FC<TwinCanvasProps> = (props) => {
   const setLayout = useTwinStore((s) => s.setLayout);
   const setComfortBands = useTwinStore((s) => s.setComfortBands);
+  const setFocusedFloor = useTwinStore((s) => s.setFocusedFloor);
 
   useEffect(() => {
     setLayout(props.layout);
     setComfortBands(props.comfortBands);
   }, [props.layout, props.comfortBands, setLayout, setComfortBands]);
+
+  useEffect(() => setFocusedFloor(props.focusedFloorId ?? null), [props.focusedFloorId, setFocusedFloor]);
 
   return (
     <div style={{ width: '100%', height: '100%', position: 'relative' }}>
@@ -69,7 +73,7 @@ export const TwinCanvas: React.FC<TwinCanvasProps> = (props) => {
           dpr={[1, 1.5]}
           shadows={false}
           gl={{ antialias: true, alpha: false, powerPreference: 'high-performance' }}
-          camera={{ position: [0, 15, 20], fov: 45, near: 0.1, far: 200 }}
+          camera={{ position: [7, 8, 11], fov: 42, near: 0.1, far: 200 }}
         >
           <Suspense fallback={null}>
             <BuildingTwin {...props} />

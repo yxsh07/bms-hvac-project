@@ -1,0 +1,420 @@
+{
+  "version": 1,
+  "schematic": true,
+  "floors": [
+    {
+      "id": "floor-b1",
+      "name": "Basement 1",
+      "elevation": -1,
+      "footprint": {
+        "w": 100,
+        "h": 60
+      },
+      "planImage": null
+    },
+    {
+      "id": "floor-gf",
+      "name": "Ground Floor",
+      "elevation": 0,
+      "footprint": {
+        "w": 100,
+        "h": 60
+      },
+      "planImage": null
+    },
+    {
+      "id": "floor-1f",
+      "name": "First Floor",
+      "elevation": 1,
+      "footprint": {
+        "w": 100,
+        "h": 60
+      },
+      "planImage": null
+    }
+  ],
+  "zones": [
+    {
+      "id": "zone-plant-room",
+      "floor": "floor-b1",
+      "rect": [
+        0,
+        0,
+        50,
+        30
+      ],
+      "spaceType": "general"
+    },
+    {
+      "id": "zone-patient-ward",
+      "floor": "floor-b1",
+      "rect": [
+        50,
+        0,
+        50,
+        30
+      ],
+      "spaceType": "general"
+    },
+    {
+      "id": "zone-corridor",
+      "floor": "floor-b1",
+      "rect": [
+        0,
+        30,
+        50,
+        30
+      ],
+      "spaceType": "general"
+    },
+    {
+      "id": "zone-utility",
+      "floor": "floor-b1",
+      "rect": [
+        50,
+        30,
+        50,
+        30
+      ],
+      "spaceType": "general"
+    },
+    {
+      "id": "zone-corridor",
+      "floor": "floor-gf",
+      "rect": [
+        0,
+        0,
+        100,
+        60
+      ],
+      "spaceType": "general"
+    },
+    {
+      "id": "zone-patient-ward",
+      "floor": "floor-1f",
+      "rect": [
+        0,
+        0,
+        100,
+        60
+      ],
+      "spaceType": "general"
+    }
+  ],
+  "anchors": {
+    "chiller-01": {
+      "floor": "floor-b1",
+      "zone": "zone-plant-room",
+      "xy": [
+        6.25,
+        7.5
+      ]
+    },
+    "chiller-02": {
+      "floor": "floor-b1",
+      "zone": "zone-plant-room",
+      "xy": [
+        18.75,
+        7.5
+      ]
+    },
+    "chwp-01": {
+      "floor": "floor-b1",
+      "zone": "zone-plant-room",
+      "xy": [
+        31.25,
+        7.5
+      ]
+    },
+    "chwp-02": {
+      "floor": "floor-b1",
+      "zone": "zone-plant-room",
+      "xy": [
+        43.75,
+        7.5
+      ]
+    },
+    "cooling-tower-01": {
+      "floor": "floor-b1",
+      "zone": "zone-plant-room",
+      "xy": [
+        6.25,
+        22.5
+      ]
+    },
+    "cwp-01": {
+      "floor": "floor-b1",
+      "zone": "zone-plant-room",
+      "xy": [
+        18.75,
+        22.5
+      ]
+    },
+    "dashboard-plant": {
+      "floor": "floor-b1",
+      "zone": "zone-plant-room",
+      "xy": [
+        31.25,
+        22.5
+      ]
+    },
+    "ahu-01": {
+      "floor": "floor-b1",
+      "zone": "zone-patient-ward",
+      "xy": [
+        62.5,
+        15
+      ]
+    },
+    "dashboard-ward": {
+      "floor": "floor-b1",
+      "zone": "zone-patient-ward",
+      "xy": [
+        87.5,
+        15
+      ]
+    },
+    "ahu-02": {
+      "floor": "floor-b1",
+      "zone": "zone-corridor",
+      "xy": [
+        12.5,
+        45
+      ]
+    },
+    "fcu-05": {
+      "floor": "floor-b1",
+      "zone": "zone-utility",
+      "xy": [
+        62.5,
+        45
+      ]
+    },
+    "fcu-03": {
+      "floor": "floor-gf",
+      "zone": "zone-corridor",
+      "xy": [
+        25,
+        30
+      ]
+    },
+    "fcu-04": {
+      "floor": "floor-gf",
+      "zone": "zone-corridor",
+      "xy": [
+        75,
+        30
+      ]
+    },
+    "fcu-01": {
+      "floor": "floor-1f",
+      "zone": "zone-patient-ward",
+      "xy": [
+        25,
+        30
+      ]
+    },
+    "fcu-02": {
+      "floor": "floor-1f",
+      "zone": "zone-patient-ward",
+      "xy": [
+        75,
+        30
+      ]
+    }
+  },
+  "plant": {
+    "viewBox": [
+      0,
+      0,
+      1600,
+      900
+    ],
+    "nodes": [
+      {
+        "id": "pn-cooling-tower-01",
+        "kind": "equipment",
+        "assetId": "cooling-tower-01",
+        "type": "cooling-tower",
+        "xy": [
+          200,
+          100
+        ]
+      },
+      {
+        "id": "pn-chiller-01",
+        "kind": "equipment",
+        "assetId": "chiller-01",
+        "type": "chiller",
+        "xy": [
+          600,
+          100
+        ]
+      },
+      {
+        "id": "pn-chiller-02",
+        "kind": "equipment",
+        "assetId": "chiller-02",
+        "type": "chiller",
+        "xy": [
+          600,
+          220
+        ]
+      },
+      {
+        "id": "pn-chwp-01",
+        "kind": "equipment",
+        "assetId": "chwp-01",
+        "type": "chilled-water-pump",
+        "xy": [
+          800,
+          100
+        ]
+      },
+      {
+        "id": "pn-chwp-02",
+        "kind": "equipment",
+        "assetId": "chwp-02",
+        "type": "chilled-water-pump",
+        "xy": [
+          800,
+          220
+        ]
+      },
+      {
+        "id": "pn-ahu-01",
+        "kind": "equipment",
+        "assetId": "ahu-01",
+        "type": "ahu",
+        "xy": [
+          1200,
+          100
+        ]
+      },
+      {
+        "id": "pn-ahu-02",
+        "kind": "equipment",
+        "assetId": "ahu-02",
+        "type": "ahu",
+        "xy": [
+          1200,
+          220
+        ]
+      },
+      {
+        "id": "pn-fcu-01",
+        "kind": "equipment",
+        "assetId": "fcu-01",
+        "type": "fcu",
+        "xy": [
+          1400,
+          100
+        ]
+      },
+      {
+        "id": "pn-fcu-02",
+        "kind": "equipment",
+        "assetId": "fcu-02",
+        "type": "fcu",
+        "xy": [
+          1400,
+          220
+        ]
+      },
+      {
+        "id": "pn-fcu-03",
+        "kind": "equipment",
+        "assetId": "fcu-03",
+        "type": "fcu",
+        "xy": [
+          1400,
+          340
+        ]
+      },
+      {
+        "id": "pn-fcu-04",
+        "kind": "equipment",
+        "assetId": "fcu-04",
+        "type": "fcu",
+        "xy": [
+          1400,
+          460
+        ]
+      },
+      {
+        "id": "pn-fcu-05",
+        "kind": "equipment",
+        "assetId": "fcu-05",
+        "type": "fcu",
+        "xy": [
+          1400,
+          580
+        ]
+      },
+      {
+        "id": "pn-cwp-01",
+        "kind": "equipment",
+        "assetId": "cwp-01",
+        "type": "condenser-water-pump",
+        "xy": [
+          1500,
+          100
+        ]
+      },
+      {
+        "id": "pn-dashboard-plant",
+        "kind": "equipment",
+        "assetId": "dashboard-plant",
+        "type": "dashboard",
+        "xy": [
+          1500,
+          100
+        ]
+      },
+      {
+        "id": "pn-dashboard-ward",
+        "kind": "equipment",
+        "assetId": "dashboard-ward",
+        "type": "dashboard",
+        "xy": [
+          1500,
+          220
+        ]
+      },
+      {
+        "id": "hdr-chw-supply",
+        "kind": "header",
+        "label": "CHW Supply",
+        "xy": [
+          800,
+          840
+        ],
+        "w": 400
+      },
+      {
+        "id": "hdr-chw-return",
+        "kind": "header",
+        "label": "CHW Return",
+        "xy": [
+          800,
+          880
+        ],
+        "w": 400
+      }
+    ],
+    "edges": [
+      {
+        "id": "pe-1",
+        "from": "pn-chiller-02",
+        "to": "pn-chwp-01",
+        "medium": "chilled"
+      },
+      {
+        "id": "pe-2",
+        "from": "pn-ahu-02",
+        "to": "pn-fcu-01",
+        "medium": "chilled"
+      }
+    ]
+  }
+}

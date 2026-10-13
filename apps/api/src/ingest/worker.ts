@@ -207,7 +207,9 @@ export function startIngestWorker(
   config: LoadedConfig,
   deps: IngestDeps,
   onBatch?: (stats: IngestStats) => void,
+  intervalMs?: number,
 ): IngestWorkerHandle {
+  const interval = intervalMs && intervalMs > 0 ? intervalMs : config.telemetry.cadenceSeconds * 1000;
   let stopped = false;
   let timer: ReturnType<typeof setTimeout> | null = null;
 
@@ -230,7 +232,7 @@ export function startIngestWorker(
       void err;
     }
     if (!stopped) {
-      timer = setTimeout(tick, config.telemetry.cadenceSeconds * 1000);
+      timer = setTimeout(tick, interval);
       if (typeof timer.unref === 'function') timer.unref();
     }
   };

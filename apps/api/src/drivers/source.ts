@@ -59,7 +59,7 @@ export class NotImplementedError extends Error {
 
 export interface SimHttpSourceOptions {
   baseUrl: string;
-  /** Endpoint path; defaults to the SimSite points endpoint. */
+  /** Endpoint path; defaults to the SimSite raw telemetry endpoint. */
   path?: string;
   fetchImpl?: typeof fetch;
   /** Default measurement tag when the sim does not provide one. */
@@ -80,7 +80,7 @@ interface SimPointDto {
 }
 
 /**
- * Pulls points from SimSite (`GET /sim/points?since=<cursor>&limit=<n>`) with a
+ * Pulls points from SimSite (`GET /sim/raw?since=<cursor>&limit=<n>`) with a
  * cursor on the sim's monotonic sequence.
  */
 export class SimHttpSource implements SourceDriver {
@@ -90,7 +90,7 @@ export class SimHttpSource implements SourceDriver {
 
   constructor(private readonly opts: SimHttpSourceOptions) {
     this.fetchImpl = opts.fetchImpl ?? fetch;
-    this.path = opts.path ?? '/sim/points';
+    this.path = opts.path ?? '/sim/raw';
     this.defaultMeasurement = opts.defaultMeasurement ?? 'components';
   }
 

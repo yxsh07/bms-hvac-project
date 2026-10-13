@@ -39,6 +39,7 @@ export function Header({
   const { user, sites, currentSiteId, setCurrentSite, logout, hasRole } = useAuth();
   const { theme, toggleTheme } = useTheme();
   const [siteMenuOpen, setSiteMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [showWeatherDetail, setShowWeatherDetail] = useState(false);
   const siteMenuRef = useRef<HTMLDivElement>(null);
@@ -69,13 +70,13 @@ export function Header({
   };
 
   return (
-    <header className="app-header fixed top-0 left-0 right-0 z-header flex items-center gap-3 px-4 h-[var(--header-height)] bg-surface-base border-b border-default">
+    <header className="app-header fixed top-0 left-0 right-0 z-50 flex items-center gap-3 px-4 h-[var(--header-height)] bg-surface-base border-b border-default">
       {/* Hamburger menu */}
       <button
-        onClick={onMenuClick}
+        onClick={() => { setMenuOpen((open) => !open); onMenuClick?.(); }}
         className="header-hamburger p-2 rounded-md bg-surface-elevated hover:bg-state-hover transition-colors text-content-primary"
         aria-label="Open main menu"
-        aria-expanded="false"
+        aria-expanded={menuOpen}
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <line x1="3" y1="6" x2="21" y2="6" />
@@ -83,6 +84,22 @@ export function Header({
           <line x1="3" y1="18" x2="21" y2="18" />
         </svg>
       </button>
+
+      {menuOpen && (
+        <nav aria-label="Main navigation" className="absolute left-3 top-full z-dropdown mt-1 grid min-w-[220px] gap-1 rounded-lg border border-default bg-surface-base p-2 shadow-lg">
+          {[
+            ['/', 'Dashboard'],
+            ['/building', 'Building twin'],
+            ['/plant', 'Plant schematic'],
+            ['/live', 'Live telemetry'],
+            ['/alarms', 'Alarms'],
+            ['/setpoints', 'Set-points'],
+            ['/controllers', 'Controller health'],
+          ].map(([href, label]) => (
+            <a key={href} href={href} onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm text-content-primary hover:bg-state-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus">{label}</a>
+          ))}
+        </nav>
+      )}
 
       {/* Product mark */}
       <div className="header-brand flex items-center gap-2 flex-shrink-0" aria-label="BMS Digital Twin">

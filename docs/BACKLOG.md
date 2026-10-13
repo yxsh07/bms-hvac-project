@@ -49,7 +49,7 @@ Status as of the repo-recovery session (see docs/BURN.md).
 - [x] T-040 Sim Console shell and controls (apps/sim-console)
 - [~] T-041 Scenario engine + gateway presets (engine done; console start/stop wired)
 - [ ] T-042 Playwright suite ↔ Test Checklist
-- [ ] T-043 What-if endpoint and twin overlay
+- [x] T-043 What-if endpoint and twin overlay
 - [ ] T-044 Sim control modes and weather strip env (env endpoints done)
 
 ## Phase 5

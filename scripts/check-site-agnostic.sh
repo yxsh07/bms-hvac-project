@@ -6,6 +6,9 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+# Scan source trees only. Raw client exports may exist beside the checkout and
+# must never be read by this check.
+SEARCH_PATHS=("${REPO_ROOT}/apps" "${REPO_ROOT}/packages" "${REPO_ROOT}/tools" "${REPO_ROOT}/infra" "${REPO_ROOT}/.github")
 
 # Tier 1: forbidden strings (exact match across whole repo)
 TIER1_PATTERNS=(
@@ -42,7 +45,7 @@ for pattern in "${TIER1_PATTERNS[@]}"; do
     --exclude-dir=scripts \
     --exclude="build_ontology_json.py" \
     --exclude="*.test.*" \
-    "$pattern" "$REPO_ROOT" 2>/dev/null || true)
+    "$pattern" "${SEARCH_PATHS[@]}" 2>/dev/null || true)
   for f in $matches; do
     echo "FAIL: Tier 1 hit: pattern='$pattern' file=$f"
     fail=1
@@ -63,7 +66,7 @@ if [ -f "${REPO_ROOT}/data/seed/forbidden-strings.txt" ]; then
       --exclude-dir=scripts \
       --exclude="build_ontology_json.py" \
       --exclude="*.test.*" \
-      "$pattern" "$REPO_ROOT" 2>/dev/null || true)
+      "$pattern" "${SEARCH_PATHS[@]}" 2>/dev/null || true)
     for f in $matches; do
       echo "FAIL: Tier 1 hit: forbidden string '$pattern' file=$f"
       fail=1

@@ -14,9 +14,9 @@ services:
       POSTGRES_DB: app_store
     volumes:
       - timescale_data:/var/lib/postgresql/data
-      - ./infra/init.sql:/docker-entrypoint-initdb.d/00-bootstrap.sql:ro
-      - ./apps/api/src/migrations/001_init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
-      - ./apps/api/src/migrations/002_rollups.sql:/docker-entrypoint-initdb.d/02-rollups.sql:ro
+      - ./init.sql:/docker-entrypoint-initdb.d/00-bootstrap.sql:ro
+      - ../apps/api/src/migrations/001_init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+      - ../apps/api/src/migrations/002_rollups.sql:/docker-entrypoint-initdb.d/02-rollups.sql:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d app_store"]
       interval: 5s
@@ -25,11 +25,12 @@ services:
 
   sim:
     build:
-      context: .
+      context: ..
       dockerfile: apps/sim/Dockerfile
     ports: ["8000:8000"]
     environment:
       SITE_STORE_DSN: postgres://postgres:postgres@timescale:5432/app_store
+      SIM_AUTORUN: "1"
     depends_on:
       timescale:
         condition: service_healthy
@@ -45,13 +46,16 @@ services:
 
   api:
     build:
-      context: .
+      context: ..
       dockerfile: apps/api/Dockerfile
     ports: ["3000:3000"]
     environment:
       PORT: 3000
-      SITE_CONFIG_PATH: data/seed/site.json
+      SITE_CONFIG_PATH: /app/data/seed/site.json
       SITE_STORE_DSN: postgres://postgres:postgres@timescale:5432/app_store
+      SITE_TELEMETRY_URL: http://sim:8000
+      SITE_GATEWAY_URL: http://sim:8000/gateway
+      INGEST_POLL_MS: 1000
       # Dev-only secrets. Replace in any real deployment.
       AUDIT_HMAC_KEY: dev-audit-key-do-not-use-in-production
       JWT_SECRET: dev-jwt-secret-do-not-use-in-production
@@ -63,14 +67,14 @@ services:
 
   web:
     build:
-      context: .
+      context: ..
       dockerfile: apps/web/Dockerfile
     ports: ["5173:80"]
     depends_on: [api]
 
   sim-console:
     build:
-      context: .
+      context: ..
       dockerfile: apps/sim-console/Dockerfile
     ports: ["5174:80"]
     depends_on: [sim]

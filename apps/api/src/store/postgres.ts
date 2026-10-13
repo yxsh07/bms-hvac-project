@@ -458,6 +458,36 @@ export class PostgresStore implements Store {
     return this.audit.verify(siteId);
   }
 
+  /**
+   * E2E-only: mutate a stored audit row in place. Never called by product code;
+   * the route that reaches it is disabled unless E2E_TAMPER_ENABLED=1.
+   */
+  async tamperAudit(siteId: string, id: string, patch: Partial<AuditLogEntry>): Promise<void> {
+    const columns: Record<string, string> = {
+      justification: 'justification',
+      approverId: 'approver_id',
+      actorEmail: 'actor_email',
+      ip: 'ip',
+      device: 'device',
+      signature: 'signature',
+    };
+    const sets: string[] = [];
+    const values: unknown[] = [];
+    let i = 1;
+    for (const [key, column] of Object.entries(columns)) {
+      if (patch[key as keyof AuditLogEntry] !== undefined) {
+        sets.push(`${column}=$${i++}`);
+        values.push(patch[key as keyof AuditLogEntry]);
+      }
+    }
+    if (sets.length === 0) return;
+    values.push(siteId, id);
+    await this.q(
+      `UPDATE audit_log SET ${sets.join(', ')} WHERE site_id=$${i++} AND id=$${i++}`,
+      values,
+    );
+  }
+
   // ── Ingest ─────────────────────────────────────────────────────────────────
 
   async getIngestCursor(siteId: string): Promise<string | null> {

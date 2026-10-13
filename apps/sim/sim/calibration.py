@@ -20,6 +20,16 @@ from typing import Any
 
 UTC = "Z"
 
+# Known metadata column names (normalised) that should not be melted as fields.
+_METADATA_COLUMNS = {
+    'time', 'timestamp', '_time',
+    'measurement', '_measurement',
+    'entity', 'entityid', 'component', 'componentid', 'deviceid', 'device_id', 'id',
+    'site', 'siteid', 'site_id',
+    'result', 'table',
+    '',  # empty column (common in InfluxDB exports)
+}
+
 # Header aliases mirroring apps/api/src/drivers/csv-parser.ts.
 _ALIASES = {
     "time": {"time", "timestamp", "datetime", "date"},
@@ -43,6 +53,50 @@ def _norm(cell: str) -> str:
     return cell.strip().lower().replace("_", "").replace("-", "").replace(" ", "")
 
 
+def _is_pivoted_format(header: list[str]) -> bool:
+    """Detect if a CSV header is in pivoted format (many field columns, few metadata columns)."""
+    field_count = 0
+    for h in header:
+        norm = _norm(h)
+        if norm not in _METADATA_COLUMNS:
+            field_count += 1
+    return field_count > 4
+
+
+def _melt_pivoted_row(cells: list[str], header: list[str], cols: dict[str, int]) -> list[CalRow]:
+    """Melt a pivoted row into multiple CalRow entries (one per field column)."""
+    out: list[CalRow] = []
+    t = cells[cols["time"]].strip()
+    try:
+        _ = int(t[:4])  # quick check if it looks like a timestamp
+    except (ValueError, IndexError):
+        return out
+    entity = cells[cols["entity"]].strip()
+    if not entity:
+        return out
+
+    for i, col_name in enumerate(header):
+        norm_name = _norm(col_name)
+        if norm_name in _METADATA_COLUMNS:
+            continue
+        value_str = cells[i].strip() if i < len(cells) else ""
+        if not value_str:
+            continue
+        try:
+            numeric = float(value_str)
+        except ValueError:
+            continue
+        is_delayed = _is_delay_field(col_name) and numeric == 1
+        out.append(CalRow(
+            time=t,
+            entity=entity,
+            field=col_name,
+            value=numeric,
+            is_delayed=is_delayed,
+        ))
+    return out
+
+
 def _resolve(header: list[str]) -> dict[str, int] | None:
     norm = [_norm(h) for h in header]
     out: dict[str, int] = {}
@@ -61,18 +115,23 @@ def _is_delay_field(field_name: str) -> bool:
 
 
 def parse_annotated_csv(text: str) -> tuple[list[CalRow], dict[str, int]]:
-    """Multi-block annotated CSV: blank line ends a block, ``#`` is an annotation."""
+    """Multi-block annotated CSV: blank line ends a block, ``#`` is an annotation.
+
+    Supports both long format (time, entity, field, value) and pivoted format
+    (time, entity, field1, field2, ... where each field column is melted).
+    """
     rows: list[CalRow] = []
     stats = {"line_count": 0, "ragged": 0, "invalid": 0}
     header: list[str] = []
     cols: dict[str, int] | None = None
+    is_pivoted = False
     delayed_keys: set[tuple[str, str]] = set()
-    delay_fields: list[CalRow] = []
 
     def flush_block() -> None:
-        nonlocal header, cols
+        nonlocal header, cols, is_pivoted
         header = []
         cols = None
+        is_pivoted = False
 
     for raw in text.splitlines():
         line = raw.rstrip()
@@ -85,12 +144,39 @@ def parse_annotated_csv(text: str) -> tuple[list[CalRow], dict[str, int]]:
         if not header:
             header = [c.strip() for c in cells]
             cols = _resolve(header)
+            is_pivoted = _is_pivoted_format(header)
+            if is_pivoted:
+                # For pivoted format, we only need time, entity, and optionally measurement
+                # Re-resolve with relaxed requirements
+                norm = [_norm(h) for h in header]
+                cols = {}
+                for i, h in enumerate(norm):
+                    if h in {"time", "timestamp", "_time"}:
+                        cols["time"] = i
+                    elif h in {"entity", "entityid", "component", "componentid", "id", "asset"}:
+                        cols["entity"] = i
+                    elif h in {"measurement", "_measurement"}:
+                        cols["measurement"] = i
+                if "time" not in cols or "entity" not in cols:
+                    cols = None
             stats["line_count"] += 1
             continue
         stats["line_count"] += 1
         if cols is None or len(cells) != len(header):
             stats["ragged"] += 1
             continue
+
+        if is_pivoted:
+            # Melt pivoted row
+            melted = _melt_pivoted_row(cells, header, cols)
+            for row in melted:
+                if _is_delay_field(row.field) and row.value == 1:
+                    row.is_delayed = True
+                    delayed_keys.add((row.entity, row.time))
+                rows.append(row)
+            continue
+
+        # Long format
         t = cells[cols["time"]].strip()
         entity = cells[cols["entity"]].strip()
         field_name = cells[cols["field"]].strip()
@@ -106,7 +192,6 @@ def parse_annotated_csv(text: str) -> tuple[list[CalRow], dict[str, int]]:
             row.is_delayed = True
             delayed_keys.add((entity, t))
         rows.append(row)
-        delay_fields.append(row)
 
     # Propagate delay markers to sibling rows at the same (entity, time).
     for row in rows:
@@ -152,9 +237,90 @@ def _hour(time_str: str) -> int:
     return 0
 
 
+def infer_entity_type(fields: set[str]) -> str:
+    """Infer entity type from the set of field names present."""
+    fields_lower = {f.lower() for f in fields}
+
+    # Chiller: very specific chilled/condenser water plant fields (NO ikwtr, NO outputfrequency, NO condapproach)
+    chiller_indicators = {
+        'chleff', 'chlwaterflow', 'chwmval', 'chwmhtmp', 'condewt', 'condlwt',
+        'condwaterflow', 'coolewt', 'coollwt', 'dispressure', 'evapflow', 'evapproach',
+        'oahum', 'oatmp', 'wbt', 'chlwmval', 'chlwtdelta', 'chlwtdelta_global',
+        'condmhrtemp', 'condmhstemp', 'condtdelta',
+        'eff', 'scta', 'setpoint', 'ssta', 'sucpressure', 'toteff', 'tpcons',
+        'tptr', 'tr', 'v', 'oilpressure', 'opernlstatus', 'pertotcap', 'mhddtmp',
+        'mhdmdtr', 'nochr'
+    }
+    if chiller_indicators & fields_lower:
+        return "chiller"
+
+    # Cooling tower: approach, wetbulb, condenser temps - NO shutvalpos, NO noctr
+    cooling_tower_indicators = {'approach', 'wetbulb', 'inwatertemp', 'outwatertemp', 'range', 'condapproach', 'efficiency'}
+    if cooling_tower_indicators & fields_lower:
+        return "cooling_tower"
+
+    # Pump: head, shutvalpos, waterflow, no*wpr (specific pump fields) - NO ikwtr, NO outputfrequency, NO mot2* (those are VFD)
+    pump_indicators = {'head', 'shutvalpos', 'waterflow', 'nopcwpr', 'nocondwpr', 'noctr', 'current'}
+    if pump_indicators & fields_lower:
+        return "pump"
+
+    # Chiller plant (combined): has chlwaterflow, chlmval, chlmhtmp, ctrltemp, dfttemp, ftemp, r1cdtemp, etc.
+    chiller_plant_indicators = {'chlwaterflow', 'chlmval', 'chlmhtmp', 'ctrltemp', 'dfttemp', 'flwtemp', 'ctrlmode', 'r1cdtemp', 'r1dptemp', 'r2cdtemp', 'r2dptemp', 'r3cdtemp', 'r3dptemp', 'r4cdtemp', 'radapp', 'rdptemp', 'rtemp', 'setpttemp', 'sltemp', 'tr', 'wdel', 'chlwmval', 'chlwtdelta', 'chwmhtmp', 'coolewt', 'coollwt', 'chlwtdelta_global'}
+    if chiller_plant_indicators & fields_lower:
+        return "chiller_plant"
+
+    # VFD/Fan motor: mot2* (specific to VFD-driven motors), outputfrequency, fanmode, hfstatus, h1status, hanalogstatus, pfstatus
+    vfd_indicators = {'mot2controltype', 'mot2kw', 'mot2status', 'mot2tripstatus', 'fanmode', 'hfstatus', 'h1status', 'hanalogstatus', 'pfstatus', 'outputfrequency'}
+    if vfd_indicators & fields_lower:
+        return "vfd_motor"
+
+    # AHU: requires actuator + (ahum OR atemp OR fanstatus OR ffstatus OR filterstatus OR pfstatus)
+    # These are specific to air handling units - REMOVED pf (conflicts with electrical)
+    ahu_specific = {'actuator', 'ahum', 'atemp', 'fanstatus', 'ffstatus', 'filterstatus', 'famddstatus', 'motspeed', 'pfstatus', 'ra', 'rarh', 'sa', 'sarh', 'setpoint_global', 'twvp', 'vfdmode', 'fanspeed', 'thmmode', 'thmsetpoint', 'cassetpoint', 'mode', 'shutvalpos', 'dp1', 'ahum_global', 'brttemp_global', 'current'}
+    if ahu_specific & fields_lower:
+        return "ahu"
+
+    # FCU: rdptemp, rltemp, rtemp, sltemp, tr, wdel, ftemp, radcdel, radapp, radcdel, avgcol, chlwaterflow, ftemp, radcdel, ctrlmode, ctrltemp, dfttemp, flwtemp, r1cdtemp, r1dptemp, r2cdtemp, r2dptemp, r3cdtemp, r3dptemp, r4cdtemp, r4cdtemp, radapp, rdptemp, rtemp, setpttemp, sltemp, tr, wdel
+    fcu_indicators = {'rdptemp', 'rltemp', 'rtemp', 'sltemp', 'tr', 'wdel', 'ftemp', 'radcdel', 'radapp', 'avgcol', 'chlwaterflow', 'ctrlmode', 'ctrltemp', 'dfttemp', 'flwtemp', 'r1cdtemp', 'r1dptemp', 'r2cdtemp', 'r2dptemp', 'r3cdtemp', 'r3dptemp', 'r4cdtemp', 'setpttemp'}
+    if fcu_indicators & fields_lower:
+        return "fcu"
+
+    # Damper/Valve actuator: dpos, fahum, fatemp, sa, sahum
+    damper_indicators = {'dpos', 'fahum', 'fatemp', 'sa', 'sahum'}
+    if damper_indicators & fields_lower:
+        return "damper"
+
+    # Electrical meter: a_amp, a_vln, statustrip, alarmstatus, ikwtr
+    electrical_indicators = {'a_amp', 'a_vln', 'statustrip', 'alarmstatus', 'ikwtr'}
+    if electrical_indicators & fields_lower:
+        return "electrical"
+
+    # Electrical panel/breaker: a_amp, a_vln, kva, kvah, kwh, pf, statustrip, alarmstatus, ikwtr, frequency, vp
+    panel_indicators = {'a_amp', 'a_vln', 'kva', 'kvah', 'kwh', 'pf', 'statustrip', 'alarmstatus', 'ikwtr', 'frequency', 'vp'}
+    if panel_indicators & fields_lower:
+        return "electrical_panel"
+
+    # Electrical (generic kva/kvah/kw/pf but with statustrip/alarmstatus/ikwtr)
+    electrical_generic = {'a_amp', 'a_vln', 'kva', 'kvah', 'kwh', 'pf', 'statustrip', 'alarmstatus', 'ikwtr', 'frequency', 'vp'}
+    if electrical_generic & fields_lower:
+        return "electrical"
+
+    # Dashboard/virtual: Fkw, fikW/TR, b2kw, status1...statusN
+    dashboard_indicators = {'1fkw', '2fkw', '3fkw', '4fkw', '5fkw', '6fkw', '7fkw', '8fkw', '9fkw', '10fikw/tr', '2fikw/tr', '4fikw/tr', '5fikw/tr', '7fikw/tr', '8fikw/tr', 'b2ikw/tr', 'b2kw', '1fikw/tr'}
+    if dashboard_indicators & fields_lower:
+        return "dashboard"
+
+    # Status only entity
+    status_only = all('status' in f for f in fields_lower)
+    if status_only:
+        return "status_point"
+
+    return "unknown"
+
+
 def calibrate(
     rows: Iterable[CalRow],
-    entity_types: dict[str, str],
+    entity_types: dict[str, str] | None = None,
     *,
     cadence_seconds: int = 60,
     window_minutes: int | None = None,
@@ -168,11 +334,24 @@ def calibrate(
     tower_approach: list[dict[str, float]] = []
     fault_distribution: dict[str, int] = {}
     chiller_load: dict[str, dict[str, float]] = {}
-    chiller_kw: dict[str, dict[str, float]] = {} 
+    chiller_kw: dict[str, dict[str, float]] = {}
 
     # Per-entity latest values for the floor-kW question.
     dashboard_total_kw: list[float] = []
 
+    # Collect fields per entity for type inference
+    entity_fields: dict[str, set[str]] = {}
+    for row in rows:
+        if row.field:
+            entity_fields.setdefault(row.entity, set()).add(row.field)
+
+    # Build entity_types if not provided
+    if entity_types is None:
+        entity_types = {}
+        for entity, fields in entity_fields.items():
+            entity_types[entity] = infer_entity_type(fields)
+
+    # Main calibration loop
     for row in rows:
         asset_type = entity_types.get(row.entity, "unknown")
         value = row.value
@@ -259,11 +438,11 @@ def reset_state() -> None:
     """Retained for CLI symmetry; calibration is now stateless."""
 
 
-def calibrate_export(input_path: str | Path, entity_types: dict[str, str], **kw: Any) -> dict[str, Any]:
+def calibrate_export(input_path: str | Path, entity_types: dict[str, str] | None = None, **kw: Any) -> dict[str, Any]:
     path = Path(input_path)
     texts: list[str] = []
     if path.is_dir():
-        for f in sorted(path.glob("*.csv")):
+        for f in sorted(path.rglob("*.csv")):
             texts.append(f.read_text(encoding="utf-8"))
     else:
         texts.append(path.read_text(encoding="utf-8"))
@@ -274,7 +453,7 @@ def calibrate_export(input_path: str | Path, entity_types: dict[str, str], **kw:
     return calibrate(rows, entity_types, **kw)
 
 
-def write_calibration(result: dict[str, Any], out_dir: str | Path, max_bytes: int = 200_000) -> list[Path]:
+def write_calibration(result: dict[str, Any], out_dir: str | Path, max_bytes: int = 2_000_000) -> list[Path]:
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     files = {
