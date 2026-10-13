@@ -23,7 +23,7 @@ export interface SourceRow {
   measurement: string;
   entityId: string;
   field: string;
-  value: number;
+  value: number | null;
   isDelayed: boolean;
 }
 
@@ -105,14 +105,13 @@ export class SimHttpSource implements SourceDriver {
     const points = Array.isArray(body) ? body : body.points ?? [];
 
     const rows: SourceRow[] = points
-      .filter((p) => p.value !== null && p.value !== undefined)
       .map((p, i) => ({
         seq: String(p.seq ?? (cursor ? Number(cursor) + 1 + i : i + 1)),
         time: p.time ?? p.at ?? new Date().toISOString(),
         measurement: p.measurement ?? this.defaultMeasurement,
         entityId: p.entity_id ?? p.entityId ?? '',
         field: p.field,
-        value: Number(p.value),
+        value: p.value === null || p.value === undefined ? null : Number(p.value),
         isDelayed: Boolean(p.is_delayed ?? p.isDelayed),
       }));
 
@@ -187,7 +186,7 @@ export class CsvSource implements SourceDriver {
           measurement,
           entityId: row.entityId,
           field: row.field,
-          value: row.value ?? 0,
+          value: row.value,
           isDelayed: row.isDelayed,
         });
       }
@@ -261,7 +260,7 @@ export class TimescaleRawSource implements SourceDriver {
       measurement: String(r.measurement),
       entityId: String(r.entity_id),
       field: String(r.field),
-      value: Number(r.value),
+      value: r.value === null ? null : Number(r.value),
       isDelayed: Boolean(r.is_delayed),
     }));
     const nextCursor = rows.length ? rows[rows.length - 1].seq : cursor ?? '0';
