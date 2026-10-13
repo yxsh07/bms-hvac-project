@@ -9,13 +9,26 @@
  */
 
 import React, { Suspense, lazy, useEffect } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useThree } from '@react-three/fiber';
 import type { TwinLayout, Zone } from 'packages-twin-core';
 import type { ComfortBands } from './twin-store.js';
 import { useTwinStore } from './twin-store.js';
 import { ExpandControls } from './ExpandControls.js';
 
 const BuildingTwin = lazy(() => import('./BuildingTwin.js'));
+
+function FitCameraToViewport() {
+  const { camera, size, invalidate } = useThree();
+
+  useEffect(() => {
+    const aspect = size.width / Math.max(size.height, 1);
+    const distance = Math.max(1, 1.2 / aspect);
+    camera.position.set(7 * distance, 8 * distance, 11 * distance);
+    invalidate();
+  }, [camera, size.width, size.height, invalidate]);
+
+  return null;
+}
 
 // ── Props ────────────────────────────────────────────────────────────────────
 
@@ -75,6 +88,7 @@ export const TwinCanvas: React.FC<TwinCanvasProps> = (props) => {
           gl={{ antialias: true, alpha: false, powerPreference: 'high-performance' }}
           camera={{ position: [7, 8, 11], fov: 42, near: 0.1, far: 200 }}
         >
+          <FitCameraToViewport />
           <Suspense fallback={null}>
             <BuildingTwin {...props} />
           </Suspense>

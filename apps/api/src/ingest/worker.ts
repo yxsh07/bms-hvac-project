@@ -75,7 +75,7 @@ export async function ingestBatch(
       fields = {};
       entityFields.set(assetId, fields);
     }
-    fields[row.field] = row.value;
+    if (row.value !== null) fields[row.field] = row.value;
   }
 
   const telemetryRows: TelemetryRow[] = [];
@@ -106,11 +106,30 @@ export async function ingestBatch(
         time,
         value: row.value,
         rawValue: null,
-        quality: 0,
+        quality: row.value === null ? 1 : 0,
         isDelayed: row.isDelayed,
         seq: Number(row.seq),
       });
-      byQuality[0] += 1;
+      byQuality[row.value === null ? 1 : 0] += 1;
+      continue;
+    }
+
+    // The source has no numeric value to qualify. Preserve the sequence and
+    // timestamp as an engineering null so coverage counts it as unavailable.
+    if (row.value === null) {
+      telemetryRows.push({
+        siteId,
+        entityId: row.entityId,
+        entityKind: 'component',
+        field: row.field,
+        time,
+        value: null,
+        rawValue: null,
+        quality: 1,
+        isDelayed: row.isDelayed,
+        seq: Number(row.seq),
+      });
+      byQuality[1] += 1;
       continue;
     }
 

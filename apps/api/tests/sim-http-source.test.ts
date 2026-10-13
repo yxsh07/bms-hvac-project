@@ -12,8 +12,14 @@ describe('SimHttpSource', () => {
         field: 'SAT',
         value: 13.9,
         is_delayed: false,
+      }, {
+        seq: 43,
+        time: '2026-07-12T00:01:00+00:00',
+        entity_id: 'ahu-01',
+        field: 'RAT',
+        value: null,
       }],
-      cursor: 42,
+      cursor: 43,
     }), { status: 200 }));
     const source = new SimHttpSource({
       baseUrl: 'http://sim:8000',
@@ -26,8 +32,8 @@ describe('SimHttpSource', () => {
       'http://sim:8000/sim/raw?since=41&limit=100',
       { headers: { Accept: 'application/json' } },
     );
-    expect(batch.cursor).toBe('42');
-    expect(batch.rows).toEqual([{
+    expect(batch.cursor).toBe('43');
+    expect(batch.rows[0]).toEqual({
       seq: '42',
       time: '2026-07-12T00:01:00+00:00',
       measurement: 'components',
@@ -35,6 +41,7 @@ describe('SimHttpSource', () => {
       field: 'SAT',
       value: 13.9,
       isDelayed: false,
-    }]);
+    });
+    expect(batch.rows[1]).toMatchObject({ seq: '43', field: 'RAT', value: null });
   });
 });

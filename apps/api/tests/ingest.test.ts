@@ -82,6 +82,23 @@ describe('ingest worker quality pipeline (§7.5)', () => {
     expect((await ctx.store.latest(ctx.config.siteId, 'chiller-01')).KW.value).toBe(11);
   });
 
+  it('stores a null source reading with a quality code and advances the cursor', async () => {
+    const ctx = await makeContext();
+    const row = { ...sourceRow(1, 'chiller-01', 'CHWST', 7, T0), value: null };
+    const stats = await ingestBatch(
+      ctx.store,
+      new FakeSource([row]),
+      ctx.config,
+      { ontology: ctx.ontology, pointRoles: ctx.pointRoles },
+    );
+
+    expect(stats.stored).toBe(1);
+    expect(stats.byQuality[1]).toBe(1);
+    expect((await ctx.store.latest(ctx.config.siteId, 'chiller-01')).CHWST)
+      .toMatchObject({ value: null, rawValue: null, quality: 1 });
+    expect(await ctx.store.getIngestCursor(ctx.config.siteId)).toBe('1');
+  });
+
   it('advances the cursor so a second run is a no-op', async () => {
     const ctx = await makeContext();
     const source = new FakeSource([sourceRow(1, 'chiller-01', 'KW', 5, T0)]);
