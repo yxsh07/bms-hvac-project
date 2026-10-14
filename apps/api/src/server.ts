@@ -209,6 +209,9 @@ export async function main(): Promise<void> {
   const config = await loadConfig();
   const deps = await createServerDeps({ config });
   await seedDemoUsers(deps.store, config);
+  if (config.telemetry.driver === 'sim-http' && config.telemetry.url) {
+    await resumeSimClock(deps.store, config.siteId, config.telemetry.url);
+  }
   const app = await buildServer(deps);
   const port = Number(process.env.PORT ?? 3000);
 
@@ -216,6 +219,39 @@ export async function main(): Promise<void> {
   app.addHook('onClose', async () => stopWorkers());
 
   await app.listen({ port, host: process.env.HOST ?? '0.0.0.0' });
+}
+
+/** Keep a restarted SimSite ahead of persisted telemetry before polling starts. */
+export async function resumeSimClock(
+  store: Pick<Store, 'listAssets' | 'latest'>,
+  siteId: string,
+  sourceUrl: string,
+  fetchImpl: typeof fetch = fetch,
+): Promise<void> {
+  const assets = await store.listAssets(siteId);
+  const readings = await Promise.all(assets.map((asset) => store.latest(siteId, asset.id)));
+  const latestMs = Math.max(0, ...readings.flatMap((fields) => Object.values(fields).map((sample) => Date.parse(sample.at))));
+  if (!latestMs) return;
+
+  const base = sourceUrl.replace(/\/$/, '');
+  let response: Response | undefined;
+  for (let attempt = 0; attempt < 20; attempt += 1) {
+    try { response = await fetchImpl(`${base}/sim/state`); if (response.ok) break; }
+    catch { /* SimSite may still be starting. */ }
+    await new Promise((resolve) => setTimeout(resolve, 500));
+  }
+  if (!response?.ok) throw new Error('SimSite is unavailable for clock recovery');
+  const state = await response.json() as { clock: { simTime: string } };
+  if (Date.parse(state.clock.simTime) > latestMs) return;
+  const seek = await fetchImpl(`${base}/sim/clock`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ seek: new Date(latestMs).toISOString() }),
+  });
+  if (!seek.ok) throw new Error(`SimSite clock recovery failed (${seek.status})`);
+  const prime = await fetchImpl(`${base}/sim/run`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ minutes: 1 }),
+  });
+  if (!prime.ok) throw new Error(`SimSite clock recovery prime failed (${prime.status})`);
 }
 
 /**

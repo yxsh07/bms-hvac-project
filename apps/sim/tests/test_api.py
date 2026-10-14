@@ -55,6 +55,15 @@ def test_scenario_start_stop(client):
     assert client.post("/sim/scenarios/nope/start", json={}).status_code == 404
 
 
+def test_scenario_start_preserves_simulation_clock(client):
+    client.post("/sim/clock", json={"seek": "2026-07-15T02:20:00Z"})
+    client.post("/sim/scenarios/low-delta-t/start", json={"seed": 42})
+    state = client.get("/sim/state").json()
+    assert state["clock"]["simTime"] == "2026-07-15T02:20:00+00:00"
+    client.post("/sim/run", json={"minutes": 1})
+    assert client.get("/sim/state").json()["clock"]["simTime"] == "2026-07-15T02:21:00+00:00"
+
+
 def test_gateway_write_read_round_trip(client):
     assert client.put("/sim/gateway", json={"preset": "ok"}).status_code == 200
     write = client.post(

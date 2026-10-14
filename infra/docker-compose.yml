@@ -63,7 +63,7 @@ services:
       timescale:
         condition: service_healthy
       sim:
-        condition: service_started
+        condition: service_healthy
 
   web:
     build:
