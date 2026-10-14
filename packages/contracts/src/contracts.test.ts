@@ -10,6 +10,7 @@ import {
   LoginRequestSchema,
   LoginResponseSchema,
   SiteSummarySchema,
+  SiteDetailSchema,
   LatestResponseSchema,
   SeriesResponseSchema,
   SetpointRequestSchema,
@@ -30,6 +31,12 @@ import {
 } from './index.js';
 
 describe('auth contracts', () => {
+  it('parses live outdoor conditions on a site detail', () => {
+    expect(SiteDetailSchema.parse({
+      id: 'site', name: 'Site', timezone: 'UTC',
+      environment: { dryBulbTemp: 34.5, relativeHumidity: 63 },
+    }).environment?.dryBulbTemp).toBe(34.5);
+  });
   it('accepts a valid login request and rejects a bad email', () => {
     expect(LoginRequestSchema.safeParse({ email: 'a@b.com', password: 'x' }).success).toBe(true);
     expect(LoginRequestSchema.safeParse({ email: 'nope', password: 'x' }).success).toBe(false);

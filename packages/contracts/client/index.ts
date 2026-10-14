@@ -8,6 +8,7 @@ import type {
   RefreshRequest,
   MeResponse,
   SiteSummary,
+  SiteDetail,
   Ontology,
   PointRoles,
   Plant,
@@ -106,6 +107,7 @@ export class ApiClient {
 
   // ── Sites / ontology ────────────────────────────────────────────────────
   listSites(): Promise<SiteSummary[]> { return this.request('GET', '/api/v1/sites'); }
+  getSite(siteId: string): Promise<SiteDetail> { return this.request('GET', `/api/v1/sites/${siteId}`); }
   getOntology(siteId: string): Promise<Ontology> { return this.request('GET', `/api/v1/sites/${siteId}/ontology`); }
   getPointRoles(siteId: string): Promise<PointRoles> { return this.request('GET', `/api/v1/sites/${siteId}/point-roles`); }
   getPlantLayout(siteId: string): Promise<Plant> { return this.request('GET', `/api/v1/sites/${siteId}/plant-layout`); }
