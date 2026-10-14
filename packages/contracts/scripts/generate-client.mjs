@@ -30,6 +30,7 @@ import type {
   MeResponse,
   SiteSummary,
   Ontology,
+  PointRoles,
   Asset,
   AssetSummary,
   LatestResponse,
@@ -126,6 +127,7 @@ export class ApiClient {
   // ── Sites / ontology ────────────────────────────────────────────────────
   listSites(): Promise<SiteSummary[]> { return this.request('GET', '/api/v1/sites'); }
   getOntology(siteId: string): Promise<Ontology> { return this.request('GET', \`/api/v1/sites/\${siteId}/ontology\`); }
+  getPointRoles(siteId: string): Promise<PointRoles> { return this.request('GET', \`/api/v1/sites/\${siteId}/point-roles\`); }
   listAssets(siteId: string, q: { type?: string; zone?: string } = {}): Promise<AssetSummary[]> {
     return this.request('GET', \`/api/v1/sites/\${siteId}/assets\`, undefined, { query: q });
   }

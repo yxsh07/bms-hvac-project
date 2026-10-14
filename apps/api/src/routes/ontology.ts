@@ -7,6 +7,7 @@
  */
 
 import type { FastifyInstance } from 'fastify';
+import { PointRolesSchema } from '@contracts';
 import type {
   Asset as ContractAsset,
   AssetSummary,
@@ -20,7 +21,7 @@ import type {
 import type { Ontology as GraphOntology } from '@ontology';
 import { classifyPoint, type PointClassification } from '../domain/classify.js';
 import { notFound } from '../util/errors.js';
-import { setCache, authenticate, type RouteDeps } from './guards.js';
+import { setCache, authenticate, parse, type RouteDeps } from './guards.js';
 
 function toPointClass(classification: PointClassification): PointClass {
   const map: Record<PointClassification, PointClass> = {
@@ -155,6 +156,16 @@ export function registerOntologyRoutes(app: FastifyInstance, deps: RouteDeps): v
     setCache(reply, 'ontology');
     return toContractOntology(graph);
   });
+
+  app.get<{ Params: { siteId: string } }>(
+    '/sites/:siteId/point-roles',
+    { preHandler: [authenticate(deps)] },
+    async (request, reply) => {
+      ensureSite(deps, request.params.siteId);
+      setCache(reply, 'ontology');
+      return parse(PointRolesSchema, deps.pointRoles);
+    },
+  );
 
   app.get<{ Params: { siteId: string }; Querystring: { type?: string; zone?: string } }>(
     '/sites/:siteId/assets',
