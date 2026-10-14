@@ -4,7 +4,7 @@ import { ThemeProvider } from '@/context/ThemeContext';
 import { AuthProvider, useAuth } from '@/context/AuthContext';
 import { Login } from '@/pages/Login';
 import { Dashboard } from '@/pages/Dashboard';
-import { AssetWorkspace } from '@/pages/AssetWorkspace';
+import { LiveAssetWorkspace } from '@/pages/LiveAssetWorkspace';
 import clsx from 'clsx';
 
 // Lazy load heavy pages
@@ -51,7 +51,7 @@ function AppContent() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Dashboard />} />
-            <Route path="/assets" element={<AssetWorkspace />} />
+            <Route path="/assets" element={<LiveAssetWorkspace />} />
             <Route path="/plant" element={<PlantSchematic />} />
             <Route path="/building" element={<BuildingView />} />
             <Route path="/alarms" element={<Alarms />} />
