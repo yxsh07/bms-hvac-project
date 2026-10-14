@@ -10,7 +10,7 @@ import clsx from 'clsx';
 // Lazy load heavy pages
 const PlantSchematic = lazy(() => import('./pages/LivePlantSchematic').then(m => ({ default: m.LivePlantSchematic })));
 const BuildingView = lazy(() => import('./pages/BuildingView').then(m => ({ default: m.BuildingView })));
-const Alarms = lazy(() => import('./pages/Alarms').then(m => ({ default: m.Alarms })));
+const Alarms = lazy(() => import('./pages/LiveAlarms').then(m => ({ default: m.LiveAlarms })));
 const Setpoints = lazy(() => import('./pages/LiveSetpoints').then(m => ({ default: m.LiveSetpoints })));
 const Reports = lazy(() => import('./pages/Reports').then(m => ({ default: m.Reports })));
 const Audit = lazy(() => import('./pages/Audit').then(m => ({ default: m.Audit })));
