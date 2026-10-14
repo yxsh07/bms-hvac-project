@@ -101,7 +101,17 @@ export class SimHttpSource implements SourceDriver {
 
     const res = await this.fetchImpl(url.toString(), { headers: { Accept: 'application/json' } });
     if (!res.ok) throw new Error(`SimHttpSource: HTTP ${res.status} for ${url.toString()}`);
-    const body = (await res.json()) as SimPointDto[] | { points?: SimPointDto[]; cursor?: string };
+    let body = (await res.json()) as SimPointDto[] | { points?: SimPointDto[]; cursor?: string; head?: number };
+    // The simulator starts sequence numbers from 1 after a container restart,
+    // while the API cursor survives in Postgres. Recover from that new stream.
+    if (!Array.isArray(body) && cursor && typeof body.head === 'number' && body.head < Number(cursor)) {
+      const resetUrl = new URL(this.path, this.opts.baseUrl);
+      resetUrl.searchParams.set('limit', String(limit));
+      const reset = await this.fetchImpl(resetUrl.toString(), { headers: { Accept: 'application/json' } });
+      if (!reset.ok) throw new Error(`SimHttpSource: HTTP ${reset.status} for ${resetUrl.toString()}`);
+      body = (await reset.json()) as typeof body;
+      cursor = null;
+    }
     const points = Array.isArray(body) ? body : body.points ?? [];
 
     const rows: SourceRow[] = points

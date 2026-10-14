@@ -38,12 +38,34 @@ async function latestGood(
   asset: AssetRecord,
   pointRoles: PointRolesData,
   role: string,
+  from?: string,
+  to?: string,
 ): Promise<number | null> {
   const point = rolePoint(asset, pointRoles, role);
   if (!point) return null;
+  if (from && to) {
+    const rows = await store.series({ siteId, entityId: asset.id, field: point.abbr, from, to, resolution: 'raw' });
+    return rows.at(-1)?.avg ?? null;
+  }
   const latest = await store.latest(siteId, asset.id);
   const sample = latest[point.abbr];
   return sample && sample.quality === 0 ? sample.value : null;
+}
+
+async function siteReferenceTime(
+  store: Store,
+  config: LoadedConfig,
+  assets: AssetRecord[],
+  override?: Date,
+): Promise<Date> {
+  if (override || config.useWallClock) return override ?? new Date();
+  let latest = 0;
+  for (const asset of assets) {
+    for (const sample of Object.values(await store.latest(config.siteId, asset.id))) {
+      latest = Math.max(latest, parseIso(sample.at));
+    }
+  }
+  return latest ? new Date(latest) : new Date();
 }
 
 /** `GET /sites/:s/floors/summary` (§7.9). */
@@ -53,10 +75,10 @@ export async function floorsSummary(
   pointRoles: PointRolesData,
   config: LoadedConfig,
   window: string,
-  now: Date = new Date(),
+  now?: Date,
 ): Promise<FloorSummaryResponse> {
-  const { from, to } = windowToRange(window, now);
   const assets = await store.listAssets(config.siteId);
+  const { from, to } = windowToRange(window, await siteReferenceTime(store, config, assets, now));
   const floors: FloorSummary[] = [];
 
   const assetFloor = new Map(assets.map((a) => [a.id, a.floorId]));
@@ -143,10 +165,10 @@ export async function plantKpis(
   pointRoles: PointRolesData,
   config: LoadedConfig,
   window: string,
-  now: Date = new Date(),
+  now?: Date,
 ): Promise<PlantKpis> {
   const assets = (await store.listAssets(config.siteId)).filter((a) => a.type !== 'dashboard');
-  const { from, to } = windowToRange(window, now);
+  const { from, to } = windowToRange(window, await siteReferenceTime(store, config, assets, now));
 
   let totalKw = 0;
   let kwSeen = false;
@@ -156,20 +178,16 @@ export async function plantKpis(
   let delayed = false;
 
   for (const asset of assets) {
-    const kw = await latestGood(store, config.siteId, asset, pointRoles, 'power-kw');
+    const kw = await latestGood(store, config.siteId, asset, pointRoles, 'power-kw', from, to);
     if (kw !== null) {
       totalKw += kw;
       kwSeen = true;
     }
 
-    const run = rolePoint(asset, pointRoles, 'run-status');
-    if (run) {
-      const latest = await store.latest(config.siteId, asset.id);
-      if (latest[run.abbr]?.value === 1) staging += 1;
-    }
+    if (await latestGood(store, config.siteId, asset, pointRoles, 'run-status', from, to) === 1) staging += 1;
 
-    const leaving = await latestGood(store, config.siteId, asset, pointRoles, 'chw-leaving-temp');
-    const entering = await latestGood(store, config.siteId, asset, pointRoles, 'chw-entering-temp');
+    const leaving = await latestGood(store, config.siteId, asset, pointRoles, 'chw-leaving-temp', from, to);
+    const entering = await latestGood(store, config.siteId, asset, pointRoles, 'chw-entering-temp', from, to);
     if (leaving !== null && entering !== null) {
       deltaSum += entering - leaving;
       deltaCount += 1;
@@ -216,13 +234,13 @@ export async function controllerHealth(
   store: Store,
   ontology: Ontology,
   config: LoadedConfig,
-  now: Date = new Date(),
+  now?: Date,
 ): Promise<ControllerHealth[]> {
   const assetById = new Map((await store.listAssets(config.siteId)).map((a) => [a.id, a]));
   const staleAfterMs = config.staleAfterCadences * config.telemetry.cadenceSeconds * 1000;
 
   // siteNow is the latest ingested event time unless the config says wall clock.
-  let siteNowMs = config.useWallClock ? now.getTime() : 0;
+  let siteNowMs = now?.getTime() ?? (config.useWallClock ? Date.now() : 0);
   const perAssetLastSeen = new Map<string, number>();
 
   for (const asset of assetById.values()) {
@@ -233,7 +251,7 @@ export async function controllerHealth(
       if (t > max) max = t;
     }
     if (max) perAssetLastSeen.set(asset.id, max);
-    if (max > siteNowMs) siteNowMs = max;
+    if (!now && max > siteNowMs) siteNowMs = max;
   }
 
   return ontology.controllers.map((controller) => {
@@ -244,7 +262,7 @@ export async function controllerHealth(
       if (t > lastSeen) lastSeen = t;
     }
     const lastSeenAt = lastSeen ? new Date(lastSeen).toISOString() : null;
-    const online = lastSeen > 0 && siteNowMs - lastSeen <= staleAfterMs;
+    const online = lastSeen > 0 && lastSeen <= siteNowMs && siteNowMs - lastSeen <= staleAfterMs;
     return {
       controllerId: controller.id,
       name: controller.name,

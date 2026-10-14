@@ -27,6 +27,7 @@ export interface IngestDeps {
 
 export interface IngestStats {
   siteId: string;
+  latestAt: string | null;
   fetched: number;
   stored: number;
   unknownEntities: number;
@@ -181,6 +182,7 @@ export async function ingestBatch(
 
   return {
     siteId,
+    latestAt: rows.length ? rows.reduce((latest, row) => row.time > latest ? row.time : latest, rows[0].time) : null,
     fetched: batch.rows.length,
     stored: telemetryRows.length,
     unknownEntities,
@@ -235,12 +237,13 @@ export function startIngestWorker(
   const tick = async (): Promise<void> => {
     if (stopped) return;
     try {
-      const stats = await ingestBatch(store, source, config, deps);
+      const stats = await ingestBatch(store, source, config, deps, 2500);
       onBatch?.(stats);
     } catch (err) {
       // Never let a failed batch kill the loop; the cursor did not advance.
       onBatch?.({
         siteId: config.siteId,
+        latestAt: null,
         fetched: 0,
         stored: 0,
         unknownEntities: 0,

@@ -46,6 +46,7 @@ export interface CreateDepsOptions {
 export interface ServerDeps extends RouteDeps {
   entityToAsset: Record<string, string>;
   source: ReturnType<typeof createSourceDriver>;
+  setSourceTime: (time: string) => void;
 }
 
 /** Build the dependency graph. Exported so tests can inject fakes. */
@@ -84,6 +85,7 @@ export async function createServerDeps(opts: CreateDepsOptions): Promise<ServerD
     columns: config.telemetry.columns,
     measurements: config.telemetry.measurements,
   });
+  let sourceTime: Date | null = null;
 
   return {
     config,
@@ -93,6 +95,8 @@ export async function createServerDeps(opts: CreateDepsOptions): Promise<ServerD
     ontology,
     pointRoles,
     clock,
+    sourceTime: () => sourceTime,
+    setSourceTime: (time) => { sourceTime = new Date(time); },
     entityToAsset: buildEntityToAsset(ontology),
     source,
   };
@@ -233,7 +237,7 @@ export function startBackgroundWorkers(deps: ServerDeps): () => void {
       pointRoles: deps.pointRoles,
       entityToAsset: deps.entityToAsset,
     },
-    undefined,
+    (stats) => { if (stats.latestAt) deps.setSourceTime(stats.latestAt); },
     ingestPollMs,
   );
 

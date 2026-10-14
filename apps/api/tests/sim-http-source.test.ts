@@ -44,4 +44,16 @@ describe('SimHttpSource', () => {
     });
     expect(batch.rows[1]).toMatchObject({ seq: '43', field: 'RAT', value: null });
   });
+
+  it('restarts at the new head when SimSite has reset its sequence', async () => {
+    const fetchImpl = vi.fn()
+      .mockResolvedValueOnce(new Response(JSON.stringify({ points: [], cursor: 195115, head: 2 })))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ points: [{ seq: 1, time: '2026-07-12T00:01:00Z', entity_id: 'asset', field: 'T', value: 24 }], cursor: 1, head: 2 })));
+    const source = new SimHttpSource({ baseUrl: 'http://sim:8000', fetchImpl });
+    const batch = await source.next('195115', 500);
+    expect(fetchImpl).toHaveBeenCalledTimes(2);
+    expect(fetchImpl.mock.calls[1][0]).toBe('http://sim:8000/sim/raw?limit=500');
+    expect(batch.cursor).toBe('1');
+    expect(batch.rows[0].value).toBe(24);
+  });
 });

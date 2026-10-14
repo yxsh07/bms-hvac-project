@@ -40,6 +40,7 @@ export interface RouteDeps {
   ontology: import('@ontology').Ontology;
   pointRoles: PointRolesData;
   clock: () => string;
+  sourceTime?: () => Date | null;
 }
 
 /** Parse with a zod schema, converting failures to a VALIDATION_ERROR. */
