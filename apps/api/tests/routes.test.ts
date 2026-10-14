@@ -97,6 +97,16 @@ describe('auth + errors', () => {
 });
 
 describe('read routes', () => {
+  it('serves semantic point roles from the selected site config', async () => {
+    const token = await login('engineer@example.com', 'Engineer123!');
+    const res = await app.inject({
+      method: 'GET', url: `/api/v1/sites/${SITE}/point-roles`, headers: auth(token),
+    });
+    expect(res.statusCode).toBe(200);
+    expect(res.json()).toEqual(ctx.pointRoles);
+    expect(res.headers['cache-control']).toContain('max-age=300');
+  });
+
   it('sets ontology Cache-Control to 300s', async () => {
     const token = await login('engineer@example.com', 'Engineer123!');
     const res = await app.inject({

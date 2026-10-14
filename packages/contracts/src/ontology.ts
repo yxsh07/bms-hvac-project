@@ -9,6 +9,18 @@
 
 import { z } from 'zod';
 
+/** Site-configured semantic roles; point abbreviations stay in this response. */
+export const PointRolesSchema = z.object({
+  byType: z.record(z.string(), z.record(z.string(), z.string())),
+  fallbackRules: z.array(z.object({
+    classificationContains: z.string().optional(),
+    unitContains: z.string().optional(),
+    nameContains: z.string().optional(),
+    role: z.string(),
+  })),
+});
+export type PointRoles = z.infer<typeof PointRolesSchema>;
+
 // ── Quality codes (§7.4) ─────────────────────────────────────────────────────
 
 export const QualityCode = {
