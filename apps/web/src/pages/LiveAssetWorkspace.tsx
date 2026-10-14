@@ -78,6 +78,8 @@ export function LiveAssetWorkspace() {
   const extra = (asset?.points ?? []).filter((point) => !mappedAbbr.has(point.abbr));
   const total = asset?.points.length ?? 0;
   const received = asset?.points.filter((point) => latest?.fields[point.abbr] !== undefined).length ?? 0;
+  // SimSite uses virtual time; compare against the freshest equipment sample, not the browser clock.
+  const sampleTime = Math.max(0, ...Object.values(latest?.fields ?? {}).map((reading) => Date.parse(reading.at)));
   const firstStatus = mapped.find((entry) => entry.role === 'run-status');
   const firstFault = mapped.find((entry) => entry.role === 'fault-alarm');
 
@@ -116,7 +118,7 @@ export function LiveAssetWorkspace() {
             <div className="rounded-lg border border-border-default bg-surface-elevated p-5 md:p-6">
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div><p className="font-mono text-xs uppercase tracking-wider text-content-tertiary">{asset.type} / {asset.criticality} priority</p><h2 className="mt-1 text-2xl font-semibold">{asset.name}</h2></div>
-                <div className="flex gap-2 text-xs"><span className="rounded border border-border-default px-3 py-2">{firstStatus?.reading?.value === 1 ? 'Running' : firstStatus?.reading?.value === 0 ? 'Stopped' : 'Status unavailable'}</span><span className="rounded border border-border-default px-3 py-2">{firstFault?.reading?.value === 1 ? 'Fault' : 'No reported fault'}</span></div>
+                <div className="flex gap-2 text-xs"><span className="rounded border border-border-default px-3 py-2">{firstStatus?.reading?.value === 1 ? 'Running' : firstStatus?.reading?.value === 0 ? 'Stopped' : 'Status unavailable'}</span><span className="rounded border border-border-default px-3 py-2">{firstFault?.reading?.value === 1 ? 'Fault' : firstFault?.reading?.value === 0 ? 'No reported fault' : 'Fault signal unavailable'}</span></div>
               </div>
               <div className="mt-6 grid gap-6 md:grid-cols-[minmax(0,1fr)_200px]">
                 <svg viewBox="0 0 540 180" role="img" aria-label={`Schematic equipment view of ${asset.name}`} className="w-full rounded bg-surface-base">
@@ -132,10 +134,10 @@ export function LiveAssetWorkspace() {
             </div>
             <div className="rounded-lg border border-border-default bg-surface-elevated p-5 md:p-6">
               <h3 className="text-lg font-semibold">Parameters</h3>
-              <p className="mt-1 text-sm text-content-tertiary">Site roles first, followed by all other equipment points.</p>
+              <p className="mt-1 text-sm text-content-tertiary">Site roles first, followed by all other equipment points. {sampleTime > 0 && `Simulation time ${new Date(sampleTime).toLocaleString()}.`}</p>
               <div className="mt-4 grid gap-x-6 md:grid-cols-2">
-                {mapped.map(({ role, point, reading, reason }) => <Parameter key={role} label={point?.display ?? role.replaceAll('-', ' ')} unit={point?.unit ?? ''} value={reading?.value} quality={reading?.quality} at={reading?.at} reason={reason ?? (!point ? 'not available at this site' : undefined)} />)}
-                {extra.map((point) => <Parameter key={point.abbr} label={point.display} unit={point.unit} value={latest?.fields[point.abbr]?.value} quality={latest?.fields[point.abbr]?.quality} at={latest?.fields[point.abbr]?.at} />)}
+                {mapped.map(({ role, point, reading, reason }) => <Parameter key={role} label={point?.display ?? role.replaceAll('-', ' ')} unit={point?.unit ?? ''} value={reading?.value} quality={reading?.quality} at={reading?.at} reason={reason ?? (!point ? 'not available at this site' : undefined)} now={sampleTime} />)}
+                {extra.map((point) => <Parameter key={point.abbr} label={point.display} unit={point.unit} value={latest?.fields[point.abbr]?.value} quality={latest?.fields[point.abbr]?.quality} at={latest?.fields[point.abbr]?.at} now={sampleTime} />)}
               </div>
             </div>
           </>}
@@ -153,11 +155,11 @@ export function parameterState(quality: number | undefined, at: string | undefin
   return 'Good';
 }
 
-function Parameter({ label, value, unit, quality, at, reason }: { label: string; value?: number | null; unit: string; quality?: number; at?: string; reason?: string }) {
-  const state = parameterState(quality, at, reason);
+function Parameter({ label, value, unit, quality, at, reason, now }: { label: string; value?: number | null; unit: string; quality?: number; at?: string; reason?: string; now: number }) {
+  const state = parameterState(quality, at, reason, now);
   const valid = state === 'Good' && value !== null && value !== undefined;
   return <div className="flex min-h-16 items-center justify-between gap-4 border-b border-border-default py-3 text-sm">
     <div className="min-w-0"><p className="truncate font-medium">{label}</p><p className="mt-1 text-xs text-content-tertiary">{state}</p></div>
-    <span className="shrink-0 font-mono tabular-nums" title={at ?? state}>{valid ? `${value} ${unit}` : '—'}</span>
+    <span className="shrink-0 font-mono tabular-nums" title={at ?? state}>{valid ? `${value.toLocaleString(undefined, { maximumFractionDigits: 1 })} ${unit}` : '—'}</span>
   </div>;
 }
