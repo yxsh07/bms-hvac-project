@@ -374,6 +374,9 @@ importers:
 
   packages/contracts:
     dependencies:
+      packages-twin-core:
+        specifier: workspace:*
+        version: link:../twin-core
       zod:
         specifier: ^4.6.5
         version: 4.6.5

@@ -16,3 +16,5 @@ export * from './gateway.js';
 export * from './alarm.js';
 export * from './report.js';
 export * from './whatif.js';
+export { PlantSchema, TwinLayoutSchema } from 'packages-twin-core';
+export type { Plant, TwinLayout } from 'packages-twin-core';
