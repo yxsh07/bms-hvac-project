@@ -12,3 +12,4 @@ sim-console-bms-bridge-recovery | tokens unknown | 1 turn | Removed live dashboa
 web-api-session | tokens unknown | 1 turn | Replaced fixture login with API authentication and persisted token refresh; tested against live Compose browser flow
 web-live-views | tokens unknown | 1 turn | Bound overview, plant, building and Sim Console to live site data; Chromium Sim Console bridge passed against Compose
 live-setpoint-ui | tokens unknown | 1 turn | Wired real set-point requests and approvals into operator UI with read-back/audit status; tests and responsive screenshots
+test-checklist-bridge | tokens unknown | 1 turn | Aligned Sim Console checklist IDs with SimSite, enabled serial Playwright reporter mode, and added browser status check

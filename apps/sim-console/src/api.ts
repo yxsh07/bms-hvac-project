@@ -26,13 +26,13 @@ export interface ScenarioInfo {
 }
 
 export interface ChecklistFeature {
-  id: string;
+  featureId: string;
   title: string;
   scenario: string;
   docRef?: string;
-  status?: 'pass' | 'fail' | 'pending';
-  lastRunAt?: string | null;
+  status?: 'pass' | 'fail' | 'skipped' | 'pending' | null;
   runId?: string | null;
+  evidence?: string | null;
 }
 
 export type GatewayPreset =
