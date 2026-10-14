@@ -1,12 +1,14 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const checklist = process.env.E2E_CHECKLIST === '1';
+
 export default defineConfig({
   testDir: './e2e',
-  fullyParallel: true,
+  fullyParallel: !checklist,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  workers: checklist || process.env.CI ? 1 : undefined,
+  reporter: checklist ? [['list'], ['./e2e/support/checklist-reporter.ts']] : 'html',
   use: {
     baseURL: process.env.DEMO_URL ?? 'http://localhost:5173',
     trace: 'on-first-retry',

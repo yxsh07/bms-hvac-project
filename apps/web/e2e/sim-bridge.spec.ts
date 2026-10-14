@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('Sim Console changes appear in the operator app', async ({ page, request }) => {
+test('[live-value] Sim Console changes appear in the operator app', async ({ page, request }) => {
   const previous = await (await request.get('http://localhost:8000/sim/state')).json() as {
     outdoorDbtC: number; relativeHumidityPct: number; occupancyMultiplier: number;
   };

@@ -156,7 +156,7 @@ export default function App() {
           <h2 style={{ fontSize: 14, marginTop: 0 }}>Test Checklist (§6.8)</h2>
           <div style={{ display: 'grid', gap: 4 }}>
             {features.map((f) => (
-              <div key={f.id} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, borderBottom: '1px solid #1b2530', padding: '4px 0' }}>
+              <div key={f.featureId} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, borderBottom: '1px solid #1b2530', padding: '4px 0' }}>
                 <span>{f.title} <span style={{ color: '#7d8ea3' }}>· {f.scenario} · {f.docRef ?? ''}</span></span>
                 <StatusPill status={f.status ?? 'pending'} />
               </div>
@@ -186,7 +186,7 @@ function Slider(props: { label: string; min: number; max: number; step: number; 
   );
 }
 
-function StatusPill({ status }: { status: 'pass' | 'fail' | 'pending' }) {
+function StatusPill({ status }: { status: 'pass' | 'fail' | 'skipped' | 'pending' }) {
   const colour = status === 'pass' ? '#2ea043' : status === 'fail' ? '#d1242f' : '#7d8ea3';
   return (
     <span style={{ color: colour, border: `1px solid ${colour}`, borderRadius: 999, padding: '1px 10px', fontSize: 12 }}>
