@@ -11,7 +11,7 @@ import clsx from 'clsx';
 const PlantSchematic = lazy(() => import('./pages/PlantSchematic').then(m => ({ default: m.PlantSchematic })));
 const BuildingView = lazy(() => import('./pages/BuildingView').then(m => ({ default: m.BuildingView })));
 const Alarms = lazy(() => import('./pages/Alarms').then(m => ({ default: m.Alarms })));
-const Setpoints = lazy(() => import('./pages/Setpoints').then(m => ({ default: m.Setpoints })));
+const Setpoints = lazy(() => import('./pages/LiveSetpoints').then(m => ({ default: m.LiveSetpoints })));
 const Reports = lazy(() => import('./pages/Reports').then(m => ({ default: m.Reports })));
 const Audit = lazy(() => import('./pages/Audit').then(m => ({ default: m.Audit })));
 const Users = lazy(() => import('./pages/Users').then(m => ({ default: m.Users })));
