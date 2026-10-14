@@ -56,6 +56,25 @@ beforeAll(async () => {
 });
 
 describe('auth + errors', () => {
+  it('audits a successful alarm acknowledgement through the mutation hook', async () => {
+    const token = await login('operator@example.com', 'Operator123!');
+    await ctx.store.createAlarm({
+      id: 'ack-test-alarm', siteId: SITE, assetId: 'chiller-01', assetName: 'Chiller 1',
+      field: 'FAULT', severity: 'critical', status: 'active', message: 'Fault asserted',
+      alarmCode: 'POINT_FAULT', raisedAt: new Date().toISOString(), clearedAt: null,
+      acknowledgedBy: null, acknowledgedAt: null, acknowledgeNote: null,
+    });
+    const res = await app.inject({
+      method: 'POST', url: `/api/v1/sites/${SITE}/alarms/ack-test-alarm/ack`,
+      headers: auth(token), payload: { note: 'Investigating' },
+    });
+    expect(res.statusCode).toBe(200);
+    expect(res.json()).toMatchObject({ status: 'acknowledged', acknowledgeNote: 'Investigating' });
+    const audit = await ctx.store.listAudit(SITE, { eventType: 'alarm.acknowledged' });
+    expect(audit.items).toHaveLength(1);
+    expect(audit.items[0]).toMatchObject({ resource: 'alarm:ack-test-alarm' });
+  });
+
   it('rejects unauthenticated requests with a stable code', async () => {
     const res = await app.inject({ method: 'GET', url: '/api/v1/me' });
     expect(res.statusCode).toBe(401);

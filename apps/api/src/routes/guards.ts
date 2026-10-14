@@ -5,7 +5,7 @@
 
 import type { FastifyReply, FastifyRequest, preHandlerHookHandler } from 'fastify';
 import type { ZodType } from 'zod';
-import type { Role } from '@contracts';
+import type { AuditEventType, Role } from '@contracts';
 import type { AuditChain } from '../audit/chain.js';
 import type { LoadedConfig } from '../config.js';
 import type { PointRolesData } from '../domain/classify.js';
@@ -29,6 +29,13 @@ declare module 'fastify' {
   interface FastifyRequest {
     authUser?: AuthUser;
     routeDeps?: RouteDeps;
+    auditChange?: {
+      siteId: string;
+      eventType: AuditEventType;
+      resource: string;
+      before: unknown;
+      after: unknown;
+    };
   }
 }
 

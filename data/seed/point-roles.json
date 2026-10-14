@@ -3,6 +3,7 @@
   "byType": {
     "chiller": {
       "run-status": "RUN",
+      "fault-alarm": "FAULT",
       "power-kw": "KW",
       "loading-pct": "LOAD",
       "chw-leaving-temp": "CHWST",

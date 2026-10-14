@@ -11,10 +11,11 @@
  */
 
 import type { Ontology } from '@ontology';
+import { randomUUID } from 'node:crypto';
 import { qualifyRow, type QualifiedRow, type RawRow as QualityRawRow } from '@quality';
 import type { LoadedConfig } from '../config.js';
 import { classifyPoint, resolveRoleAbbrev, type PointRolesData } from '../domain/classify.js';
-import type { IngestReportRecord, Store, TelemetryRow } from '../store/types.js';
+import type { AlarmRecord, IngestReportRecord, Store, TelemetryRow } from '../store/types.js';
 import type { SourceDriver, SourceRow } from '../drivers/source.js';
 import { toUtcIso } from '../util/time.js';
 
@@ -177,6 +178,7 @@ export async function ingestBatch(
   await store.withTransaction(async () => {
     if (telemetryRows.length) await store.upsertTelemetry(telemetryRows);
     if (reports.size) await store.recordIngestReport([...reports.values()]);
+    await reconcileFaultAlarms(store, siteId, telemetryRows, deps);
     await store.setIngestCursor(siteId, cursorNow);
   });
 
@@ -190,6 +192,52 @@ export async function ingestBatch(
     byQuality,
     rows: qualifiedRows,
   };
+}
+
+/** Reconcile binary alarm points in event order; bad values cannot change state. */
+async function reconcileFaultAlarms(
+  store: Store,
+  siteId: string,
+  rows: TelemetryRow[],
+  deps: IngestDeps,
+): Promise<void> {
+  const assets = new Map(deps.ontology.assets.map((asset) => [asset.id, asset]));
+  const candidates = rows.flatMap((row) => {
+    const assetId = deps.entityToAsset?.[row.entityId] ?? row.entityId;
+    const asset = assets.get(assetId);
+    const point = (deps.ontology.points[assetId] ?? []).find((item) => item.abbr === row.field);
+    if (!asset || !point || row.quality !== 0 || row.value === null) return [];
+    const roleField = resolveRoleAbbrev(deps.pointRoles, asset.type, 'fault-alarm');
+    if (point.cls !== 'fault-alarm' && point.cls !== 'alarm' && row.field !== roleField) return [];
+    return [{ row, asset, assetId }];
+  }).sort((a, b) => a.row.time.localeCompare(b.row.time) || (a.row.seq ?? 0) - (b.row.seq ?? 0));
+
+  const openByPoint = new Map<string, AlarmRecord | null>();
+  for (const { row, asset, assetId } of candidates) {
+    const key = `${assetId}:${row.field}`;
+    if (!openByPoint.has(key)) {
+      const page = await store.listAlarms(siteId, { assetId, limit: 200 });
+      openByPoint.set(key, page.items.find((alarm) => alarm.field === row.field && !alarm.clearedAt) ?? null);
+    }
+    const open = openByPoint.get(key);
+    if (row.value !== null && row.value > 0 && !open) {
+      const alarm: AlarmRecord = {
+        id: randomUUID(), siteId, assetId, assetName: asset.name, field: row.field,
+        severity: asset.criticality === 'critical' ? 'critical' : 'high',
+        status: 'active', message: `${asset.name}: ${row.field} fault asserted`,
+        alarmCode: 'POINT_FAULT', raisedAt: row.time, clearedAt: null,
+        acknowledgedBy: null, acknowledgedAt: null, acknowledgeNote: null,
+      };
+      await store.createAlarm(alarm);
+      openByPoint.set(key, alarm);
+    } else if (row.value === 0 && open) {
+      await store.updateAlarm(open.id, {
+        clearedAt: row.time,
+        status: open.acknowledgedAt ? 'cleared' : 'cleared_unacknowledged',
+      });
+      openByPoint.set(key, null);
+    }
+  }
 }
 
 function addReport(
