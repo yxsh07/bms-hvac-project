@@ -311,7 +311,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                 }
             )
         cursor = out[-1]["seq"] if out else since
-        return {"points": out, "cursor": cursor}
+        return {"points": out, "cursor": cursor, "head": len(combined)}
 
     return app
 

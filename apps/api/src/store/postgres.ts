@@ -219,20 +219,23 @@ export class PostgresStore implements Store {
   // ── Telemetry ──────────────────────────────────────────────────────────────
 
   async upsertTelemetry(rows: TelemetryRow[]): Promise<number> {
-    let count = 0;
-    for (const row of rows) {
+    // Keep statements below PostgreSQL's parameter limit and avoid one network
+    // round trip per point when accelerated simulation emits thousands/second.
+    for (let start = 0; start < rows.length; start += 250) {
+      const batch = rows.slice(start, start + 250);
+      const params = batch.flatMap((row) => [row.time, row.siteId, row.entityId, row.entityKind,
+        row.field, row.value, row.rawValue, row.quality, row.isDelayed]);
+      const values = batch.map((_, index) => `(${Array.from({ length: 9 }, (_value, field) => `$${index * 9 + field + 1}`).join(',')})`).join(',');
       await this.q(
         `INSERT INTO telemetry (time, site_id, entity_id, entity_kind, field, value, raw_value, quality, is_delayed)
-         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
+         VALUES ${values}
          ON CONFLICT (site_id, entity_id, field, time) DO UPDATE
            SET value = EXCLUDED.value, raw_value = EXCLUDED.raw_value,
                quality = EXCLUDED.quality, is_delayed = EXCLUDED.is_delayed`,
-        [row.time, row.siteId, row.entityId, row.entityKind, row.field, row.value, row.rawValue,
-          row.quality, row.isDelayed],
+        params,
       );
-      count += 1;
     }
-    return count;
+    return rows.length;
   }
 
   private mapTelemetry(r: Row): TelemetryRow {

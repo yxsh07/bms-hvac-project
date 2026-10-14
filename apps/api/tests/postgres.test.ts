@@ -29,6 +29,18 @@ const DDL = `
     cursor text NOT NULL,
     updated_at timestamptz NOT NULL
   );
+  CREATE TABLE telemetry (
+    time timestamptz NOT NULL,
+    site_id text NOT NULL,
+    entity_id text NOT NULL,
+    entity_kind text NOT NULL,
+    field text NOT NULL,
+    value double precision,
+    raw_value double precision,
+    quality integer NOT NULL,
+    is_delayed boolean NOT NULL,
+    PRIMARY KEY (site_id, entity_id, field, time)
+  );
   CREATE TABLE audit_log (
     id text PRIMARY KEY,
     site_id text NOT NULL,
@@ -126,6 +138,21 @@ describe('PostgresStore (pg-mem)', () => {
     await store.setIngestCursor('simsite-hospital', '5');
     await store.setIngestCursor('simsite-hospital', '9');
     expect(await store.getIngestCursor('simsite-hospital')).toBe('9');
+  });
+
+  it('bulk upserts telemetry across chunks while retaining quality values', async () => {
+    const rows = Array.from({ length: 251 }, (_, index) => ({
+      siteId: 'simsite-hospital', entityId: 'asset-1', entityKind: 'component' as const,
+      field: 'KW', time: new Date(Date.UTC(2026, 6, 12, 0, index)).toISOString(),
+      value: index === 250 ? null : index, rawValue: index === 250 ? 9999 : null,
+      quality: index === 250 ? 1 : 0, isDelayed: false,
+    }));
+    expect(await store.upsertTelemetry(rows)).toBe(251);
+    expect(await store.upsertTelemetry([{ ...rows[0], value: 777 }])).toBe(1);
+    const stored = db.public.many('SELECT value, raw_value, quality FROM telemetry WHERE time = \'2026-07-12T04:10:00Z\'');
+    expect(stored).toEqual([{ value: null, raw_value: 9999, quality: 1 }]);
+    expect(db.public.one('SELECT value FROM telemetry WHERE time = \'2026-07-12T00:00:00Z\'').value).toBe(777);
+    expect(db.public.one('SELECT count(*) AS n FROM telemetry').n).toBe(251);
   });
 
   it('runs transactions via withSiteLock and reuses a nested transaction', async () => {

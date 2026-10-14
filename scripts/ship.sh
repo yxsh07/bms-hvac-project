@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
+# WSL cannot read the Windows git worktree's .git pointer; use its native CLI.
+if [ -n "${WSL_DISTRO_NAME:-}" ] && command -v git.exe >/dev/null 2>&1; then
+  git() { git.exe "$@"; }
+  gh() { gh.exe "$@"; }
+fi
 msg="${1:?conventional commit message}"
 pnpm -r --if-present lint && pnpm -r --if-present typecheck && pnpm -r --if-present test   # each package's test script is "vitest run"
 (cd apps/sim && ruff check . && pytest -q)
@@ -10,4 +15,4 @@ big=$(git diff --cached --name-only --diff-filter=AM | while read -r f; do [ -f 
 [ -z "$big" ] || { echo "refusing: files > 1 MB staged:"; echo "$big"; exit 1; }
 git commit -m "$msg"
 git push -u origin HEAD
-gh pr create --fill --base main
+gh pr create --fill --base "${PR_BASE:-main}"

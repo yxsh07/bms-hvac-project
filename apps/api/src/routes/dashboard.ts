@@ -19,9 +19,9 @@ export function registerDashboardRoutes(app: FastifyInstance, deps: RouteDeps): 
     { preHandler: [authenticate(deps)] },
     async (request, reply) => {
       ensureSite(request.params.siteId);
-      setCache(reply, 'telemetry');
+      setCache(reply, 'no-store');
       const window = request.query.window ?? '1h';
-      const body = await floorsSummary(deps.store, deps.ontology, deps.pointRoles, deps.config, window);
+      const body = await floorsSummary(deps.store, deps.ontology, deps.pointRoles, deps.config, window, deps.sourceTime?.() ?? undefined);
       return parse(FloorSummaryResponseSchema, body);
     },
   );
@@ -31,9 +31,9 @@ export function registerDashboardRoutes(app: FastifyInstance, deps: RouteDeps): 
     { preHandler: [authenticate(deps)] },
     async (request, reply) => {
       ensureSite(request.params.siteId);
-      setCache(reply, 'telemetry');
+      setCache(reply, 'no-store');
       const window = request.query.window ?? '1h';
-      const body = await plantKpis(deps.store, deps.ontology, deps.pointRoles, deps.config, window);
+      const body = await plantKpis(deps.store, deps.ontology, deps.pointRoles, deps.config, window, deps.sourceTime?.() ?? undefined);
       return parse(PlantKpisSchema, body);
     },
   );
@@ -43,8 +43,8 @@ export function registerDashboardRoutes(app: FastifyInstance, deps: RouteDeps): 
     { preHandler: [authenticate(deps)] },
     async (request, reply) => {
     ensureSite(request.params.siteId);
-    setCache(reply, 'telemetry');
-    const body = await controllerHealth(deps.store, deps.ontology, deps.config);
+    setCache(reply, 'no-store');
+    const body = await controllerHealth(deps.store, deps.ontology, deps.config, deps.sourceTime?.() ?? undefined);
     return body.map((item) => parse(ControllerHealthSchema, item));
   });
 }

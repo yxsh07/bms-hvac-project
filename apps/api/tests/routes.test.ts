@@ -141,6 +141,7 @@ describe('read routes', () => {
     });
     expect(res.statusCode).toBe(200);
     expect(res.json().totalKw).toBeGreaterThanOrEqual(120);
+    expect(res.headers['cache-control']).toBe('no-store');
   });
 });
 

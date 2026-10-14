@@ -87,7 +87,7 @@ export class ApiClient {
   constructor(opts: ApiClientOptions) {
     this.baseUrl = opts.baseUrl.replace(/\\/$/, '');
     this.getToken = opts.getToken ?? (() => null);
-    this.fetchImpl = opts.fetchImpl ?? fetch;
+    this.fetchImpl = opts.fetchImpl ?? ((...args) => fetch(...args));
   }
 
   private async request<T>(method: string, path: string, body?: unknown, opts: RequestOptions = {}): Promise<T> {
