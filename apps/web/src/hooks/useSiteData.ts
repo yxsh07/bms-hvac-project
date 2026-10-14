@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ApiClient } from '@contracts/index';
 import type { FloorSummaryResponse, PlantKpis } from '../../../../packages/contracts/src/telemetry';
+import type { Ontology } from '../../../../packages/contracts/src/ontology';
 import { defaultBaseUrl } from '../api/client';
 import { useAuth } from '../context/AuthContext';
 
@@ -13,6 +14,7 @@ export function useSiteData() {
   const [plant, setPlant] = useState<PlantKpis | null>(null);
   const [floors, setFloors] = useState<FloorSummaryResponse | null>(null);
   const [assets, setAssets] = useState<AssetSummary[]>([]);
+  const [ontology, setOntology] = useState<Ontology | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -20,10 +22,11 @@ export function useSiteData() {
     let alive = true;
     const refresh = async () => {
       try {
-        const [nextPlant, nextFloors, nextAssets] = await Promise.all([
-          client.plantKpis(currentSiteId), client.floorsSummary(currentSiteId), client.listAssets(currentSiteId),
+        const [nextPlant, nextFloors, nextAssets, nextOntology] = await Promise.all([
+          client.plantKpis(currentSiteId), client.floorsSummary(currentSiteId),
+          client.listAssets(currentSiteId), client.getOntology(currentSiteId),
         ]);
-        if (alive) { setPlant(nextPlant); setFloors(nextFloors); setAssets(nextAssets); setError(null); }
+        if (alive) { setPlant(nextPlant); setFloors(nextFloors); setAssets(nextAssets); setOntology(nextOntology); setError(null); }
       } catch (reason) {
         if (alive) setError(reason instanceof Error ? reason.message : String(reason));
       }
@@ -33,5 +36,5 @@ export function useSiteData() {
     return () => { alive = false; window.clearInterval(timer); };
   }, [client, currentSiteId, accessToken]);
 
-  return { plant, floors, assets, error };
+  return { plant, floors, assets, ontology, error };
 }

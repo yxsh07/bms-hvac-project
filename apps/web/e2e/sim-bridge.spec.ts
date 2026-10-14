@@ -6,7 +6,7 @@ test('[live-value] Sim Console changes appear in the operator app', async ({ pag
   };
   await page.goto('/');
   await page.getByRole('button', { name: 'Sign in' }).click();
-  await expect(page.getByText('LIVE SIMSITE DATA')).toBeVisible();
+  await expect(page.getByText('LIVE SITE DATA')).toBeVisible();
   const power = page.locator('.overview-pulse-stat').filter({ hasText: 'Plant power' }).locator('strong');
   await expect(power).not.toHaveText('—');
   const before = await power.textContent();

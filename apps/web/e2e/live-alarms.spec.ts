@@ -4,7 +4,7 @@ test('[lead-trip-failover] a simulated trip reaches the alarm queue and can be a
   test.setTimeout(90_000);
   await page.goto('/');
   await page.getByRole('button', { name: 'Sign in' }).click();
-  await expect(page.getByText('LIVE SIMSITE DATA')).toBeVisible();
+  await expect(page.getByText('LIVE SITE DATA')).toBeVisible();
   const session = await page.evaluate(() => JSON.parse(localStorage.getItem('bms-session')!) as {
     accessToken: string; currentSiteId: string;
   });
