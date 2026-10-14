@@ -4,17 +4,17 @@ import { useAuth } from '../context/AuthContext';
 import './login.css';
 
 const demoUsers = [
-  { email: 'admin@bms.local', password: 'admin123', role: 'Administrator' },
-  { email: 'engineer@bms.local', password: 'eng123', role: 'HVAC Engineer' },
-  { email: 'manager@bms.local', password: 'mgr123', role: 'Facility Manager' },
-  { email: 'operator@bms.local', password: 'op123', role: 'Operator' },
-  { email: 'executive@bms.local', password: 'exec123', role: 'Executive' },
+  { email: 'admin@example.com', password: 'Admin123!', role: 'Administrator' },
+  { email: 'engineer@example.com', password: 'Engineer123!', role: 'HVAC Engineer' },
+  { email: 'facility@example.com', password: 'Facility123!', role: 'Facility Manager' },
+  { email: 'operator@example.com', password: 'Operator123!', role: 'Operator' },
+  { email: 'executive@example.com', password: 'Executive123!', role: 'Executive' },
 ];
 
 export function Login() {
   const { login, isLoading } = useAuth();
-  const [email, setEmail] = useState('engineer@bms.local');
-  const [password, setPassword] = useState('eng123');
+  const [email, setEmail] = useState('engineer@example.com');
+  const [password, setPassword] = useState('Engineer123!');
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
