@@ -6,7 +6,9 @@ if [ -n "${WSL_DISTRO_NAME:-}" ] && command -v git.exe >/dev/null 2>&1; then
   gh() { gh.exe "$@"; }
 fi
 msg="${1:?conventional commit message}"
-pnpm -r --if-present lint && pnpm -r --if-present typecheck && pnpm -r --if-present test   # each package's test script is "vitest run"
+pnpm -r --if-present lint
+pnpm -r --if-present typecheck
+pnpm -r --if-present test
 (cd apps/sim && ruff check . && pytest -q)
 scripts/check-site-agnostic.sh
 git add -A
@@ -15,4 +17,9 @@ big=$(git diff --cached --name-only --diff-filter=AM | while read -r f; do [ -f 
 [ -z "$big" ] || { echo "refusing: files > 1 MB staged:"; echo "$big"; exit 1; }
 git commit -m "$msg"
 git push -u origin HEAD
-gh pr create --fill --base "${PR_BASE:-main}"
+existing_pr=$(gh pr view --json url --jq .url 2>/dev/null || true)
+if [ -n "$existing_pr" ]; then
+  printf '%s\n' "$existing_pr"
+else
+  gh pr create --fill --base "${PR_BASE:-main}"
+fi

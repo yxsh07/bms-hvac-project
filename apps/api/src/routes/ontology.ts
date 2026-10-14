@@ -7,16 +7,16 @@
  */
 
 import type { FastifyInstance } from 'fastify';
-import { PointRolesSchema } from '@contracts';
-import type {
-  Asset as ContractAsset,
-  AssetSummary,
-  Floor,
-  Ontology as ContractOntology,
-  Point as ContractPoint,
-  PointClass,
-  Site as ContractSite,
-  Zone,
+import {
+  PointRolesSchema,
+  type Asset as ContractAsset,
+  type AssetSummary,
+  type Floor,
+  type Ontology as ContractOntology,
+  type Point as ContractPoint,
+  type PointClass,
+  type Site as ContractSite,
+  type Zone,
 } from '@contracts';
 import type { Ontology as GraphOntology } from '@ontology';
 import { classifyPoint, type PointClassification } from '../domain/classify.js';
