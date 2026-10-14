@@ -1,6 +1,6 @@
-import type { ReactNode } from 'react';
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import type { User, Site, AuthState, LoginCredentials, LoginResponse, TokenPair, UserRole } from '../types/auth';
+import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
+import { defaultBaseUrl } from '../api/client';
+import { hasPermission as roleHasPermission, type AuthState, type LoginCredentials, type Site, type User, type UserRole } from '../types/auth';
 
 interface AuthContextValue extends AuthState {
   login: (credentials: LoginCredentials) => Promise<void>;
@@ -12,234 +12,97 @@ interface AuthContextValue extends AuthState {
 }
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
+const STORAGE = 'bms-session';
+const empty: AuthState = { user: null, sites: [], currentSiteId: null, accessToken: null, refreshToken: null, isAuthenticated: false, isLoading: false };
 
-// Demo users for development
-const DEMO_USERS: Record<string, { user: User; password: string }> = {
-  'admin@bms.local': {
-    user: {
-      id: 'u1',
-      email: 'admin@bms.local',
-      name: 'Admin User',
-      role: 'admin',
-      siteIds: ['simsite-hospital', 'office-small']
-    },
-    password: 'admin123'
-  },
-  'engineer@bms.local': {
-    user: {
-      id: 'u2',
-      email: 'engineer@bms.local',
-      name: 'HVAC Engineer',
-      role: 'engineer',
-      siteIds: ['simsite-hospital', 'office-small']
-    },
-    password: 'eng123'
-  },
-  'manager@bms.local': {
-    user: {
-      id: 'u3',
-      email: 'manager@bms.local',
-      name: 'Facility Manager',
-      role: 'facility_manager',
-      siteIds: ['simsite-hospital']
-    },
-    password: 'mgr123'
-  },
-  'operator@bms.local': {
-    user: {
-      id: 'u4',
-      email: 'operator@bms.local',
-      name: 'Operator',
-      role: 'operator',
-      siteIds: ['simsite-hospital']
-    },
-    password: 'op123'
-  },
-  'executive@bms.local': {
-    user: {
-      id: 'u5',
-      email: 'executive@bms.local',
-      name: 'Executive',
-      role: 'executive',
-      siteIds: ['simsite-hospital', 'office-small']
-    },
-    password: 'exec123'
+async function api<T>(path: string, init?: RequestInit): Promise<T> {
+  const response = await fetch(defaultBaseUrl() + path, { ...init, headers: { 'Content-Type': 'application/json', ...init?.headers } });
+  if (!response.ok) {
+    const body = await response.json().catch(() => ({})) as { error?: string };
+    throw new Error(body.error ?? `API request failed (${response.status})`);
   }
-};
+  return response.status === 204 ? undefined as T : response.json() as Promise<T>;
+}
 
-const DEMO_SITES: Site[] = [
-  {
-    id: 'simsite-hospital',
-    name: 'SimSite Hospital',
-    timezone: 'Asia/Kolkata',
-    environment: {
-      wetBulbTemp: 24.5,
-      dryBulbTemp: 32.1,
-      relativeHumidity: 65
-    }
-  },
-  {
-    id: 'office-small',
-    name: 'Office Small',
-    timezone: 'America/New_York',
-    environment: {
-      wetBulbTemp: 18.2,
-      dryBulbTemp: 24.8,
-      relativeHumidity: 52
-    }
-  }
-];
+interface ApiMe { id: string; name: string; email: string; roles: Record<string, string>; siteIds: string[] }
+interface ApiTokens { accessToken: string; refreshToken: string }
+
+function toUser(me: ApiMe, siteId: string): User {
+  const role = me.roles[siteId] === 'facility-manager' ? 'facility_manager' : me.roles[siteId];
+  return { id: me.id, name: me.name, email: me.email, siteIds: me.siteIds, role: role as UserRole };
+}
+
+async function session(tokens: ApiTokens, preferredSite?: string | null): Promise<AuthState> {
+  const headers = { Authorization: `Bearer ${tokens.accessToken}` };
+  const [me, sites] = await Promise.all([
+    api<ApiMe>('/api/v1/me', { headers }),
+    api<Site[]>('/api/v1/sites', { headers }),
+  ]);
+  const currentSiteId = sites.some((site) => site.id === preferredSite) ? preferredSite! : sites[0]?.id ?? null;
+  return { user: currentSiteId ? toUser(me, currentSiteId) : null, sites, currentSiteId,
+    accessToken: tokens.accessToken, refreshToken: tokens.refreshToken, isAuthenticated: Boolean(currentSiteId), isLoading: false };
+}
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [state, setState] = useState<AuthState>({
-    user: null,
-    sites: [],
-    currentSiteId: null,
-    accessToken: null,
-    refreshToken: null,
-    isAuthenticated: false,
-    isLoading: true
-  });
+  const [state, setState] = useState<AuthState>({ ...empty, isLoading: true });
+  const clear = useCallback(() => { localStorage.removeItem(STORAGE); setState(empty); }, []);
 
-  const clearAuth = useCallback(() => {
-    localStorage.removeItem('bms-user');
-    localStorage.removeItem('bms-access-token');
-    localStorage.removeItem('bms-refresh-token');
-    localStorage.removeItem('bms-current-site');
-    setState({
-      user: null,
-      sites: [],
-      currentSiteId: null,
-      accessToken: null,
-      refreshToken: null,
-      isAuthenticated: false,
-      isLoading: false
-    });
-  }, []);
-
-  // Initialize auth from localStorage
   useEffect(() => {
-    const initAuth = () => {
-      const storedUser = localStorage.getItem('bms-user');
-      const storedToken = localStorage.getItem('bms-access-token');
-      const storedRefresh = localStorage.getItem('bms-refresh-token');
-      const storedSite = localStorage.getItem('bms-current-site');
-
-      if (storedUser && storedToken) {
+    const saved = localStorage.getItem(STORAGE);
+    if (!saved) { setState(empty); return; }
+    try {
+      const stored = JSON.parse(saved) as ApiTokens & { currentSiteId?: string };
+      session(stored, stored.currentSiteId).then(setState).catch(async () => {
         try {
-          const user = JSON.parse(storedUser) as User;
-          const sites = DEMO_SITES.filter(s => user.siteIds.includes(s.id));
-          const currentSiteId = storedSite && user.siteIds.includes(storedSite) ? storedSite : user.siteIds[0] || null;
-
-          setState({
-            user,
-            sites,
-            currentSiteId,
-            accessToken: storedToken,
-            refreshToken: storedRefresh,
-            isAuthenticated: true,
-            isLoading: false
-          });
-        } catch {
-          clearAuth();
-        }
-      } else {
-        setState(prev => ({ ...prev, isLoading: false }));
-      }
-    };
-
-    initAuth();
-  }, [clearAuth]);
+          const tokens = await api<ApiTokens>('/api/v1/auth/refresh', { method: 'POST', body: JSON.stringify({ refreshToken: stored.refreshToken }) });
+          const next = await session(tokens, stored.currentSiteId);
+          localStorage.setItem(STORAGE, JSON.stringify({ ...tokens, currentSiteId: next.currentSiteId }));
+          setState(next);
+        } catch { clear(); }
+      });
+    } catch { clear(); }
+  }, [clear]);
 
   const login = useCallback(async (credentials: LoginCredentials) => {
-    setState(prev => ({ ...prev, isLoading: true }));
-
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 500));
-
-    const demoUser = DEMO_USERS[credentials.email];
-    if (!demoUser || demoUser.password !== credentials.password) {
-      setState(prev => ({ ...prev, isLoading: false }));
-      throw new Error('Invalid credentials');
-    }
-
-    const sites = DEMO_SITES.filter(s => demoUser.user.siteIds.includes(s.id));
-    const currentSiteId = demoUser.user.siteIds[0] || null;
-
-    const accessToken = `demo-access-${Date.now()}`;
-    const refreshToken = `demo-refresh-${Date.now()}`;
-
-    localStorage.setItem('bms-user', JSON.stringify(demoUser.user));
-    localStorage.setItem('bms-access-token', accessToken);
-    localStorage.setItem('bms-refresh-token', refreshToken);
-    if (currentSiteId) {
-      localStorage.setItem('bms-current-site', currentSiteId);
-    }
-
-    setState({
-      user: demoUser.user,
-      sites,
-      currentSiteId,
-      accessToken,
-      refreshToken,
-      isAuthenticated: true,
-      isLoading: false
-    });
+    setState((previous) => ({ ...previous, isLoading: true }));
+    try {
+      const tokens = await api<ApiTokens>('/api/v1/auth/login', { method: 'POST', body: JSON.stringify(credentials) });
+      const next = await session(tokens);
+      localStorage.setItem(STORAGE, JSON.stringify({ ...tokens, currentSiteId: next.currentSiteId }));
+      setState(next);
+    } catch (error) { setState(empty); throw error; }
   }, []);
 
   const logout = useCallback(async () => {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 200));
-    clearAuth();
-  }, [clearAuth]);
+    if (state.refreshToken) {
+      await api<void>('/api/v1/auth/logout', { method: 'POST', body: JSON.stringify({ refreshToken: state.refreshToken }) }).catch(() => undefined);
+    }
+    clear();
+  }, [state.refreshToken, clear]);
 
   const refreshAccessToken = useCallback(async () => {
-    // In real implementation, call refresh endpoint
-    const newAccessToken = `demo-access-${Date.now()}`;
-    localStorage.setItem('bms-access-token', newAccessToken);
-    setState(prev => ({ ...prev, accessToken: newAccessToken }));
-  }, []);
+    if (!state.refreshToken) { clear(); return; }
+    try {
+      const tokens = await api<ApiTokens>('/api/v1/auth/refresh', { method: 'POST', body: JSON.stringify({ refreshToken: state.refreshToken }) });
+      localStorage.setItem(STORAGE, JSON.stringify({ ...tokens, currentSiteId: state.currentSiteId }));
+      setState((previous) => ({ ...previous, ...tokens }));
+    } catch { clear(); }
+  }, [state.refreshToken, state.currentSiteId, clear]);
 
   const setCurrentSite = useCallback((siteId: string) => {
-    if (state.user?.siteIds.includes(siteId)) {
-      localStorage.setItem('bms-current-site', siteId);
-      setState(prev => ({ ...prev, currentSiteId: siteId }));
-    }
-  }, [state.user?.siteIds]);
-
-  const hasPermission = useCallback((permission: string) => {
-    if (!state.user) return false;
-    if (state.user.role === 'admin') return true;
-    // In real app, check against actual permissions from backend
-    return true; // Simplified for demo
+    if (!state.user?.siteIds.includes(siteId)) return;
+    const stored = JSON.parse(localStorage.getItem(STORAGE) ?? '{}') as Record<string, unknown>;
+    localStorage.setItem(STORAGE, JSON.stringify({ ...stored, currentSiteId: siteId }));
+    setState((previous) => ({ ...previous, currentSiteId: siteId }));
   }, [state.user]);
 
-  const hasRole = useCallback((roles: UserRole[]) => {
-    if (!state.user) return false;
-    return roles.includes(state.user.role);
-  }, [state.user]);
-
-  const value: AuthContextValue = {
-    ...state,
-    login,
-    logout,
-    refreshAccessToken,
-    setCurrentSite,
-    hasPermission,
-    hasRole
-  };
-
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  );
+  const hasPermission = useCallback((permission: string) => Boolean(state.user && roleHasPermission(state.user.role, permission)), [state.user]);
+  const hasRole = useCallback((roles: UserRole[]) => Boolean(state.user && roles.includes(state.user.role)), [state.user]);
+  return <AuthContext.Provider value={{ ...state, login, logout, refreshAccessToken, setCurrentSite, hasPermission, hasRole }}>{children}</AuthContext.Provider>;
 }
 
-export function useAuth() {
+export function useAuth(): AuthContextValue {
   const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
+  if (!context) throw new Error('useAuth must be used within AuthProvider');
   return context;
 }
