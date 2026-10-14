@@ -2,9 +2,10 @@ import { useMemo, useState } from 'react';
 import { Header } from '../components/Header';
 import { Breadcrumb } from '../components/Breadcrumb';
 import { WhatIfOverlay } from '../components/WhatIfOverlay';
-import { MEDIUM_STROKE, MOCK_LIVE_KPIS, MOCK_PLANT, PLANT_TARGETS, PLANT_VIEWBOX } from '../fixtures/plantLayout';
+import { MEDIUM_STROKE, MOCK_PLANT, PLANT_TARGETS, PLANT_VIEWBOX } from '../fixtures/plantLayout';
 import type { PlantNodeFixture } from '../fixtures/plantLayout';
 import { SimClient, WHATIF_LABEL, type WhatIfResult } from '../api/sim';
+import { useSiteData } from '../hooks/useSiteData';
 import clsx from 'clsx';
 
 /**
@@ -27,6 +28,7 @@ export function PlantSchematic() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
+  const { plant, error: liveError } = useSiteData();
 
   const nodeById = useMemo(() => {
     const map = new Map<string, PlantNodeFixture>();
@@ -61,7 +63,7 @@ export function PlantSchematic() {
       <Header breadcrumb={breadcrumb} />
       <main style={{ paddingTop: 'calc(var(--header-height) + 24px)' }} className="p-4 lg:p-6">
         <div className="mb-5 flex flex-wrap items-end justify-between gap-2">
-          <div><p className="text-[10px] font-mono tracking-widest text-content-tertiary">SYSTEMS / WATER CIRCUITS</p><h1 className="mt-2 text-content-primary">Plant schematic</h1><p className="mt-1 text-sm text-content-secondary">Trace connected equipment and model a proposed change.</p></div>
+          <div><p className="text-[10px] font-mono tracking-widest text-content-tertiary">SYSTEMS / WATER CIRCUITS</p><h1 className="mt-2 text-content-primary">Plant schematic</h1><p className="mt-1 text-sm text-content-secondary">Trace connected equipment and model a proposed change. {liveError ? `Live data unavailable: ${liveError}` : plant ? 'Live values update every 5 seconds.' : 'Connecting to live data…'}</p></div>
           <span className="rounded-full bg-surface-sunken px-2 py-0.5 text-[10px] text-content-tertiary">
             schematic layout — not to scale
           </span>
@@ -105,14 +107,14 @@ export function PlantSchematic() {
                   );
                 }
                 if (node.kind === 'sensor') {
-                  const value = node.role === 'power-kw' ? MOCK_LIVE_KPIS.kw : node.role === 'chw-delta-t' ? MOCK_LIVE_KPIS.deltaTC : node.value;
+                  const value = node.role === 'power-kw' ? plant?.totalKw : node.role === 'chw-delta-t' ? plant?.chwDeltaT : null;
                   const ghost = node.role === 'power-kw' ? ghostKw : node.role === 'chw-delta-t' ? ghostDt : null;
                   const ghostTestId = node.role === 'power-kw' ? 'ghost-kw' : node.role === 'chw-delta-t' ? 'ghost-delta-t' : undefined;
                   return (
                     <g key={node.id} transform={`translate(${node.x},${node.y})`}>
                       <rect x={-34} y={-14} width={68} height={28} rx={14} fill="var(--color-surface-base)" stroke="var(--color-semantic-success)" />
                       <text textAnchor="middle" y={-2} fontSize="9" className="fill-content-tertiary">{node.label}</text>
-                      <text textAnchor="middle" y={9} fontSize="10" className="fill-content-primary font-mono">{value?.toFixed(1)}{node.unit}</text>
+                      <text textAnchor="middle" y={9} fontSize="10" className="fill-content-primary font-mono">{value == null ? '—' : `${value.toFixed(1)}${node.unit ?? ''}`}</text>
                       {ghost !== null && (
                         <g transform="translate(0,30)" data-testid={ghostTestId}>
                           <rect x={-34} y={-13} width={68} height={26} rx={13} fill="var(--color-surface-base)" stroke="var(--color-semantic-info)" strokeDasharray="4 2" />

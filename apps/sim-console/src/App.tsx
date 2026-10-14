@@ -61,7 +61,7 @@ export default function App() {
   const health = useMemo(() => ingestHealth(state?.ingestLagSeconds), [state?.ingestLagSeconds]);
 
   const setClock = (body: { scale?: number; paused?: boolean; seek?: string }) => {
-    void client.setClock(body).then(setState).catch((e) => setError(String(e)));
+    void client.setClock(body).then(refresh).catch((e) => setError(String(e)));
   };
 
   return (
@@ -108,7 +108,7 @@ export default function App() {
             onChange={(rh) => setEnv((e) => ({ ...e, rh }))} />
           <Slider label={`Occupancy ×${env.occ.toFixed(2)}`} min={0} max={2} step={0.05} value={env.occ}
             onChange={(occ) => setEnv((e) => ({ ...e, occ }))} />
-          <button style={btn} onClick={() => void client.setEnv({ outdoor_dbt: env.dbt, rh: env.rh, occupancy_mult: env.occ }).then(setState)}>
+          <button style={btn} onClick={() => void client.setEnv({ outdoor_dbt: env.dbt, rh: env.rh, occupancy_mult: env.occ }).then(refresh).catch((e) => setError(String(e)))}>
             Apply environment
           </button>
         </section>

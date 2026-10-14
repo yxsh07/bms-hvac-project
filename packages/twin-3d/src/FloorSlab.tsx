@@ -22,6 +22,7 @@ export interface FloorSlabProps {
   totalFloors: number;
   comfortBands: ComfortBands;
   zoneTemps?: Record<string, number> | undefined;
+  comfortScore?: number | undefined;
 }
 
 /** Layout-unit → Three.js scale factor. */
@@ -37,6 +38,7 @@ export const FloorSlab = React.memo<FloorSlabProps>(function FloorSlab({
   index,
   comfortBands,
   zoneTemps,
+  comfortScore,
 }) {
   const meshRef = useRef<THREE.Mesh>(null);
   const invalidate = useThree((s) => s.invalidate);
@@ -86,8 +88,10 @@ export const FloorSlab = React.memo<FloorSlabProps>(function FloorSlab({
       m.transparent = isDimmed;
       m.opacity = isDimmed ? 0.25 : 1;
     }
+    const tone = comfortScore == null ? 0x387487 : comfortScore >= 0.8 ? 0x397b5c : comfortScore >= 0.5 ? 0xa9792e : 0xb94743;
+    mats[0].color.setHex(tone);
     mats[2].emissive.set(isFocused ? 0x124054 : 0x000000);
-  }, [isFocused, isDimmed, mats]);
+  }, [isFocused, isDimmed, comfortScore, mats]);
 
   // Lerp Y position – ref-only, never setState
   useFrame(() => {

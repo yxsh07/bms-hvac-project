@@ -10,3 +10,4 @@ null-telemetry-retention | ~unknown | 1 turn | Preserved null readings from SimS
 frontend-control-room-redesign | tokens unknown | 1 turn | Rebuilt navigation, login, overview, asset workspace and live telemetry; refined building/plant presentation; responsive screenshots at 390/820/1180/1440; full workspace lint/typecheck/tests, ruff, site gate and Chromium demo paths passed
 sim-console-bms-bridge-recovery | tokens unknown | 1 turn | Removed live dashboard browser cache, batched Postgres ingest and enlarged poll; rebuilt Compose; Chromium bridge, lint, typecheck, unit tests and site-agnostic gate passed
 web-api-session | tokens unknown | 1 turn | Replaced fixture login with API authentication and persisted token refresh; tested against live Compose browser flow
+web-live-views | tokens unknown | 1 turn | Bound overview, plant, building and Sim Console to live site data; Chromium Sim Console bridge passed against Compose

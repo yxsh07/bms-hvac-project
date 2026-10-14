@@ -2,36 +2,36 @@ import type { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { useAuth } from '../context/AuthContext';
-import { MOCK_ASSETS } from '../fixtures/dashboardData';
 import { MOCK_ALARMS } from '../fixtures/alarmsData';
+import { useSiteData } from '../hooks/useSiteData';
 import { parseTwinLayout } from 'packages-twin-core';
 import seedLayout from '../../../../data/seed/twin-layout.json';
 import './overview.css';
 
 const layout = parseTwinLayout(seedLayout);
 const floors = [...layout.floors].sort((a, b) => b.elevation - a.elevation);
-const zones = new Set(MOCK_ASSETS.map((asset) => asset.zone).filter(Boolean));
 const openAlarmCount = MOCK_ALARMS.filter((alarm) => alarm.status === 'asserted').length;
 
 export function Dashboard() {
   const { sites, currentSiteId } = useAuth();
+  const { plant, assets, error } = useSiteData();
   const site = sites.find((entry) => entry.id === currentSiteId);
 
   return (
     <div className="min-h-screen bg-surface-base">
       <Header breadcrumb={[{ label: 'Overview' }]} />
       <main className="overview-main">
-        <div className="overview-kicker"><span className="overview-signal" /> OPERATIONS OVERVIEW <span className="overview-divider">/</span> PROTOTYPE DATA</div>
+        <div className="overview-kicker"><span className="overview-signal" /> OPERATIONS OVERVIEW <span className="overview-divider">/</span> {error ? 'API UNAVAILABLE' : plant ? 'LIVE SIMSITE DATA' : 'CONNECTING TO API'}</div>
         <div className="overview-heading">
           <div><h1>{site?.name ?? 'Site overview'}</h1><p>Building systems at a glance. Choose a space or system to inspect.</p></div>
           <Link className="overview-primary-link" to="/building">Explore building <span aria-hidden="true">↗</span></Link>
         </div>
 
         <section className="overview-pulse" aria-label="Site pulse">
-          <div className="overview-pulse-intro"><span className="overview-pulse-label">SITE PULSE</span><strong>Systems in view</strong><span>Simulator snapshot</span></div>
-          <Link to="/alarms" className="overview-pulse-stat attention"><span>Needs attention</span><strong>{String(openAlarmCount).padStart(2, '0')}</strong><small>Review alarm queue ↗</small></Link>
-          <Link to="/assets" className="overview-pulse-stat"><span>Assets monitored</span><strong>{String(MOCK_ASSETS.length).padStart(2, '0')}</strong><small>Browse equipment ↗</small></Link>
-          <Link to="/building" className="overview-pulse-stat"><span>Spaces mapped</span><strong>{String(zones.size).padStart(2, '0')}</strong><small>Across {floors.length} levels ↗</small></Link>
+          <div className="overview-pulse-intro"><span className="overview-pulse-label">SITE PULSE</span><strong>Systems in view</strong><span>{error ?? 'Updating every 5 seconds'}</span></div>
+          <Link to="/plant" className="overview-pulse-stat"><span>Plant power</span><strong>{plant?.totalKw == null ? '—' : plant.totalKw.toFixed(1)}</strong><small>kW from SimSite ↗</small></Link>
+          <Link to="/assets" className="overview-pulse-stat"><span>Assets monitored</span><strong>{String(assets.length).padStart(2, '0')}</strong><small>Browse equipment ↗</small></Link>
+          <Link to="/building" className="overview-pulse-stat"><span>Floors mapped</span><strong>{String(floors.length).padStart(2, '0')}</strong><small>Open twin ↗</small></Link>
         </section>
 
         <div className="overview-content">

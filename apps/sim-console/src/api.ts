@@ -6,6 +6,7 @@
  */
 
 export interface SimState {
+  clock: { simTime: string; simMinute: number; scale: number; paused: boolean };
   simTime: string;
   scale: number;
   paused: boolean;
@@ -64,7 +65,7 @@ export class SimClient {
     return this.request('GET', '/sim/state');
   }
 
-  setClock(body: { scale?: number; paused?: boolean; seek?: string }): Promise<SimState> {
+  setClock(body: { scale?: number; paused?: boolean; seek?: string }): Promise<SimState['clock']> {
     return this.request('POST', '/sim/clock', body);
   }
 
@@ -80,7 +81,7 @@ export class SimClient {
     return this.request('POST', `/sim/scenarios/${encodeURIComponent(name)}/stop`, {});
   }
 
-  setEnv(body: { outdoor_dbt?: number; rh?: number; occupancy_mult?: number }): Promise<SimState> {
+  setEnv(body: { outdoor_dbt?: number; rh?: number; occupancy_mult?: number }): Promise<{ outdoor_dbt: number; rh: number; occupancy_mult: number }> {
     return this.request('POST', '/sim/env', body);
   }
 
