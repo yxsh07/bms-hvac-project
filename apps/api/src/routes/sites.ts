@@ -3,14 +3,10 @@
  */
 
 import type { FastifyInstance } from 'fastify';
-import { MeResponseSchema, type MeResponse, type SiteSummary } from '@contracts';
+import { MeResponseSchema, SiteDetailSchema, type MeResponse, type SiteSummary } from '@contracts';
 import { permissionsFor } from '../auth/rbac.js';
 import { notFound } from '../util/errors.js';
-import { authenticate, parse, type RouteDeps } from './guards.js';
-
-export interface SiteSummaryWithEnvironment extends SiteSummary {
-  environment?: { dryBulbTemp: number | null; relativeHumidity: number | null };
-}
+import { authenticate, parse, setCache, type RouteDeps } from './guards.js';
 
 export function registerSiteRoutes(app: FastifyInstance, deps: RouteDeps): void {
   app.get(
@@ -43,19 +39,19 @@ export function registerSiteRoutes(app: FastifyInstance, deps: RouteDeps): void 
   app.get<{ Params: { siteId: string } }>(
     '/sites/:siteId',
     { preHandler: [authenticate(deps)] },
-    async (request) => {
+    async (request, reply) => {
       const { siteId } = request.params;
       if (siteId !== deps.config.siteId) {
         throw notFound('SITE_NOT_FOUND', `site ${siteId} not found`);
       }
       const environment = await readEnvironment(deps);
-      const body: SiteSummaryWithEnvironment = {
+      setCache(reply, 'no-store');
+      return parse(SiteDetailSchema, {
         id: deps.config.siteId,
         name: deps.config.name,
         timezone: deps.config.timezone,
         ...(environment ? { environment } : {}),
-      };
-      return body;
+      });
     },
   );
 }
@@ -63,23 +59,14 @@ export function registerSiteRoutes(app: FastifyInstance, deps: RouteDeps): void 
 async function readEnvironment(
   deps: RouteDeps,
 ): Promise<{ dryBulbTemp: number | null; relativeHumidity: number | null } | undefined> {
-  // Best-effort: read the site's calculated environment dashboard via roles.
-  for (const asset of deps.ontology.assets) {
-    const temp = deps.ontology.points[asset.id]?.find(
-      (p) => p.cls === 'area-temp' || p.cls === 'supply-air-temp',
-    );
-    const humidity = deps.ontology.points[asset.id]?.find((p) => p.cls === 'area-humidity');
-    if (temp && humidity) {
-      const latest = await deps.store.latest(deps.config.siteId, asset.id);
-      const t = latest[temp.abbr];
-      const h = latest[humidity.abbr];
-      if (t || h) {
-        return {
-          dryBulbTemp: t?.quality === 0 ? t.value : null,
-          relativeHumidity: h?.quality === 0 ? h.value : null,
-        };
-      }
-    }
-  }
-  return undefined;
+  if (deps.config.telemetry.driver !== 'sim-http' || !deps.config.telemetry.url) return undefined;
+  try {
+    const response = await fetch(`${deps.config.telemetry.url.replace(/\/$/, '')}/sim/state`, {
+      signal: AbortSignal.timeout(1500), cache: 'no-store',
+    });
+    if (!response.ok) return undefined;
+    const state = await response.json() as { outdoorDbtC?: unknown; relativeHumidityPct?: unknown };
+    if (typeof state.outdoorDbtC !== 'number' || typeof state.relativeHumidityPct !== 'number') return undefined;
+    return { dryBulbTemp: state.outdoorDbtC, relativeHumidity: state.relativeHumidityPct };
+  } catch { return undefined; }
 }

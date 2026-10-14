@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { NavLink, useInRouterContext, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useAlarmFeed } from '../hooks/useAlarmFeed';
+import { useSiteEnvironment } from '../hooks/useSiteEnvironment';
 
 export interface BreadcrumbItem {
   label: string;
@@ -81,6 +82,7 @@ export function Header(props: HeaderProps) {
 function ShellHeader({ breadcrumb = [], onMenuClick }: HeaderProps) {
   const { user, sites, currentSiteId, setCurrentSite, logout } = useAuth();
   const { alarms } = useAlarmFeed();
+  const environment = useSiteEnvironment();
   const openAlarmCount = alarms.filter((alarm) => !alarm.clearedAt).length;
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
@@ -126,11 +128,11 @@ function ShellHeader({ breadcrumb = [], onMenuClick }: HeaderProps) {
               {sites.map((entry) => <option value={entry.id} key={entry.id}>{entry.name}</option>)}
             </select>
           </label>
-          {site?.environment && (
+          {environment && (
             <div className="shell-weather" aria-label="Outdoor conditions">
               <span>OUTDOOR</span>
-              <strong>{site.environment.dryBulbTemp?.toFixed(1)}°</strong>
-              <small>{site.environment.relativeHumidity?.toFixed(0)}% RH</small>
+              <strong>{environment.dryBulbTemp?.toFixed(1) ?? '—'}°</strong>
+              <small>{environment.relativeHumidity?.toFixed(0) ?? '—'}% RH</small>
             </div>
           )}
           <NavLink className="shell-alarm-button" to="/alarms" aria-label={`Alarms (${openAlarmCount})`}>

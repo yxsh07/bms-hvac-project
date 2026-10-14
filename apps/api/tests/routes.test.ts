@@ -1,4 +1,4 @@
-import { beforeAll, describe, expect, it } from 'vitest';
+import { beforeAll, describe, expect, it, vi } from 'vitest';
 import type { FastifyInstance } from 'fastify';
 import { buildServer, createServerDeps, seedDemoUsers } from '../src/server.js';
 import { makeContext, FakeGateway, type TestContext } from './helpers.js';
@@ -56,6 +56,20 @@ beforeAll(async () => {
 });
 
 describe('auth + errors', () => {
+  it('serves live simulator outdoor conditions without caching', async () => {
+    const token = await login('operator@example.com', 'Operator123!');
+    const fetchMock = vi.spyOn(globalThis, 'fetch').mockResolvedValue(new Response(JSON.stringify({
+      outdoorDbtC: 38.5, relativeHumidityPct: 47,
+    }), { status: 200 }));
+    try {
+      const res = await app.inject({ method: 'GET', url: `/api/v1/sites/${SITE}`, headers: auth(token) });
+      expect(res.statusCode).toBe(200);
+      expect(res.headers['cache-control']).toBe('no-store');
+      expect(res.json().environment).toEqual({ dryBulbTemp: 38.5, relativeHumidity: 47 });
+      expect(fetchMock).toHaveBeenCalledWith(expect.stringContaining('/sim/state'), expect.any(Object));
+    } finally { fetchMock.mockRestore(); }
+  });
+
   it('audits a successful alarm acknowledgement through the mutation hook', async () => {
     const token = await login('operator@example.com', 'Operator123!');
     await ctx.store.createAlarm({

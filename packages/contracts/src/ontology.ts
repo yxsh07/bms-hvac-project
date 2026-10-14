@@ -156,6 +156,13 @@ export type Site = z.infer<typeof SiteSchema>;
 export const SiteSummarySchema = SiteSchema.pick({ id: true, name: true, timezone: true });
 export type SiteSummary = z.infer<typeof SiteSummarySchema>;
 
+export const SiteEnvironmentSchema = z.object({
+  dryBulbTemp: z.number().nullable(),
+  relativeHumidity: z.number().nullable(),
+});
+export const SiteDetailSchema = SiteSummarySchema.extend({ environment: SiteEnvironmentSchema.optional() });
+export type SiteDetail = z.infer<typeof SiteDetailSchema>;
+
 // ── Ontology (full tree for a site) ──────────────────────────────────────────
 
 export const OntologySchema = z.object({

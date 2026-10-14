@@ -20,3 +20,4 @@ site-plant-api | tokens unknown | 1 turn | Exposed validated site-authored plant
 live-plant-schematic | tokens unknown | 1 turn | Bound L2 plant to authored site topology and live semantic roles; added selection, pan/zoom and what-if browser coverage
 telemetry-fault-alarms | tokens unknown | 1 turn | Ingested site-classified fault transitions as persistent alarms, added chiller fault point and audited acknowledgements; tests passed
 live-alarm-queue | tokens unknown | 1 turn | Replaced alarm route and badge with live API polling and audited acknowledgement UI; browser trip scenario passed; four responsive screenshots
+live-weather-strip | tokens unknown | 1 turn | Typed live site environment from SimSite and polled it into the header; API and browser checks passed with responsive screenshots
