@@ -121,6 +121,20 @@ export async function buildServer(deps: ServerDeps, logger = true): Promise<Fast
       reply.code(204).send();
     }
   });
+  app.addHook('onSend', async (request, reply, payload) => {
+    const change = request.auditChange;
+    if (change && reply.statusCode < 400) {
+      await deps.chain.append({
+        ...change,
+        actorId: request.authUser?.id,
+        actorEmail: request.authUser?.email,
+        ip: request.ip,
+        device: request.headers['user-agent'] ?? null,
+        action: request.method,
+      });
+    }
+    return payload;
+  });
 
   app.setErrorHandler((error, request, reply) => {
     if (error instanceof HttpError) {

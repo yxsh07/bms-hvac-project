@@ -112,4 +112,25 @@ describe('ingest worker quality pipeline (§7.5)', () => {
     });
     expect(second.fetched).toBe(0);
   });
+
+  it('opens and clears one alarm per fault transition while ignoring bad readings', async () => {
+    const ctx = await makeContext();
+    const source = new FakeSource([
+      sourceRow(1, 'chiller-01', 'FAULT', 1, T0),
+      sourceRow(2, 'chiller-01', 'FAULT', 1, T1),
+      sourceRow(3, 'chiller-01', 'FAULT', 2, T1), // invalid binary status
+      sourceRow(4, 'chiller-01', 'FAULT', 0, T2),
+    ]);
+    const deps = { ontology: ctx.ontology, pointRoles: ctx.pointRoles };
+    await ingestBatch(ctx.store, source, ctx.config, deps, 2);
+    const open = await ctx.store.listAlarms(ctx.config.siteId, { assetId: 'chiller-01' });
+    expect(open.items).toHaveLength(1);
+    expect(open.items[0]).toMatchObject({ status: 'active', raisedAt: T0, field: 'FAULT' });
+
+    await ingestBatch(ctx.store, source, ctx.config, deps, 2);
+    const closed = await ctx.store.listAlarms(ctx.config.siteId, { assetId: 'chiller-01' });
+    expect(closed.items).toHaveLength(1);
+    expect(closed.items[0]).toMatchObject({ status: 'cleared_unacknowledged', clearedAt: T2 });
+    expect((await ctx.store.latest(ctx.config.siteId, 'chiller-01')).FAULT.quality).toBe(0);
+  });
 });

@@ -31,6 +31,7 @@
         { "abbr": "KW",     "display": "Compressor Power",    "unit": "kW",  "group": "energy",       "cls": "power",                        "source": "modbus", "writable": false },
         { "abbr": "LOAD",   "display": "Loading %",           "unit": "%",   "group": "performance",  "cls": "loading-percentage",           "source": "modbus", "writable": false, "safeMin": 0.0,  "safeMax": 105.0 },
         { "abbr": "RUN",    "display": "Run Status",          "unit": "",    "group": "status",       "cls": "run-status",                   "source": "modbus", "writable": false },
+        { "abbr": "FAULT",  "display": "Fault Alarm",         "unit": "",    "group": "alarms",       "cls": "fault-alarm",                  "source": "modbus", "writable": false },
         { "abbr": "CHWSSP", "display": "CHW Supply Setpoint", "unit": "°C",  "group": "setpoints",    "cls": "setpoint-chw-temp",            "source": "modbus", "writable": true,  "safeMin": 4.0,  "safeMax": 12.0 }
       ]
     },
@@ -49,6 +50,7 @@
         { "abbr": "KW",     "display": "Compressor Power",    "unit": "kW",  "group": "energy",       "cls": "power",                        "source": "modbus", "writable": false },
         { "abbr": "LOAD",   "display": "Loading %",           "unit": "%",   "group": "performance",  "cls": "loading-percentage",           "source": "modbus", "writable": false, "safeMin": 0.0,  "safeMax": 105.0 },
         { "abbr": "RUN",    "display": "Run Status",          "unit": "",    "group": "status",       "cls": "run-status",                   "source": "modbus", "writable": false },
+        { "abbr": "FAULT",  "display": "Fault Alarm",         "unit": "",    "group": "alarms",       "cls": "fault-alarm",                  "source": "modbus", "writable": false },
         { "abbr": "CHWSSP", "display": "CHW Supply Setpoint", "unit": "°C",  "group": "setpoints",    "cls": "setpoint-chw-temp",            "source": "modbus", "writable": true,  "safeMin": 4.0,  "safeMax": 12.0 }
       ]
     },

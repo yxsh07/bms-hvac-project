@@ -55,6 +55,13 @@ export function registerAlarmRoutes(app: FastifyInstance, deps: RouteDeps): void
         acknowledgedAt: deps.clock(),
         acknowledgeNote: body.note ?? null,
       });
+      if (updated) request.auditChange = {
+        siteId: request.params.siteId,
+        eventType: 'alarm.acknowledged',
+        resource: `alarm:${alarm.id}`,
+        before: alarm,
+        after: updated,
+      };
       return updated ?? alarm;
     },
   );

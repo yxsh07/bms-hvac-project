@@ -24,6 +24,9 @@ export const AuditEventTypeSchema = z.enum([
   // Access control
   'authz.denied',
 
+  // Alarms
+  'alarm.acknowledged',
+
   // Setpoints
   'setpoint.proposed',
   'setpoint.approved',
