@@ -89,7 +89,7 @@ export default defineConfig({
             }
           },
           {
-            urlPattern: /^https?.*\/api\/v1\/sites\/.*\/assets/,
+            urlPattern: /^https?.*\/api\/v1\/sites\/[^/]+\/assets(?:\/[^/]+)?$/,
             handler: 'StaleWhileRevalidate',
             options: {
               cacheName: 'assets-cache',
