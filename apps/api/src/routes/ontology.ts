@@ -7,8 +7,10 @@
  */
 
 import type { FastifyInstance } from 'fastify';
+import { readFileSync } from 'node:fs';
 import {
   PointRolesSchema,
+  TwinLayoutSchema,
   type Asset as ContractAsset,
   type AssetSummary,
   type Floor,
@@ -164,6 +166,18 @@ export function registerOntologyRoutes(app: FastifyInstance, deps: RouteDeps): v
       ensureSite(deps, request.params.siteId);
       setCache(reply, 'ontology');
       return parse(PointRolesSchema, deps.pointRoles);
+    },
+  );
+
+  app.get<{ Params: { siteId: string } }>(
+    '/sites/:siteId/plant-layout',
+    { preHandler: [authenticate(deps)] },
+    async (request, reply) => {
+      ensureSite(deps, request.params.siteId);
+      if (!deps.config.paths.twinLayout) throw notFound('LAYOUT_NOT_FOUND', 'Site plant layout is unavailable');
+      const layout = TwinLayoutSchema.parse(JSON.parse(readFileSync(deps.config.paths.twinLayout, 'utf8')));
+      setCache(reply, 'ontology');
+      return layout.plant;
     },
   );
 

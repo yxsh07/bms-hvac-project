@@ -6,6 +6,7 @@ if [ -n "${WSL_DISTRO_NAME:-}" ] && command -v git.exe >/dev/null 2>&1; then
   gh() { gh.exe "$@"; }
 fi
 msg="${1:?conventional commit message}"
+base="${2:-${PR_BASE:-main}}"
 pnpm -r --if-present lint
 pnpm -r --if-present typecheck
 pnpm -r --if-present test
@@ -21,5 +22,5 @@ existing_pr=$(gh pr view --json url --jq .url 2>/dev/null || true)
 if [ -n "$existing_pr" ]; then
   printf '%s\n' "$existing_pr"
 else
-  gh pr create --fill --base "${PR_BASE:-main}"
+  gh pr create --fill --base "$base"
 fi

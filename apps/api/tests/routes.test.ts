@@ -2,6 +2,7 @@ import { beforeAll, describe, expect, it } from 'vitest';
 import type { FastifyInstance } from 'fastify';
 import { buildServer, createServerDeps, seedDemoUsers } from '../src/server.js';
 import { makeContext, FakeGateway, type TestContext } from './helpers.js';
+import { PlantSchema } from '@contracts';
 
 const SITE = 'simsite-hospital';
 
@@ -97,6 +98,17 @@ describe('auth + errors', () => {
 });
 
 describe('read routes', () => {
+  it('serves the validated site plant topology to authenticated users', async () => {
+    const token = await login('engineer@example.com', 'Engineer123!');
+    const denied = await app.inject({ method: 'GET', url: `/api/v1/sites/${SITE}/plant-layout` });
+    expect(denied.statusCode).toBe(401);
+    const res = await app.inject({ method: 'GET', url: `/api/v1/sites/${SITE}/plant-layout`, headers: auth(token) });
+    expect(res.statusCode).toBe(200);
+    const plant = PlantSchema.parse(res.json());
+    expect(plant.nodes.some((node) => node.kind === 'equipment')).toBe(true);
+    expect(plant.edges.length).toBeGreaterThan(1);
+  });
+
   it('serves semantic point roles from the selected site config', async () => {
     const token = await login('engineer@example.com', 'Engineer123!');
     const res = await app.inject({
