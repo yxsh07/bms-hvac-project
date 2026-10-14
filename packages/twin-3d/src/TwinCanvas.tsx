@@ -36,6 +36,7 @@ export interface TwinCanvasProps {
   layout: TwinLayout;
   comfortBands: ComfortBands;
   zoneTemps?: Record<string, number> | undefined;
+  floorComfort?: Record<string, number> | undefined;
   focusedFloorId?: string | null;
 }
 

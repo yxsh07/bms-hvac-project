@@ -22,12 +22,14 @@ export interface BuildingTwinProps {
   layout: TwinLayout;
   comfortBands: ComfortBands;
   zoneTemps?: Record<string, number> | undefined;
+  floorComfort?: Record<string, number> | undefined;
 }
 
 export const BuildingTwin: React.FC<BuildingTwinProps> = ({
   layout,
   comfortBands,
   zoneTemps,
+  floorComfort,
 }) => {
   const expandFactor = useTwinStore(selectExpandFactor);
   const revolve = useTwinStore(selectRevolve);
@@ -72,6 +74,7 @@ export const BuildingTwin: React.FC<BuildingTwinProps> = ({
             totalFloors={sortedFloors.length}
             comfortBands={comfortBands}
             zoneTemps={zoneTemps}
+            comfortScore={floorComfort?.[floor.id]}
           />
         ))}
 

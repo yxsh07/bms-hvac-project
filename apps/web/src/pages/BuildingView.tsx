@@ -1,6 +1,7 @@
 import { lazy, Suspense, useState } from 'react';
 import { Header } from '../components/Header';
 import { parseTwinLayout } from 'packages-twin-core';
+import { useSiteData } from '../hooks/useSiteData';
 import seedLayout from '../../../../data/seed/twin-layout.json';
 
 const TwinCanvas = lazy(() => import('packages-twin-3d').then((module) => ({ default: module.TwinCanvas })));
@@ -9,9 +10,12 @@ const floors = [...layout.floors].sort((a, b) => b.elevation - a.elevation);
 const comfortBands = {};
 
 export function BuildingView() {
+  const { floors: liveFloors, error } = useSiteData();
   const [focusedFloorId, setFocusedFloorId] = useState<string | null>(null);
   const [showPlan, setShowPlan] = useState(false);
   const visibleFloors = focusedFloorId ? floors.filter((floor) => floor.id === focusedFloorId) : floors;
+  const floorData = new Map(liveFloors?.floors.map((floor) => [floor.id, floor]) ?? []);
+  const floorComfort = Object.fromEntries(liveFloors?.floors.filter((floor) => floor.comfort !== null).map((floor) => [floor.id, floor.comfort!]) ?? []);
 
   return (
     <div className="min-h-screen bg-surface-base">
@@ -21,7 +25,7 @@ export function BuildingView() {
           <div>
             <p className="text-xs font-medium text-content-tertiary">Spatial overview</p>
             <h1 className="text-2xl font-semibold text-content-primary">Building twin</h1>
-            <p className="text-sm text-content-tertiary">Schematic layout, generated from site assets. Not to scale.</p>
+            <p className="text-sm text-content-tertiary">Schematic layout, generated from site assets. {error ? `Live data unavailable: ${error}` : 'Floor conditions update every 5 seconds.'}</p>
           </div>
           <div className="flex gap-2" role="group" aria-label="View mode">
             <button type="button" onClick={() => setShowPlan(false)} aria-pressed={!showPlan} className={`rounded-md border px-4 py-2 text-sm ${!showPlan ? 'bg-surface-sunken text-content-primary' : 'text-content-tertiary'}`}>3D view</button>
@@ -40,7 +44,7 @@ export function BuildingView() {
                 const active = focusedFloorId === floor.id;
                 return (
                   <button key={floor.id} type="button" onClick={() => setFocusedFloorId(active ? null : floor.id)} aria-pressed={active} className={`flex w-full items-center justify-between rounded-md border px-3 py-3 text-left text-sm ${active ? 'border-chilled bg-state-selected text-content-primary' : 'border-default text-content-secondary hover:bg-state-hover'}`}>
-                    <span>{floor.name}</span><span className="text-xs text-content-tertiary">{count} assets</span>
+                    <span>{floor.name}</span><span className="text-xs text-content-tertiary">{floorData.get(floor.id)?.avgTempC == null ? '—' : `${floorData.get(floor.id)!.avgTempC!.toFixed(1)}°C`} · {count} assets</span>
                   </button>
                 );
               })}
@@ -53,7 +57,7 @@ export function BuildingView() {
               <div className="grid max-h-[70vh] gap-3 overflow-auto p-4 md:grid-cols-2">
                 {visibleFloors.map((floor) => (
                   <div key={floor.id} className="rounded-lg border border-white/15 bg-[#1b3440] p-3 text-white">
-                    <h2 className="mb-2 text-sm font-semibold">{floor.name}</h2>
+                    <h2 className="mb-2 text-sm font-semibold">{floor.name} <span className="font-mono text-xs text-white/70">{floorData.get(floor.id)?.avgTempC == null ? 'No live temperature' : `${floorData.get(floor.id)!.avgTempC!.toFixed(1)}°C live`}</span></h2>
                     <svg className="w-full" viewBox={`0 0 ${floor.footprint.w} ${floor.footprint.h}`} role="img" aria-label={`${floor.name} schematic plan`}>
                       <rect width={floor.footprint.w} height={floor.footprint.h} fill="#132630" />
                       {layout.zones.filter((zone) => zone.floor === floor.id).map((zone) => (
@@ -69,7 +73,7 @@ export function BuildingView() {
             ) : (
               <Suspense fallback={<div className="grid h-[70vh] place-items-center text-white">Loading building view…</div>}>
                 <div className="h-[70vh] min-h-[520px]">
-                  <TwinCanvas layout={layout} comfortBands={comfortBands} focusedFloorId={focusedFloorId} />
+                  <TwinCanvas layout={layout} comfortBands={comfortBands} floorComfort={floorComfort} focusedFloorId={focusedFloorId} />
                 </div>
               </Suspense>
             )}
