@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { NavLink, useInRouterContext, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { MOCK_ALARMS } from '../fixtures/alarmsData';
-
-const openAlarmCount = MOCK_ALARMS.filter((alarm) => alarm.status === 'asserted').length;
+import { useAlarmFeed } from '../hooks/useAlarmFeed';
 
 export interface BreadcrumbItem {
   label: string;
@@ -49,7 +47,7 @@ const navigation = [
   ] },
 ] as const;
 
-function Navigation({ onNavigate, label }: { onNavigate?: () => void; label: string }) {
+function Navigation({ onNavigate, label, openAlarmCount }: { onNavigate?: () => void; label: string; openAlarmCount: number }) {
   return (
     <nav aria-label={label} className="shell-navigation">
       {navigation.map((section) => (
@@ -82,6 +80,8 @@ export function Header(props: HeaderProps) {
 
 function ShellHeader({ breadcrumb = [], onMenuClick }: HeaderProps) {
   const { user, sites, currentSiteId, setCurrentSite, logout } = useAuth();
+  const { alarms } = useAlarmFeed();
+  const openAlarmCount = alarms.filter((alarm) => !alarm.clearedAt).length;
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const activeItem = navigation.flatMap((section) => [...section.items] as Array<{ href: string; label: string; code: string }>).find((item) => item.href === location.pathname);
@@ -95,7 +95,7 @@ function ShellHeader({ breadcrumb = [], onMenuClick }: HeaderProps) {
           <span className="shell-brand-mark" aria-hidden="true"><span /><span /><span /></span>
           <span className="shell-brand-name">BMS<span>Twin</span><small>Operations console</small></span>
         </NavLink>
-        <Navigation label="Primary navigation" />
+        <Navigation label="Primary navigation" openAlarmCount={openAlarmCount} />
         <div className="shell-rail-foot">
           <span className="shell-online-dot" />
           <span>Prototype mode</span>
@@ -153,7 +153,7 @@ function ShellHeader({ breadcrumb = [], onMenuClick }: HeaderProps) {
           <button className="shell-menu-backdrop" aria-label="Close main menu" onClick={() => setMenuOpen(false)} />
           <div className="shell-menu-panel">
             <div className="shell-menu-head"><span>Navigate</span><button type="button" onClick={() => setMenuOpen(false)} aria-label="Close main menu">×</button></div>
-            <Navigation label="Main navigation" onNavigate={() => setMenuOpen(false)} />
+            <Navigation label="Main navigation" openAlarmCount={openAlarmCount} onNavigate={() => setMenuOpen(false)} />
           </div>
         </div>
       )}

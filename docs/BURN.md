@@ -19,3 +19,4 @@ sim-clock-continuity | tokens unknown | 1 turn | API resumes SimSite after the l
 site-plant-api | tokens unknown | 1 turn | Exposed validated site-authored plant layout through contract/generated client/API and made ship base explicit; unit gate passed
 live-plant-schematic | tokens unknown | 1 turn | Bound L2 plant to authored site topology and live semantic roles; added selection, pan/zoom and what-if browser coverage
 telemetry-fault-alarms | tokens unknown | 1 turn | Ingested site-classified fault transitions as persistent alarms, added chiller fault point and audited acknowledgements; tests passed
+live-alarm-queue | tokens unknown | 1 turn | Replaced alarm route and badge with live API polling and audited acknowledgement UI; browser trip scenario passed; four responsive screenshots
