@@ -15,3 +15,4 @@ live-setpoint-ui | tokens unknown | 1 turn | Wired real set-point requests and a
 test-checklist-bridge | tokens unknown | 1 turn | Aligned Sim Console checklist IDs with SimSite, enabled serial Playwright reporter mode, and added browser status check
 site-role-api | tokens unknown | 1 turn | Added authenticated site-specific point-role contract and API endpoint for role-bound equipment views
 live-asset-workspace | tokens unknown | 1 turn | Replaced fixture equipment route with site-role-bound assets, live readings and quality states; unit/browser checks and responsive screenshots
+sim-clock-continuity | tokens unknown | 1 turn | API resumes SimSite after the latest persisted sample on restart; scenario changes preserve virtual time; tests and Compose bridge check

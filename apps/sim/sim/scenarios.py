@@ -9,7 +9,6 @@ from __future__ import annotations
 
 from typing import Any
 
-from .clock import DEFAULT_START
 from .profile import Catalogue, Scenario
 
 
@@ -49,8 +48,11 @@ class ScenarioRunner:
         sc = self._find(name)
         if sc is None:
             return False
+        # A scenario resets physics, but must not rewind timestamps already
+        # ingested by the operator app. Tests can seek explicitly for replay.
+        start_time = self.engine.clock.now()
         self.engine.reset(seed if seed is not None else sc.seed)
-        self.engine.clock.seek(DEFAULT_START.isoformat())
+        self.engine.clock.seek(start_time.isoformat())
         self.current = sc
         self.current_name = sc.name
         self.start_min = 0
