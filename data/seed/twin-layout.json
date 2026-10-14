@@ -357,28 +357,8 @@
         "assetId": "cwp-01",
         "type": "condenser-water-pump",
         "xy": [
-          1500,
+          400,
           100
-        ]
-      },
-      {
-        "id": "pn-dashboard-plant",
-        "kind": "equipment",
-        "assetId": "dashboard-plant",
-        "type": "dashboard",
-        "xy": [
-          1500,
-          100
-        ]
-      },
-      {
-        "id": "pn-dashboard-ward",
-        "kind": "equipment",
-        "assetId": "dashboard-ward",
-        "type": "dashboard",
-        "xy": [
-          1500,
-          220
         ]
       },
       {
@@ -405,14 +385,74 @@
     "edges": [
       {
         "id": "pe-1",
-        "from": "pn-chiller-02",
+        "from": "pn-cooling-tower-01",
+        "to": "pn-cwp-01",
+        "medium": "condenser"
+      },
+      {
+        "id": "pe-2",
+        "from": "pn-cwp-01",
+        "to": "pn-chiller-01",
+        "medium": "condenser"
+      },
+      {
+        "id": "pe-3",
+        "from": "pn-cwp-01",
+        "to": "pn-chiller-02",
+        "medium": "condenser"
+      },
+      {
+        "id": "pe-4",
+        "from": "pn-chiller-01",
         "to": "pn-chwp-01",
         "medium": "chilled"
       },
       {
-        "id": "pe-2",
-        "from": "pn-ahu-02",
+        "id": "pe-5",
+        "from": "pn-chiller-02",
+        "to": "pn-chwp-02",
+        "medium": "chilled"
+      },
+      {
+        "id": "pe-6",
+        "from": "pn-chwp-01",
+        "to": "pn-ahu-01",
+        "medium": "chilled"
+      },
+      {
+        "id": "pe-7",
+        "from": "pn-chwp-02",
+        "to": "pn-ahu-02",
+        "medium": "chilled"
+      },
+      {
+        "id": "pe-8",
+        "from": "pn-ahu-01",
         "to": "pn-fcu-01",
+        "medium": "chilled"
+      },
+      {
+        "id": "pe-9",
+        "from": "pn-ahu-02",
+        "to": "pn-fcu-02",
+        "medium": "chilled"
+      },
+      {
+        "id": "pe-10",
+        "from": "pn-ahu-02",
+        "to": "pn-fcu-03",
+        "medium": "chilled"
+      },
+      {
+        "id": "pe-11",
+        "from": "pn-ahu-02",
+        "to": "pn-fcu-04",
+        "medium": "chilled"
+      },
+      {
+        "id": "pe-12",
+        "from": "pn-ahu-02",
+        "to": "pn-fcu-05",
         "medium": "chilled"
       }
     ]

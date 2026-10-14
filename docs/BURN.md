@@ -17,3 +17,4 @@ site-role-api | tokens unknown | 1 turn | Added authenticated site-specific poin
 live-asset-workspace | tokens unknown | 1 turn | Replaced fixture equipment route with site-role-bound assets, live readings and quality states; unit/browser checks and responsive screenshots
 sim-clock-continuity | tokens unknown | 1 turn | API resumes SimSite after the latest persisted sample on restart; scenario changes preserve virtual time; tests and Compose bridge check
 site-plant-api | tokens unknown | 1 turn | Exposed validated site-authored plant layout through contract/generated client/API and made ship base explicit; unit gate passed
+live-plant-schematic | tokens unknown | 1 turn | Bound L2 plant to authored site topology and live semantic roles; added selection, pan/zoom and what-if browser coverage
